@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="mb-2 hidden text-sm text-gray-500 dark:text-gray-400 md:flex">
           <div className="mx-1">
             <Link href="https://parthdesai.vercel.app" className="link-underline">
-              Parth Desai{` © ${new Date().getFullYear()}`}
+              SnowyField{` © ${new Date().getFullYear()}`}
             </Link>
           </div>
           {`•`}

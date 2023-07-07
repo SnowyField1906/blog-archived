@@ -1,13 +1,13 @@
 ---
-name: Parth Desai
+name: SnowyField
 avatar: /static/images/avatar.png
-occupation: Data Engineer
-company: Accenture
-email: desaiparth2000@gmail.com
-twitter: https://twitter.com/_ParthDesai_
-linkedin: https://www.linkedin.com/in/parth-desai-2bb1b0160/
-github: https://github.com/pycoder2000
-text1: I am an India based Data Engineer with a bachelors in Computer Science. I am passionate about Data Science and Automation. I am also fascinated with Mathematics and wish to make a career out of it someday.
+occupation: Blockchain Developer, Computer/Data Scientist Student
+company: LECLE Vietnam
+email: snowyfield1906@gmail.com
+twitter: https://twitter.com/SnowyField1906
+linkedin: https://www.linkedin.com/in/NHThuan
+github: https://github.com/SnowyField1906
+text1: I am a Blockchain Developer and Computer/Data Scientist Student who is passionate about Science, Mathematics and Researching.
 text2:
 text3:
 ---

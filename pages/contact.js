@@ -13,7 +13,7 @@ const Contact = () => {
         <div className="pt-10 pb-8">
           <ul className="font-semi-bold flex flex-col space-y-4">
             <ContactLink
-              href="mailto:desaiparth2000@gmail.com"
+              href="mailto:snowyfield1906@gmail.com"
               title="gmail"
               icon="desaiparth2000"
             />
