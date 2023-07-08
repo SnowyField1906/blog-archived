@@ -19,8 +19,8 @@ export default async function handler(req, res) {
 
   return res.status(200).json({
     followers: user.followers,
+    following: user.following,
     stars,
     repos: user.public_repos,
-    gists: user.public_gists,
   })
 }

@@ -23,9 +23,9 @@ const Contact = () => {
               icon="SnowyField1906"
             />
             <ContactLink
-              href="https://twitter.com/_ParthDesai_"
+              href="https://twitter.com/SnowyField1906"
               title="twitter"
-              icon="_ParthDesai_"
+              icon="SnowyField1906"
             />
             <ContactLink
               href="https://www.linkedin.com/in/parth-desai-2bb1b0160/"

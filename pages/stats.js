@@ -1,6 +1,5 @@
 // import Link from '@/components/Link'
 import Analytics from 'components/metrics/Analytics'
-import Twitter from '@/components/metrics/Twitter'
 import GithubPersonal from '@/components/metrics/GithubPersonal'
 import GitHub from '@/components/metrics/Github'
 import siteMetadata from '@/data/siteMetadata'
@@ -21,22 +20,17 @@ export default function Stats() {
             Stats
           </h1>
           <p className="text-md leading-7 text-gray-500 dark:text-gray-400">
-            I use this dashboard to track various metrics across platforms like Spotify, Twitter,
-            GitHub, and more.
+            I use this dashboard to track various metrics across platforms like Spotify, GitHub, and
+            more.
           </p>
         </div>
         <div className="pt-2">
+          <div className="flex w-full flex-col pb-2">
+            <Analytics />
+          </div>
           <div className="flex w-full flex-col">
             <GithubPersonal />
             <GitHub />
-          </div>
-          <div className="grid w-full grid-cols-1 gap-4 py-2  sm:grid-cols-2">
-            <Twitter type="followers" />
-            <Twitter type="following" />
-          </div>
-          <div className="grid w-full grid-cols-1 gap-4 py-2 sm:grid-cols-2">
-            <Twitter type="total_tweets" />
-            <Analytics />
           </div>
         </div>
         <h2 className="mb-4 mt-16 text-3xl font-bold tracking-tight text-black dark:text-white">
@@ -56,7 +50,7 @@ export default function Stats() {
           <a
             className="text-md mt-4 rounded-full border px-8 py-2 text-center font-normal text-gray-800 transition-colors hover:border-green-600 hover:bg-green-600 hover:text-white dark:text-gray-200"
             href="https://twitter.com/messages/compose?recipient_id=4302974298&text=Hey Parth, you should listen to:"
-            data-screen-name="@_ParthDesai_"
+            data-screen-name="@SnowyField1906"
             target="_blank"
             rel="noreferrer noopener"
           >
