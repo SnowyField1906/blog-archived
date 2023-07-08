@@ -17,7 +17,11 @@ const Contact = () => {
               title="gmail"
               icon="desaiparth2000"
             />
-            <ContactLink href="https://github.com/pycoder2000" title="github" icon="pycoder2000" />
+            <ContactLink
+              href="https://github.com/SnowyField1906"
+              title="github"
+              icon="SnowyField1906"
+            />
             <ContactLink
               href="https://twitter.com/_ParthDesai_"
               title="twitter"
