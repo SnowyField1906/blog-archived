@@ -6,7 +6,7 @@ const siteMetadata = {
   snippets: 'Reuseable code snippets collected by SnowyField',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://musing.vercel.app',
+  siteUrl: 'https://blog-snowyfield1906.vercel.app/',
   siteRepo: 'https://github.com/SnowyField1906/blog',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
