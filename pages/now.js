@@ -77,34 +77,34 @@ export default function Now(currentlyReading) {
     return () => clearInterval(timer)
   }, [])
 
-  var ParthBirthDate = '2003-12-18'
-  var birthDate = new Date(ParthBirthDate)
+  var SnowyFieldBirthDate = '2003-12-18'
+  var birthDate = new Date(SnowyFieldBirthDate)
 
-  var ParthAge = year - birthDate.getFullYear()
+  var SnowyFieldAge = year - birthDate.getFullYear()
 
-  var ParthMonth = 0
-  if (month >= birthDate.getMonth()) ParthMonth = month - birthDate.getMonth()
+  var SnowyFieldMonth = 0
+  if (month >= birthDate.getMonth()) SnowyFieldMonth = month - birthDate.getMonth()
   else {
-    ParthAge--
-    ParthMonth = 12 + month - birthDate.getMonth()
+    SnowyFieldAge--
+    SnowyFieldMonth = 12 + month - birthDate.getMonth()
   }
 
-  var ParthDay = 0
-  if (date >= birthDate.getDate()) ParthDay = date - birthDate.getDate()
+  var SnowyFieldDay = 0
+  if (date >= birthDate.getDate()) SnowyFieldDay = date - birthDate.getDate()
   else {
-    ParthMonth--
-    ParthDay = 31 + date - birthDate.getDate()
-    if (ParthMonth < 0) {
-      ParthMonth = 11
-      ParthAge--
+    SnowyFieldMonth--
+    SnowyFieldDay = 31 + date - birthDate.getDate()
+    if (SnowyFieldMonth < 0) {
+      SnowyFieldMonth = 11
+      SnowyFieldAge--
     }
   }
 
   var age = {}
   age = {
-    years: ParthAge,
-    months: ParthMonth,
-    days: ParthDay,
+    years: SnowyFieldAge,
+    months: SnowyFieldMonth,
+    days: SnowyFieldDay,
   }
 
   var ageString = ''
