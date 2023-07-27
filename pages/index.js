@@ -7,6 +7,7 @@ import formatDate from '@/lib/utils/formatDate'
 import { RoughNotation } from 'react-rough-notation'
 import NewsletterForm from '@/components/NewsletterForm'
 import ViewCounter from '@/components/ViewCounter'
+import PostPreview from '@/components/PostPreview'
 
 const MAX_DISPLAY = 3
 
@@ -22,10 +23,10 @@ export default function Home({ posts }) {
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 flex flex-col items-center gap-x-12 xl:flex-row">
-          <div className="pt-6">
+          <div className="pt-6 font-lora">
             <h1 className="pb-6 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
               Hi, I am{' '}
-              <span className="text-primary-color-500 dark:text-primary-color-dark-500">
+              <span className="text-primary-600 dark:text-primary-400 font-piazzolla">
                 SnowyField
               </span>
             </h1>
@@ -39,7 +40,7 @@ export default function Home({ posts }) {
                 animate="true"
                 type="box"
                 show={true}
-                color="#DE1D8D"
+                color="#AB57E9"
                 animationDelay={1000}
                 animationDuration={2500}
                 className="text-slate-200"
@@ -54,7 +55,7 @@ export default function Home({ posts }) {
                 animate="true"
                 type="highlight"
                 show={true}
-                color="#DE1D8D"
+                color="#AB57E9"
                 animationDelay={1000}
                 animationDuration={2500}
                 className="text-slate-200"
@@ -199,67 +200,20 @@ export default function Home({ posts }) {
             </div>
           </div>
         </div>
-        <h2 className="flex pb-6 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl md:text-5xl">
+        <h2 className="flex pb-6 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl md:text-5xl font-lora">
           Latest
         </h2>
         <hr className="border-gray-200 dark:border-gray-700" />
         <ul>
           {!posts.length && 'No posts found.'}
-          {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
-            const { slug, date, title, summary, tags } = frontMatter
-            return (
-              <Link
-                href={`/blog/${slug}`}
-                key={slug}
-                className="group flex bg-transparent bg-opacity-20 px-2 transition duration-100 hover:scale-105 hover:rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800"
-              >
-                <li className="py-6">
-                  <article>
-                    <div className="space-y-2 bg-transparent bg-opacity-20 p-2 transition duration-200 hover:rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                      <dl>
-                        <dt className="sr-only">Published on</dt>
-                        <dd className="text-sm font-normal leading-6 text-gray-500 dark:text-gray-400">
-                          <time dateTime={date}>{formatDate(date)}</time>
-                          {' • '}
-                          <ViewCounter className="mx-1" slug={slug} />
-                          views
-                        </dd>
-                      </dl>
-                      <div className="space-y-5 xl:col-span-4">
-                        <div className="space-y-1">
-                          <div>
-                            <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                              <Link
-                                href={`/blog/${slug}`}
-                                className="text-gray-900 transition duration-500 ease-in-out hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-500"
-                              >
-                                {title}
-                              </Link>
-                            </h2>
-                          </div>
-                          <div className="flex flex-wrap">
-                            {tags.map((tag) => (
-                              <Tag key={tag} text={tag} />
-                            ))}
-                          </div>
-                          <div className="prose max-w-none pt-5 text-gray-500 dark:text-gray-400">
-                            {summary}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </li>
-              </Link>
-            )
-          })}
+          {posts.slice(0, MAX_DISPLAY).map((frontMatter) => PostPreview(frontMatter))}
         </ul>
       </div>
       {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end pt-5 text-lg font-normal leading-6">
           <Link
             href="/blog"
-            className=" special-underline-new text-primary-500 hover:text-gray-100 hover:no-underline dark:text-primary-500 hover:dark:text-gray-100"
+            className=" special-underline-new text-primary-600 hover:text-gray-100 hover:no-underline dark:text-primary-400 hover:dark:text-gray-100"
             aria-label="all posts"
           >
             All Posts &rarr;

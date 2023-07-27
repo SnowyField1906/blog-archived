@@ -36,7 +36,7 @@ const LayoutWrapper = ({ children }) => {
                   siteMetadata.headerTitle
                 )}
               </div> */}
-              <div className="text-primary-color dark:text-primary-color-dark flex items-center justify-between text-xl font-semibold">
+              <div className="text-secondary dark:text-tertiary flex items-center justify-between text-xl font-semibold">
                 {`~${router.asPath}`}{' '}
                 <Typewriter
                   options={{

@@ -12,47 +12,55 @@ export default function Timeline() {
   return (
     <div>
       <ol className="relative mt-6 ml-6 border-l border-zinc-400 dark:border-gray-800 ">
-        <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
-          <span className=" absolute -left-3 flex h-6 w-6 animate-pulse items-center justify-center rounded-full bg-blue-200 ring-8 ring-white dark:bg-green-900 dark:ring-gray-900">
-            <FaBlackTie className="animate-none" />
-          </span>
-          <h3 className="flex items-center text-base  font-semibold text-gray-900 dark:text-white">
-            Applying for Jobs
-            <span className="mr-2 ml-3 rounded bg-blue-100 px-2.5 py-0.5 text-sm font-medium text-blue-800 dark:bg-blue-200 dark:text-blue-800">
-              Present
-            </span>
-          </h3>
-          <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            June 13th, 2022
-          </time>
-          <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-            Feel confident that I can work as a junior Data Engineer. Wish me Luck
-          </p>
-        </li>
         <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white px-4 py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
           <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-200 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900">
             <FaGraduationCap />
           </span>
           <h3 className="text-base font-semibold text-gray-900 dark:text-white">
-            Graduated College
+            Computer Scientist in the University Ranked 1 at IT in Vietnam
+            <span className="mr-2 ml-3 rounded bg-blue-100 px-2.5 py-0.5 text-sm font-medium text-blue-800 dark:bg-blue-200 dark:text-blue-800">
+              Present
+            </span>
           </h3>
           <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            May 21st, 2022
+            September 25th, 2023
           </time>
           <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-            8.2 CGPA / 3.42 GPA
+            Even though I did not spend my time on my univeristy except semester exams, I was lucky to win against other veteran students with 3.0/4.0 Major-GPA
+          </p>
+        </li>
+        <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
+          <span className=" absolute -left-3 flex h-6 w-6 animate-pulse items-center justify-center rounded-full bg-blue-200 ring-8 ring-white dark:bg-green-900 dark:ring-gray-900">
+            <FaBlackTie className="animate-none" />
+          </span>
+          <h3 className="flex items-center text-base  font-semibold text-gray-900 dark:text-white">
+            Part-time Freelance Smart Contract Engineer
+            <span className="mr-2 ml-3 rounded bg-blue-100 px-2.5 py-0.5 text-sm font-medium text-blue-800 dark:bg-blue-200 dark:text-blue-800">
+              Present
+            </span>
+          </h3>
+          <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+            June 5th, 2023
+          </time>
+          <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+            Individual developed and tested Smart Contracts for MamaExchange
           </p>
         </li>
         <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
           <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-yellow-300 ring-8 ring-white dark:bg-yellow-700 dark:ring-gray-900">
-            <SiLeetcode />
+            <SiLeetcode className="animate-none" />
           </span>
-          <h3 className="text-base font-semibold text-gray-900 dark:text-white">Joined LeetCode</h3>
+          <h3 className="text-base font-semibold text-gray-900 dark:text-white">
+            Part-time Blockchain Developer
+            <span className="mr-2 ml-3 rounded bg-blue-100 px-2.5 py-0.5 text-sm font-medium text-blue-800 dark:bg-blue-200 dark:text-blue-800">
+              Present
+            </span>
+          </h3>
           <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            Feb 2nd, 2022
+            June 5th, 2023
           </time>
           <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-            Preparing for coding interviews
+            Individual developed and tested Smart Contracts for a DeFi project at LECLE Vietnam
           </p>
         </li>
         <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
@@ -60,13 +68,27 @@ export default function Timeline() {
             <HiOutlineDatabase />
           </span>
           <h3 className="text-base font-semibold text-gray-900 dark:text-white">
-            6 Month Internship
+            4-Month Full-time Blockchain Developer
           </h3>
           <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            January 12th, 2022
+            February 5th, 2023
           </time>
           <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-            Data Engineer @ Accenture
+            Individual developed and tested Smart Contracts for a DeFi project at LECLE Vietnam
+          </p>
+        </li>
+        <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
+          <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-purple-200 ring-8 ring-white dark:bg-purple-900 dark:ring-gray-900">
+            <HiOutlineDatabase />
+          </span>
+          <h3 className="text-base font-semibold text-gray-900 dark:text-white">
+            3-Month Part-time Internship Blockchain Developer
+          </h3>
+          <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+            November 30th, 2022
+          </time>
+          <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+            Applied for Blockchain Developer internship but mainly worked as a Researcher
           </p>
         </li>
         <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
@@ -74,28 +96,30 @@ export default function Timeline() {
             <TbDeviceDesktopAnalytics />
           </span>
           <h3 className="text-base font-semibold text-gray-900 dark:text-white">
-            First Internship
+            Self-learned Blockchain Development
           </h3>
           <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            March 17th, 2021
+            March 30th, 2022
           </time>
           <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-            Analytics Engineer @ HOPS Healthcare
+            Overcame moments of procrastination and self-doubt to conquer the complexities of Blockchain Development.
           </p>
         </li>
         <li className="mb-2 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
           <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-red-200 ring-8 ring-white dark:bg-red-900 dark:ring-gray-900">
             <BsBuilding />
           </span>
-          <h3 className="text-base font-semibold text-gray-900 dark:text-white">Started College</h3>
+          <h3 className="text-base font-semibold text-gray-900 dark:text-white">
+            Introduction Program in the University Ranked 1 at IT in Vietnam
+          </h3>
           <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            August 20th, 2018
+            September 25th, 2021
           </time>
           <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-            Bachelor of Technology in Computer Science
+            Successfully enrolled in Information Technology at the University of Science with an outstanding national graduation examination score of 27.6/30.
           </p>
         </li>
-        <Disclosure>
+        {/* <Disclosure>
           {({ open }) => (
             <>
               <Disclosure.Button>
@@ -160,7 +184,7 @@ export default function Timeline() {
               </Transition>
             </>
           )}
-        </Disclosure>
+        </Disclosure> */}
       </ol>
     </div>
   )

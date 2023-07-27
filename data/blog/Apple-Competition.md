@@ -1,7 +1,7 @@
 ---
 title: Apple and the case for competition.
 date: '2021-09-23'
-tags: [apple, tech]
+tags: [Apple, Tech]
 draft: false
 summary: The EU announced plans to force all devices – including iPhones – to use a common charging port.
 ---

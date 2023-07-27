@@ -55,7 +55,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } })
     <SessionProvider session={session}>
       {/* <Provider apiKey="pt_7c8b6840f5ba39cd3b2b471cd8efc2" theme={defaultTheme}> */}
       <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
-        <ProgressBar bgcolor="#DE1D8D" />
+        <ProgressBar bgcolor="#AB57E9" />
         <ScrollTop />
         <Head>
           <meta content="width=device-width, initial-scale=1" name="viewport" />

@@ -2,7 +2,7 @@
 name: SnowyField
 avatar: /static/images/avatar.png
 occupation: Blockchain Developer, Computer/Data Scientist Student
-company: LECLE Vietnam
+company: LECLE Vietnam, University of Science - VNUHCM
 email: snowyfield1906@gmail.com
 twitter: https://twitter.com/SnowyField1906
 linkedin: https://www.linkedin.com/in/NHThuan

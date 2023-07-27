@@ -20,36 +20,36 @@
 
 @layer utilities {
   .special-underline {
-    @apply bg-gradient-to-r from-primary-color-500 to-primary-color-500 bg-no-repeat pb-0.5
+    @apply bg-gradient-to-r from-primary-600 to-primary-600 bg-no-repeat pb-0.5
       font-normal [background-position:0_100%]
       [background-size:100%_0.2em]
       hover:text-white hover:[background-size:100%_100%]
       focus:[background-size:100%_100%]
       motion-safe:transition-all
       motion-safe:duration-300
-      dark:from-primary-color-dark-500 dark:to-primary-color-dark-500 dark:hover:text-white;
+      dark:from-primary-400 dark:to-primary-400 dark:hover:text-white;
   }
 
   .special-underline-new {
-    @apply bg-gradient-to-r from-primary-color-500 to-primary-color-500 bg-no-repeat pb-1
+    @apply bg-gradient-to-r from-primary-600 to-primary-600 bg-no-repeat pb-1
       font-normal [background-position:0_100%]
       [background-size:100%_0.1em]
       hover:text-white hover:[background-size:100%_100%]
       focus:[background-size:100%_100%]
       motion-safe:transition-all
       motion-safe:duration-300
-      dark:from-primary-color-dark-500 dark:to-primary-color-dark-500 dark:hover:text-white;
+      dark:from-primary-400 dark:to-primary-400 dark:hover:text-white;
   }
 
   .company {
-    box-shadow: inset 0 0 0 0 #de1d8d;
-    color: #de1d8d;
+    box-shadow: inset 0 0 0 0 #ab57e9;
+    color: #ab57e9;
     margin: 0 -0.25rem;
     padding: 0 0.25rem;
     transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
   .company:hover {
-    box-shadow: inset 200px 0 0 0 #de1d8d;
+    box-shadow: inset 200px 0 0 0 #ab57e9;
     color: white;
   }
 }
@@ -65,11 +65,21 @@ input:-webkit-autofill:focus {
 }
 
 ::-moz-selection {
-  background: #de1d8d;
+  background: #a4f2d3;
 }
 ::-webkit-selection {
-  background: #de1d8d;
+  background: #a4f2d3;
 }
 ::selection {
-  background: #de1d8d;
+  background: #a4f2d3;
+}
+
+.dark ::-moz-selection {
+  background: #097c63;
+}
+.dark ::-webkit-selection {
+  background: #097c63;
+}
+.dark ::selection {
+  background: #097c63;
 }

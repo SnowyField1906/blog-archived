@@ -78,9 +78,9 @@ module.exports = withBundleAnalyzer({
     },
   ],
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
-  eslint: {
-    dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
-  },
+  // eslint: {
+  //   dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
+  // },
   async headers() {
     return [
       {
