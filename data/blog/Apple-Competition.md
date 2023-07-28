@@ -4,6 +4,7 @@ date: '2021-09-23'
 tags: [Apple, Tech]
 draft: false
 summary: The EU announced plans to force all devices – including iPhones – to use a common charging port.
+thumbnail: '/static/images/Blog/spotify-refresh-token.jpg'
 ---
 
 <img className="inline" src="/static/images/Blog/apple-competition.jpg" alt="Apple Competition" />
