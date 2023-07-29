@@ -15,7 +15,7 @@ const Contact = () => {
             <ContactLink
               href="mailto:snowyfield1906@gmail.com"
               title="gmail"
-              icon="desaiparth2000"
+              icon="snowyfield1906"
             />
             <ContactLink
               href="https://github.com/SnowyField1906"
@@ -27,11 +27,7 @@ const Contact = () => {
               title="twitter"
               icon="SnowyField1906"
             />
-            <ContactLink
-              href="https://www.linkedin.com/in/parth-desai-2bb1b0160/"
-              title="linkedin"
-              icon="parthdesai"
-            />
+            <ContactLink href="https://www.linkedin.com/NHThuan/" title="linkedin" icon="NHThuan" />
           </ul>
         </div>
       </div>

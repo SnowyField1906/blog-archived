@@ -1,4 +1,4 @@
-Sitemap: https://blog-snowyfield1906.vercel.app//sitemap.xml
+Sitemap: https://blog-snowyfield.vercel.app//sitemap.xml
 
 User-agent: *
 Allow: /

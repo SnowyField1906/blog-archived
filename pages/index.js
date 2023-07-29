@@ -29,7 +29,7 @@ export default function Home({ posts }) {
               animationDuration={2500}
               brackets={['left', 'right']}
               strokeWidth={4}
-              className="self-center text-6xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
+              className="self-center text-6xl font-extrabold leading-9 tracking-wide text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14	"
             >
               Hi, I am <br />
               <span className="text-6xl text-primary-600 dark:text-primary-400">SnowyField</span>
@@ -190,7 +190,7 @@ export default function Home({ posts }) {
               <div className="my-2 grid items-start gap-8">
                 <div className="group relative">
                   <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r  from-pink-600 to-purple-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
-                  <Link href="https://parthdesai.vercel.app/resume.pdf">
+                  <Link href="http://blog-snowyfield.vercel.app/resume.pdf">
                     <span className="relative flex items-center justify-between divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
                       <span className="flex space-x-5">
                         <svg
