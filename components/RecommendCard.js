@@ -26,9 +26,9 @@ const RecommendCard = ({ title, description, href, tags, showLink = true }) =>
               </g>
             </svg>
           </h4>
-          <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">{description}</p>
+          <p className="prose mb-3 max-w-none text-gray-600 dark:text-gray-400">{description}</p>
           {/* {tags && (
-            <div className="max-w-none text-sm capitalize text-gray-500 dark:text-gray-400">
+            <div className="max-w-none text-sm capitalize text-gray-600 dark:text-gray-400">
               {tags.join(' • ')}
             </div>
           )} */}
@@ -42,7 +42,7 @@ const RecommendCard = ({ title, description, href, tags, showLink = true }) =>
           <h4 className="mb-3 text-2xl font-bold leading-8 tracking-tight text-black dark:text-white">
             {title}
           </h4>
-          <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">
+          <p className="prose mb-3 max-w-none text-gray-600 dark:text-gray-400">
             (Coming soon) {description}
           </p>
           {/* {tags && (

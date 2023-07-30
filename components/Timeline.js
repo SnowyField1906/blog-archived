@@ -25,8 +25,9 @@ export default function Timeline() {
           <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
             September 25th, 2023
           </time>
-          <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-            Even though I did not spend my time on my univeristy except semester exams, I was lucky to win against other veteran students with 3.0/4.0 Major-GPA
+          <p className="mt-1 text-sm font-normal text-gray-600 dark:text-gray-400">
+            Even though I did not spend my time on my univeristy except semester exams, I was lucky
+            to win against other veteran students with 3.0/4.0 Major-GPA
           </p>
         </li>
         <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
@@ -42,7 +43,7 @@ export default function Timeline() {
           <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
             June 5th, 2023
           </time>
-          <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+          <p className="mt-1 text-sm font-normal text-gray-600 dark:text-gray-400">
             Individual developed and tested Smart Contracts for MamaExchange
           </p>
         </li>
@@ -59,7 +60,7 @@ export default function Timeline() {
           <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
             June 5th, 2023
           </time>
-          <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+          <p className="mt-1 text-sm font-normal text-gray-600 dark:text-gray-400">
             Individual developed and tested Smart Contracts for a DeFi project at LECLE Vietnam
           </p>
         </li>
@@ -73,7 +74,7 @@ export default function Timeline() {
           <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
             February 5th, 2023
           </time>
-          <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+          <p className="mt-1 text-sm font-normal text-gray-600 dark:text-gray-400">
             Individual developed and tested Smart Contracts for a DeFi project at LECLE Vietnam
           </p>
         </li>
@@ -87,7 +88,7 @@ export default function Timeline() {
           <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
             November 30th, 2022
           </time>
-          <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+          <p className="mt-1 text-sm font-normal text-gray-600 dark:text-gray-400">
             Applied for Blockchain Developer internship but mainly worked as a Researcher
           </p>
         </li>
@@ -101,8 +102,9 @@ export default function Timeline() {
           <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
             March 30th, 2022
           </time>
-          <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-            Overcame moments of procrastination and self-doubt to conquer the complexities of Blockchain Development.
+          <p className="mt-1 text-sm font-normal text-gray-600 dark:text-gray-400">
+            Overcame moments of procrastination and self-doubt to conquer the complexities of
+            Blockchain Development.
           </p>
         </li>
         <li className="mb-2 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
@@ -115,8 +117,9 @@ export default function Timeline() {
           <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
             September 25th, 2021
           </time>
-          <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-            Successfully enrolled in Information Technology at the University of Science with an outstanding national graduation examination score of 27.6/30.
+          <p className="mt-1 text-sm font-normal text-gray-600 dark:text-gray-400">
+            Successfully enrolled in Information Technology at the University of Science with an
+            outstanding national graduation examination score of 27.6/30.
           </p>
         </li>
         {/* <Disclosure>
@@ -150,7 +153,7 @@ export default function Timeline() {
                     <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                       May 16th, 2018
                     </time>
-                    <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+                    <p className="mt-1 text-sm font-normal text-gray-600 dark:text-gray-400">
                       With 92% in 10<sup>th</sup> & 86% in 12<sup>th</sup>
                     </p>
                   </li>
@@ -164,7 +167,7 @@ export default function Timeline() {
                     <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                       July 6th, 2015
                     </time>
-                    <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+                    <p className="mt-1 text-sm font-normal text-gray-600 dark:text-gray-400">
                       Wrote my first program in C
                     </p>
                   </li>
@@ -176,7 +179,7 @@ export default function Timeline() {
                     <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                       April 16th, 2000
                     </time>
-                    <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+                    <p className="mt-1 text-sm font-normal text-gray-600 dark:text-gray-400">
                       Connected to the internet
                     </p>
                   </li>

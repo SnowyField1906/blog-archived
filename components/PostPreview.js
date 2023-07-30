@@ -3,11 +3,13 @@ import kebabCase from '@/lib/utils/kebabCase'
 import formatDate from '@/lib/utils/formatDate'
 import ViewCounter from '@/components/ViewCounter'
 import Tag from '@/components/Tag'
+import Image from 'next/image'
 
 const PostPreview = ({ slug, date, title, summary, tags, thumbnail }) => {
   return (
     <Link
       href={`/blog/${slug}`}
+      passHref
       key={slug}
       className="group flex h-[14rem] bg-transparent bg-opacity-20 px-2 transition duration-100 hover:scale-105 hover:rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800"
     >
@@ -15,14 +17,12 @@ const PostPreview = ({ slug, date, title, summary, tags, thumbnail }) => {
         key={slug}
         className="flex items-center bg-transparent bg-opacity-20 py-6 transition duration-200 hover:rounded-xl hover:bg-gray-100 dark:hover:bg-gray-900"
       >
-        <img
-          src={thumbnail}
-          alt={title}
-          className="inline hidden h-[14rem] w-[28rem] object-cover px-8 lg:block"
-        />
+        <div className="relative mx-8 hidden h-[14rem] w-[28rem] object-cover lg:block">
+          <Image src={thumbnail} alt="Picture of the author" layout="fill" objectFit="cover" />
+        </div>
         <article className="space-y-2 p-2 lg:grid lg:items-baseline lg:space-y-3">
           <dl>
-            <dd className="text-sm font-normal leading-6 text-gray-500 dark:text-gray-400">
+            <dd className="text-sm font-normal leading-6 text-gray-600 dark:text-gray-400">
               <time dateTime={date}>{formatDate(date)}</time>
               {' ✨'}
               <ViewCounter className="mx-1" slug={slug} />
@@ -40,12 +40,10 @@ const PostPreview = ({ slug, date, title, summary, tags, thumbnail }) => {
 
             <div className="flex flex-wrap">
               {tags.map((tag) => (
-                <Tag key={tag} text={tag} />
+                <Tag key={tag} page="blog" text={tag} />
               ))}
             </div>
-            <div className="prose max-w-none pt-5 font-lora text-gray-500 dark:text-gray-400">
-              {summary}
-            </div>
+            <div className="prose pt-5 font-lora text-gray-600 dark:text-gray-400">{summary}</div>
           </div>
         </article>
       </li>

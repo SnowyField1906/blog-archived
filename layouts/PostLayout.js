@@ -26,7 +26,6 @@ const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 export default function PostLayout({ frontMatter, toc, authorDetails, next, prev, children }) {
-  console.log(toc)
   const { slug, fileName, date, title, images, tags, readingTime } = frontMatter
   const postUrl = `${siteMetadata.siteUrl}/blog/${slug}`
   return (
@@ -44,7 +43,7 @@ export default function PostLayout({ frontMatter, toc, authorDetails, next, prev
               <dl className="space-y-10">
                 <div>
                   <dt className="sr-only">Published on</dt>
-                  <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                  <dd className="text-base font-medium leading-6 text-gray-600 dark:text-gray-400">
                     <time dateTime={date}>
                       <BsCalendarDate className="mr-1.5 -mt-1.5 inline h-4 w-4" />
                       {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
@@ -126,10 +125,10 @@ export default function PostLayout({ frontMatter, toc, authorDetails, next, prev
                 </ul>
               </dd>
               <footer>
-                <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y xl:grid lg:flex lg:justify-between">
+                <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 lg:flex lg:justify-between xl:col-start-1 xl:row-start-2 xl:grid xl:divide-y">
                   {tags && (
                     <div className="py-4 xl:py-8">
-                      <h2 className="pb-1 text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                      <h2 className="pb-1 text-xs uppercase tracking-wide text-gray-600 dark:text-gray-400">
                         Tags
                       </h2>
                       <div className="flex flex-wrap">
@@ -143,17 +142,17 @@ export default function PostLayout({ frontMatter, toc, authorDetails, next, prev
                     <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
                       {prev && (
                         <div>
-                          <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                          <h2 className="text-xs uppercase tracking-wide text-gray-600 dark:text-gray-400">
                             Previous Article
                           </h2>
-                          <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 mt-2 mr-3">
+                          <div className="mt-2 mr-3 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
                             <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
                           </div>
                         </div>
                       )}
                       {next && (
                         <div>
-                          <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                          <h2 className="text-xs uppercase tracking-wide text-gray-600 dark:text-gray-400">
                             Next Article
                           </h2>
                           <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
@@ -164,7 +163,7 @@ export default function PostLayout({ frontMatter, toc, authorDetails, next, prev
                     </div>
                   )}
                 </div>
-                <div className="pt-4 xl:pt-8 xl:text-left md:text-right">
+                <div className="pt-4 md:text-right xl:pt-8 xl:text-left">
                   <Link
                     href="/blog"
                     className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
@@ -175,7 +174,9 @@ export default function PostLayout({ frontMatter, toc, authorDetails, next, prev
               </footer>
             </dl>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-none pt-10 pb-8 dark:prose-dark font-lora">{children}</div>
+              <div className="prose prose-lg max-w-none pt-10 pb-8 font-lora dark:prose-dark">
+                {children}
+              </div>
               <div className="grid place-items-center pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
                 <div className="flex items-center space-x-4">
                   <TwitterShareButton

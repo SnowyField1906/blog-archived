@@ -37,7 +37,7 @@ const LayoutWrapper = ({ children }) => {
                 )}
               </div> */}
               <div className="text-secondary dark:text-tertiary flex items-center justify-between text-xl font-semibold">
-                {`~${router.asPath}`}{' '}
+                {`~${router.asPath.split('?')[0]}`}{' '}
                 <Typewriter
                   options={{
                     strings: [],

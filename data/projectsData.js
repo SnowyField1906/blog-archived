@@ -14,7 +14,7 @@ const projectsData = [
     description:
       'Decentralized Market (on-chain Order Book) which built on Flow protocol - Spot, Margin, Future trading.',
     imgSrc: '',
-    href: '',
+    href: 'https://mama-ui.vercel.app/',
     github: 'https://github.com/onflow/developer-grants/issues/165',
     tech1: 'Cadence',
     tech2: 'Blockchain',
@@ -25,7 +25,7 @@ const projectsData = [
     description:
       'Decentralized Exchange (Uniswap-V3 alike) which built on Flow protocol - Multi-pool swaps.',
     imgSrc: '',
-    href: '',
+    href: 'https://mama-ui.vercel.app/',
     github: 'https://github.com/onflow/developer-grants/issues/165',
     tech1: 'Cadence',
     tech2: 'Blockchain',

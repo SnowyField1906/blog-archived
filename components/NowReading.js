@@ -16,7 +16,7 @@ const NowReading = ({ title, description, href, rating, showLink = true }) =>
             {title}
             <FiExternalLink className="ml-1 -mt-0.5 inline-block h-5 w-5" />
           </h4>
-          <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">
+          <p className="prose mb-3 max-w-none text-gray-600 dark:text-gray-400">
             {description} (Currently Reading)
           </p>
         </div>
@@ -29,7 +29,7 @@ const NowReading = ({ title, description, href, rating, showLink = true }) =>
           <h4 className="mb-3 text-2xl font-bold leading-8 tracking-tight text-black dark:text-white">
             {title}
           </h4>
-          <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">
+          <p className="prose mb-3 max-w-none text-gray-600 dark:text-gray-400">
             (Coming soon) {description}
           </p>
         </div>

@@ -3,13 +3,22 @@ import Tag from '@/components/Tag'
 import { useState } from 'react'
 import Pagination from '@/components/Pagination'
 import PostPreview from '@/components/PostPreview'
+import kebabCase from '@/lib/utils/kebabCase'
 
-export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }) {
+export default function ListLayout({
+  posts,
+  title,
+  initialDisplayPosts = [],
+  pagination,
+  tags = {},
+}) {
   const [searchValue, setSearchValue] = useState('')
   const filteredBlogPosts = posts.filter((frontMatter) => {
     const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
+
+  const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
 
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
@@ -19,6 +28,20 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
     <>
       <div className="mx-auto max-w-6xl divide-y divide-gray-400">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+          <div className="flex flex-wrap">
+            {Object.keys(tags).length === 0 && 'No tags found.'}
+            {sortedTags.map((t) => {
+              return (
+                <div key={t} className="mt-2 mb-2 mr-5">
+                  <Tag page="blog" text={t} num={tags[t]} />
+                  <Link
+                    href={`blog/tag/${kebabCase(t)}`}
+                    className="-ml-2 text-sm font-semibold text-gray-600 dark:text-gray-300"
+                  ></Link>
+                </div>
+              )
+            })}
+          </div>
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>

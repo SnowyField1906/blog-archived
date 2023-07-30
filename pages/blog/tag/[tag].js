@@ -5,6 +5,7 @@ import generateRss from '@/lib/generate-rss'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { getAllTags } from '@/lib/tags'
 import kebabCase from '@/lib/utils/kebabCase'
+import { fil } from 'date-fns/locale'
 import fs from 'fs'
 import path from 'path'
 
@@ -16,7 +17,7 @@ export async function getStaticPaths() {
   return {
     paths: Object.keys(tags).map((tag) => ({
       params: {
-        tag,
+        tag: tag,
       },
     })),
     fallback: false,
@@ -24,32 +25,35 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const allPosts = await getAllFilesFrontMatter('blog')
-  const filteredPosts = allPosts.filter(
+  const posts = await getAllFilesFrontMatter('blog')
+  const tags = await getAllTags('blog')
+
+  const filteredPosts = posts.filter(
     (post) => post.draft !== true && post.tags.map((t) => kebabCase(t)).includes(params.tag)
   )
 
   // rss
   if (filteredPosts.length > 0) {
-    const rss = generateRss(filteredPosts, `tags/${params.tag}/feed.xml`)
-    const rssPath = path.join(root, 'public', 'tags', params.tag)
+    const rss = generateRss(filteredPosts, `blog/tag/${params.tag}/feed.xml`)
+    const rssPath = path.join(root, 'public', 'blog', 'tag', params.tag)
     fs.mkdirSync(rssPath, { recursive: true })
     fs.writeFileSync(path.join(rssPath, 'feed.xml'), rss)
   }
 
-  return { props: { posts: filteredPosts, tag: params.tag } }
+  return { props: { posts: filteredPosts, tag: params.tag, tags: tags } }
 }
 
-export default function Tag({ posts, tag }) {
+export default function Tag({ posts, tag, tags }) {
   // Capitalize first letter and convert space to dash
   const title = tag[0].toUpperCase() + tag.split(' ').join('-').slice(1)
+
   return (
     <>
       <TagSEO
-        title={`${tag} - ${siteMetadata.author}`}
-        description={`${tag} tags - ${siteMetadata.author}`}
+        title={`${title} - ${siteMetadata.author}`}
+        description={`${tag} tag - ${siteMetadata.author}`}
       />
-      <ListLayout posts={posts} title={title} />
+      <ListLayout posts={posts} title={title} tags={tags} />
     </>
   )
 }

@@ -42,8 +42,8 @@ export default function AuthorLayout({ children, frontMatter }) {
               blurDataURL="/static/images/SVG-placeholder.png"
             />
             <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">{name}</h3>
-            <div className="text-gray-500 dark:text-gray-400">{occupation}</div>
-            <div className="text-gray-500 dark:text-gray-400">{company}</div>
+            <div className="text-gray-600 dark:text-gray-400">{occupation}</div>
+            <div className="text-gray-600 dark:text-gray-400">{company}</div>
             <div className="flex flex-col pt-3">
               <a
                 className="rounded-full border px-8 py-2 text-center text-sm font-light text-gray-700 transition-colors hover:border-[#1DA1F2] hover:bg-[#1DA1F2] hover:text-white hover:shadow dark:text-white"

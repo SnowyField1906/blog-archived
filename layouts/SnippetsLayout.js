@@ -72,7 +72,7 @@ export default function SnippetsLayout({ posts, title, initialDisplayPosts = [],
                           {title}
                         </Link>
                       </h2>
-                      <div className="prose prose-base max-w-none text-gray-500 dark:text-gray-400 sm:prose-lg">
+                      <div className="prose prose-base max-w-none text-gray-600 dark:text-gray-400 sm:prose-lg">
                         {summary}
                       </div>
 
