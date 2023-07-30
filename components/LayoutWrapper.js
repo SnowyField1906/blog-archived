@@ -17,36 +17,58 @@ import DropMenu from './DropMenu.js'
 const LayoutWrapper = ({ children }) => {
   const { data: session } = useSession()
   const router = useRouter()
+  const segments = router.asPath
+    .split('?')[0]
+    .split('/')
+    .filter((segment) => segment !== '')
 
   return (
     <SectionContainer>
       <div className="flex h-screen flex-col justify-between">
         <header className="flex items-center justify-between py-10">
           <div>
-            <Link href="/" aria-label={siteMetadata.headerTitle}>
-              {/* <div className="flex items-center justify-between">
-                <div className="mr-1">
-                  <Logo />
-                </div>
-                {typeof siteMetadata.headerTitle === 'string' ? (
-                  <div className="hidden h-6 text-2xl font-semibold sm:block">
-                    {siteMetadata.headerTitle}
-                  </div>
-                ) : (
-                  siteMetadata.headerTitle
-                )}
-              </div> */}
-              <div className="text-secondary dark:text-tertiary flex items-center justify-between text-xl font-semibold">
-                {`~${router.asPath.split('?')[0]}`}{' '}
-                <Typewriter
-                  options={{
-                    strings: [],
-                    autoStart: true,
-                    loop: true,
-                  }}
-                />
+            {/* <div className="flex items-center justify-between">
+              <div className="mr-1">
+                <Logo />
               </div>
-            </Link>
+              {typeof siteMetadata.headerTitle === 'string' ? (
+                <div className="hidden h-6 text-2xl font-semibold sm:block">
+                  {siteMetadata.headerTitle}
+                </div>
+              ) : (
+                siteMetadata.headerTitle
+              )}
+            </div> */}
+            <div className="flex">
+              <Link href="/" aria-label={siteMetadata.headerTitle}>
+                <div className="text-secondary dark:text-tertiary flex items-center justify-between text-xl font-semibold">
+                  @<a className="hover:text-primary-600 hover:dark:text-primary-400">snowyfield</a>
+                  {segments.map((segment, index) => (
+                    <div key={index}>
+                      /
+                      <Link href={`/${segments.slice(0, index + 1).join('/')}`}>
+                        <a
+                          className={
+                            segment !== 'tag'
+                              ? 'cursor-pointer hover:text-primary-600 hover:dark:text-primary-400'
+                              : 'cursor-default'
+                          }
+                        >
+                          {segment}
+                        </a>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </Link>
+              <Typewriter
+                options={{
+                  strings: [],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </div>
           </div>
           <div className="flex items-center gap-2 text-base leading-5">
             <div className="hidden 2xl:block">
