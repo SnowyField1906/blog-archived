@@ -30,17 +30,15 @@ export default function ListLayout({
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <div className="flex flex-wrap">
             {Object.keys(tags).length === 0 && 'No tags found.'}
-            {sortedTags.map((t) => {
-              return (
-                <div key={t} className="mt-2 mb-2 mr-5">
-                  <Tag page="posts" text={t} num={tags[t]} />
-                  <Link
-                    href={`posts/tag/${kebabCase(t)}`}
-                    className="-ml-2 text-sm font-semibold text-gray-600 dark:text-gray-300"
-                  ></Link>
-                </div>
-              )
-            })}
+            {sortedTags.map((t) => (
+              <div key={t} className="mt-2 mb-2 mr-5">
+                <Tag page="posts" text={t} num={tags[t]} />
+                <Link
+                  href={`posts/tag/${kebabCase(t)}`}
+                  className="text-sm font-semibold text-gray-600 dark:text-gray-300"
+                ></Link>
+              </div>
+            ))}
           </div>
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}

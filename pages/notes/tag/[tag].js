@@ -11,7 +11,7 @@ import path from 'path'
 const root = process.cwd()
 
 export async function getStaticPaths() {
-  const tags = await getAllTags('posts')
+  const tags = await getAllTags('notes')
 
   return {
     paths: Object.keys(tags).map((tag) => ({
@@ -24,25 +24,25 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const posts = await getAllFilesFrontMatter('posts')
-  const tags = await getAllTags('posts')
+  const notes = await getAllFilesFrontMatter('notes')
+  const tags = await getAllTags('notes')
 
-  const filteredPosts = posts.filter(
+  const filteredPosts = notes.filter(
     (post) => post.draft !== true && post.tags.map((t) => kebabCase(t)).includes(params.tag)
   )
 
   // rss
   if (filteredPosts.length > 0) {
-    const rss = generateRss(filteredPosts, `posts/tag/${params.tag}/feed.xml`)
-    const rssPath = path.join(root, 'public', 'posts', 'tag', params.tag)
+    const rss = generateRss(filteredPosts, `notes/tag/${params.tag}/feed.xml`)
+    const rssPath = path.join(root, 'public', 'notes', 'tag', params.tag)
     fs.mkdirSync(rssPath, { recursive: true })
     fs.writeFileSync(path.join(rssPath, 'feed.xml'), rss)
   }
 
-  return { props: { posts: filteredPosts, tag: params.tag, tags: tags } }
+  return { props: { notes: filteredPosts, tag: params.tag, tags: tags } }
 }
 
-export default function Tag({ posts, tag, tags }) {
+export default function Tag({ notes, tag, tags }) {
   const title = tag[0].toUpperCase() + tag.split(' ').join('-').slice(1)
 
   return (
@@ -51,7 +51,7 @@ export default function Tag({ posts, tag, tags }) {
         title={`${title} - ${siteMetadata.author}`}
         description={`${tag} tag - ${siteMetadata.author}`}
       />
-      <ListLayout posts={posts} title={title} tags={tags} />
+      <ListLayout notes={notes} title={title} tags={tags} />
     </>
   )
 }

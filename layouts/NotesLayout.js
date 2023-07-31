@@ -4,22 +4,43 @@ import siteMetadata from '@/data/siteMetadata'
 import { useState } from 'react'
 import Pagination from '@/components/Pagination'
 import formatDate from '@/lib/utils/formatDate'
+import kebabCase from '@/lib/utils/kebabCase'
 
-export default function NotesLayout({ posts, title, initialDisplayPosts = [], pagination }) {
+export default function NotesLayout({
+  notes,
+  title,
+  initialDisplayPosts = [],
+  pagination,
+  tags = {},
+}) {
   const [searchValue, setSearchValue] = useState('')
-  const filteredPosts = posts.filter((frontMatter) => {
+  const filteredNotes = notes.filter((frontMatter) => {
     const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
 
+  const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
+
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
-    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredPosts
+    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredNotes
 
   return (
     <>
       <div className="mx-auto max-w-6xl divide-y divide-gray-400">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+          <div className="flex flex-wrap">
+            {Object.keys(tags).length === 0 && 'No tags found.'}
+            {sortedTags.map((t) => (
+              <div key={t} className="mt-2 mb-2 mr-5">
+                <Tag page="posts" text={t} num={tags[t]} />
+                <Link
+                  href={`posts/tag/${kebabCase(t)}`}
+                  className="text-sm font-semibold text-gray-600 dark:text-gray-300"
+                ></Link>
+              </div>
+            ))}
+          </div>
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>
@@ -48,7 +69,7 @@ export default function NotesLayout({ posts, title, initialDisplayPosts = [], pa
           </div>
         </div>
         <div className="grid grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
-          {!filteredPosts.length && 'No posts found.'}
+          {!filteredNotes.length && 'No notes found.'}
           {displayPosts.map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
             return (
