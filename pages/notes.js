@@ -1,6 +1,6 @@
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import siteMetadata from '@/data/siteMetadata'
-import NotesLayout from '@/layouts/notesLayout'
+import NotesLayout from '@/layouts/NotesLayout'
 import { PageSEO } from '@/components/SEO'
 
 export const POSTS_PER_PAGE = 5

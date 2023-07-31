@@ -1,7 +1,7 @@
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
-import NotesLayout from '@/layouts/notesLayout'
+import NotesLayout from '@/layouts/NotesLayout'
 import { POSTS_PER_PAGE } from '../../notes'
 
 export async function getStaticPaths() {
