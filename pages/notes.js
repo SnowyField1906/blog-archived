@@ -4,31 +4,31 @@ import NotesLayout from '@/layouts/NotesLayout'
 import { PageSEO } from '@/components/SEO'
 import { getAllTags } from '@/lib/tags'
 
-export const POSTS_PER_PAGE = 5
+export const NOTES_PER_PAGE = 5
 
 export async function getStaticProps() {
   const notes = await getAllFilesFrontMatter('notes')
-  const initialDisplayPosts = notes.slice(0, POSTS_PER_PAGE)
+  const initialDisplayNotes = notes.slice(0, NOTES_PER_PAGE)
   const pagination = {
-    currentPage: 1,
-    totalPages: Math.ceil(notes.length / POSTS_PER_PAGE),
+    currentNote: 1,
+    totalNotes: Math.ceil(notes.length / NOTES_PER_PAGE),
   }
 
   const tags = await getAllTags('notes')
 
-  return { props: { initialDisplayPosts, notes, pagination, tags } }
+  return { props: { initialDisplayNotes, notes, pagination, tags } }
 }
 
-export default function Notes({ notes, initialDisplayPosts, pagination, tags }) {
+export default function Notes({ notes, initialDisplayNotes, pagination, tags }) {
   return (
     <>
       <PageSEO
         title={`Notes - ${siteMetadata.author}`}
-        description="Reuseable code notes collected by SnowyField"
+        description="Notes and reuseable collected by SnowyField"
       />
       <NotesLayout
         notes={notes}
-        initialDisplayPosts={initialDisplayPosts}
+        initialDisplayNotes={initialDisplayNotes}
         pagination={pagination}
         title="All Notes"
         tags={tags}

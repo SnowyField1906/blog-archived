@@ -35,7 +35,10 @@ export default function Home({ posts }) {
               <span className="text-6xl text-primary-600 dark:text-primary-400">SnowyField</span>
             </RoughNotation>
             <h1 className="prose pt-10 text-lg text-gray-600 dark:text-gray-300">
-              Welcome to my personal blog 😆 <br />I am a{' '}
+              Welcome to my personal blog 😆
+            </h1>
+            <p className="pt-5 text-lg leading-7 text-slate-600 dark:text-slate-300">
+              I am a{' '}
               <RoughNotation
                 animate="true"
                 type="highlight"
@@ -63,7 +66,7 @@ export default function Home({ posts }) {
               </RoughNotation>{' '}
               who is passionate about Science, Mathematics and Researching. In my free time, I like
               developing side projects and learning new technologies.
-            </h1>
+            </p>
             <p className="pt-5 text-lg leading-7 text-slate-600 dark:text-slate-300 sm:block md:hidden lg:hidden">
               This is my place for thoughts, reflections & everything in between. Have a good read!
             </p>

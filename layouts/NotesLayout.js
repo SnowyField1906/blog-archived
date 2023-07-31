@@ -1,15 +1,13 @@
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
 import { useState } from 'react'
 import Pagination from '@/components/Pagination'
-import formatDate from '@/lib/utils/formatDate'
 import kebabCase from '@/lib/utils/kebabCase'
 
 export default function NotesLayout({
   notes,
   title,
-  initialDisplayPosts = [],
+  initialDisplayNotes = [],
   pagination,
   tags = {},
 }) {
@@ -21,9 +19,9 @@ export default function NotesLayout({
 
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
 
-  // If initialDisplayPosts exist, display it if no searchValue is specified
+  // If initialDisplayNotes exist, display it if no searchValue is specified
   const displayPosts =
-    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredNotes
+    initialDisplayNotes.length > 0 && !searchValue ? initialDisplayNotes : filteredNotes
 
   return (
     <>
@@ -33,9 +31,9 @@ export default function NotesLayout({
             {Object.keys(tags).length === 0 && 'No tags found.'}
             {sortedTags.map((t) => (
               <div key={t} className="mt-2 mb-2 mr-5">
-                <Tag page="posts" text={t} num={tags[t]} />
+                <Tag page="notes" text={t} num={tags[t]} />
                 <Link
-                  href={`posts/tag/${kebabCase(t)}`}
+                  href={`notes/tag/${kebabCase(t)}`}
                   className="text-sm font-semibold text-gray-600 dark:text-gray-300"
                 ></Link>
               </div>
@@ -99,7 +97,7 @@ export default function NotesLayout({
 
                       <div className="flex flex-wrap pt-2">
                         {tags.map((tag) => (
-                          <Tag key={tag} text={tag} />
+                          <Tag page="notes" key={tag} text={tag} />
                         ))}
                       </div>
                     </div>
