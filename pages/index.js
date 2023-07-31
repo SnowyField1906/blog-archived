@@ -2,7 +2,7 @@ import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
-import { RoughNotationGroup, RoughNotation } from 'react-rough-notation'
+import { RoughNotation } from 'react-rough-notation'
 import PostPreview from '@/components/PostPreview'
 
 const MAX_DISPLAY = 3
@@ -32,7 +32,7 @@ export default function Home({ posts }) {
               className="self-center text-6xl font-extrabold leading-9 tracking-wide text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14	"
             >
               Hi, I am <br />
-              <span className="text-6xl text-primary-600 dark:text-primary-400">SnowyField</span>
+              <h1 className="text-6xl text-primary-600 dark:text-primary-400">SnowyField</h1>
             </RoughNotation>
             <h2 className="prose pt-10 text-lg text-gray-600 dark:text-gray-300">
               Welcome to my personal blog 😆 <br />I am a{' '}

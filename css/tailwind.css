@@ -21,7 +21,7 @@
 @layer utilities {
   .special-underline {
     @apply bg-gradient-to-r from-primary-600 to-primary-600 bg-no-repeat pb-0.5
-      font-normal [background-position:0_100%]
+      font-medium [background-position:0_100%]
       [background-size:100%_0.2em]
       hover:text-white hover:[background-size:100%_100%]
       focus:[background-size:100%_100%]
@@ -49,7 +49,7 @@
     transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
   .company:hover {
-    box-shadow: inset 200px 0 0 0 #ab57e9;
+    box-shadow: inset 400px 0 0 0 #ab57e9;
     color: white;
   }
 }

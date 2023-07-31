@@ -63,9 +63,11 @@ export default function AuthorLayout({ children, frontMatter }) {
                 type="bracket"
                 brackets={['left', 'right']}
                 show={true}
-                color="#FF0000"
+                color="#AB57E9"
                 animationDelay={300}
                 animationDuration={3000}
+                strokeWidth={2}
+                iterations={4}
               >
                 {text1} Currently, I am focused on building Concentrated Liquidity Exchange and
                 Order Book at{' '}
@@ -74,10 +76,17 @@ export default function AuthorLayout({ children, frontMatter }) {
                   className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
                 >
                   LECLE Vietnam
+                </Link>{' '}
+                and{' '}
+                <Link
+                  href={'https://mama.exchange'}
+                  className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
+                >
+                  Mama Exchange
                 </Link>
               </RoughNotation>
+              .
             </p>
-            <br />
             <p>
               This is what I am doing right{' '}
               <Link
@@ -86,36 +95,34 @@ export default function AuthorLayout({ children, frontMatter }) {
               >
                 now
               </Link>
+              .
             </p>
-            <br />
             <p className="">
               I am always looking to learn new things. I am currently working on a few projects
               related to
-              <span className="font-semibold">
-                {' '}
-                Natural Language Processing and Machine Learning.{' '}
-              </span>
-              At the same time I am{' '}
+              <span className="font-semibold"> Blockchain and Machine Learning.</span> At the same
+              time I am{' '}
               <RoughNotation
                 type="underline"
                 show={true}
-                color="#FBCFE8"
+                color="#AB57E9"
                 animationDelay={1500}
                 animationDuration={3000}
                 multiline={true}
+                strokeWidth={2}
+                iterations={3}
               >
-                actively on the lookout for remote internships which I can pursue in field of Data
-                Science.
+                actively on the lookout for remote work which I can pursue in field of Blockchain
+                and keep Machine Learning as a hobby.
               </RoughNotation>
             </p>
-            <br />
             <p>
               I am a strong advocate for open source and I am always interested in working on new
               projects with new people. Feel free to reach out if you have anything to talk about,
               you can reach me through{' '}
               <Link
                 href={'mailto:snowyfield1906@gmail.com'}
-                className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
+                className="special-underline-new no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
               >
                 Mail
                 <svg
@@ -134,10 +141,10 @@ export default function AuthorLayout({ children, frontMatter }) {
               </Link>{' '}
               or{' '}
               <Link
-                href={'https://api.whatsapp.com/send?phone=916358190818&text=hi'}
-                className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
+                href={'https://www.messenger.com/t/snowyfield1906'}
+                className="special-underline-new no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
               >
-                Whatsapp
+                Messenger
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -153,17 +160,6 @@ export default function AuthorLayout({ children, frontMatter }) {
                 </svg>
               </Link>
             </p>
-            <br />
-            <p>
-              <Link
-                href={'/uses'}
-                className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
-              >
-                Here
-              </Link>{' '}
-              you can see what I use on daily basis
-            </p>
-            <br />
             <h1>About this site</h1>
             <p>
               Welcome to my home on the internet. This site functions as a blog/portfolio, a place
@@ -175,7 +171,7 @@ export default function AuthorLayout({ children, frontMatter }) {
                 <li>
                   <Link
                     href={'https://github.com/timlrx/tailwind-nextjs-starter-blog'}
-                    className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
+                    className="special-underline-new no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
                   >
                     Timothy's Next.js and Tailwind CSS template
                     <svg
@@ -197,7 +193,7 @@ export default function AuthorLayout({ children, frontMatter }) {
                 <li>
                   <Link
                     href={'https://www.einargudni.com/'}
-                    className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
+                    className="special-underline-new no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
                   >
                     Einar Guðjónsson
                     <svg
