@@ -1,7 +1,7 @@
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
-import { BlogSEO } from '@/components/SEO'
+import { PostSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
 import Comments from '@/components/comments'
@@ -14,7 +14,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
 
   return (
     <SectionContainer>
-      <BlogSEO url={`${siteMetadata.siteUrl}/snippets/${frontMatter.slug}`} {...frontMatter} />
+      <PostSEO url={`${siteMetadata.siteUrl}/notes/${frontMatter.slug}`} {...frontMatter} />
       <ScrollTopAndComment />
       <article>
         <div className="mx-auto max-w-3xl">
@@ -58,7 +58,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 {prev && (
                   <div className="pt-4 xl:pt-8">
                     <Link
-                      href={`/snippets/${prev.slug}`}
+                      href={`/notes/${prev.slug}`}
                       className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                     >
                       &larr; {prev.title}
@@ -68,7 +68,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 {next && (
                   <div className="pt-4 xl:pt-8">
                     <Link
-                      href={`/snippets/${next.slug}`}
+                      href={`/notes/${next.slug}`}
                       className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                     >
                       {next.title} &rarr;

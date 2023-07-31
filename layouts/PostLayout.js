@@ -1,7 +1,7 @@
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
-import { BlogSEO } from '@/components/SEO'
+import { PostSEO } from '@/components/SEO'
 import Image from '@/components/Image'
 import ViewCounter from '@/components/ViewCounter'
 import Tag from '@/components/Tag'
@@ -21,17 +21,17 @@ import { SocialIcon } from 'react-social-icons'
 import { HiOutlinePencil, HiOutlineClock, HiOutlineEye } from 'react-icons/hi'
 import { BsCalendarDate } from 'react-icons/bs'
 
-const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
+const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/posts/${fileName}`
 
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 export default function PostLayout({ frontMatter, toc, authorDetails, next, prev, children }) {
   const { slug, fileName, date, title, images, tags, readingTime } = frontMatter
-  const postUrl = `${siteMetadata.siteUrl}/blog/${slug}`
+  const postUrl = `${siteMetadata.siteUrl}/posts/${slug}`
   return (
     <SectionContainer>
-      <BlogSEO
-        url={`${siteMetadata.siteUrl}/blog/${slug}`}
+      <PostSEO
+        url={`${siteMetadata.siteUrl}/posts/${slug}`}
         authorDetails={authorDetails}
         {...frontMatter}
       />
@@ -146,7 +146,7 @@ export default function PostLayout({ frontMatter, toc, authorDetails, next, prev
                             Previous Article
                           </h2>
                           <div className="mt-2 mr-3 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                            <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
+                            <Link href={`/posts/${prev.slug}`}>{prev.title}</Link>
                           </div>
                         </div>
                       )}
@@ -156,7 +156,7 @@ export default function PostLayout({ frontMatter, toc, authorDetails, next, prev
                             Next Article
                           </h2>
                           <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                            <Link href={`/blog/${next.slug}`}>{next.title}</Link>
+                            <Link href={`/posts/${next.slug}`}>{next.title}</Link>
                           </div>
                         </div>
                       )}
@@ -165,10 +165,10 @@ export default function PostLayout({ frontMatter, toc, authorDetails, next, prev
                 </div>
                 <div className="pt-4 md:text-right xl:pt-8 xl:text-left">
                   <Link
-                    href="/blog"
+                    href="/posts"
                     className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    &larr; Back to the blog
+                    &larr; Back to the posts
                   </Link>
                 </div>
               </footer>
@@ -205,7 +205,7 @@ export default function PostLayout({ frontMatter, toc, authorDetails, next, prev
                     />
                   </FacebookShareButton>
                   <EmailShareButton
-                    body={'Check out this blog'}
+                    body={'Check out this post'}
                     subject={title}
                     separator=" : "
                     url={postUrl}
@@ -219,7 +219,7 @@ export default function PostLayout({ frontMatter, toc, authorDetails, next, prev
                     />
                   </EmailShareButton>
                   <LinkedinShareButton
-                    summary={'Check out this blog'}
+                    summary={'Check out this post'}
                     title={title}
                     source={siteMetadata.siteUrl}
                     url={postUrl}

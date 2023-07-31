@@ -204,7 +204,7 @@ export default function PrivacyPolicy() {
             Cookies are deleted as soon as You close Your web browser. You can learn more about
             cookies on{' '}
             <a
-              href="https://www.termsfeed.com/blog/cookies/#What_Are_Cookies"
+              href="https://www.termsfeed.com/posts/cookies/#What_Are_Cookies"
               target="_blank"
               rel="noreferrer"
             >

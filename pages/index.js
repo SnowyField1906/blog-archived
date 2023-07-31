@@ -8,7 +8,7 @@ import PostPreview from '@/components/PostPreview'
 const MAX_DISPLAY = 3
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('blog')
+  const posts = await getAllFilesFrontMatter('posts')
 
   return { props: { posts } }
 }
@@ -98,11 +98,11 @@ export default function Home({ posts }) {
           {/* <div className="h-content sm:h-content-sm flex flex-col justify-around">
             <h1 className="sm:text-8.5xl tracking-tightest my-28 select-none text-center text-6xl font-extrabold leading-none sm:my-10">
               <span
-                data-content="Blog."
+                data-content="Post."
                 className="relative block before:absolute before:top-0 before:bottom-0 before:left-0 before:block before:w-full before:animate-gradient-background-1 before:px-2 before:text-center before:text-black before:content-[attr(data-content)] dark:before:text-white dark:before:content-[attr(data-content)]"
               >
                 <span className="animate-gradient-foreground-1 bg-gradient-to-br from-gradient-1-start to-gradient-1-end bg-clip-text px-2 text-transparent">
-                  Blog.
+                  Post.
                 </span>
               </span>
               <span
@@ -235,7 +235,7 @@ export default function Home({ posts }) {
       {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end pt-5 text-lg font-normal leading-6">
           <Link
-            href="/blog"
+            href="/posts"
             className=" special-underline-new text-primary-600 hover:text-gray-100 hover:no-underline dark:text-primary-400 hover:dark:text-gray-100"
             aria-label="all posts"
           >

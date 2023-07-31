@@ -12,7 +12,7 @@ import path from 'path'
 const root = process.cwd()
 
 export async function getStaticPaths() {
-  const tags = await getAllTags('blog')
+  const tags = await getAllTags('posts')
 
   return {
     paths: Object.keys(tags).map((tag) => ({
@@ -25,8 +25,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const posts = await getAllFilesFrontMatter('blog')
-  const tags = await getAllTags('blog')
+  const posts = await getAllFilesFrontMatter('posts')
+  const tags = await getAllTags('posts')
 
   const filteredPosts = posts.filter(
     (post) => post.draft !== true && post.tags.map((t) => kebabCase(t)).includes(params.tag)
@@ -34,8 +34,8 @@ export async function getStaticProps({ params }) {
 
   // rss
   if (filteredPosts.length > 0) {
-    const rss = generateRss(filteredPosts, `blog/tag/${params.tag}/feed.xml`)
-    const rssPath = path.join(root, 'public', 'blog', 'tag', params.tag)
+    const rss = generateRss(filteredPosts, `posts/tag/${params.tag}/feed.xml`)
+    const rssPath = path.join(root, 'public', 'posts', 'tag', params.tag)
     fs.mkdirSync(rssPath, { recursive: true })
     fs.writeFileSync(path.join(rssPath, 'feed.xml'), rss)
   }

@@ -1,11 +1,11 @@
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
-import SnippetsLayout from '@/layouts/SnippetsLayout'
-import { POSTS_PER_PAGE } from '../../snippets'
+import ListLayout from '@/layouts/ListLayout'
+import { POSTS_PER_PAGE } from '../../posts'
 
 export async function getStaticPaths() {
-  const totalPosts = await getAllFilesFrontMatter('snippets')
+  const totalPosts = await getAllFilesFrontMatter('posts')
   const totalPages = Math.ceil(totalPosts.length / POSTS_PER_PAGE)
   const paths = Array.from({ length: totalPages }, (_, i) => ({
     params: { page: (i + 1).toString() },
@@ -21,7 +21,7 @@ export async function getStaticProps(context) {
   const {
     params: { page },
   } = context
-  const posts = await getAllFilesFrontMatter('snippets')
+  const posts = await getAllFilesFrontMatter('posts')
   const pageNumber = parseInt(page)
   const initialDisplayPosts = posts.slice(
     POSTS_PER_PAGE * (pageNumber - 1),
@@ -44,12 +44,12 @@ export async function getStaticProps(context) {
 export default function PostPage({ posts, initialDisplayPosts, pagination }) {
   return (
     <>
-      <PageSEO title={`Snippets - ${siteMetadata.author}`} description={siteMetadata.snippets} />
-      <SnippetsLayout
+      <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+      <ListLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title="All Snippets"
+        title="All Posts"
       />
     </>
   )

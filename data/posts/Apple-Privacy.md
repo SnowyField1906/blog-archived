@@ -4,10 +4,10 @@ date: '2022-07-06'
 tags: [Apple, Tech, Privacy]
 draft: false
 summary: Apple announced that it would begin checking content uploaded to iCloud Photos, against a list of known CSAM material. This is fine on it's own, however the system could easily be abused.
-thumbnail: '/static/images/Blog/wwdc-2022-hero.jpeg'
+thumbnail: '/static/images/posts/wwdc-2022-hero.jpeg'
 ---
 
-<img className="inline" src="/static/images/Blog/apple-privacy.jpg" alt="Apple Privacy" />
+<img className="inline" src="/static/images/posts/apple-privacy.jpg" alt="Apple Privacy" />
 
 ```javascript
 access(all) contract A {

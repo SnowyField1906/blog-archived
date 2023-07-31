@@ -3,7 +3,7 @@ const siteMetadata = {
   author: 'SnowyField',
   headerTitle: 'Mere Musings',
   description: 'My personal blog where I share my musings',
-  snippets: 'Reuseable code snippets collected by SnowyField',
+  notes: 'Reuseable code notes collected by SnowyField',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://blog-snowyfield.vercel.app/',

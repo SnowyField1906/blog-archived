@@ -4,7 +4,7 @@ date: '2023-07-09'
 tags: [Cadence, Blockchain, Flow]
 draft: false
 summary: Flow Improvement Proposal for Cadence language - Accessible Interface Definition
-thumbnail: '/static/images/blog/apple-competition.jpg'
+thumbnail: '/static/images/posts/apple-competition.jpg'
 ---
 
 # FLIP 117: Accessible Interface Definition

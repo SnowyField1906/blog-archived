@@ -8,7 +8,7 @@ import Image from 'next/image'
 const PostPreview = ({ slug, date, title, summary, tags, thumbnail }) => {
   return (
     <Link
-      href={`/blog/${slug}`}
+      href={`/posts/${slug}`}
       passHref
       key={slug}
       className="group flex h-[14rem] bg-transparent bg-opacity-20 px-2 transition duration-100 hover:scale-105 hover:rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800"
@@ -32,7 +32,7 @@ const PostPreview = ({ slug, date, title, summary, tags, thumbnail }) => {
           <div className="space-y-1">
             <div>
               <h2 className="font-lora text-2xl font-medium leading-8 tracking-tight text-gray-900 transition duration-200 ease-in-out hover:text-primary-600 dark:text-gray-100 dark:hover:text-primary-400">
-                <Link href={`/blog/${slug}`} className="">
+                <Link href={`/posts/${slug}`} className="">
                   {title}
                 </Link>
               </h2>
@@ -40,7 +40,7 @@ const PostPreview = ({ slug, date, title, summary, tags, thumbnail }) => {
 
             <div className="flex flex-wrap">
               {tags.map((tag) => (
-                <Tag key={tag} page="blog" text={tag} />
+                <Tag key={tag} page="posts" text={tag} />
               ))}
             </div>
             <div className="prose pt-5 font-lora text-gray-600 dark:text-gray-400">{summary}</div>

@@ -71,7 +71,7 @@ export const TagSEO = ({ title, description }) => {
   )
 }
 
-export const BlogSEO = ({
+export const PostSEO = ({
   authorDetails,
   title,
   summary,

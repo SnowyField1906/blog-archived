@@ -5,16 +5,16 @@ import { useState } from 'react'
 import Pagination from '@/components/Pagination'
 import formatDate from '@/lib/utils/formatDate'
 
-export default function SnippetsLayout({ posts, title, initialDisplayPosts = [], pagination }) {
+export default function NotesLayout({ posts, title, initialDisplayPosts = [], pagination }) {
   const [searchValue, setSearchValue] = useState('')
-  const filteredBlogPosts = posts.filter((frontMatter) => {
+  const filteredPosts = posts.filter((frontMatter) => {
     const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
 
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
-    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
+    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredPosts
 
   return (
     <>
@@ -25,10 +25,10 @@ export default function SnippetsLayout({ posts, title, initialDisplayPosts = [],
           </h1>
           <div className="relative max-w-lg">
             <input
-              aria-label="Search snippets"
+              aria-label="Search notes"
               type="text"
               onChange={(e) => setSearchValue(e.target.value)}
-              placeholder="Search snippets"
+              placeholder="Search notes"
               className="block w-full rounded-md border border-gray-400 bg-white px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100"
             />
             <svg
@@ -48,13 +48,13 @@ export default function SnippetsLayout({ posts, title, initialDisplayPosts = [],
           </div>
         </div>
         <div className="grid grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
-          {!filteredBlogPosts.length && 'No posts found.'}
+          {!filteredPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
             return (
               <Link
                 key={slug}
-                href={`/snippets/${slug}`}
+                href={`/notes/${slug}`}
                 className="bg-day·dark:bg-night·group group relative flex transform cursor-pointer flex-wrap border border-gray-200 bg-opacity-50 p-px py-px transition duration-200 hover:scale-105 dark:border-gray-700 dark:bg-opacity-50"
               >
                 <div className="absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 transform bg-primary-500 duration-200 group-hover:scale-x-100" />
@@ -66,7 +66,7 @@ export default function SnippetsLayout({ posts, title, initialDisplayPosts = [],
                     <div>
                       <h2 className="text-2xl font-bold leading-8 tracking-tight ">
                         <Link
-                          href={`/snippets/${slug}`}
+                          href={`/notes/${slug}`}
                           className="text-gray-900 transition  duration-500 ease-in-out hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-500"
                         >
                           {title}

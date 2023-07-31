@@ -1,12 +1,12 @@
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import siteMetadata from '@/data/siteMetadata'
-import SnippetsLayout from '@/layouts/SnippetsLayout'
+import NotesLayout from '@/layouts/notesLayout'
 import { PageSEO } from '@/components/SEO'
 
 export const POSTS_PER_PAGE = 5
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('snippets')
+  const posts = await getAllFilesFrontMatter('notes')
   const initialDisplayPosts = posts.slice(0, POSTS_PER_PAGE)
   const pagination = {
     currentPage: 1,
@@ -16,18 +16,18 @@ export async function getStaticProps() {
   return { props: { initialDisplayPosts, posts, pagination } }
 }
 
-export default function Snippets({ posts, initialDisplayPosts, pagination }) {
+export default function Notes({ posts, initialDisplayPosts, pagination }) {
   return (
     <>
       <PageSEO
-        title={`Snippets - ${siteMetadata.author}`}
-        description="Reuseable code snippets collected by SnowyField"
+        title={`Notes - ${siteMetadata.author}`}
+        description="Reuseable code notes collected by SnowyField"
       />
-      <SnippetsLayout
+      <NotesLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title="All Snippets"
+        title="All Notes"
       />
     </>
   )

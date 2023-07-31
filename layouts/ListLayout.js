@@ -13,7 +13,7 @@ export default function ListLayout({
   tags = {},
 }) {
   const [searchValue, setSearchValue] = useState('')
-  const filteredBlogPosts = posts.filter((frontMatter) => {
+  const filteredPosts = posts.filter((frontMatter) => {
     const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
@@ -22,7 +22,7 @@ export default function ListLayout({
 
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
-    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
+    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredPosts
 
   return (
     <>
@@ -33,9 +33,9 @@ export default function ListLayout({
             {sortedTags.map((t) => {
               return (
                 <div key={t} className="mt-2 mb-2 mr-5">
-                  <Tag page="blog" text={t} num={tags[t]} />
+                  <Tag page="posts" text={t} num={tags[t]} />
                   <Link
-                    href={`blog/tag/${kebabCase(t)}`}
+                    href={`posts/tag/${kebabCase(t)}`}
                     className="-ml-2 text-sm font-semibold text-gray-600 dark:text-gray-300"
                   ></Link>
                 </div>
@@ -70,7 +70,7 @@ export default function ListLayout({
           </div>
         </div>
         <ul>
-          {!filteredBlogPosts.length && 'No posts found.'}
+          {!filteredPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => PostPreview(frontMatter))}
         </ul>
       </div>
