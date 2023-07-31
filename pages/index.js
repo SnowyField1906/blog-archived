@@ -32,9 +32,9 @@ export default function Home({ posts }) {
               className="self-center text-6xl font-extrabold leading-9 tracking-wide text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14	"
             >
               Hi, I am <br />
-              <h1 className="text-6xl text-primary-600 dark:text-primary-400">SnowyField</h1>
+              <span className="text-6xl text-primary-600 dark:text-primary-400">SnowyField</span>
             </RoughNotation>
-            <h2 className="prose pt-10 text-lg text-gray-600 dark:text-gray-300">
+            <h1 className="prose pt-10 text-lg text-gray-600 dark:text-gray-300">
               Welcome to my personal blog 😆 <br />I am a{' '}
               <RoughNotation
                 animate="true"
@@ -63,7 +63,7 @@ export default function Home({ posts }) {
               </RoughNotation>{' '}
               who is passionate about Science, Mathematics and Researching. In my free time, I like
               developing side projects and learning new technologies.
-            </h2>
+            </h1>
             <p className="pt-5 text-lg leading-7 text-slate-600 dark:text-slate-300 sm:block md:hidden lg:hidden">
               This is my place for thoughts, reflections & everything in between. Have a good read!
             </p>
