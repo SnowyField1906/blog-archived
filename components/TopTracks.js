@@ -2,8 +2,9 @@ import useSWR from 'swr'
 import fetcher from '@/lib/fetcher'
 import Track from '@/components/Track'
 
-export default function TopTracks() {
-  const { data } = useSWR('/api/top-tracks', fetcher)
+export default function TopTracks({ range, multiply }) {
+  console.log('TopTracks multiply ', multiply)
+  const { data } = useSWR(`/api/top-tracks?range=${range}&limit=${10 * multiply}`, fetcher)
 
   if (!data) {
     return null

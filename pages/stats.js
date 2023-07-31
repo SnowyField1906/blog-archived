@@ -6,8 +6,12 @@ import siteMetadata from '@/data/siteMetadata'
 import { PageSEO } from '@/components/SEO'
 import TopTracks from '@/components/TopTracks'
 import NowPlaying from '@/components/NowPlaying'
+import { useState } from 'react'
 
 export default function Stats() {
+  const [range, isRange] = useState('short_term')
+  const [multiply, isMultiply] = useState(1)
+
   return (
     <>
       <PageSEO
@@ -42,14 +46,59 @@ export default function Stats() {
         <div>
           <NowPlaying />
         </div>
-        <TopTracks />
-        <div className="flex flex-col pl-4 pt-10">
+        <div className="flex flex-row justify-evenly">
+          <button
+            onClick={() => {
+              isRange('short_term')
+              isMultiply(1)
+            }}
+            className={`text-md rounded-full border px-8 py-2 text-center font-normal transition-colors hover:border-green-600 hover:bg-green-600 hover:text-white dark:text-gray-200 ${
+              range === 'short_term' ? 'border-green-600 bg-green-600 text-white' : ''
+            }`}
+          >
+            Last 4 Weeks
+          </button>
+          <button
+            onClick={() => {
+              isRange('medium_term')
+              isMultiply(1)
+            }}
+            className={`text-md rounded-full border px-8 py-2 text-center font-normal transition-colors hover:border-green-600 hover:bg-green-600 hover:text-white dark:text-gray-200 ${
+              range === 'medium_term' ? 'border-green-600 bg-green-600 text-white' : ''
+            }`}
+          >
+            Last 6 Months
+          </button>
+          <button
+            onClick={() => {
+              isRange('long_term')
+              isMultiply(1)
+            }}
+            className={`text-md rounded-full border px-8 py-2 text-center font-normal transition-colors hover:border-green-600 hover:bg-green-600 hover:text-white dark:text-gray-200 ${
+              range === 'long_term' ? 'border-green-600 bg-green-600 text-white' : ''
+            }`}
+          >
+            All Time
+          </button>
+        </div>
+        <TopTracks range={range} multiply={multiply} />
+        {multiply < 5 && (
+          <div className="my-4 flex flex-row justify-center">
+            <button
+              onClick={() => isMultiply(multiply + 1)}
+              className="text-md self-center rounded-full border px-8 py-2 text-center font-normal transition-colors hover:border-green-600 hover:bg-green-600 hover:text-white dark:text-gray-200"
+            >
+              Load more +10 tracks
+            </button>
+          </div>
+        )}
+        <div className="flex flex-col pl-4 pt-5">
           <p className="text-md text-gray-600 dark:text-gray-400">
             Do you know a good song I should listen to?
           </p>
           <a
             className="text-md mt-4 rounded-full border px-8 py-2 text-center font-normal text-gray-800 transition-colors hover:border-green-600 hover:bg-green-600 hover:text-white dark:text-gray-200"
-            href="https://twitter.com/messages/compose?recipient_id=4302974298&text=Hey SnowyField, you should listen to:"
+            href="https://twitter.com/messages/1130146745088745472-1644439499018219520?&text=Hey%20SnowyField,%20you%20should%20listen%20to:"
             data-screen-name="@SnowyField1906"
             target="_blank"
             rel="noreferrer noopener"

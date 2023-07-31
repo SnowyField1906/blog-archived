@@ -1,7 +1,7 @@
 import Image from 'next/image'
 export default function Track(track) {
   return (
-    <div className="group mt-8 flex w-full max-w-3xl transform flex-row items-baseline border-b border-gray-100 transition-all hover:scale-[1.03] dark:border-gray-800">
+    <div className="group mx-5 mt-8 flex w-full max-w-3xl transform flex-row items-baseline border-b border-gray-100 transition-all hover:scale-[1.03] dark:border-gray-800">
       <p className="text-sm font-bold text-gray-400 dark:text-gray-600">{track.ranking}</p>
       <div className="flex justify-self-auto">
         <div className="flex flex-col pl-3">
