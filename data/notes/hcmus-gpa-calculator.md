@@ -5,7 +5,7 @@ tags: ['Script', 'Tool']
 draft: false
 summary: Script calculates total accumulated GPA in University of Science.
 images: []
-layout: PostSimple
+layout: NoteView
 ---
 
 ## Guide

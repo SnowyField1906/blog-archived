@@ -5,18 +5,18 @@ const dedent = require('dedent')
 
 const root = process.cwd()
 
-const getAuthors = () => {
-  const authorPath = path.join(root, 'data', 'authors')
-  const authorList = fs.readdirSync(authorPath).map((filename) => path.parse(filename).name)
-  return authorList
-}
+// const getAuthors = () => {
+//   const authorPath = path.join(root, 'data', 'authors')
+//   const authorList = fs.readdirSync(authorPath).map((filename) => path.parse(filename).name)
+//   return authorList
+// }
 
 const getLayouts = () => {
   const layoutPath = path.join(root, 'layouts')
   const layoutList = fs
     .readdirSync(layoutPath)
     .map((filename) => path.parse(filename).name)
-    .filter((file) => file.toLowerCase().includes('post'))
+    .filter((file) => file.includes('View'))
   return layoutList
 }
 
@@ -40,7 +40,6 @@ const genFrontMatter = (answers) => {
   summary: ${answers.summary ? answers.summary : ' '}
   images: []
   layout: ${answers.layout}
-  canonicalUrl: ${answers.canonicalUrl}
   `
 
   if (answers.authors.length > 0) {
@@ -59,18 +58,12 @@ inquirer
       message: 'Enter post title:',
       type: 'input',
     },
-    {
-      name: 'extension',
-      message: 'Choose post extension:',
-      type: 'list',
-      choices: ['mdx', 'md'],
-    },
-    {
-      name: 'authors',
-      message: 'Choose authors:',
-      type: 'checkbox',
-      choices: getAuthors,
-    },
+    // {
+    //   name: 'authors',
+    //   message: 'Choose authors:',
+    //   type: 'checkbox',
+    //   choices: getAuthors,
+    // },
     {
       name: 'summary',
       message: 'Enter post summary:',
@@ -93,11 +86,6 @@ inquirer
       type: 'list',
       choices: getLayouts,
     },
-    {
-      name: 'canonicalUrl',
-      message: 'Enter canonical url:',
-      type: 'input',
-    },
   ])
   .then((answers) => {
     // Remove special characters and replace space with -
@@ -108,9 +96,9 @@ inquirer
       .replace(/-+/g, '-')
     const frontMatter = genFrontMatter(answers)
     if (!fs.existsSync('data/posts')) fs.mkdirSync('data/posts', { recursive: true })
-    const filePath = `data/${answers.layout === 'SimpleLayout' ? 'notes' : 'posts'}/${
+    const filePath = `data/${answers.layout === 'NoteView' ? 'notes' : 'posts'}/${
       fileName ? fileName : 'untitled'
-    }.${answers.extension ? answers.extension : 'md'}`
+    }.md}`
     fs.writeFile(filePath, frontMatter, { flag: 'wx' }, (err) => {
       if (err) {
         throw err

@@ -25,7 +25,7 @@ const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/posts/$
 
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
-export default function PostLayout({ frontMatter, toc, authorDetails, next, prev, children }) {
+export default function PostView({ frontMatter, toc, authorDetails, next, prev, children }) {
   const { slug, fileName, date, title, images, tags, readingTime } = frontMatter
   const postUrl = `${siteMetadata.siteUrl}/posts/${slug}`
   return (
@@ -125,7 +125,7 @@ export default function PostLayout({ frontMatter, toc, authorDetails, next, prev
                 </ul>
               </dd>
               <footer>
-                <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 lg:flex lg:justify-between xl:col-start-1 xl:row-start-2 xl:grid xl:divide-y">
+                <div className="flex justify-between divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:grid xl:divide-y">
                   {tags && (
                     <div className="py-4 xl:py-8">
                       <h2 className="pb-1 text-xs uppercase tracking-wide text-gray-600 dark:text-gray-400">
@@ -163,7 +163,7 @@ export default function PostLayout({ frontMatter, toc, authorDetails, next, prev
                     </div>
                   )}
                 </div>
-                <div className="pt-4 md:text-right xl:pt-8 xl:text-left">
+                <div className="pt-4 text-right xl:pt-8 xl:text-left">
                   <Link
                     href="/posts"
                     className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"

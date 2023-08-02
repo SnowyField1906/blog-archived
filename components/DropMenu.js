@@ -37,7 +37,7 @@ export default function DropMenu() {
   return (
     <Menu as="div" className="relative z-10 inline-block text-left ">
       <div>
-        <Menu.Button className=" ml-2 cursor-pointer rounded-full bg-zinc-300 ring-zinc-400 transition-all hover:bg-violet-400 hover:ring-1 dark:bg-zinc-700 dark:ring-violet-700 dark:hover:bg-violet-600">
+        <Menu.Button className=" ml-2 cursor-pointer rounded-full bg-zinc-300 ring-zinc-400 transition-all hover:ring-1 dark:bg-zinc-700 dark:ring-violet-700 dark:hover:bg-violet-600">
           <motion.button
             className="flex h-8 w-8 items-center justify-center p-2"
             whileTap={{

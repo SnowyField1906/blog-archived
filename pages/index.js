@@ -18,8 +18,8 @@ export default function Home({ posts }) {
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div className="mx-auto max-w-6xl">
-        <div className="mb-12 flex justify-between">
-          <div className="mt-10 font-lora">
+        <div className="mb-12 flex-row justify-between gap-10 lg:flex">
+          <div className="mt-10 w-full font-lora lg:w-2/3">
             <RoughNotation
               animate="true"
               type="bracket"
@@ -29,7 +29,7 @@ export default function Home({ posts }) {
               animationDuration={2500}
               brackets={['left', 'right']}
               strokeWidth={4}
-              className="self-center text-6xl font-extrabold leading-9 tracking-wide text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14	"
+              className="self-center text-6xl font-extrabold leading-9 tracking-wide text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
             >
               Hi, I am <br />
               <span className="text-6xl text-primary-600 dark:text-primary-400">SnowyField</span>
@@ -126,7 +126,7 @@ export default function Home({ posts }) {
               </span>
             </h1>
           </div> */}
-          <div className="flex items-center justify-center">
+          <div className="xs:justify-end flex items-center justify-center">
             <div className="grid grid-cols-1 grid-rows-3 gap-8 py-12">
               <div className="my-2 grid items-start gap-8">
                 <div className="group relative">

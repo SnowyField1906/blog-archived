@@ -12,7 +12,6 @@ import { useRouter } from 'next/router'
 import { EnterIcon } from '@radix-ui/react-icons'
 import DropMenu from './DropMenu.js'
 // import Logo from '@/data/logo.svg'
-// import MobileNav from './MobileNav'
 
 const LayoutWrapper = ({ children }) => {
   const { data: session } = useSession()
@@ -41,10 +40,13 @@ const LayoutWrapper = ({ children }) => {
             </div> */}
             <div className="flex">
               <Link href="/" aria-label={siteMetadata.headerTitle}>
-                <div className="text-secondary dark:text-tertiary flex items-center justify-between text-xl font-semibold">
-                  @<a className="hover:text-primary-600 hover:dark:text-primary-400">snowyfield</a>
+                <div className="text-secondary dark:text-tertiary grid items-center justify-between text-xl font-semibold md:flex">
+                  <div>
+                    @
+                    <a className="hover:text-primary-600 hover:dark:text-primary-400">snowyfield</a>
+                  </div>
                   {segments.map((segment, index) => (
-                    <div key={index}>
+                    <div key={index} className="ml-3 md:ml-0">
                       /
                       <Link href={`/${segments.slice(0, index + 1).join('/')}`}>
                         <a
@@ -61,13 +63,15 @@ const LayoutWrapper = ({ children }) => {
                   ))}
                 </div>
               </Link>
-              <Typewriter
-                options={{
-                  strings: [],
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
+              <div className="hidden md:block ">
+                <Typewriter
+                  options={{
+                    strings: [],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
+              </div>
             </div>
           </div>
           <div className="flex items-center gap-2 text-base leading-5">
@@ -87,9 +91,9 @@ const LayoutWrapper = ({ children }) => {
             <ThemeSwitch />
             <DropMenu />
 
-            <div className="link-underline ml-2 cursor-pointer rounded py-1 px-2">
-              <Link>
-                <div className="mx-2 flex flex-row">
+            <div className="ml-3 cursor-pointer rounded py-1">
+              <Link className="link-underline">
+                <div className="hidden flex-row px-1 font-medium lg:flex ">
                   {session ? (
                     <>
                       <div className="mr-2 flex flex-row items-center">
@@ -104,23 +108,17 @@ const LayoutWrapper = ({ children }) => {
                           ''
                         )}
                       </div>
-                      <div className="" onClick={() => signOut()}>
-                        Sign Out
-                      </div>
+                      <div onClick={() => signOut()}>Sign Out</div>
                     </>
                   ) : (
                     <>
-                      <EnterIcon />
-                      <div className="ml-4" onClick={() => signIn()}>
-                        Sign In
-                      </div>
+                      <EnterIcon className="mt-1 mr-4" />
+                      <div onClick={() => signIn()}>Sign In</div>
                     </>
                   )}
                 </div>
               </Link>
             </div>
-
-            {/* <MobileNav /> */}
           </div>
         </header>
         <main className="mb-auto">{children}</main>

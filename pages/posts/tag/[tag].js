@@ -1,6 +1,6 @@
 import { TagSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
-import ListLayout from '@/layouts/ListLayout'
+import PostsLayout from '@/layouts/PostsLayout'
 import generateRss from '@/lib/generate-rss'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { getAllTags } from '@/lib/tags'
@@ -51,7 +51,7 @@ export default function Tag({ posts, tag, tags }) {
         title={`${title} - ${siteMetadata.author}`}
         description={`${tag} tag - ${siteMetadata.author}`}
       />
-      <ListLayout posts={posts} title={title} tags={tags} />
+      <PostsLayout posts={posts} title={title} tags={tags} />
     </>
   )
 }

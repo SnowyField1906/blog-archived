@@ -58,50 +58,41 @@ export default function AuthorLayout({ children, frontMatter }) {
             </div>
           </div>
           <div className="prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2">
-            <p>
-              <RoughNotation
-                type="bracket"
-                brackets={['left', 'right']}
-                show={true}
-                color="#AB57E9"
-                animationDelay={300}
-                animationDuration={3000}
-                strokeWidth={2}
-                iterations={4}
-              >
-                {text1} Currently, I am focused on building Concentrated Liquidity Exchange and
-                Order Book at{' '}
+            <RoughNotation
+              type="bracket"
+              brackets={['left', 'right']}
+              show={true}
+              color="#AB57E9"
+              animationDelay={300}
+              animationDuration={3000}
+              strokeWidth={2}
+              iterations={4}
+            >
+              <p>
+                Currently, I'm working as a{' '}
+                <span className="font-semibold">Blockchain Developer</span> at{' '}
                 <Link
                   href={'https://lecle.vn'}
                   className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
                 >
                   LECLE Vietnam
-                </Link>{' '}
-                and{' '}
+                </Link>
+                . And I'm also involved in a DEX project at{' '}
                 <Link
                   href={'https://mama.exchange'}
                   className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
                 >
                   Mama Exchange
                 </Link>
-              </RoughNotation>
-              .
-            </p>
-            <p>
-              This is what I am doing right{' '}
-              <Link
-                href={'/now'}
-                className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
-              >
-                now
-              </Link>
-              .
-            </p>
+                , where I work independently as a{' '}
+                <span className="font-semibold">Smart Contract Engineer</span> for a Concentrated
+                Liquidity Exchange and On-Chain Order Book.
+              </p>
+            </RoughNotation>
             <p className="">
               I am always looking to learn new things. I am currently working on a few projects
-              related to
-              <span className="font-semibold"> Blockchain and Machine Learning.</span> At the same
-              time I am{' '}
+              related to <span className="font-semibold">Blockchain</span> and{' '}
+              <span className="font-semibold">Machine Learning</span>. At the same time I am{' '}
               <RoughNotation
                 type="underline"
                 show={true}

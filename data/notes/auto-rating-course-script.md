@@ -5,7 +5,7 @@ tags: ['Script', 'Tool']
 draft: false
 summary: Script automatically rates to all courses in University of Science.
 images: []
-layout: PostSimple
+layout: NoteView
 ---
 
 ## Guide

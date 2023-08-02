@@ -5,7 +5,7 @@ import Pagination from '@/components/Pagination'
 import PostPreview from '@/components/PostPreview'
 import kebabCase from '@/lib/utils/kebabCase'
 
-export default function ListLayout({
+export default function PostsLayout({
   posts,
   title,
   initialDisplayPosts = [],
@@ -31,7 +31,7 @@ export default function ListLayout({
           <div className="flex flex-wrap">
             {Object.keys(tags).length === 0 && 'No tags found.'}
             {sortedTags.map((t) => (
-              <div key={t} className="mt-2 mb-2 mr-5">
+              <div key={t}>
                 <Tag page="posts" text={t} num={tags[t]} />
                 <Link
                   href={`posts/tag/${kebabCase(t)}`}

@@ -5,7 +5,7 @@ tags: ['Script', 'Tool']
 draft: false
 summary: Script downloads all videos from a Douyin user.
 images: []
-layout: PostSimple
+layout: NoteView
 ---
 
 ## Guide

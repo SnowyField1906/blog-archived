@@ -30,7 +30,7 @@ export default function NotesLayout({
           <div className="flex flex-wrap">
             {Object.keys(tags).length === 0 && 'No tags found.'}
             {sortedTags.map((t) => (
-              <div key={t} className="mt-2 mb-2 mr-5">
+              <div key={t}>
                 <Tag page="notes" text={t} num={tags[t]} />
                 <Link
                   href={`notes/tag/${kebabCase(t)}`}

@@ -139,55 +139,29 @@ export default function Now(currentlyReading) {
         </div>
         {/* Misc */}
         <div>
-          <div className="flex justify-between gap-5">
+          <div className="flex justify-between gap-5 ">
             <div className="mt-2 mb-10 w-1/2 rounded-md border border-gray-600 p-1 text-sm dark:border-gray-200">
               <span className="ml-2 font-semibold">Location:</span>{' '}
               <span>District 1, Ho Chi Minh City</span>
               <br />
               <span className="ml-2 font-semibold">Weather:</span>{' '}
               <span>
+                {icons[`_${weatherIcon}`]}{' '}
                 <a
                   href="https://weather.com/en-GB/weather/today/l/f9e2c272160f48be1b08c33e76a295947d53ec250868eaf4bb401afea124fbfc"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline-offset-1 hover:underline"
                 >
-                  {icons[`_${weatherIcon}`]} Currently <b>{parseInt(temperature)}°C</b>
+                  Currently <b>{parseInt(temperature)}°C</b>
                   {' with '}
                   <span>{weatherDescription}</span>
                 </a>
               </span>
             </div>
-
             <div className="mt-2 mb-10 w-1/2 rounded-md border border-gray-600 p-1 text-sm dark:border-gray-200">
-              <span className="ml-2 font-semibold">Reading:</span>{' '}
-              <a
-                href={currentlyReadingData[0].url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline-offset-1 hover:underline"
-              >
-                <span>{currentlyReadingData[0].title}</span> by{' '}
-                <span>{currentlyReadingData[0].author}</span>
-              </a>
-              <br />
               <span className="ml-2 font-semibold">Age:</span> <span>{ageString}</span>
-            </div>
-          </div>
-
-          <div className="-my-6 flex justify-between gap-5">
-            <div className="mt-2 mb-10 w-1/2 rounded-md border border-gray-600 p-1 text-sm dark:border-gray-200">
-              <span className="ml-2 font-semibold">Date:</span>{' '}
-              <span>{TodayDate.format('DD/MM/YYYY')}</span>
               <br />
-              <span className="ml-2 font-semibold">Time:</span>{' '}
-              <span>
-                <BsClock className="mb-0.5 inline h-3 w-3 hover:animate-spin" />{' '}
-                {TodayDate.format('h:mm:ss A')}
-              </span>
-            </div>
-
-            <div className="mt-2 mb-10 w-1/2 rounded-md border border-gray-600 p-1 text-sm dark:border-gray-200">
               <span className="ml-2 font-semibold">Listening:</span>{' '}
               <span>
                 {data?.songUrl ? (
@@ -203,92 +177,83 @@ export default function Now(currentlyReading) {
                   <span>Not Playing</span>
                 )}
               </span>
-              <br />
-              <span className="ml-2 font-semibold">Drinking:</span> <span>Coffee</span>
             </div>
           </div>
         </div>
         <div className="justify-center text-center text-2xl font-medium text-gray-200 dark:text-gray-600">
-          &#126;&#126;&#126;
+          &#126;&#126; Present &#126;&#126;
         </div>
-        {/* Work */}
-        <div className="pb-4">
+        <div className="py-4">
           <p>
-            I work as a Data Engineer at{' '}
-            <Link
-              href={'https://www.accenture.com/'}
-              className="special-underline no-underline dark:text-gray-100 hover:dark:text-gray-100"
-            >
-              Accenture
-            </Link>
-            .
+            I have been trying to shift my field from Blockchain to Machine Learning as a backup
+            plan. I'm following a lot of cool repositories on Github but I still don't have time to
+            try them out.
           </p>
           <br />
           <p>
-            I work on building pipelines and automating the entire process using Scala and Gcloud.
+            I'm currently pursuing my favorite major at my dream university, but I've been enduring
+            a lot of pain and frustration with it due to various reasons. I wish to leave it as soon
+            as possible and my goal is to apply to a remote university abroad in the near future. It
+            sounds pretty cool, doesn't it?
           </p>
           <br />
           <p>
-            I have been trying to shift my field from Data Engineering to Data Science. I have been
-            constantly applying for the same as well.
-          </p>
-          <br />
-          <p>
-            My location preference is Bangalore but I am open to shift to another place for a better
-            opportunity.
-          </p>
-          <br />
-          <p>
-            I'm always trying to learn more, and at the moment I'm trying to follow this{' '}
-            <Link
-              href={
-                'https://www.youtube.com/watch?v=_u-PaJCpwiU&list=PLu0W_9lII9ai6fAMHp-acBmJONT7Y4BSG'
-              }
-              className="special-underline no-underline dark:text-gray-100 hover:dark:text-gray-100"
-            >
-              Machine Learning tutorial
-            </Link>
-            .
+            I want to dedicate as much time as possible to learning English, but after a while, I
+            still find myself tangled up with many aspects and having to postpone it.
           </p>
         </div>
         <div className="justify-center text-center text-2xl font-medium text-gray-200 dark:text-gray-600">
-          &#126;&#126;&#126;
+          &#126;&#126; Preferences &#126;&#126;
         </div>
-
-        {/* Personal life */}
-        <div className="pt-6">
+        <div className="py-4">
+          <p>
+            My preferred destinations are Japan, Taiwan, and especially Nordic countries. But there
+            is no place I love more than Vietnam, my born-and-raised home.
+          </p>
+          <br />
+          <p>
+            I have a fondness for purple, all shades of purple. That's why this website has a
+            predominant purple color scheme. Additionally, I also like blue, white, and black.
+          </p>
+          <br />
           <p>
             I've been slowly building this website, trying to share interesting things with anyone
             who wants to read it.{' '}
             <Link
               href={'https://www.swyx.io/learn-in-public'}
-              className="special-underline no-underline dark:text-gray-100 hover:dark:text-gray-100"
+              className="special-underline-new no-underline dark:text-gray-100 hover:dark:text-gray-100"
             >
-              This
+              This article
             </Link>{' '}
-            article is a great reason to start your blog.
-          </p>
-          <br />
-          <p>
-            I am also going to start applying for Masters in Data Science in August 2022 for intake
-            of Fall 2023. I hope to get a good university near the West Coast. I'll update this page
-            after I get my admits.
-          </p>
-          <br />
-          <p>
-            I recently started to draft a post about my new Obsidian worklfow, it will be a good
-            one!
+            is a great reason to start your blog.
           </p>
         </div>
-        <div className="mt-3 text-sm">
-          For more examples of folks with /now pages, check out{' '}
-          <Link
-            href={'https://nownownow.com/'}
-            className="special-underline no-underline dark:text-gray-100 hover:dark:text-gray-100"
-          >
-            nownownow.com
-          </Link>
-          .
+        <div className="justify-center text-center text-2xl font-medium text-gray-200 dark:text-gray-600">
+          &#126;&#126; Music &#126;&#126;
+        </div>
+        <div className="py-4">
+          <p>
+            I have a special affection for Rap, Hip-hop, and R&B music. However, I exclusively
+            listen to Vietnamese songs because my ears are not accustomed to foreign languages, and
+            I have a strong preference for meaningful lyrics over melodies.
+          </p>
+          <br />
+          <p>
+            I have a fondness for purple, all shades of purple. That's why this website has a
+            predominant purple color scheme. Additionally, I also like blue, white, and black.
+          </p>
+          <br />
+          <p>
+            I've been slowly building this website, trying to share interesting things with anyone
+            who wants to read it.{' '}
+            <Link
+              href={'https://www.swyx.io/learn-in-public'}
+              className="special-underline-new no-underline dark:text-gray-100 hover:dark:text-gray-100"
+            >
+              This article
+            </Link>{' '}
+            is a great reason to start your blog.
+          </p>
         </div>
       </div>
     </>

@@ -9,7 +9,7 @@ import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import { HiOutlinePencil, HiOutlineClock, HiOutlineEye } from 'react-icons/hi'
 import { BsCalendarDate } from 'react-icons/bs'
 
-export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
+export default function PostView({ frontMatter, authorDetails, next, prev, children }) {
   const { slug, date, title, summary, readingTime } = frontMatter
 
   return (

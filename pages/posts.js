@@ -1,6 +1,6 @@
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import siteMetadata from '@/data/siteMetadata'
-import ListLayout from '@/layouts/ListLayout'
+import PostsLayout from '@/layouts/PostsLayout'
 import { PageSEO } from '@/components/SEO'
 import { getAllTags } from '@/lib/tags'
 
@@ -22,7 +22,7 @@ export default function Post({ posts, initialDisplayPosts, pagination, tags }) {
   return (
     <>
       <PageSEO title={`Post - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <ListLayout
+      <PostsLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
