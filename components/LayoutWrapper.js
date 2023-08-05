@@ -18,6 +18,7 @@ const LayoutWrapper = ({ children }) => {
   const router = useRouter()
   const segments = router.asPath
     .split('?')[0]
+    .split('#')[0]
     .split('/')
     .filter((segment) => segment !== '')
 

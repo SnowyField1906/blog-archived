@@ -5,12 +5,6 @@ const dedent = require('dedent')
 
 const root = process.cwd()
 
-// const getAuthors = () => {
-//   const authorPath = path.join(root, 'data', 'authors')
-//   const authorList = fs.readdirSync(authorPath).map((filename) => path.parse(filename).name)
-//   return authorList
-// }
-
 const getLayouts = () => {
   const layoutPath = path.join(root, 'layouts')
   const layoutList = fs
@@ -30,7 +24,6 @@ const genFrontMatter = (answers) => {
   const tagArray = answers.tags.split(',')
   tagArray.forEach((tag, index) => (tagArray[index] = tag.trim()))
   const tags = "'" + tagArray.join("','") + "'"
-  const authorArray = answers.authors.length > 0 ? "'" + answers.authors.join("','") + "'" : ''
 
   let frontMatter = dedent`---
   title: ${answers.title ? answers.title : 'Untitled'}
@@ -38,13 +31,9 @@ const genFrontMatter = (answers) => {
   tags: [${answers.tags ? tags : ''}]
   draft: ${answers.draft === 'yes' ? true : false}
   summary: ${answers.summary ? answers.summary : ' '}
-  images: []
   layout: ${answers.layout}
+  thumbnail: ${answers.thumbnail ? answers.thumbnail : ''}
   `
-
-  if (answers.authors.length > 0) {
-    frontMatter = frontMatter + '\n' + `authors: [${authorArray}]`
-  }
 
   frontMatter = frontMatter + '\n---'
 
@@ -58,12 +47,6 @@ inquirer
       message: 'Enter post title:',
       type: 'input',
     },
-    // {
-    //   name: 'authors',
-    //   message: 'Choose authors:',
-    //   type: 'checkbox',
-    //   choices: getAuthors,
-    // },
     {
       name: 'summary',
       message: 'Enter post summary:',
@@ -86,6 +69,11 @@ inquirer
       type: 'list',
       choices: getLayouts,
     },
+    {
+      name: 'thumbnail',
+      message: 'Enter thumbnail url:',
+      type: 'input',
+    },
   ])
   .then((answers) => {
     // Remove special characters and replace space with -
@@ -98,7 +86,7 @@ inquirer
     if (!fs.existsSync('data/posts')) fs.mkdirSync('data/posts', { recursive: true })
     const filePath = `data/${answers.layout === 'NoteView' ? 'notes' : 'posts'}/${
       fileName ? fileName : 'untitled'
-    }.md}`
+    }.md`
     fs.writeFile(filePath, frontMatter, { flag: 'wx' }, (err) => {
       if (err) {
         throw err

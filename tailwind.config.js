@@ -25,9 +25,9 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['Piazzolla', ...defaultTheme.fontFamily.sans],
-        fairplay: ['Fairplay Display', ...defaultTheme.fontFamily.serif],
-        lora: ['Lora', ...defaultTheme.fontFamily.serif],
+        sans: ['Brygada 1918', ...defaultTheme.fontFamily.sans],
+        fairplay: ['Fairplay Display', ...defaultTheme.fontFamily.sans],
+        lora: ['Lora', ...defaultTheme.fontFamily.sans],
         brygada: ['Brygada 1918', ...defaultTheme.fontFamily.sans],
         piazzolla: ['Piazzolla', ...defaultTheme.fontFamily.sans],
       },
@@ -100,6 +100,9 @@ module.exports = {
               },
               code: { color: theme('colors.primary.400') },
             },
+            p: {
+              textIndent: '40px',
+            },
             h1: {
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.wide'),
@@ -150,6 +153,7 @@ module.exports = {
             },
             'ul li::marker': {
               backgroundColor: theme('colors.gray.500'),
+              textIndent: '0px',
             },
             strong: { color: theme('colors.gray.600') },
             blockquote: {

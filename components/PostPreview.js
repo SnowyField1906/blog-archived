@@ -31,7 +31,7 @@ const PostPreview = ({ slug, date, title, summary, tags, thumbnail }) => {
           </dl>
           <div className="space-y-1">
             <div>
-              <h2 className="font-lora text-2xl font-medium leading-8 tracking-tight text-gray-900 transition duration-200 ease-in-out hover:text-primary-600 dark:text-gray-100 dark:hover:text-primary-400">
+              <h2 className="font-brygada text-2xl font-medium leading-8 tracking-tight text-gray-900 transition duration-200 ease-in-out hover:text-primary-600 dark:text-gray-100 dark:hover:text-primary-400">
                 <Link href={`/posts/${slug}`} className="">
                   {title}
                 </Link>
@@ -43,7 +43,9 @@ const PostPreview = ({ slug, date, title, summary, tags, thumbnail }) => {
                 <Tag key={tag} page="posts" text={tag} />
               ))}
             </div>
-            <div className="prose pt-5 font-lora text-gray-600 dark:text-gray-400">{summary}</div>
+            <div className="prose pt-5 font-brygada text-gray-600 dark:text-gray-400">
+              {summary}
+            </div>
           </div>
         </article>
       </li>
