@@ -25,7 +25,7 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['Brygada 1918', ...defaultTheme.fontFamily.sans],
+        sans: ['Lora', ...defaultTheme.fontFamily.sans],
         fairplay: ['Fairplay Display', ...defaultTheme.fontFamily.sans],
         lora: ['Lora', ...defaultTheme.fontFamily.sans],
         brygada: ['Brygada 1918', ...defaultTheme.fontFamily.sans],
@@ -100,9 +100,6 @@ module.exports = {
               },
               code: { color: theme('colors.primary.400') },
             },
-            p: {
-              textIndent: '40px',
-            },
             h1: {
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.wide'),
@@ -139,6 +136,7 @@ module.exports = {
               content: 'none',
             },
             details: {
+              textIndent: '0px',
               backgroundColor: theme('colors.gray.100'),
               paddingLeft: '4px',
               paddingRight: '4px',
@@ -148,17 +146,21 @@ module.exports = {
             },
             hr: { borderColor: theme('colors.gray.200') },
             'ol li::marker': {
+              textIndent: '0px',
               fontWeight: '600',
               color: theme('colors.gray.500'),
             },
             'ul li::marker': {
-              backgroundColor: theme('colors.gray.500'),
               textIndent: '0px',
+              backgroundColor: theme('colors.gray.500'),
             },
             strong: { color: theme('colors.gray.600') },
             blockquote: {
               color: theme('colors.gray.900'),
               borderLeftColor: theme('colors.gray.200'),
+            },
+            p: {
+              textIndent: '40px',
             },
           },
         },
@@ -199,15 +201,18 @@ module.exports = {
               backgroundColor: theme('colors.gray.800'),
             },
             details: {
+              textIndent: '0px',
               backgroundColor: theme('colors.gray.800'),
             },
             hr: { borderColor: theme('colors.gray.700') },
             'ol li::marker': {
               fontWeight: '600',
               color: theme('colors.gray.400'),
+              textIndent: '0px',
             },
             'ul li::marker': {
               backgroundColor: theme('colors.gray.400'),
+              textIndent: '0px',
             },
             strong: { color: theme('colors.gray.100') },
             thead: {

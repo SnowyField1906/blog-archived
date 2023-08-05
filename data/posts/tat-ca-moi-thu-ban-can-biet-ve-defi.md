@@ -3,7 +3,7 @@ title: Tất cả mọi thứ bạn cần biết về DeFi
 date: '2023-08-05'
 tags: ['DeFi', 'Blockchain']
 draft: false
-summary: Tất cả mọi thứ bạn cần biết về DeFi (Tài chính phi tập trung) và vai trò quan trọng của nó trong thế giới tiền mã hóa. Tìm hiểu về khái niệm DeFi, sự khác biệt với hệ thống tài chính truyền thống, lợi ích và rủi ro, cùng với các hoạt động quan trọng khác.
+summary: Tổng quan về DeFi và vai trò quan trọng của nó trong thế giới tiền mã hóa. Tìm hiểu về khái niệm DeFi, sự khác biệt với hệ thống tài chính truyền thống, lợi ích và rủi ro, cùng với các hoạt động quan trọng khác.
 layout: PostView
 thumbnail: '/static/images/thumbnails/tat-ca-moi-thu-ban-can-biet-ve-defi.png'
 ---
@@ -64,7 +64,7 @@ Có thể hiểu nôm na như việc bạn gửi tiền vào ngân hàng, hoặc
 
 ### Trading
 
-**Trading** (Giao dịch) trong hệ sinh thái DeFi được diễn ra thông qua các DEX. Có rất nhiều loại Trading như **Margin**, **Spot**, **Futures**,... phần này sẽ được giới thiệu sau.
+**Trading** (Giao dịch) trong hệ sinh thái DeFi được diễn ra thông qua các DEX. Có rất nhiều loại Trading như **Swap**, **Margin**, **Spot**, **Futures**,... phần này sẽ được giới thiệu sau.
 
 Nó hoạt động tương tự như việc đầu tư cổ phiếu. Nó giúp bạn kiếm lời từ sự chênh lệch giá của các tài sản, nhưng cũng đi kèm với nhiều rủi ro.
 
