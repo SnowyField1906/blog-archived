@@ -94,9 +94,9 @@ module.exports = {
           css: {
             color: theme('colors.gray.700'),
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.primary.600'),
               '&:hover': {
-                color: `${theme('colors.primary.500')}`,
+                color: `${theme('colors.primary.600')}`,
               },
               code: { color: theme('colors.primary.400') },
             },
@@ -121,7 +121,7 @@ module.exports = {
               backgroundColor: theme('colors.gray.800'),
             },
             code: {
-              color: theme('colors.green.500'),
+              color: theme('colors.green.600'),
               backgroundColor: theme('colors.gray.100'),
               paddingLeft: '4px',
               paddingRight: '4px',
@@ -148,19 +148,20 @@ module.exports = {
             'ol li::marker': {
               textIndent: '0px',
               fontWeight: '600',
-              color: theme('colors.gray.500'),
+              color: theme('colors.gray.600'),
             },
             'ul li::marker': {
               textIndent: '0px',
-              backgroundColor: theme('colors.gray.500'),
+              backgroundColor: theme('colors.gray.600'),
             },
-            strong: { color: theme('colors.gray.600') },
+            strong: { color: theme('colors.gray.700') },
             blockquote: {
               color: theme('colors.gray.900'),
               borderLeftColor: theme('colors.gray.200'),
             },
             p: {
-              textIndent: '40px',
+              textIndent: '30px',
+              textAlign: 'justify',
             },
           },
         },
@@ -168,9 +169,9 @@ module.exports = {
           css: {
             color: theme('colors.gray.300'),
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.primary.400'),
               '&:hover': {
-                color: `${theme('colors.primary.500')} `,
+                color: `${theme('colors.primary.400')} `,
               },
               code: {
                 fontSize: '20rem',
@@ -206,13 +207,13 @@ module.exports = {
             },
             hr: { borderColor: theme('colors.gray.700') },
             'ol li::marker': {
+              textIndent: '0px',
               fontWeight: '600',
               color: theme('colors.gray.400'),
-              textIndent: '0px',
             },
             'ul li::marker': {
-              backgroundColor: theme('colors.gray.400'),
               textIndent: '0px',
+              backgroundColor: theme('colors.gray.400'),
             },
             strong: { color: theme('colors.gray.100') },
             thead: {

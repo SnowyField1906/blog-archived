@@ -8,6 +8,8 @@ layout: PostView
 thumbnail: '/static/images/thumbnails/tat-ca-moi-thu-ban-can-biet-ve-defi.png'
 ---
 
+<img src="/static/images/thumbnails/tat-ca-moi-thu-ban-can-biet-ve-defi.png" alt="Tất cả mọi thứ bạn cần biết về DeFi" width="100%" />
+
 _Hãy tưởng tượng rằng Blockchain là một cơ thể sống, khi đó tiền mã hóa chính là mạch máu vì chúng chảy qua và làm nhiệm vụ duy trì sự sống và khả năng hoạt động của toàn bộ hệ thống. Tương tự như cách máu cung cấp dưỡng chất và năng lượng cho cơ thể, tiền mã hóa đóng vai trò quan trọng trong việc cung cấp tài sản và thanh khoản cho toàn bộ hệ thống Blockchain._
 
 _Tuy nhiên, như bất kỳ mạch máu nào, hệ thống này cần phải được điều chỉnh và duy trì để đảm bảo dòng chảy suôn sẻ và cân đối. Đây chính là nhiệm vụ của DeFi, DeFi là tác nhân điều hòa, mang lại sự cân đối cho dòng tiền mã hóa trong hệ thống Blockchain._
@@ -40,7 +42,7 @@ Tuy nhiên DeFi cũng có một số rủi ro nhất định, trong đó rủi r
 
 - **An toàn và bảo mật**: Như đã nói ở trên, các Smart Contract không phải lúc nào cũng hoàn hảo và có thể có các lỗ hổng bảo mật dù đã được test và audit kĩ càng. Các hacker có thể tìm cách tấn công các dịch vụ DeFi để đánh cắp tài sản của người dùng.
 
-- **Pháp lý và quy định**: Vì DeFi hoạt động trong môi trường mới và thường không chịu sự kiểm soát chặt chẽ, các vấn đề liên quan đến pháp lý và quy định có thể phát sinh. Các tội phạm DeFi cũng thường rất khó truy vết. Một ví dụ điển hình là [Tornado Cash](https://en.wikipedia.org/wiki/Tornado_Cash). Bằng việc triển khai Zero-Knowledge, nó có thể giúp các tội phạm có thể rửa tiền mà không có cách nào để truy vết. Hiện Tornado Cash đã bị cấm ở vài quốc gia và nhà phát triển cũng đã bị bắt.
+- **Pháp lý và quy định**: Vì DeFi hoạt động trong môi trường mới và thường không chịu sự kiểm soát chặt chẽ, các vấn đề liên quan đến pháp lý và quy định có thể phát sinh. Các tội phạm DeFi cũng thường rất khó truy vết. Một ví dụ điển hình là [Tornado Cash](https://en.wikipedia.org/wiki/Tornado_Cash). Bằng việc triển khai Zero-Knowledge, nó có thể giúp các tội phạm rửa tiền mà không có cách nào để truy vết. Hiện Tornado Cash đã bị cấm ở vài quốc gia và nhà phát triển cũng đã bị bắt.
 
 - **Các rủi ro khác**: Có thể kể đến như biến động thị trường, thất thoát tiền mã hoá, mất khả năng trợ giúp,...
 
@@ -66,7 +68,7 @@ Có thể hiểu nôm na như việc bạn gửi tiền vào ngân hàng, hoặc
 
 **Trading** (Giao dịch) trong hệ sinh thái DeFi được diễn ra thông qua các DEX. Có rất nhiều loại Trading như **Swap**, **Margin**, **Spot**, **Futures**,... phần này sẽ được giới thiệu sau.
 
-Nó hoạt động tương tự như việc đầu tư cổ phiếu. Nó giúp bạn kiếm lời từ sự chênh lệch giá của các tài sản, nhưng cũng đi kèm với nhiều rủi ro.
+Với hoạt động tương tự như việc đầu tư cổ phiếu, nó giúp bạn kiếm lời từ sự chênh lệch giá của các tài sản, nhưng cũng đi kèm với nhiều rủi ro.
 
 ### Arbitrage
 
@@ -78,4 +80,4 @@ Việc mua hàng hóa từ nơi có giá rẻ hơn và bán chúng ở nơi có 
 
 **Flash Loan** (Vay nhanh) là một hoạt động nâng cao trong DeFi, cho phép người dùng vay mượn một số lượng lớn tiền mã hóa trong một **Transaction** (Giao dịch) duy nhất, miễn là bạn có khả năng trả lại trong cùng một Transaction.
 
-Với tính chất này, ngoài việc thường được sử dụng để thực hiện các giao dịch có lợi như Arbitrage hoặc để tham gia vào các hoạt động cụ thể trên Blockchain, Flash Loan cũng thường bị lạm dụng bởi các hacker để thực hiện một hình thức tấn công phổ biến: **Flash Loan Attack**.
+Với tính chất này, ngoài việc được sử dụng để thực hiện các giao dịch có lợi như Arbitrage hoặc để tham gia vào các hoạt động cụ thể trên Blockchain, Flash Loan cũng thường bị lạm dụng bởi các hacker để thực hiện một hình thức tấn công phổ biến: **Flash Loan Attack**.
