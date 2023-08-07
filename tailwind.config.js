@@ -157,11 +157,21 @@ module.exports = {
             strong: { color: theme('colors.gray.700') },
             blockquote: {
               color: theme('colors.gray.900'),
-              borderLeftColor: theme('colors.gray.200'),
+              borderLeftColor: theme('colors.gray.300'),
+              backgroundColor: theme('colors.gray.100'),
+              paddingY: '2px',
+              paddingRight: '20px',
+              marginLeft: '30px',
             },
+            'blockquote p:first-of-type::before': false,
+            'blockquote p:last-of-type::after': false,
             p: {
               textIndent: '30px',
               textAlign: 'justify',
+            },
+            figcaption: {
+              textAlign: 'center',
+              color: theme('colors.gray.600'),
             },
           },
         },
@@ -229,6 +239,12 @@ module.exports = {
             blockquote: {
               color: theme('colors.gray.100'),
               borderLeftColor: theme('colors.gray.700'),
+              backgroundColor: theme('colors.gray.900'),
+            },
+
+            figcaption: {
+              textAlign: 'center',
+              color: theme('colors.gray.400'),
             },
           },
         },
