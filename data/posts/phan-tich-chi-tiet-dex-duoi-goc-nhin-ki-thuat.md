@@ -8,7 +8,7 @@ layout: PostView
 thumbnail: '/static/images/thumbnails/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat.png'
 ---
 
-_Trong hệ sinh thái DeFi, DEX đã nhanh chóng trở thành một phần quan trọng của việc trao đổi tài sản mã hoá và cung cấp thanh khoản. Điểm độc đáo của DEX so với các sàn truyền thống nằm ở việc chúng không cần sự can thiệp của bên thứ ba và hoạt động dựa trên nguyên tắc của công nghệ Blockchain._
+_Trong hệ sinh thái DeFi, DEX đã nhanh chóng trở thành một phần quan trọng của việc trao đổi tài sản mã hoá và cung cấp thanh khoản. Điểm độc đáo của DEX so với các sàn truyền thống nằm ở việc chúng không cần sự can thiệp của bên thứ ba và hoạt động dựa trên các nguyên tắc của công nghệ Blockchain._
 
 _Trong bài viết này, chúng ta sẽ cùng nhau khám phá một cách chi tiết về cách hoạt động của DEX, tập trung vào hai mô hình phổ biến: Automated Market Maker (AMM) và Order Book. Bằng cách hiểu rõ cách mỗi mô hình hoạt động, chúng ta sẽ có cái nhìn sâu hơn về cách DEX đóng góp vào sự phát triển của hệ sinh thái DeFi._
 
@@ -125,7 +125,7 @@ $$
 \begin{align*}
 y &= \frac{k}{x} \newline
 \Leftrightarrow \frac{dy}{dx} &= \frac{d}{dx}(\frac{k}{x}) \newline
-\Leftrightarrow \frac{dy}{dx} &= -\frac{y}{x^2} \newline
+\Leftrightarrow \frac{dy}{dx} &= -\frac{k}{x^2} \newline
 \Leftrightarrow \frac{dy}{dx} &= -\frac{y}{x} \newline
 \end{align*}
 $$
@@ -202,7 +202,7 @@ Bởi vì giá chỉ thay đổi khi swap được thực hiện, nên khi các 
 
 Để dễ hình dung, đường cong của pool chính là một chiếc cân Roberval với hai đĩa, mỗi đĩa đại diện cho một token và giá của pool chính là mũi tên cân bằng. Khi bỏ vào một lượng token, mũi tên sẽ nghiêng đi một đoạn, hay nói cách khác là giá của nó sẽ dịch chuyển một đoạn. Để giữ cho mũi tên cân bằng tránh bị dịch chuyển, ta phải cung cấp thêm token còn lại.
 
-Bạn sẽ nhận được LP token của DEX hoặc pool đó với số lượng là lượng liquidity bạn đã cung cấp, lượng này liquitiy sẽ được tính tùy theo từng pool.
+Các LP sẽ nhận được LP token của DEX hoặc pool đó với số lượng là lượng liquidity mà họ đã cung cấp, lượng này liquitiy sẽ được tính tùy theo từng pool.
 
 Các LP cũng có thể trade token này hoặc đốt (rút khỏi pool) một lượng bất kì để nhận lại cặp token tương xứng mà họ đã bỏ vào pool, đồng thời họ cũng sẽ nhận được ít lợi tức hơn khi người dùng swap.
 
@@ -218,10 +218,14 @@ Trong đó:
 - $P_\text{T}$ là tổng giá trị của tất cả token trong pool
 - $\text{C}$ là tổng số lượng LP token đang lưu hành
 
-Ví dụ cặp ETH/USDT với ETH có giá là $2000\$$ và USDT có giá là $1\$$. Cho rằng trong pool có $2$ ETH và $4000$ USDT, khi đó giá của pool sẽ là:
+Ví dụ cặp ETH/USDT với ETH có giá là $2000$\$ và USDT có giá là $1$\$. Cho rằng trong pool có $2$ ETH và $4000$ USDT, khi đó giá của pool sẽ là:
 
 $$
-P_\text{T}\space (\$)= P_{ETH} + P_{USDT} = 2 \times 2000 + 1 \times 4000 = 8000 \$
+\begin{align*}
+P_\text{T}\space (\$) &= P_{ETH} + P_{USDT} \\
+&= 2 \times 2000 + 1 \times 4000 \\
+&= 8000 \$
+\end{align*}
 $$
 
 Nếu đang có $1000$ LP token đang lưu hành, khi đó giá của một LP token sẽ là:
@@ -232,24 +236,27 @@ $$
 
 #### Lợi tức của LP
 
-Khi bạn có một lượng LP token, bạn sẽ nhận được hoa hồng miễn là đang có swap xảy ra.
+Khi có một lượng LP token, các LP sẽ nhận được hoa hồng miễn là đang có swap xảy ra.
 Khi đó:
 
 $$
-\text{Earn} \space (liquidity)= \frac{L}{L_T} \times \Delta L_f \space (liquidity)
+\text{E} \space (liquidity)= \frac{L}{L_T} \times \Delta L_f \space (liquidity)
 $$
 
 Trong đó:
 
-- $\text{Earn}$ là lợi tức bạn nhận được tính theo liquidity
-- $L$ Lượng liquidity của token bạn đang cung cấp
+- $\text{E}$ là lợi tức nhận được tính theo liquidity
+- $L$ Lượng liquidity đang cung cấp
 - $L_T$ Lượng liquidity của pool
 - $\Delta L_f$ Lượng phí mà người swap trả tính theo liquidity (tương đương $ f\Delta x$)
 
-Ví dụ cặp ETH/USDT ($0.3\%$) có liquidity là $8000$ và bạn có $1000$ LP token, khi đó với một lượt swap có phí bằng 100 liquidty, bạn sẽ nhận được:
+Ví dụ cặp ETH/USDT ($0.3\%$) có liquidity là $8000$ và ta có $1000$ LP token, khi đó với một lượt swap có phí bằng 100 liquidty, ta sẽ nhận được:
 
 $$
-\text{Earn} \space (liquidity) = \frac{1000}{8000} \times 100 = 12.5 \space (liquidity)
+\begin{align*}
+\text{E} \space (liquidity) &= \frac{1000}{8000} \times 100 \\
+&= 12.5 \space (liquidity)
+\end{align*}
 $$
 
 ### Trượt giá
@@ -258,9 +265,9 @@ $$
 
 Trong mô hình này, việc trượt giá thường xuyên xảy ra, đây là hiện tượng giá thực tế mà người dùng nhận được sau khi thực hiện một giao dịch không giống như giá được hiển thị ban đầu trên giao diện. Thường xảy ra ở những pool có lượng liquidity thấp và khối lượng giao dịch cao.
 
-Cụ thể, giao dịch của bạn được xử lí trong lúc có một lượng lớn các giao dịch khác được thực hiện, các giá trị được tính toán trong giao dịch của bạn sẽ khác (xa) so với các giá trị hiển thị trên giao diện, khi đó bạn sẽ không nhận được số token như bạn mong đợi.
+Cụ thể, khi một giao dịch được xử lí trong lúc có một lượng lớn các giao dịch khác được thực hiện, các giá trị được tính toán trong giao dịch này sẽ khác (xa) so với các giá trị hiển thị trên giao diện, khi đó chúng ta sẽ không nhận được số token như mong đợi.
 
-Do đó, hầu hết các DEX đều có một cơ chế trượt giá, bạn sẽ nhập vào một khoảng trượt giá mà bạn có thể chấp nhận được, nếu giá thực tế vượt quá giá bạn cho phép, giao dịch sẽ bị hủy.
+Do đó, hầu hết các DEX đều có một cơ chế trượt giá, chúng ta sẽ nhập vào một khoảng trượt giá có thể chấp nhận được, nếu giá thực tế vượt quá giá cho phép, giao dịch sẽ bị hủy.
 
 #### Cách tính
 
@@ -272,21 +279,20 @@ Lúc này, đã xảy ra trượt giá với độ trượt giá được tính 
 
 $$
 \begin{align*}
-\text{Slippage} \space (\%) &= \frac{| P_P - P_A |}{P_A} \times 100\% \\
-&= \frac{| 0.82494569794943252\ldots - 0.8910891089108911\ldots |}{0.82494569794943252} \times 100\% \\
-&= 0.08017910891089107\ldots \times 100\% \\
-&= 8.017910891089107\ldots \ldots \%
+\text{S} \space (\%) &= \frac{| P_P - P_A |}{P_A} \times 100\% \\
+&= \frac{| 0.82\ldots - 0.89\ldots |}{0.82\ldots} \times 100\% \\
+&= 0.08\ldots \times 100\% \\
+&= 8.01\ldots \ldots \%
 \end{align*}
 $$
 
 Trong đó:
 
+- $\text{S}$ là độ trượt giá
 - $P_P$ là giá tuyệt đối
 - $P_A$ là giá thực tế
 
-Như vậy đã xảy ra trượt giá $\approx 8\%$. Giả sử nếu bạn cài đặt trượt giá là $5\%$, giao dịch sẽ bị hủy.
-
-### Oracle và thao túng giá
+Như vậy đã xảy ra trượt giá $\approx 8\%$. Giả sử nếu chúng ta cài đặt độ trượt giá là $5\%$, giao dịch này sẽ bị hủy.
 
 ---
 

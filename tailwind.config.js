@@ -173,6 +173,10 @@ module.exports = {
               textAlign: 'center',
               color: theme('colors.gray.600'),
             },
+            'latex-display': {
+              textAlign: 'center',
+              overflowX: 'auto',
+            },
           },
         },
         dark: {
@@ -184,7 +188,6 @@ module.exports = {
                 color: `${theme('colors.primary.400')} `,
               },
               code: {
-                fontSize: '20rem',
                 color: theme('colors.primary.600'),
               },
             },
