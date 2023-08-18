@@ -216,15 +216,15 @@ Một số kỹ thuật khác như truebit và Arbitrum cũng đã được đ�
 
 Cadence là một Interpreted Language (Ngôn ngữ thông dịch) được thiết kế đặc biệt cho việc viết Smart Contract (Hợp đồng thông minh) trên Flow.
 
-Có cốt lõi là một ngôn ngữ Resource-Oriented Programming (Lập trình hướng Tài nguyên).
+Lấy ý tưởng từ ngôn ngữ Move của Diem (tên cũ là Libra, được phát hành bởi Facebook), Cadence có cốt lõi là một ngôn ngữ Resource-Oriented Programming (Lập trình hướng Tài nguyên).
 Đây là một mô hình mới kết hợp các Type (Loại) và Capability (Khả năng) của một Object (Đối tượng), gọi là Resource (Tài nguyên) dùng để đại diện cho một Digital Asset (Tài sản Kỹ thuật số).
 Do đó nó chỉ chỉ có thể tồn tại ở một vị trí tại một thời điểm, không thể được sao chép và không thể vô tình bị mất hoặc bị xóa và được quản lí xoay quanh các Capability của nó.
 
-Việc sử dụng bảo mật dựa trên khả năng, trong đó thực thi quyền truy cập vào các đối tượng chỉ bị hạn chế đối với chủ sở hữu của đối tượng và những người có tham chiếu hợp lệ đối với đối tượng đó. Đây là hình thức kiểm soát truy cập chính của Cadence.
+Việc sử dụng và các bảo mật đều dựa trên hệ thống Capability, trong đó thực thi quyền truy cập vào các đối tượng chỉ bị hạn chế đối với chủ sở hữu của Resource và những người có Reference (Tham chiếu) hợp lệ đối với đối tượng đó. Đây là hình thức kiểm soát truy cập chính của Cadence.
 
 #### Giải thích về Resource-Oriented Programming
 
-Để hiểu đơn giản, chúng ta sẽ đến với một ví dụ về một phiên chợ.
+Để hiểu đơn giản, chúng ta sẽ đến với một ví dụ về một khu chợ.
 
 ##### Đối với kiểu Ledger
 
@@ -256,6 +256,40 @@ Giả sử nếu kho bị cháy, chúng ta vẫn sẽ không bị bất ảnh h�
 Và cũng sẽ không ai có thể lén thay đổi thông tin của một thứ đang nằm trên tay chúng ta.
 
 Và tất nhiên, chúng ta hoàn toàn có thể hủy các quyền nếu không muốn bán nữa hoặc tặng hoàn toàn cho một ai đó mà không cần thông qua **Kho Lưu Trữ Trung Tâm**.
+
+##### Phân quyền
+
+Vì Resource về cơ bản là một Object, cho nên nó cũng chứa các function (hàm). Vì thế Resource ngoài việc dùng để đại diện cho một Digital Asset, nó còn có thể được sử dụng như một "tấm vé" để thực hiện một số hành động được hạn chế. Hay nói cách khác, Resource có tính phân quyền.
+
+Ví dụ, đối với khu chợ, chúng ta sẽ nâng cấp lên thành một nơi với nhiều người cho thuê sạp (diện tích) để bán hàng. Khi đó sẽ có 4 cấp độ là: **Chủ khu chợ**, các **Chủ sạp**, các **Thương nhân** và cuối cùng là **Khách hàng**.
+
+Mỗi người sẽ có một số quyền hạn - Capability cho các thao tác - function khác nhau, mà khi đó, các function sẽ được lưu trong Resource (ví dụ: chỉ **Thương nhân** mới có quyền quản lí và truy cập thông tin các **Khách hàng** của mình).
+Để thực hiện một hành động, chúng ta sẽ lấy Resource ra và gọi đến function tương ứng. Do đó nếu không có Resource đó, chúng ta sẽ không thể thực hiện được hành động đó.
+Và các resource này (nên) được cung cấp bởi một số điều kiện nhất định (ví dụ: chỉ khi thuê một sạp mới có thể trở thành **Thương nhân**).
+
+##### Reference và các quyền
+
+Khác với Phân quyền, thứ yêu cầu phải có Resource đó trên tay và sử dụng nó, tất cả mọi người có thể "mượn" Reference (Tham chiếu).
+
+Reference có thể hiểu như là một hình thức "mượn" một Resource rồi "photocoppy" nó ra thành một "bản sao".
+Khác với "bản chính", thứ bạn có thể tùy ý thao tác lên nó, "bản sao" chỉ cho phép bạn chỉ được thực hiện một số thao tác đã được quy định trước đó.
+Các thao tác này vẫn có thể ảnh hưởng đến "bản chính".
+
+Để hiểu rõ hơn, các quyền này có thể được cấp cho **Tất cả mọi người** (Public) hoặc **Chỉ một số người** (Private) tùy ý bởi chủ sở hữu của Resource đó:
+
+- Đối với các quyền được đặt là Public, chúng ta có thể tự do "mượn" bằng cách truy cập vào tài khoản của chủ sở hữu.
+- Đói với các quyền được đặt là Private, chúng ta buộc phải có một "bản sao" của Resource đó.
+  Chúng ta có thể có được bản sao bằng cách trực tiếp xin từ chủ sở hữu, hay làm cách nào đó để có nó trên tay rồi lén "photocopy".
+
+Như vậy, quay lại ví dụ trước, với một Resource là mặt hàng, chúng ta có thể chia thành các quyền như: **Truy cập vào thông tin mặt hàng** (Public) hay **Lấy mặt hàng đi bất cứ lúc nào** (Private).
+
+Ngoài ra, chúng ta có thể có các quyền khác cho Resource mặt hàng như:
+
+- Quyền xem nó (biết được màu sắc, hình dáng,...)
+- Quyền chụp ảnh nó
+- Quyền thay đổi nó (lấy đi hay thay đổi một vài linh kiện)
+- Quyền sử dụng nó (thực hiện các thao tác mà nó cung cấp)
+- Quyền xóa nỏ (chỉ người sở hữu - người có nó trên tay mới có thể làm điều này)
 
 #### 5 trụ cột của Cadence
 
