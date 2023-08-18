@@ -190,7 +190,6 @@ Cơ chế SPoCK có tính duy nhất. Nghĩa là, cho một chứng minh SPoCK $
 - **Execution**: Mỗi node Execution sẽ tạo ra một chứng minh SPoCK cho mỗi chuỗi transaction mà nó thực thi.
   Chứng minh này sẽ được tạo ra bằng cách sử dụng Private Key (Khóa bí mật) của node Execution và một Private Message (Thông điệp bí mật) liên quan đến chuỗi transaction.
 - **Verification**: Mỗi node Verification sẽ tạo ra một chứng minh SPoCK cho mỗi chuỗi transaction mà nó xác minh.
-
 - **Consensus**: Mỗi node Consensus sẽ xác minh tính hợp lệ của các chứng minh SPoCK bằng cách so sánh chúng với nhau.
   Nếu các chứng minh SPoCK được tạo ra từ cùng một Private Message, chúng sẽ được chấp nhận. Ngược lại, nếu chúng không tương thích, chúng sẽ bị từ chối.
 
@@ -290,6 +289,10 @@ Ngoài ra, chúng ta có thể có các quyền khác cho Resource mặt hàng n
 - Quyền thay đổi nó (lấy đi hay thay đổi một vài linh kiện)
 - Quyền sử dụng nó (thực hiện các thao tác mà nó cung cấp)
 - Quyền xóa nỏ (chỉ người sở hữu - người có nó trên tay mới có thể làm điều này)
+
+##### ROP và OOP
+
+Chắc hẳn mỗi developer chúng ta đều đã từng code Hệ thống Quản lí Sinh viên bằng OOP (Object-Oriented Programming), vậy hãy thử mô hình hóa lại nó bằng ROP thông qua các ví dụ trên và cảm nhận sự ảo diệu của phương pháp này nhé 😉
 
 #### 5 trụ cột của Cadence
 
