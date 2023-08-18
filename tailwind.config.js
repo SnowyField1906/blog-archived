@@ -205,28 +205,28 @@ module.exports = {
               fontSize: '56px',
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.wide'),
-              color: theme('colors.gray.900'),
+              color: theme('colors.gray.100'),
             },
             h2: {
               fontSize: '48px',
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.wide'),
-              color: theme('colors.gray.900'),
+              color: theme('colors.gray.100'),
             },
             h3: {
               fontSize: '30px',
               fontWeight: '600',
-              color: theme('colors.gray.900'),
+              color: theme('colors.gray.100'),
             },
             h4: {
               fontSize: '24px',
               fontWeight: '600',
-              color: theme('colors.gray.900'),
+              color: theme('colors.gray.100'),
             },
             'h5,h6': {
               fontSize: '20px',
               fontWeight: '500',
-              color: theme('colors.gray.900'),
+              color: theme('colors.gray.100'),
             },
             pre: {
               backgroundColor: theme('colors.gray.800'),
