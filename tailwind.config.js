@@ -101,20 +101,30 @@ module.exports = {
               code: { color: theme('colors.primary.400') },
             },
             h1: {
+              fontSize: '48px',
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.wide'),
               color: theme('colors.gray.900'),
             },
             h2: {
+              fontSize: '30px',
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.wide'),
               color: theme('colors.gray.900'),
             },
             h3: {
+              fontSize: '24px',
               fontWeight: '600',
               color: theme('colors.gray.900'),
             },
-            'h4,h5,h6': {
+            h4: {
+              fontSize: '20px',
+              fontWeight: '600',
+              color: theme('colors.gray.900'),
+            },
+            h5: {
+              fontSize: '16px',
+              fontWeight: '500',
               color: theme('colors.gray.900'),
             },
             pre: {
@@ -192,21 +202,31 @@ module.exports = {
               },
             },
             h1: {
+              fontSize: '56px',
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.wide'),
-              color: theme('colors.gray.100'),
+              color: theme('colors.gray.900'),
             },
             h2: {
+              fontSize: '48px',
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.wide'),
-              color: theme('colors.gray.100'),
+              color: theme('colors.gray.900'),
             },
             h3: {
+              fontSize: '30px',
               fontWeight: '600',
-              color: theme('colors.gray.100'),
+              color: theme('colors.gray.900'),
             },
-            'h4,h5,h6': {
-              color: theme('colors.gray.100'),
+            h4: {
+              fontSize: '24px',
+              fontWeight: '600',
+              color: theme('colors.gray.900'),
+            },
+            'h5,h6': {
+              fontSize: '20px',
+              fontWeight: '500',
+              color: theme('colors.gray.900'),
             },
             pre: {
               backgroundColor: theme('colors.gray.800'),

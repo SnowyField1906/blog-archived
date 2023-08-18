@@ -43,9 +43,9 @@ AMM hoạt động dựa trên một công thức toán học để định giá
 
 <figure>
 <img
-className="w-full flex justify-center"
-src="/static/images/posts/amm-curve.png"
-alt="Công thức tỉ lệ nghịch"
+    className="w-full flex justify-center"
+    src="/static/images/posts/amm-curve.png"
+    alt="Công thức tỉ lệ nghịch"
 />
 <figcaption>Source: uniswapv3book.com</figcaption>
 </figure>

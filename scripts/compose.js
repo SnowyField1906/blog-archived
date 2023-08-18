@@ -32,8 +32,11 @@ const genFrontMatter = (answers) => {
   draft: ${answers.draft === 'yes' ? true : false}
   summary: ${answers.summary ? answers.summary : ' '}
   layout: ${answers.layout}
-  thumbnail: ${answers.thumbnail ? answers.thumbnail : ''}
-  `
+  thumbnail: /static/images/thumbnails/${title
+    .toLowerCase()
+    .replace(/[^a-zA-Z0-9 ]/g, '')
+    .replace(/ /g, '-')
+    .replace(/-+/g, '-')}.png`
 
   frontMatter = frontMatter + '\n---'
 
@@ -69,11 +72,7 @@ inquirer
       type: 'list',
       choices: getLayouts,
     },
-    {
-      name: 'thumbnail',
-      message: 'Enter thumbnail url:',
-      type: 'input',
-    },
+    s,
   ])
   .then((answers) => {
     // Remove special characters and replace space with -
@@ -82,16 +81,17 @@ inquirer
       .replace(/[^a-zA-Z0-9 ]/g, '')
       .replace(/ /g, '-')
       .replace(/-+/g, '-')
+
     const frontMatter = genFrontMatter(answers)
     if (!fs.existsSync('data/posts')) fs.mkdirSync('data/posts', { recursive: true })
-    const filePath = `data/${answers.layout === 'NoteView' ? 'notes' : 'posts'}/${
+    const filePath = `data / ${answers.layout === 'NoteView' ? 'notes' : 'posts'} /${
       fileName ? fileName : 'untitled'
     }.md`
     fs.writeFile(filePath, frontMatter, { flag: 'wx' }, (err) => {
       if (err) {
         throw err
       } else {
-        console.log(`Post generated successfully at ${filePath}`)
+        console.log(`Post generated successfully at ${filePath} `)
       }
     })
   })
