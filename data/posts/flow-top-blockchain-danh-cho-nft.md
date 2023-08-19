@@ -5,14 +5,14 @@ tags: ['Flow', 'NFT', 'Blockchain']
 draft: false
 summary: Trong bài viết này chúng ta sẽ tìm hiểu về Flow - một Blockchain mới nhưng đã có rất nhiều thành công trong việc hỗ trợ cho các ứng dụng NFT và GameFi.
 layout: PostView
-thumbnail: '/static/images/thumbnails/flow-top-blockchain-danh-cho-nft.png'
+thumbnail: '/static/images/thumbnails/flow-top-Blockchain-danh-cho-nft.png'
 ---
 
-Trước khi NFT được biến đến rộng rãi vào năm 2021, thì vào năm 2017, CryptoKitties đã được khai sinh bởi DapperLabs và trở thành một trong những
-dự án NFT đầu tiên. Hiện tượng này đã gây sốt trong một khoảng thời gian dài và phần còn lại là lịch sử. Với số lượng user đông đảo, "cuộc cách mạng" CryptoKitties
-đã khiến cho Ethereum, Blockchain mà nó được xây dựng trên đó, trở nên tắc nghẽn và gây ra các vấn đề về tốc độ và phí transaction. Điều này
-đã khiến cho DapperLabs có một ý tưởng về một Blockchain lý tưởng dành riêng cho NFT và các Digital Asset (Tài sản kỹ thuật số) khác. Sau đó Flow ra đời và toàn bộ
-dự án CryptoKitties được chuyển sang đó.
+_Trước khi NFT được biến đến rộng rãi vào năm 2021, thì vào năm 2017, CryptoKitties đã được khai sinh bởi DapperLabs và trở thành một trong những
+dự án NFT đầu tiên. Hiện tượng này đã gây sốt trong một khoảng thời gian dài và phần còn lại là lịch sử. Với số lượng user đông đảo, "cuộc cách mạng" CryptoKitties đã khiến cho Ethereum, Blockchain mà nó được xây dựng trên đó, trở nên tắc nghẽn và gây ra các vấn đề về tốc độ và phí transaction._
+
+_Điều này đã khiến cho DapperLabs có một ý tưởng về một Blockchain lý tưởng dành riêng cho NFT và các Digital Asset (Tài sản kỹ thuật số) khác. Sau đó Flow ra đời và toàn bộ
+dự án CryptoKitties được chuyển sang đó._
 
 ## Tổng quan về Flow
 
@@ -22,12 +22,15 @@ Flow là một Blockchain layer 1 (tương tự như Ethereum) được thiết 
 Vì là một **Non-EVM Blockchain** (Blockchain không tương thích với EVM), nên thiết kế của Flow rất đặt biệt và khác xa với Ethereum và các
 Blockchain khác.
 
+Flow sử dụng Consensus Mechanism (Cơ chế Đồng thuận) là Proof-of-Stake.
+Vì network của Flow có 4 loại node khác nhau nên người dùng có thể stake (đặt cược) vào một trong các loại node đó để nhận lãi suất khác nhau.
+
 ### Khác biệt giữa Flow và Ethereum
 
 #### Nhanh chóng
 
 Mặc dù đã chuyển sang Proof-of-Stake vào năm 2022 nhưng Ethereum vẫn còn rất chậm, cụ thể tốc độ xử lí block là khoảng 12 giây/block.
-Trong khi đó, Flow có tốc độ xử lí block khoảng 2 giây/block
+Trong khi đó, Flow có tốc độ xử lí block khoảng 2 giây/block.
 
 #### Phí transaction thấp
 
@@ -64,8 +67,7 @@ Trong đó các node sẽ được chia thành 4 loại, mỗi loại chỉ th�
 
 Trong một network truyền thống, mỗi node sẽ phải lưu trữ trạng thái hoàn chỉnh của toàn bộ network cùng với xử lý tất các transaction trên chain.
 
-Do đó, các giải pháp mở rộng network Blockchain thường tập trung vào việc giảm tải các transaction khỏi chain chính để giảm tải cho network,
-và một trong những triển khai nổi tiếng nhất cho giải pháp này là **Sharding**.
+Do đó, các giải pháp mở rộng network Blockchain thường tập trung vào việc giảm tải các transaction khỏi chain chính để giảm tải cho network, và một trong những triển khai nổi tiếng nhất cho giải pháp này là **Sharding**.
 Đây là hình thức chia transaction thành nhiều phần gọi là **Shard** (Phân đoạn), giúp giảm độ trễ của network.
 Điều này có nghĩa là mỗi Shard trong một hệ thống như vậy chỉ chịu trách nhiệm xử lý một phần của khối lượng transaction tổng thể.
 
@@ -139,7 +141,7 @@ Cùng với các node Execution, chúng quyết định toàn bộ dữ liệu v
 
 #### Giới thiệu và ý nghĩa
 
-**Specialized Proof of Confidential Knowledge** (Siêu bằng chứng về Kiến thức mật) là một hệ thống được sử dụng trong blockchain để đảm bảo tính toàn vẹn và an ninh của các transaction.
+**Specialized Proof of Confidential Knowledge** (Siêu bằng chứng về Kiến thức mật) là một hệ thống được sử dụng trong Blockchain để đảm bảo tính toàn vẹn và an ninh của các transaction.
 Dựa trên **Zero-Knowledge Proof** (Bằng chứng về Kiến thức mật), SPoCK cho phép các node trong mạng chứng minh rằng họ đã thực hiện cùng một chuỗi transaction mà không cần tiết lộ thông tin chi tiết về quá trình thực hiện.
 
 Ý nghĩa của SPoCK là đảm bảo rằng các node trong mạng đã thực hiện cùng một chuỗi transaction mà không cần tiết lộ thông tin chi tiết về quá trình thực hiện.
@@ -150,7 +152,7 @@ Ngoài ra, SPoCK cũng giúp phát hiện và ngăn chặn các cuộc tấn cô
 
 ##### Định nghĩa 1
 
-SPoCK gồm 4 thuật toán
+Cơ chế SPoCK gồm 4 thuật toán
 
 - **SP-Setup**: Tạo ra các tham số công khai một cách ngẫu nhiên.
 - **SP-KeyGen**: Tạo ra cặp Public Key (Khóa công khai) và Private Key (Khóa bí mật) cho mỗi node tham gia vào hệ thống.
@@ -175,7 +177,7 @@ Cơ chế SPoCK an toàn trong việc chống lại giả mạo Key vì kẻ t�
 
 ##### Định nghĩa 6
 
-Cơ chế SPoCK an toàn chống lại việc giả mạo thông tin và khóa bí mật. Điều này đảm bảo rằng một kẻ tấn công không thể tạo ra một chứng minh SPoCK giả mạo mà không biết thông điệp bí mật tương ứng và không biết khóa bí mật tương ứng.
+Cơ chế SPoCK an toàn trong việc chống lại giả mạo Message và Private Key vì kẻ tấn công không thể tạo ra một chứng minh SPoCK giả mạo mà không biết Private Message cùng với Private Key tương ứng.
 
 ##### Định nghĩa 7
 
@@ -198,24 +200,24 @@ Cơ chế SPoCK có tính duy nhất. Nghĩa là, cho một chứng minh SPoCK $
 **Verifier's Dilemma** (Song đề Người xác minh) là một vấn đề phổ biến trong các Decentralized System (Hệ thống Phân tán), đặc biệt là trong các mạng Blockchain.
 Nó xảy ra khi các node tham gia trong hệ thống được giao nhiệm vụ xác minh công việc của các node khác, nhưng có động cơ để không thực hiện công việc này một cách trung thực.
 
-Trong mạng blockchain, Verifier's Dilemma có thể xảy ra khi các node xác minh các transaction trong một khối.
+Trong mạng Blockchain, Verifier's Dilemma có thể xảy ra khi các node xác minh các transaction trong một khối.
 Mặc dù các node được trả thưởng cho việc xác minh này, nhưng việc chấp nhận tất cả các kết quả mà không thực hiện xác minh sẽ cho chúng nhiều lợi nhuận nhất.
 Điều làm suy yếu khả năng chống lại các hành động xấu.
 
-Flow, một blockchain có hướng tiếp cận giải quyết Verifier's Dilemma thông qua kiến ​​trúc của nó kết hợp với SPoCK.
+Flow, một Blockchain có hướng tiếp cận giải quyết Verifier's Dilemma thông qua kiến ​​trúc của nó kết hợp với SPoCK.
 Trong Flow, các node Verification phải chứng minh rằng chúng biết về quá trình thực hiện của các transaction trong khối thông qua việc tạo ra chứng minh SPoCK.
 Nếu các node Verification không thực hiện xác minh đúng, chúng sẽ bị trừ điểm và các node Execution cũng sẽ bị trừ điểm nếu tạo ra kết quả sai.
 
 Điều này giúp giải quyết Verifier's Dilemma bằng cách tạo ra một cơ chế để đảm bảo tính trung thực cho các node Verification.
-Một số kỹ thuật khác như truebit và Arbitrum cũng đã được đề xuất để giải quyết Verifier's Dilemma trong các Decentralized System khác.
+Một số kỹ thuật khác như **truebit** và **Arbitrum** cũng đã được đề xuất để giải quyết Verifier's Dilemma trong các Decentralized System khác.
 
 ### Ngôn ngữ lập trình Cadence
 
 #### Giới thiệu
 
-Cadence là một Interpreted Language (Ngôn ngữ thông dịch) được thiết kế đặc biệt cho việc viết Smart Contract (Hợp đồng thông minh) trên Flow.
+Cadence là một Interpreted Language (Ngôn ngữ thông dịch) viết bằng Golang và được thiết kế đặc biệt cho việc viết Smart Contract (Hợp đồng thông minh) trên Flow.
 
-Lấy ý tưởng từ ngôn ngữ Move của Diem (tên cũ là Libra, được phát hành bởi Facebook), Cadence có cốt lõi là một ngôn ngữ Resource-Oriented Programming (Lập trình hướng Tài nguyên).
+Lấy ý tưởng từ ngôn ngữ Move của Diem (tên cũ là Libra, Blockchain được phát hành bởi Facebook), Cadence có cốt lõi là một ngôn ngữ Resource-Oriented Programming (Lập trình hướng Tài nguyên).
 Đây là một mô hình mới kết hợp các Type (Loại) và Capability (Khả năng) của một Object (Đối tượng), gọi là Resource (Tài nguyên) dùng để đại diện cho một Digital Asset (Tài sản Kỹ thuật số).
 Do đó nó chỉ chỉ có thể tồn tại ở một vị trí tại một thời điểm, không thể được sao chép và không thể vô tình bị mất hoặc bị xóa và được quản lí xoay quanh các Capability của nó.
 
