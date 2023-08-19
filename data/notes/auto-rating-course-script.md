@@ -11,13 +11,9 @@ layout: NoteView
 ## Guide
 
 - Open Course Evaluation in HCMUS Portal
-
 - Choose a specific course
-
 - Open DevChrome (F12)
-
 - Paste the code snippet to Console and press Enter
-
 - View the process in console
 
 ## Code snippet

@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: CambriaBold;
+  src: url('fonts/cambria/cambriab.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: CambriaItalic;
+  src: url('fonts/cambria/cambriai.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: CambriaBoldItalic;
+  src: url('fonts/cambria/cambriaz.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Cambria;
+  src: url('fonts/cambria/cambria.ttc') format('truetype');
+}
+
+@font-face {
+  font-family: Georgia;
+  src: url('fonts/georgia/GeorgiaPro-CondLight.ttf') format('truetype');
+}
+
 .task-list-item::before {
   @apply hidden;
 }
@@ -82,4 +107,24 @@ input:-webkit-autofill:focus {
 }
 .dark ::selection {
   background: #097c63;
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-track {
+  width: 12px;
+  border-radius: 12px;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background-clip: padding-box;
+  border-right: 4px solid transparent;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  background-color: #ab57e9;
+}
+
+.small-scroll::-webkit-scrollbar,
+.small-scroll::-webkit-scrollbar-track {
+  width: 8px;
+  border-radius: 8px;
 }

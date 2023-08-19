@@ -11,13 +11,9 @@ layout: NoteView
 ## Guide
 
 - Open [Rate Academic Results](https://portal1.hcmus.edu.vn/SinhVien.aspx?pid=211) in HCMUS Portal
-
 - Choose the academic year and semester you want to calculate grades for (or select "All" for all semesters).
-
 - Open DevChrome (F12)
-
 - Paste the code snippet to Console and press Enter
-
 - View the process in console
 
 **Node**: Citizenship Education, English, Physical Education, Informatics and subjects in which you have failed (final score < `5`) or have not received a grade will not be included.

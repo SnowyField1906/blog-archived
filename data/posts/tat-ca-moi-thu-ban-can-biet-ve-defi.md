@@ -12,6 +12,8 @@ _Hãy tưởng tượng rằng Blockchain là một cơ thể sống, khi đó t
 
 _Tuy nhiên, như bất kỳ mạch máu nào, hệ thống này cần phải được điều chỉnh và duy trì để đảm bảo dòng chảy suôn sẻ và cân đối. Đây chính là nhiệm vụ của DeFi, DeFi là tác nhân điều hòa, mang lại sự cân đối cho dòng tiền mã hóa trong hệ thống Blockchain._
 
+<img src='/static/images/thumbnails/tat-ca-moi-thu-ban-can-biet-ve-defi.png' alt="Tất cả mọi thứ bạn cần biết về DeFi" />
+
 ## Khái niệm của DeFi
 
 Là viết tắt của **Decentralized Finance**, DeFi là một dạng hệ thống tài chính phi tập trung được xây dựng trên nền tảng Blockchain với các logic được đặt trong Smart Contract. Điều này cho phép việc giao dịch, cho vay, đầu tư và các hoạt động tài chính khác diễn ra trực tiếp giữa các cá nhân mà không cần sự trung gian của các tổ chức tài chính truyền thống. DeFi mang lại sự minh bạch, tính toàn vẹn và tiềm năng cải thiện quyền kiểm soát cá nhân đối với tài sản và giao dịch.

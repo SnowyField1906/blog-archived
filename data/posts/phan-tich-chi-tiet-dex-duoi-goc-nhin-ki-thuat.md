@@ -12,6 +12,8 @@ _Trong hệ sinh thái DeFi, DEX đã nhanh chóng trở thành một phần qua
 
 _Trong bài viết này, chúng ta sẽ cùng nhau khám phá một cách chi tiết về cách hoạt động của DEX, tập trung vào hai mô hình phổ biến: Automated Market Maker (AMM) và Order Book. Bằng cách hiểu rõ cách mỗi mô hình hoạt động, chúng ta sẽ có cái nhìn sâu hơn về cách DEX đóng góp vào sự phát triển của hệ sinh thái DeFi._
 
+<img src='/static/images/thumbnails/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat.png' alt="Phân tích chi tiết DEX dưới góc nhìn kĩ thuật" />
+
 ## Giới thiệu về DEX
 
 ### Khái niệm
@@ -43,7 +45,7 @@ AMM hoạt động dựa trên một công thức toán học để định giá
 
 <figure>
 <img
-    className="w-full flex justify-center"
+    className="w-full md:w-1/2"
     src="/static/images/posts/amm-curve.png"
     alt="Công thức tỉ lệ nghịch"
 />

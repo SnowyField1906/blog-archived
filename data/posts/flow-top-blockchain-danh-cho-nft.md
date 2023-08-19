@@ -1,7 +1,7 @@
 ---
 title: Flow - Top Blockchain dành cho NFT
 date: '2023-08-16'
-tags: ['Flow', 'NFT', 'Blockchain']
+tags: ['Flow', 'Blockchain']
 draft: false
 summary: Trong bài viết này chúng ta sẽ tìm hiểu về Flow - một Blockchain mới nhưng đã có rất nhiều thành công trong việc hỗ trợ cho các ứng dụng NFT và GameFi.
 layout: PostView
@@ -9,10 +9,13 @@ thumbnail: '/static/images/thumbnails/flow-top-Blockchain-danh-cho-nft.png'
 ---
 
 _Trước khi NFT được biến đến rộng rãi vào năm 2021, thì vào năm 2017, CryptoKitties đã được khai sinh bởi DapperLabs và trở thành một trong những
-dự án NFT đầu tiên. Hiện tượng này đã gây sốt trong một khoảng thời gian dài và phần còn lại là lịch sử. Với số lượng user đông đảo, "cuộc cách mạng" CryptoKitties đã khiến cho Ethereum, Blockchain mà nó được xây dựng trên đó, trở nên tắc nghẽn và gây ra các vấn đề về tốc độ và phí transaction._
+dự án NFT đầu tiên. Hiện tượng này đã gây sốt trong một khoảng thời gian dài và phần còn lại là lịch sử.
+Với số lượng user đông đảo, "cuộc cách mạng" CryptoKitties đã khiến cho Ethereum, Blockchain mà nó được xây dựng trên đó, trở nên tắc nghẽn và gây ra các vấn đề về tốc độ và phí transaction._
 
 _Điều này đã khiến cho DapperLabs có một ý tưởng về một Blockchain lý tưởng dành riêng cho NFT và các Digital Asset (Tài sản kỹ thuật số) khác. Sau đó Flow ra đời và toàn bộ
 dự án CryptoKitties được chuyển sang đó._
+
+<img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/flow-top-Blockchain-danh-cho-nft.png" alt="Flow - Top Blockchain dành cho NFT" />
 
 ## Tổng quan về Flow
 
@@ -56,7 +59,7 @@ Giúp cho việc quản lí tài sản và các quyền là vô cùng dễ dàng
 Flow được thiết kế với kiến trúc đặt người dùng và các Digital Asset - Resource làm trung tâm, giúp cho Flow có nhiều tiện lợi hơn khi sử dụng so với các
 Blockchain khác.
 
-## Chi tiết về các đặc điểm đặc biệt của Flow
+## Chi tiết về các điểm đặc biệt của Flow
 
 ### Multi-role Node
 
@@ -109,7 +112,7 @@ Trong whitepaper của mình, Flow đã khẳng định việc này tăng hiệu
 
 <figure>
 <img
-    className="w-1/2 flex justify-center mx-auto"
+    className="w-full md:w-1/2 flex justify-center mx-auto"
     src="/static/images/posts/flow-nodes.gif"
     alt="Node đa vai trò"
 />
@@ -181,7 +184,7 @@ Cơ chế SPoCK an toàn trong việc chống lại giả mạo Message và Priv
 
 ##### Định nghĩa 7
 
-Cơ chế SPoCK có tính nghiêm ngặt. Nghĩa là, cho một chứng minh SPoCK $σ_a$ và hai Public Key $pk_a$ và $pk_b$, không thể tạo ra một chứng minh SPoCK $σ_a'$ khác mà cũng được xác minh bởi $\text{SP-Verify}(pk_a, σ_a', pk_b, σ_b)$.
+Cơ chế SPoCK có tính nghiêm ngặt. Nghĩa là, cho một chứng minh SPoCK $σ_a$ và hai Public Key $pk_a$ và $pk_b$, không thể tạo ra một chứng minh SPoCK $σ_{a'}$ khác mà cũng được xác minh bởi $\text{SP-Verify}(pk_a, σ_{a'}, pk_b, σ_b)$.
 
 ##### Định nghĩa 8
 

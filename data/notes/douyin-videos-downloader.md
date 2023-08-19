@@ -11,15 +11,10 @@ layout: NoteView
 ## Guide
 
 - Open link of user, example: https://www.douyin.com/user/MS4wLjABAAAA5A-hCBCTdv102baOvaoZqg7nCIW_Bn_YBA0Aiz9uYPY
-
 - Open DevChrome (F12)
-
 - Set delay in milisecond at `await waitforme(1000);` (optional)
-
 - Paste the code snippet to Console and press Enter
-
 - Enter `id` of video, fill `0` if you want to download all videos
-
 - View the process in Console
 
 ## Code snippet
