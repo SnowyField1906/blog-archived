@@ -52,7 +52,7 @@ export default function Timeline() {
             <SiLeetcode className="animate-none" />
           </span>
           <h3 className="text-base font-semibold text-gray-900 dark:text-white">
-            Part-time Blockchain Developer
+            Part-time Artificial Intelligence Researcher
             <span className="mr-2 ml-3 rounded bg-blue-100 px-2.5 py-0.5 text-sm font-medium text-blue-800 dark:bg-blue-200 dark:text-blue-800">
               Present
             </span>
@@ -61,7 +61,7 @@ export default function Timeline() {
             June 5th, 2023
           </time>
           <p className="mt-1 text-sm font-normal text-gray-600 dark:text-gray-400">
-            Individual developed and tested Smart Contracts for a DeFi project at LECLE Vietnam
+            Researching on the abiity and application of Artificial Intelligence
           </p>
         </li>
         <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">

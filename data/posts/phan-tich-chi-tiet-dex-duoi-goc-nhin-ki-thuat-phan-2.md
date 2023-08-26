@@ -88,7 +88,7 @@ Nếu sức mua quá mạnh dẫn đến liquidity tại giá $0.3940$ được 
 
 #### Nguyên tắc hoạt động của Spot Trading
 
-Spot Trading (Giao dịch Giao ngay) là một hình thức trade cơ bản nhất, người dùng chỉ đơn giản là mua hoặc bán một token như bình thường.
+**Spot Trading** (Giao dịch Giao ngay) là một hình thức trade cơ bản nhất, người dùng chỉ đơn giản là mua hoặc bán một token như bình thường.
 
 Hình thức này gồm 2 loại giao dịch chính là **Market Order** và **Limit Order**.
 
@@ -233,7 +233,7 @@ Lúc này, Order Book sẽ được cập nhật như bên dưới:
 
 #### Nguyên tắc hoạt động của Margin Trading
 
-Margin Trading (Giao dịch Ký quỹ) là một hình thức trade có thể kiếm được lợi nhuận rất cao, nhưng cũng có nguy cơ rủi ro rất lớn.
+**Margin Trading** (Giao dịch Ký quỹ) là một hình thức trade có thể kiếm được lợi nhuận rất cao, nhưng cũng có nguy cơ rủi ro rất lớn.
 
 Margin Trading cho phép mở một order giao dịch lớn hơn so với số token thực sự có thông qua việc sử dụng token vay từ sàn giao dịch bằng cơ chế đòn bẩy.
 Điều này cho phép tiềm năng tạo ra lợi nhuận lớn hơn từ biến động giá của tài sản, nhưng cũng đồng nghĩa với việc tăng rủi ro và khả năng mất vốn nhanh chóng.
@@ -251,9 +251,9 @@ chúng ta có thể mở position trị giá 100 USD với 10 USD equity và 90 
 
 ##### Leverage Ratio
 
-**Leverage Ratio** (Mức Đòn bẩy) là tỷ lệ giữa borrowed capital và equity.
+**Leverage Ratio** (Mức Đòn bẩy) là tỷ lệ giữa tổng trị giá và equity.
 Ví dụ, sử dụng đòn bẩy 10x thì tỷ lệ này là 10:1,
-có nghĩa là mỗi đơn vị equity cho phép mở position trị giá 10 đơn vị borrowed capital.
+có nghĩa là mỗi đơn vị equity cho phép mở position có trị giá 10 đơn vị.
 
 ##### Margin Call
 

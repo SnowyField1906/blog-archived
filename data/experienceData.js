@@ -11,10 +11,20 @@ const experienceData = [
     text3: 'Carrying out quality assurance tests to discover errors and optimize usability',
   },
   {
+    title: 'Artificial Intelligence Researcher',
+    company: 'LECLE Vietnam',
+    location: 'Ho Chi Minh City, Vietnam',
+    range: 'June 2023 - Present',
+    url: 'https://lecle.vn/',
+    text1: 'Having good performance in working and researching',
+    text2: 'Working closely with senior members and discussing jointly for solutions',
+    text3: 'Carrying out researching and developing AI models and products',
+  },
+  {
     title: 'Blockchain Developer',
     company: 'LECLE Vietnam',
     location: 'Ho Chi Minh City, Vietnam',
-    range: 'November 2022 - Present',
+    range: 'November 2022 - June 2023',
     url: 'https://lecle.vn/',
     text1: 'Having good performance in working and researching',
     text2:
