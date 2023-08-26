@@ -16,27 +16,25 @@ _Trong bài viết này, chúng ta sẽ cùng nhau khám phá một cách chi ti
 
 ## Giới thiệu về DEX
 
-### Khái niệm
-
 **Decentralized Exchange** (DEX) là nền tảng cho phép người dùng trao đổi các tài sản mã hoá mà không cần đến sự trung gian của ngân hàng hay tổ chức truyền thống.
 
 Một DEX bao gồm nhiều cặp tiền mã hóa để người dùng có thể trao đổi và mua bán trực tiếp các loại tiền mã hóa cho nhau. Hoạt động trên nguyên tắc của công nghệ Blockchain, DEX giúp tăng tính minh bạch, an toàn và ẩn danh trong giao dịch.
 
-Hai mô hình phổ biến trong DEX là **Automated Market Maker** (AMM) và **Order Book**. Trong đó AMM là mô hình được sử dụng rộng rãi nhất, trong khi mô hình Order Book lại được sử dụng nhiều hơn trong các sàn giao dịch tập trung, gọi là **Centralized Exchange** (CEX).
+Hai mô hình phổ biến trong DEX là **Automated Market Maker** (AMM) và **Order Book**.
+Trong đó AMM là mô hình được sử dụng rộng rãi nhất, trong khi mô hình Order Book lại được sử dụng nhiều hơn trong các sàn giao dịch tập trung, gọi là **Centralized Exchange** (CEX).
+
+## Mô hình Automated Market Maker (AMM)
 
 ### Các thuật ngữ cơ bản
 
-- **Token Pair** / **Pool**: Là cặp tiền mã hoá được sử dụng để trao đổi với nhau, thường kí hiệu là Base/Quote. Từ **Pool** thường được dùng cho AMM, còn **Token Pair** thường được dùng cho Order Book.
-- **Base**/**Quote Token**: Lần lượt là tiền mã hoá được dùng để giao dịch và định giá. Ví dụ trong cặp ETH/USDT, ETH là **Base Token** và USDT là **Quote Token**.
-- **Swap** / **Trade**: Là hành động trao đổi (có thể là mua hoặc bán) giữa hai token trong một cặp tiền mã hoá, **Swap** thường được dùng cho AMM, còn **Trade** thường được dùng cho Order Book.
-- **Liquidity**: Là số lượng thanh khoản của một cặp tiền mã hoá. Con số này biểu thị khả năng mua bán của một cặp tiền mã hoá.
-- **Liquidity Provider**: Là người cung cấp thanh khoản cho một cặp tiền mã hoá. LP sẽ nhận được phần thưởng từ phí swap.
+- **Pool**: Là cặp tiền mã hoá được sử dụng để trao đổi với nhau, thường kí hiệu là Base/Quote.
+- **Base**/**Quote Token**: Lần lượt là tiền mã hoá được dùng để **Giao dịch** và **Định giá**. Ví dụ trong cặp ETH/USDT, ETH là **Base Token** và USDT là **Quote Token**.
+- **Swap**: Lần lượt là hành động **Mua** và **Bán** một token trong một pool.
+- **Liquidity**: Là số lượng thanh khoản của một pool. Con số này biểu thị khả năng mua bán của một pool.
+- **Liquidity Provider**: Là người cung cấp thanh khoản cho một pool. LP sẽ nhận được phần thưởng từ phí swap.
 - **Execution Price**: Là giá trị thực tế mà một token được mua hoặc bán trong một giao dịch, đây là độ dài của đoạn thẳng nối 2 điểm giá (trước và sau) trên đồ thị.
 - **Slippage**: Là sự thay đổi giá của một token sau khi thực hiện swap. Slippage thường được tính bằng phần trăm.
-- **Spread**: Là sự chênh lệch giữa giá mua và giá bán của một token, dùng trong mô hình Order Book.
-- **Oracle**: Là một dịch vụ cung cấp giá trị của một token, thông thường được sử dụng để định giá token trong một cặp tiền mã hoá.
-
-## Mô hình Automated Market Maker (AMM)
+- **Oracle**: Là một dịch vụ cung cấp giá trị của một token, thông thường được sử dụng để định giá token trong một pool.
 
 ### Khái niệm và nguyên tắc hoạt động của AMM
 
@@ -296,6 +294,19 @@ Trong đó:
 
 Như vậy đã xảy ra trượt giá $\approx 8\%$. Giả sử nếu chúng ta cài đặt độ trượt giá là $5\%$, giao dịch này sẽ bị hủy.
 
+### Ưu nhược điểm của AMM
+
+#### Ưu điểm
+
+- **Đơn giản**: AMM là một mô hình đơn giản, dễ hiểu và dễ sử dụng. Phù hợp cho những người chỉ cần swap token một cách nhanh chóng mà không cần quan tâm đến những thứ khác.
+- **Không yêu cầu liquidity cao**: AMM vẫn có thể hoạt động tốt trong một thị trường có liquidity thấp, điều này rất thích hợp cho các DEX.
+
+#### Nhược điểm
+
+- **Trượt giá**: Trượt giá có thể thường xuyên xảy ra trên các AMM DEX. Một lệnh swap lớn, một pool đang có khối lượng giao dịch cao hoặc liquidity thấp đều dẫn đến trượt giá.
+- **Dễ bị tấn công**: Vì AMM là một mô hình đơn giản, nên nó khá dễ bị tấn công bởi nhiều cách.
+
 ---
 
-Ở phần 2, chúng ta đã tìm hiểu về cách hoạt động của một Order Book.
+Vậy là chúng ta đã đi qua cách hoạt động của mô hình AMM.
+Đến với [phần 2](https://blog-snowyfield.vercel.app/posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-2), chúng ta đã tìm hiểu về cách hoạt động của một Order Book.

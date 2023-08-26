@@ -46,10 +46,10 @@ module.exports = {
           300: '#CE9DF4',
           400: '#BD7AEE',
           500: '#AB57E9',
-          600: '#9C44C6',
-          700: '#8C31A3',
-          800: '#7D1E80',
-          900: '#6D1A6A',
+          600: '#8D37CC',
+          700: '#7122AB',
+          800: '#5E1B8F',
+          900: '#490C75',
         },
         secondary: {
           100: '#FDD1D9',
@@ -103,13 +103,11 @@ module.exports = {
             h1: {
               fontSize: '38px',
               fontWeight: '900',
-              letterSpacing: theme('letterSpacing.wide'),
               color: theme('colors.gray.900'),
             },
             h2: {
               fontSize: '34px',
               fontWeight: '900',
-              letterSpacing: theme('letterSpacing.wide'),
               color: theme('colors.gray.900'),
             },
             h3: {
@@ -200,6 +198,12 @@ module.exports = {
               maxWidth: '100%',
               height: 'auto',
             },
+            table: {
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              width: 'auto',
+              tableLayout: 'auto',
+            },
           },
         },
         dark: {
@@ -217,13 +221,11 @@ module.exports = {
             h1: {
               fontSize: '38px',
               fontWeight: '900',
-              letterSpacing: theme('letterSpacing.wide'),
               color: theme('colors.gray.100'),
             },
             h2: {
               fontSize: '34px',
               fontWeight: '900',
-              letterSpacing: theme('letterSpacing.wide'),
               color: theme('colors.gray.100'),
             },
             h3: {
@@ -384,5 +386,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('tailwindcss/nesting')(require('postcss-nesting')),
+  ],
 }

@@ -133,7 +133,7 @@ export default function PostView({ frontMatter, toc, authorDetails, next, prev, 
                       </h2>
                       <div className="flex flex-wrap">
                         {tags.map((tag) => (
-                          <Tag key={tag} text={tag} />
+                          <Tag page="blog" key={tag} text={tag} />
                         ))}
                       </div>
                     </div>

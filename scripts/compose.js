@@ -32,11 +32,12 @@ const genFrontMatter = (answers) => {
   draft: ${answers.draft === 'yes' ? true : false}
   summary: ${answers.summary ? answers.summary : ' '}
   layout: ${answers.layout}
-  thumbnail: /static/images/thumbnails/${title
-    .toLowerCase()
-    .replace(/[^a-zA-Z0-9 ]/g, '')
-    .replace(/ /g, '-')
-    .replace(/-+/g, '-')}.png`
+  `
+  // thumbnail: /static/images/thumbnails/${answers.title
+  //     .toLowerCase()
+  //     .replace(/[^a-zA-Z0-9 ]/g, '')
+  //     .replace(/ /g, '-')
+  //     .replace(/-+/g, '-')}.png
 
   frontMatter = frontMatter + '\n---'
 
@@ -72,7 +73,6 @@ inquirer
       type: 'list',
       choices: getLayouts,
     },
-    s,
   ])
   .then((answers) => {
     // Remove special characters and replace space with -
