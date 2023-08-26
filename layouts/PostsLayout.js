@@ -32,7 +32,7 @@ export default function PostsLayout({
             {Object.keys(tags).length === 0 && 'No tags found.'}
             {sortedTags.map((t) => (
               <div key={t}>
-                <Tag page="posts" text={t} num={tags[t]} />
+                <Tag page="posts" text={t} num={tags[t]} isCurrent={t === title} />
                 <Link
                   href={`posts/tag/${kebabCase(t)}`}
                   className="text-sm font-semibold text-gray-600 dark:text-gray-300"

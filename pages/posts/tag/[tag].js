@@ -4,17 +4,16 @@ import PostsLayout from '@/layouts/PostsLayout'
 import generateRss from '@/lib/generate-rss'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { getAllTags } from '@/lib/tags'
-import kebabCase from '@/lib/utils/kebabCase'
 import fs from 'fs'
 import path from 'path'
 
 const root = process.cwd()
 
 export async function getStaticPaths() {
-  const tags = await getAllTags('posts')
+  const [, formattedTag] = await getAllTags('posts')
 
   return {
-    paths: Object.keys(tags).map((tag) => ({
+    paths: formattedTag.map((tag) => ({
       params: {
         tag: tag,
       },
@@ -25,11 +24,10 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const posts = await getAllFilesFrontMatter('posts')
-  const tags = await getAllTags('posts')
+  const [tags, formattedTags] = await getAllTags('posts')
+  const tag = Object.keys(tags)[formattedTags.indexOf(params.tag)]
 
-  const filteredPosts = posts.filter(
-    (post) => post.draft !== true && post.tags.map((t) => kebabCase(t)).includes(params.tag)
-  )
+  const filteredPosts = posts.filter((post) => post.draft !== true && post.tags.includes(tag))
 
   // rss
   if (filteredPosts.length > 0) {
@@ -39,19 +37,17 @@ export async function getStaticProps({ params }) {
     fs.writeFileSync(path.join(rssPath, 'feed.xml'), rss)
   }
 
-  return { props: { posts: filteredPosts, tag: params.tag, tags: tags } }
+  return { props: { posts: filteredPosts, tag: tag, tags: tags } }
 }
 
 export default function Tag({ posts, tag, tags }) {
-  const title = tag[0].toUpperCase() + tag.split(' ').join('-').slice(1)
-
   return (
     <>
       <TagSEO
-        title={`${title} - ${siteMetadata.author}`}
+        title={`${tag} - ${siteMetadata.author}`}
         description={`${tag} tag - ${siteMetadata.author}`}
       />
-      <PostsLayout posts={posts} title={title} tags={tags} />
+      <PostsLayout posts={posts} title={tag} tags={tags} />
     </>
   )
 }

@@ -14,7 +14,7 @@ export async function getStaticProps() {
     totalNotes: Math.ceil(notes.length / NOTES_PER_PAGE),
   }
 
-  const tags = await getAllTags('notes')
+  const [tags] = await getAllTags('notes')
 
   return { props: { initialDisplayNotes, notes, pagination, tags } }
 }

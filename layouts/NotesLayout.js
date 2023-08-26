@@ -31,7 +31,7 @@ export default function NotesLayout({
             {Object.keys(tags).length === 0 && 'No tags found.'}
             {sortedTags.map((t) => (
               <div key={t}>
-                <Tag page="notes" text={t} num={tags[t]} />
+                <Tag page="notes" text={t} num={tags[t]} isCurrent={t === title} />
                 <Link
                   href={`notes/tag/${kebabCase(t)}`}
                   className="text-sm font-semibold text-gray-600 dark:text-gray-300"

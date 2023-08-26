@@ -4,17 +4,16 @@ import NotesLayout from '@/layouts/NotesLayout'
 import generateRss from '@/lib/generate-rss'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { getAllTags } from '@/lib/tags'
-import kebabCase from '@/lib/utils/kebabCase'
 import fs from 'fs'
 import path from 'path'
 
 const root = process.cwd()
 
 export async function getStaticPaths() {
-  const tags = await getAllTags('notes')
+  const [, formattedTags] = await getAllTags('notes')
 
   return {
-    paths: Object.keys(tags).map((tag) => ({
+    paths: formattedTags.map((tag) => ({
       params: {
         tag: tag,
       },
@@ -25,33 +24,30 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const notes = await getAllFilesFrontMatter('notes')
-  const tags = await getAllTags('notes')
+  const [tags, formattedTags] = await getAllTags('notes')
+  const tag = Object.keys(tags)[formattedTags.indexOf(params.tag)]
 
-  const filteredPosts = notes.filter(
-    (post) => post.draft !== true && post.tags.map((t) => kebabCase(t)).includes(params.tag)
-  )
+  const filteredNotes = notes.filter((note) => note.draft !== true && note.tags.includes(tag))
 
   // rss
-  if (filteredPosts.length > 0) {
-    const rss = generateRss(filteredPosts, `notes/tag/${params.tag}/feed.xml`)
+  if (filteredNotes.length > 0) {
+    const rss = generateRss(filteredNotes, `notes/tag/${params.tag}/feed.xml`)
     const rssPath = path.join(root, 'public', 'notes', 'tag', params.tag)
     fs.mkdirSync(rssPath, { recursive: true })
     fs.writeFileSync(path.join(rssPath, 'feed.xml'), rss)
   }
 
-  return { props: { notes: filteredPosts, tag: params.tag, tags: tags } }
+  return { props: { notes: filteredNotes, tag: tag, tags: tags } }
 }
 
 export default function Tag({ notes, tag, tags }) {
-  const title = tag[0].toUpperCase() + tag.split(' ').join('-').slice(1)
-
   return (
     <>
       <TagSEO
-        title={`${title} - ${siteMetadata.author}`}
+        title={`${tag} - ${siteMetadata.author}`}
         description={`${tag} tag - ${siteMetadata.author}`}
       />
-      <NotesLayout notes={notes} title={title} tags={tags} />
+      <NotesLayout notes={notes} title={tag} tags={tags} />
     </>
   )
 }

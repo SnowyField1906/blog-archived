@@ -13,7 +13,7 @@ export async function getStaticProps() {
     currentPage: 1,
     totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
   }
-  const tags = await getAllTags('posts')
+  const [tags] = await getAllTags('posts')
 
   return { props: { initialDisplayPosts, posts, pagination, tags } }
 }
