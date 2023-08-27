@@ -180,7 +180,7 @@ export default function Now(currentlyReading) {
             </div>
           </div>
         </div>
-        <div className="justify-center text-center text-2xl font-medium text-gray-200 dark:text-gray-600">
+        <div className="mt-10 justify-center text-center text-2xl font-medium text-gray-600 dark:text-gray-400">
           &#126;&#126; Present &#126;&#126;
         </div>
         <div className="py-4">
@@ -202,10 +202,17 @@ export default function Now(currentlyReading) {
             still find myself tangled up with many aspects and having to postpone it.
           </p>
         </div>
-        <div className="justify-center text-center text-2xl font-medium text-gray-200 dark:text-gray-600">
+        <div className="mt-10 justify-center text-center text-2xl font-medium text-gray-600 dark:text-gray-400">
           &#126;&#126; Preferences &#126;&#126;
         </div>
         <div className="py-4">
+          <p>
+            I have a deep passion for knowledge and research, particularly in Mathematics, Science,
+            and Spirituality also. I'm drawn to abstract and enigmatic concepts that challenge
+            understanding. My choices consistently lean towards the atypical and out of the
+            ordinary. Sometimes I hate this.
+          </p>
+          <br />
           <p>
             My preferred destinations are Japan, Taiwan, and especially Nordic countries. But there
             is no place I love more than Vietnam, my born-and-raised home.
@@ -216,44 +223,152 @@ export default function Now(currentlyReading) {
             predominant purple color scheme. Additionally, I also like blue, white, and black.
           </p>
           <br />
-          <p>
-            I've been slowly building this website, trying to share interesting things with anyone
-            who wants to read it.{' '}
-            <Link
-              href={'https://www.swyx.io/learn-in-public'}
-              className="special-underline-new no-underline dark:text-gray-100 hover:dark:text-gray-100"
-            >
-              This article
-            </Link>{' '}
-            is a great reason to start your blog.
-          </p>
         </div>
-        <div className="justify-center text-center text-2xl font-medium text-gray-200 dark:text-gray-600">
+        <div className="mt-10 justify-center text-center text-2xl font-medium text-gray-600 dark:text-gray-400">
           &#126;&#126; Music &#126;&#126;
         </div>
         <div className="py-4">
           <p>
             I have a special affection for Rap, Hip-hop, and R&B music. However, I exclusively
             listen to Vietnamese songs because my ears are not accustomed to foreign languages, and
-            I have a strong preference for meaningful lyrics over melodies.
+            I enjoy getting immersed in the lyrics of a song passively rather than the melody.
           </p>
           <br />
           <p>
-            I have a fondness for purple, all shades of purple. That's why this website has a
-            predominant purple color scheme. Additionally, I also like blue, white, and black.
+            My favourite rapper is <Link href={'https://www.youtube.com/@EvBRecords'}>B Ray</Link>,
+            he has a profound personal significance to me. His music has accompanied me through
+            various stages of my life, and his lyrics resonate deeply with my experiences.
           </p>
           <br />
           <p>
-            I've been slowly building this website, trying to share interesting things with anyone
-            who wants to read it.{' '}
+            Lately, I've been looping{' '}
+            <Link href={'https://www.youtube.com/@HustlangRecord'}>Hustlang Robber</Link> songs
+            quite a bit. However, if I could recommend some rappers to you, they would be{' '}
+            <Link href={'https://www.youtube.com/@hoanglongmck'}>MCK</Link>,{' '}
+            <Link href={'https://www.youtube.com/@wxrdie'}>Wxrdie</Link>, and{' '}
+            <Link href={'https://www.youtube.com/@BinzDaPoet'}>Binz</Link>.
+          </p>
+          <br />
+          <p>
+            I'm a Spotify addict, you can check out my Spotify stats{' '}
+            <Link href={'https://blog-snowyfield.vercel.app/stats'}>here</Link>. By the way, this is
+            the{' '}
             <Link
-              href={'https://www.swyx.io/learn-in-public'}
-              className="special-underline-new no-underline dark:text-gray-100 hover:dark:text-gray-100"
+              href={'https://open.spotify.com/playlist/0J9wMOS5qXCWnTCk5hPgIY?si=9b36b1607c1e42f2'}
             >
-              This article
+              Spotify playlist
             </Link>{' '}
-            is a great reason to start your blog.
+            including all of my treasured songs.
           </p>
+        </div>
+        <div className="mt-10 justify-center text-center text-2xl font-medium text-gray-600 dark:text-gray-400">
+          &#126;&#126; Movie &#126;&#126;
+        </div>
+        <div className="py-4">
+          <p>I have a special love on anime, but I don't have much time to watch.</p>
+          <br />
+          <p>
+            My go-to genres are Supernatural, Drama, and Romance. An anime movie blending all three
+            is a magnum opus to me. A romantic love, gripping with drama's touch, and spiced up with
+            supernatural plot twists. Absolutely astounding, isn't it?
+          </p>
+          <br />
+          <p>
+            Besides anime, I also enjoy indulging in J-dramas, Documentaries, and Science films.
+            However, I specifically prefer movies over series due to my lack of patience.
+          </p>
+        </div>
+        <div className="mt-10 justify-center text-center text-2xl font-medium text-gray-600 dark:text-gray-400">
+          &#126;&#126; Personality &#126;&#126;
+        </div>
+        <div className="py-4">
+          <p>
+            While I'm not strictly a Jungian, I find that delving into it occasionally helps unearth
+            some of my traits that I have never realized. Describing myself is challenging, so I
+            borrow those ides to do aid in self-expression.
+          </p>
+          <br />
+          <p>
+            It's fortunate that mine is exactly INFJ type, which means all aspects of my being
+            interlock flawlessly and seamlessly with every aspect of INFJ's. Nevertheless, it's
+            prone to lead me entering the negative{' '}
+            <Link href={'https://introvertedgrowth.com/ni-ti-loop/'}>Ni-Ti Loop</Link>, which makes
+            me incredibly draining.
+          </p>
+          <br />
+          <p>Here's a bit more about me:</p>
+          <br />
+          <ul className="list-inside list-disc">
+            <li>
+              <b>MBTI</b> (Jung theory) &nbsp;—&nbsp; Code:{' '}
+              <Link href={'https://personalityjunkie.com/the-infj/'}>INFJ</Link> &nbsp;
+              <i>
+                (Dominant: Ni &nbsp;•&nbsp; Auxiliary: Fe &nbsp;•&nbsp; Tertiary: Ti &nbsp;•&nbsp;
+                Inferior: Se)
+              </i>
+            </li>
+            <li>
+              <b>Enneagram</b> &nbsp;—&nbsp; Code:{' '}
+              <Link
+                href={
+                  'https://enneagramuniverse.com/enneagram/learn/enneagram-types/enneagram-type-4-the-individualist/'
+                }
+              >
+                4
+              </Link>{' '}
+              &nbsp;<i>(Triad: Heart)</i> &nbsp;•&nbsp; Wing:{' '}
+              <Link
+                href={
+                  'https://enneagramuniverse.com/enneagram/learn/enneagram-wings/enneagram_4w5/'
+                }
+              >
+                5
+              </Link>{' '}
+              &nbsp;•&nbsp; Instinctual Variant:{' '}
+              <Link href={'https://introvertedgrowth.com/so-sp-2/'}>SO/SP</Link> &nbsp;•&nbsp;
+              Tritype:{' '}
+              <Link
+                href={
+                  'https://personalityprofilinghell.tumblr.com/post/134436263161/my-tritype-is-4-6-1-what-does-that-actually'
+                }
+              >
+                461
+              </Link>
+            </li>
+            <li>
+              <b>Socionics</b> &nbsp;—&nbsp; Code:{' '}
+              <Link href={'https://classicsocionics.wordpress.com/augusta-eii/'}>EII</Link> &nbsp;
+              <i>
+                (Ego Blocks: Fi-Ne &nbsp;•&nbsp; Super-Ego Blocks: Ti-Se &nbsp;•&nbsp; Super-Id
+                Blocks: Te-Si &nbsp;•&nbsp; Id Blocks: Fe-Ni)
+              </i>
+            </li>
+            <li>
+              <b>Global 5</b> (SLOAN) &nbsp;—&nbsp; Code:{' '}
+              <Link href={'https://similarminds.com/global5/rloai.html'}>RLOAI</Link>
+            </li>
+            <li>
+              <b>Attitudinal Psyche</b>: &nbsp;—&nbsp; Code:{' '}
+              <Link href={'https://www.attitudinalpsyche.com/personality-profiles/exi/levf/'}>
+                LEVF
+              </Link>{' '}
+              &nbsp;
+              <i>
+                (Attitude: 4F &nbsp;•&nbsp; Positive Disposition: Fo+ &nbsp;•&nbsp; Negative
+                Disposition: Fs-)
+              </i>
+            </li>
+            <li>
+              <b>Four Temperaments</b>: &nbsp;—&nbsp; Code:{' '}
+              <Link
+                href={
+                  'https://plus.catholicmatch.com/temperaments/melancholic/melancholic-phlegmatic'
+                }
+              >
+                Melancholy-Phlegmatic
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </>

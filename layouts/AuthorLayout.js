@@ -57,7 +57,7 @@ export default function AuthorLayout({ children, frontMatter }) {
               </a>
             </div>
           </div>
-          <div className="prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2">
+          <div className="prose-base max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2">
             <RoughNotation
               type="bracket"
               brackets={['left', 'right']}
@@ -73,14 +73,14 @@ export default function AuthorLayout({ children, frontMatter }) {
                 <span className="font-semibold">Blockchain Developer</span> at{' '}
                 <Link
                   href={'https://lecle.vn'}
-                  className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
+                  className="special-underline hover:text-white dark:hover:text-white"
                 >
                   LECLE Vietnam
                 </Link>
                 . And I'm also involved in a DEX project at{' '}
                 <Link
                   href={'https://mama.exchange'}
-                  className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
+                  className="special-underline hover:text-white dark:hover:text-white"
                 >
                   Mama Exchange
                 </Link>
@@ -108,13 +108,16 @@ export default function AuthorLayout({ children, frontMatter }) {
               </RoughNotation>
             </p>
             <p>
+              I've been slowly building this website, trying to share interesting things with anyone
+              who wants to read it.{' '}
+              <Link href={'https://www.swyx.io/learn-in-public'}>This article</Link> is a great
+              reason to start your blog.
+            </p>
+            <p>
               I am a strong advocate for open source and I am always interested in working on new
               projects with new people. Feel free to reach out if you have anything to talk about,
               you can reach me through{' '}
-              <Link
-                href={'mailto:snowyfield1906@gmail.com'}
-                className="special-underline-new no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
-              >
+              <Link href={'mailto:snowyfield1906@gmail.com'}>
                 Mail
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -131,10 +134,7 @@ export default function AuthorLayout({ children, frontMatter }) {
                 </svg>
               </Link>{' '}
               or{' '}
-              <Link
-                href={'https://www.messenger.com/t/snowyfield1906'}
-                className="special-underline-new no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
-              >
+              <Link href={'https://www.messenger.com/t/snowyfield1906'}>
                 Messenger
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -160,10 +160,7 @@ export default function AuthorLayout({ children, frontMatter }) {
               I learnt how to build this site from the most awesome people in the community:
               <ul>
                 <li>
-                  <Link
-                    href={'https://github.com/timlrx/tailwind-nextjs-starter-blog'}
-                    className="special-underline-new no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
-                  >
+                  <Link href={'https://github.com/timlrx/tailwind-nextjs-starter-blog'}>
                     Timothy's Next.js and Tailwind CSS template
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -182,10 +179,7 @@ export default function AuthorLayout({ children, frontMatter }) {
                   : Template starter where I bootstrapped the project.
                 </li>
                 <li>
-                  <Link
-                    href={'https://www.einargudni.com/'}
-                    className="special-underline-new no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
-                  >
+                  <Link href={'https://www.einargudni.com/'}>
                     Einar Guðjónsson
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
