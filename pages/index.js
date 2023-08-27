@@ -226,9 +226,15 @@ export default function Home({ posts }) {
             </div>
           </div>
         </div>
-        <h2 className="flex self-center pb-6 font-lora text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl md:text-5xl">
-          Latest
-        </h2>
+        <div className="pb-6">
+          <h1 className="font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-4xl md:leading-14">
+            Latest
+          </h1>
+          <p className="text-md leading-7 text-gray-600 dark:text-gray-400">
+            There are my latest posts, if you don't see it change over time, it means I'm struggling
+            with my life 😂
+          </p>
+        </div>
         <hr className="border-gray-200 dark:border-gray-700" />
         <ul>
           {!posts.length && 'No posts found.'}

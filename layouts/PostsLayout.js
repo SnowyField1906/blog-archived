@@ -28,6 +28,12 @@ export default function PostsLayout({
     <>
       <div className="mx-auto max-w-6xl divide-y divide-gray-400">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+          <h1 className="font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+            {title}
+          </h1>
+          <p className="text-md leading-7 text-gray-600 dark:text-gray-400">
+            I post about my knowledge and experience here, I hope you find something useful.
+          </p>
           <div className="flex flex-wrap">
             {Object.keys(tags).length === 0 && 'No tags found.'}
             {sortedTags.map((t) => (
@@ -40,9 +46,6 @@ export default function PostsLayout({
               </div>
             ))}
           </div>
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            {title}
-          </h1>
           <div className="relative max-w-lg">
             <input
               aria-label="Search articles"

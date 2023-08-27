@@ -26,9 +26,12 @@ export default function AuthorLayout({ children, frontMatter }) {
       <PageSEO title={`About - ${name}`} description={`A little trivia me`} />
       <div className="">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5 md:pl-16">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <h1 className="font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
             About
           </h1>
+          <p className="text-md leading-7 text-gray-600 dark:text-gray-400">
+            I put technical details about me and this blog here.
+          </p>
         </div>
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
           <div className="flex flex-col items-center space-x-2 pt-8 xl:sticky xl:top-0">
@@ -203,11 +206,15 @@ export default function AuthorLayout({ children, frontMatter }) {
         </div>
         <div className="mt-10 md:pl-16">
           <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-            <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+            <h1 className="font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-4xl md:leading-14">
               Experience
             </h1>
+            <p className="text-md leading-7 text-gray-600 dark:text-gray-400">
+              This is about my work experience, I wish it would increase more and more in the
+              future.
+            </p>
           </div>
-          <div className="max-w-none pt-8 pb-8 xl:col-span-2">
+          <div className="max-w-none  pb-8 xl:col-span-2">
             {experienceData.map((d) => (
               <Experience
                 key={d.company}

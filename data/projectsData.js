@@ -21,7 +21,7 @@ const projectsData = [
     tech3: 'Flow CLI',
   },
   {
-    title: 'MamaExchange - Swap',
+    title: 'MamaExchange - AMM',
     description:
       'Decentralized Exchange (Uniswap-V3 alike) which built on Flow protocol - Multi-pool swaps.',
     imgSrc: '',

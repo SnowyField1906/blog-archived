@@ -176,6 +176,9 @@ module.exports = {
             },
             'blockquote p:first-of-type::before': false,
             'blockquote p:last-of-type::after': false,
+            'p:first-of-type': {
+              textIndent: '0px',
+            },
             p: {
               textIndent: '30px',
               textAlign: 'justify',
