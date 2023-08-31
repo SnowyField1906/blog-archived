@@ -92,7 +92,7 @@ Cụ thể sau 20 lần thử:
 
 $$
 \begin{aligned}
-P(\text{Alice chứng minh sai}) &= (1/2)^{20} \\
+P(\text{Alice nói dốiiiiiiiiiii}) &= (1/2)^{20} \\
 &\approx 9.536 \times 10^{-7}
 \end{aligned}
 $$

@@ -52,7 +52,7 @@ const LayoutWrapper = ({ children }) => {
                       </Link>
                     </div>
                   ))}
-                  <div className="2xl:hidden">
+                  <div className="xl:hidden">
                     {segments.length === 0 && (
                       <Typewriter
                         options={{
@@ -65,7 +65,7 @@ const LayoutWrapper = ({ children }) => {
                   </div>
                 </div>
               </Link>
-              <div className="hidden 2xl:flex">
+              <div className="hidden xl:block">
                 <Typewriter
                   options={{
                     strings: [],

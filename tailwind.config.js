@@ -189,7 +189,7 @@ module.exports = {
               textAlign: 'center',
               color: theme('colors.gray.600'),
             },
-            'latex-display': {
+            '[class~="math"]': {
               textAlign: 'center',
               overflowX: 'auto',
             },
