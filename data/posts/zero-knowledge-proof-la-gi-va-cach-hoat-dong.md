@@ -20,6 +20,7 @@ _Tuy nhiên, người dùng ngày càng phải đối mặt với các vấn đ�
 và được giới thiệu lần đầu tiên vào năm 1985 bởi Shafi Goldwasser, Silvio Micali, và Charles Rackoff.
 
 ZKP hoạt động dựa trên phương pháp là một bên **Prover** (Người chứng minh) chứng minh với bên **Verifier** (Người xác minh) rằng một thông tin (tuyên bố, mệnh đề,...) là đúng hoặc sai mà không cần phải tiết lộ bất kỳ thông tin nào khác.
+Ngoài ra, còn có một bên là **Key Generator** (Trình tạo Khóa) tạo ra các Private Key (Khóa Bí mật) và Public Key (Khóa Công khai) để sử dụng trong quá trình chứng minh.
 
 Có thể hiểu đơn giản là, khi chúng ta bị yêu cầu chứng minh rằng mình đã làm một điều gì đó, chẳng hạn như giải một bài toán.
 Thông thường, ta có thể sẽ phải giải lại toàn bộ bài toán đó dưới sự giám sát của người yêu cầu.
@@ -92,7 +93,7 @@ Cụ thể sau 20 lần thử:
 
 $$
 \begin{aligned}
-P(\text{Alice nói dốiiiiiiiiiii}) &= (1/2)^{20} \\
+P(\text{Alice nói dối}) &= (1/2)^{20} \\
 &\approx 9.536 \times 10^{-7}
 \end{aligned}
 $$
@@ -184,6 +185,48 @@ Có nghĩa là, cả Alice và Bob đều không có động cơ nào để làm
 
 Mặt khác, Prover sẽ luôn muốn chứng minh rằng khẳng định của mình là đúng và Verifier sẽ luôn muốn chứng minh rằng khẳng định của Prover là sai đến khi hoàn toàn bị thuyết phục.
 
+## Key Generator và Trusted Setup
+
+### Key Generator
+
+**Key Generator** (Trình tạo Khóa) là một bên thứ ba trong quá trình chứng minh, nó có nhiệm vụ tạo ra các Private Key (Khóa Bí mật) và Public Key (Khóa Công khai) để sử dụng trong quá trình chứng minh.
+
+Các key thường được tạo dựa trên Elliptic Curve (Đường cong Elliptic), đường cong này được xác định bởi phương trình:
+
+$$
+y^2 = x^3 + ax + b
+$$
+
+Elliptic Curve thường được dùng trong các thuật toán như ECDSA (Elliptic Curve Digital Signature Algorithm) và ECDH (Elliptic Curve Diffie-Hellman).
+Các thuật toán này được sử dụng trong các hệ thống tạo ví và mã hóa trên Blockchain.
+
+<figure>
+<img
+    className="w-full md:w-1/2"
+    src="/static/images/posts/elliptic-curve.png"
+    alt="Ví dụ về Elliptic Curve"
+/>
+<figcaption>Source: researchgate.net by Alejandra Alvarado</figcaption>
+</figure>
+
+### Trusted Setup
+
+**Trusted Setup** (Thiết lập Tin cậy) là một quá trình được thực hiện để đảm bảo tính bảo mật của các bên tham gia.
+
+Để hiễu rõ hơn, hãy xem qua ví dụ về triển khai Zero-Knowledge Proof trong một ván bài Poker:
+
+Giả sử một ván bài Poker đang diễn ra giữa Alice và Bob. ZKP được áp dụng để loại bỏ dealer (người chia bài) khỏi ván bài.
+Lúc này, người xáo bài có thể là một trong hai và người này hoàn toàn có thể biết được thứ tự của các lá bài.
+
+Với ZKP, ta sẽ thực hiện bằng cách dùng một số ngẫu nhiên để xáo bài:
+
+- Alice sẽ mã hóa từng lá bài bằng Public Key của mình rồi xáo bài, sau đó gửi cho Bob.
+- Bob lại sẽ mã hóa từng lá bài bằng Public Key của mình rồi xáo bài, sau đó gửi lại cho Alice.
+
+Bây giờ toàn bộ lá bài đã được mã hóa và xáo trộn bởi Public Key cả hai mà không ai biết được thứ tự của chúng.
+
+Cơ chế Trusted Setup cũng hoạt động tơng tự như vậy, nó sẽ bắt đầu bằng việc tạo các Key ngẫu nhiên và dùng chúng để tính toán các thông số và mã hóa dữ liệu.
+
 ## Chi tiết về Zero-Knowledge Proof
 
 ### Đặc điểm
@@ -207,6 +250,30 @@ Cụ thể hơn, Prover có thể thực hiện một loạt các bước chứn
 **Zero-Knowledge** (Không có Kiến thức) cho biết rằng nếu một khẳng định là đúng, không có Verifier gian lận nào có thể học được bất kỳ thông tin bổ sung nào về khẳng định đó.
 
 Điều này đảm bảo tính riêng tư của quá trình chứng minh, và Prover có thể yên tâm rằng họ không sẽ bị tiết lộ bất kỳ thông tin nào về khẳng định đó.
+
+### Các loại
+
+Có 2 loại Zero-Knowledge Proof cơ bản là **Interactive Zero-Knowledge Proof** và **Non-interactive Zero-Knowledge Proof**.
+
+#### Interactive Zero-Knowledge Proof
+
+**Interactive Zero-Knowledge Proof** (ZKP Tương tác) là một loại Zero-Knowledge Proof mà trong đó Prover và Verifier phải tương tác với nhau nhiều lần.
+Các tương tác này thường liên quan đến vấn đề về xác suất.
+
+Trong IZKP, Prover cần thuyết phục một Verifier cụ thể và lặp lại quy trình này cho từng Verifier khác.
+Hoặc Prover phải hoàn thành một loạt hành động để thuyết phục Verifier về một thực tế cụ thể.
+
+Trong ví dụ [Bài toán hang Ali Baba](#bài-toán-hang-ali-baba), Alice và Bob phải lặp lại việc xác minh nhiều lần để có thể đảm bảo rằng Alice không lừa dối Bob.
+
+#### Non-Interactive Zero-Knowledge Proof
+
+**Non-Interactive Zero-Knowledge Proof** (ZKP Không tương tác) là một loại Zero-Knowledge Proof mà trong đó Prover và Verifier không có bất kỳ tương tác tự nguyện nào.
+
+Trong NIZKP, Prover tạo ra bằng chứng mà bất kỳ ai cũng có thể xác minh được, quá trình xác minh này cũng có thể được chuyển sang giai đoạn sau.
+Cơ chế này thường cần một giải thuật phức tạp.
+
+Trong ví dụ [Bài toán túi socola bí mật](#bài-toán-túi-socola-bí-mật), giả sử rằng Alice là Prover muốn chứng minh cho Bob là cả hai có cùng số lượng socola.
+Khi đó họ chỉ cần thực hiện một loạt các hành động mà không cần phải tương tác với nhau.
 
 ### Ưu nhược điểm của Zero-Knowledge Proof
 
@@ -272,25 +339,35 @@ Hiện Tornado Cash đã bị cấm ở vài quốc gia và developer cũng đã
 
 2 giao thức ZKP được quan tâm nhất trên thị trường hiện nay là zk-SNARK và zk-STARK.
 
+<figure>
 <img
   className="w-full md:w-1/2"
   src="/static/images/posts/snark-vs-stark.png"
   alt="zk-SNARK vs zk-STARK"
 />
+<figcaption>Source: github.com by Matter Lab, Elena Nadilinski</figcaption>
+</figure>
 
 #### zk-SNARK
 
 **zk-SNARK** (Succinct Non-interactive Argument of Knowledge) lần đầu tiên được đề xuất vào năm 2012 và được triển khai ngay sau đó. Trong đó:
 
-- **Succinct** (Ngắn gọn): Có nghĩa là thời gian để xác minh quy mô đa logarit
+- **Succinct** (Ngắn gọn): Những bằng chứng thuòng có kích thước nhỏ và có thể được xác minh nhanh chóng.
 
-- **Non-interactive** (Không Tương tác): Cho thấy rằng hệ thống chứng minh không thể cho phép bất kỳ tương tác nào nữa sau giai đoạn xử lý trước, có thể bao gồm “toxic waste” và cần thời gian tuyến tính để tạo.
+- **Non-interactive** (Không Tương tác): Điều này thường mang lại nhiều lợi ích hơn [IZKP](#interactive-zero-knowledge-proof) khi chỉ cần một bằng chứng từ Prover.
+
+- **Argument of Knowledge** (Lập luận Kiến thức): Là một phiên bản tính toán của Proof of Knowledge (Bằng chứng Kiến thức).
+  Các tính toán này tạo nên các yêu cầu khắt khe hơn cho Prover, đảm bảo rằng các Prover rất khó để lừa dối Verifier.
 
 #### zk-STARK
 
-**zk-STARK** (Scalable Transparent Argument of Knowledge) là công nghệ tương đối mới hơn. Được nhóm StarkWare giới thiệu vào năm 2018, zk-STARK có 2 ưu điểm chính:
+**zk-STARK** (Scalable Transparent Argument of Knowledge) là công nghệ tương đối mới hơn. Được nhóm StarkWare giới thiệu vào năm 2018.
 
-- **Transparent** (Minh bạch): Hệ thống hoạt động mà không cần thiết lập đáng tin cậy, tức là nó loại bỏ “toxic waste”, điều mà được cho phép bởi zk-SNARKs
-- **Scalable** (Khả năng mở rộng): Chúng có khả năng mở rộng hơn về tốc độ và kích thước tính toán khi chứng minh quy mô thời gian bán tuyến tính và quan trọng là xác minh tổng số + thời gian tiền xử lý sẽ chia tỷ lệ đa logarit
+zk-STARK tương đổi khác với zk-SNARK mặc dù chỉ thay **SN** bằng **ST**, và đây cũng là 2 ưu điểm chính:
 
-Tuy nhiên, STARK có kích thước bằng chứng lớn hơn nhiều so với SNARK. Ngoài ra, Ethereum có một trình biên dịch cho các SNARK cụ thể và đối với các SNARK đó, chi phí gas để xác minh bằng chứng thấp hơn so với bằng chứng STARK.
+- **Scalable** (Khả năng mở rộng): Các chứng minh có độ phức tạp là $O(n\log(n))$ với $n$ là kích thước của bằng chứng.
+  Điều này giúp các bằng chứng có kích thước lớn được xác minh nhanh hơn nhiều so với zk-SNARK.
+- **Transparent** (Minh bạch): Hệ thống hoạt động mà không cần [Trusted Setup](#trusted-setup) và không cần phải thiết lập các khóa trước khi tham gia vào quá trình này.
+
+Tuy nhiên, STARK có kích thước bằng chứng lớn hơn nhiều so với SNARK. Tuy nhiên, khả năng mở rộng của nó tốt hơn nhiều và có thể chống lại các cuộc tấn công từ máy tính lượng tử.
+Điều này là do zk-STARK không dựa vào Elliptic Curve như zk-SNARK mà dựa vào các hàm băm, cũng như loại bỏ rủi ro của Trusted Setup khi nó có thể bị tấn công bởi một người biết được cơ chế random.

@@ -75,7 +75,7 @@ export default function PostView({ frontMatter, toc, authorDetails, next, prev, 
             className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:grid xl:grid-cols-5 xl:gap-x-6 xl:divide-y-0"
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
-            <dl className="h-min pt-6 pb-6 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
+            <dl className="h-min pt-6 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
               <dt className="sr-only">Authors</dt>
               <dd>
                 <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
@@ -125,7 +125,7 @@ export default function PostView({ frontMatter, toc, authorDetails, next, prev, 
                 </ul>
               </dd>
               <footer>
-                <div className="flex justify-between divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:grid xl:divide-y">
+                <div className="grid justify-between divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 md:flex xl:grid xl:divide-y">
                   {tags && (
                     <div className="py-4 xl:py-8">
                       <h2 className="pb-1 text-xs uppercase tracking-wide text-gray-600 dark:text-gray-400">
@@ -139,7 +139,7 @@ export default function PostView({ frontMatter, toc, authorDetails, next, prev, 
                     </div>
                   )}
                   {(next || prev) && (
-                    <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
+                    <div className="grid justify-between gap-4 py-4 md:flex md:gap-0 xl:block xl:space-y-8 xl:py-8">
                       {prev && (
                         <div>
                           <h2 className="text-xs uppercase tracking-wide text-gray-600 dark:text-gray-400">
@@ -155,21 +155,13 @@ export default function PostView({ frontMatter, toc, authorDetails, next, prev, 
                           <h2 className="text-xs uppercase tracking-wide text-gray-600 dark:text-gray-400">
                             Next Article
                           </h2>
-                          <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                          <div className="mt-2 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
                             <Link href={`/posts/${next.slug}`}>{next.title}</Link>
                           </div>
                         </div>
                       )}
                     </div>
                   )}
-                </div>
-                <div className="pt-4 text-right xl:pt-8 xl:text-left">
-                  <Link
-                    href="/posts"
-                    className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                  >
-                    &larr; Back to the posts
-                  </Link>
                 </div>
               </footer>
             </dl>

@@ -8,16 +8,21 @@ import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import { HiOutlinePencil, HiOutlineClock, HiOutlineEye } from 'react-icons/hi'
 import { BsCalendarDate } from 'react-icons/bs'
+import TableOfContents from '@/components/TableOfContents'
 
-export default function PostView({ frontMatter, authorDetails, next, prev, children }) {
+export default function NoteView({ frontMatter, toc, authorDetails, next, prev, children }) {
   const { slug, date, title, summary, readingTime } = frontMatter
 
   return (
     <SectionContainer>
-      <PostSEO url={`${siteMetadata.siteUrl}/notes/${frontMatter.slug}`} {...frontMatter} />
+      <PostSEO
+        url={`${siteMetadata.siteUrl}/posts/${slug}`}
+        authorDetails={authorDetails}
+        {...frontMatter}
+      />
       <ScrollTopAndComment />
       <article>
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-5xl xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
           <header>
             <div className="space-y-1 border-b border-gray-200 pb-10 text-center dark:border-gray-700">
               <dl>
@@ -46,37 +51,16 @@ export default function PostView({ frontMatter, authorDetails, next, prev, child
             </div>
           </header>
           <div
-            className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:divide-y-0"
+            className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0"
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
-            </div>
-            <Comments frontMatter={frontMatter} />
-            <footer>
-              <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
-                {prev && (
-                  <div className="pt-4 xl:pt-8">
-                    <Link
-                      href={`/notes/${prev.slug}`}
-                      className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                    >
-                      &larr; {prev.title}
-                    </Link>
-                  </div>
-                )}
-                {next && (
-                  <div className="pt-4 xl:pt-8">
-                    <Link
-                      href={`/notes/${next.slug}`}
-                      className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                    >
-                      {next.title} &rarr;
-                    </Link>
-                  </div>
-                )}
+              <div className="prose max-w-none pt-10 pb-8 font-cambria dark:prose-dark">
+                {children}
               </div>
-            </footer>
+              <Comments frontMatter={frontMatter} />
+            </div>
+            {toc.length > 1 && <TableOfContents className="min-h-full" toc={toc} />}
           </div>
         </div>
       </article>

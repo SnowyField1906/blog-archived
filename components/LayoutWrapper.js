@@ -22,8 +22,6 @@ const LayoutWrapper = ({ children }) => {
     .split('/')
     .filter((segment) => segment !== '')
 
-  console.log(segments)
-
   return (
     <SectionContainer>
       <div className="flex h-screen flex-col justify-between">
@@ -52,7 +50,7 @@ const LayoutWrapper = ({ children }) => {
                       </Link>
                     </div>
                   ))}
-                  <div className="xl:hidden">
+                  <div className="block -translate-y-1 xl:hidden">
                     {segments.length === 0 && (
                       <Typewriter
                         options={{
@@ -63,17 +61,17 @@ const LayoutWrapper = ({ children }) => {
                       />
                     )}
                   </div>
+                  <div className="hidden -translate-y-1 xl:block">
+                    <Typewriter
+                      options={{
+                        strings: [],
+                        autoStart: true,
+                        loop: true,
+                      }}
+                    />
+                  </div>
                 </div>
               </Link>
-              <div className="hidden xl:block">
-                <Typewriter
-                  options={{
-                    strings: [],
-                    autoStart: true,
-                    loop: true,
-                  }}
-                />
-              </div>
             </div>
             <div className="flex items-center gap-2 text-base leading-5">
               <div className="hidden 2xl:block">
@@ -92,9 +90,9 @@ const LayoutWrapper = ({ children }) => {
               <ThemeSwitch />
               <DropMenu />
 
-              <div className="ml-3 cursor-pointer rounded py-1">
+              <div className="ml-3 hidden cursor-pointer rounded py-1 lg:block">
                 <Link className="link-underline">
-                  <div className="hidden flex-row px-1 font-medium lg:flex ">
+                  <div className="flex flex-row px-1 font-medium">
                     {session ? (
                       <>
                         <div className="mr-2 flex flex-row items-center">
@@ -144,15 +142,17 @@ const LayoutWrapper = ({ children }) => {
                 </Link>
               </div>
             ))}
-            {segments.length != 0 && (
-              <Typewriter
-                options={{
-                  strings: [],
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
-            )}
+            <div className=" -translate-y-1">
+              {segments.length != 0 && (
+                <Typewriter
+                  options={{
+                    strings: [],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
+              )}
+            </div>
           </div>
         </header>
         <main className="mb-auto">{children}</main>
