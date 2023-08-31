@@ -17,7 +17,7 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-6xl px-2">
         <div className="mb-12 flex-row justify-between gap-10 lg:flex">
           <div className="mt-10 w-full font-lora lg:w-2/3">
             <RoughNotation
@@ -29,7 +29,7 @@ export default function Home({ posts }) {
               animationDuration={2500}
               brackets={['left', 'right']}
               strokeWidth={4}
-              className="self-center text-6xl font-extrabold leading-9 tracking-wide text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
+              className="self-center text-4xl font-extrabold leading-9 tracking-wide text-gray-900 dark:text-gray-100 md:text-6xl md:leading-14"
             >
               Hi, I am <br />
               <span className="text-6xl text-primary-600 dark:text-primary-400">SnowyField</span>
@@ -227,7 +227,7 @@ export default function Home({ posts }) {
           </div>
         </div>
         <div className="pb-6">
-          <h1 className="font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-4xl md:leading-14">
+          <h1 className="text-4xl font-extrabold leading-14 tracking-tight text-gray-900 dark:text-gray-100">
             Latest
           </h1>
           <p className="text-md leading-7 text-gray-600 dark:text-gray-400">

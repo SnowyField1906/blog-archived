@@ -20,27 +20,32 @@ Là viết tắt của **Decentralized Finance**, DeFi là một dạng hệ th�
 
 Có thể nói DeFi là ứng dụng thiết thực nhất của Blockchain bên cạnh tiền mã hóa vì nó tận dụng được hầu hết các lợi thế của Blockchain.
 
-## Khác biệt giữa hệ thống tài chính truyền thống và DeFi
+### Khác biệt giữa hệ thống tài chính truyền thống và DeFi
 
 Trong hệ thống tài chính truyền thống, ngân hàng (và các tổ chức tài chính thống thường) sẽ kiểm soát mọi quy trình và giao dịch. Từ đăng ký tài khoản và xác minh danh tính đến đăng ký vay vốn, đăng ký đầu tư,... đều phải thông qua các tổ chức tài chính. Điều này khiến cho các hoạt động tài chính trở nên phức tạp, tốn kém cũng như dễ bị đánh cắp thông tin cá nhân.
 
-Ví dụ để có đăng kí một tài khoản ngân hàng - thứ có thể giúp bạn nhận và gửi tiền, bạn phải thực hiện hàng tá thủ tục. Và nếu một ngày đẹp trời nào đó bạn cãi nhau với một nhân viên ngân hàng trên mạng, họ hoàn toàn có thể lôi mọi thông tin của bạn ra. Hay mỗi khi bạn muốn vay tiền và gửi tiết kiệm, bạn phải thực hiện rất nhiều thủ tục ngoằn ngoèo để chứng minh danh tính.
+Ví dụ để có đăng kí một tài khoản ngân hàng - thứ có thể giúp bạn nhận và gửi tiền, bạn phải thực hiện hàng tá thủ tục.
+Hay mỗi khi bạn muốn vay tiền và gửi tiết kiệm, bạn phải thực hiện rất nhiều thủ tục ngoằn ngoèo để chứng minh danh tính.
 
 Trong khi với Blockchain, bạn không cần phải làm bất kì thủ tục gì và bạn cũng có thể kiểm tra logic - hoạt động của mọi hệ thống (Smart Contract) mà bạn tham gia vào. Qua đó ta có thể thấy sự khác biệt cơ bản là DeFi loại bỏ các quy trình phức tạp nhưng vẫn đảm bảo tính ẩn danh của bạn và tính minh bạch của hệ thống.
 
 Tuy nhiên DeFi cũng có một số rủi ro nhất định, trong đó rủi ro lớn nhất là DeFi hack, rất nhiều cuộc tấn công vào các DeFi lớn nhỏ mỗi ngày vì các lỗ hổng trong Smart Contract dù đã được test và audit kĩ càng.
 
-### Các lợi ích của DeFi
+### Ưu nhược điểm của DeFi
+
+#### Ưu điểm
 
 - **Phi tập trung và sự kiểm soát**: DeFi loại bỏ sự cần thiết của trung gian tài chính truyền thống như ngân hàng, giúp cá nhân có thể kiểm soát tài sản và giao dịch của mình mà không cần phải thông qua bên thứ ba.
 - **Tiếp cận mở**: Mọi người trên khắp thế giới đều có thể tham gia vào DeFi chỉ cần một kết nối internet, tạo ra những cơ hội tài chính mới cho những người không thể tiếp cận dịch vụ tài chính truyền thống, như vay vốn, đầu tư vào các tài sản, và tham gia vào các sản phẩm tài chính phức tạp.
 - **Khả năng kiểm tra và minh bạch**: Do thông tin trên Blockchain là công khai và không thể thay đổi, tạo nên sự minh bạch về các thông số báo cáo và giảm thiểu các vấn đề về gian lận trong các hệ thống tài chính.
 
-### Các rủi ro của DeFi
+#### Nhược điểm
 
 - **An toàn và bảo mật**: Như đã nói ở trên, các Smart Contract không phải lúc nào cũng hoàn hảo và có thể có các lỗ hổng bảo mật dù đã được test và audit kĩ càng. Các hacker có thể tìm cách tấn công các dịch vụ DeFi để đánh cắp tài sản của người dùng.
-- **Pháp lý và quy định**: Vì DeFi hoạt động trong môi trường mới và thường không chịu sự kiểm soát chặt chẽ, các vấn đề liên quan đến pháp lý và quy định có thể phát sinh. Các tội phạm DeFi cũng thường rất khó truy vết. Một ví dụ điển hình là [Tornado Cash](https://en.wikipedia.org/wiki/Tornado_Cash). Bằng việc triển khai Zero-Knowledge, nó có thể giúp các tội phạm rửa tiền mà không có cách nào để truy vết. Hiện Tornado Cash đã bị cấm ở vài quốc gia và nhà phát triển cũng đã bị bắt.
+- **Pháp lý và quy định**: Vì DeFi hoạt động trong môi trường mới và thường không chịu sự kiểm soát chặt chẽ, các vấn đề liên quan đến pháp lý và quy định có thể phát sinh. Các tội phạm DeFi cũng thường rất khó truy vết. Một ví dụ điển hình là [Tornado Cash](https://en.wikipedia.org/wiki/Tornado_Cash). Bằng việc triển khai **Zero-Knowledge Proof**, nó có thể giúp các tội phạm rửa tiền mà không có cách nào để truy vết. Hiện Tornado Cash đã bị cấm ở vài quốc gia và developer cũng đã bị bắt giữ.
 - **Các rủi ro khác**: Có thể kể đến như biến động thị trường, thất thoát tiền mã hoá, mất khả năng trợ giúp,...
+
+> Đọc thêm về Zero-Knowledge tại bài viết [này](https://blog-snowyfield.vercel.app/posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong).
 
 ## Các hoạt động trên DeFi
 

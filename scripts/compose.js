@@ -84,7 +84,7 @@ inquirer
 
     const frontMatter = genFrontMatter(answers)
     if (!fs.existsSync('data/posts')) fs.mkdirSync('data/posts', { recursive: true })
-    const filePath = `data / ${answers.layout === 'NoteView' ? 'notes' : 'posts'} /${
+    const filePath = `data/${answers.layout === 'NoteView' ? 'notes' : 'posts'}/${
       fileName ? fileName : 'untitled'
     }.md`
     fs.writeFile(filePath, frontMatter, { flag: 'wx' }, (err) => {

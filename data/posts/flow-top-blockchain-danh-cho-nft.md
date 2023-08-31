@@ -3,7 +3,7 @@ title: Flow - Top Blockchain dành cho NFT
 date: '2023-08-16'
 tags: ['Flow', 'Blockchain']
 draft: false
-summary: Trong bài viết này chúng ta sẽ tìm hiểu về Flow - một Blockchain mới nhưng đã có rất nhiều thành công trong việc hỗ trợ cho các ứng dụng NFT và GameFi.
+summary: Flow - một Blockchain mới nhưng đã có rất nhiều thành công trong việc hỗ trợ cho các ứng dụng NFT và GameFi. Hãy cùng tìm hiểu nhữg điều đặc biệt làm nên một chain khác biệt này.
 layout: PostView
 thumbnail: '/static/images/thumbnails/flow-top-blockchain-danh-cho-nft.png'
 ---
