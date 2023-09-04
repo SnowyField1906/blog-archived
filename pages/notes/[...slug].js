@@ -5,9 +5,9 @@ import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/l
 const DEFAULT_LAYOUT = 'PostView'
 
 export async function getStaticPaths() {
-  const posts = getFiles('notes')
+  const notess = getFiles('notes')
   return {
-    paths: posts.map((p) => ({
+    paths: notess.map((p) => ({
       params: {
         slug: formatSlug(p).split('/'),
       },
@@ -17,23 +17,14 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const allPosts = await getAllFilesFrontMatter('notes')
-  const postIndex = allPosts.findIndex((post) => formatSlug(post.slug) === params.slug.join('/'))
-  const prev = allPosts[postIndex + 1] || null
-  const next = allPosts[postIndex - 1] || null
-  const post = await getFileBySlug('notes', params.slug.join('/'))
-  const authorList = post.frontMatter.authors || ['default']
-  const authorPromise = authorList.map(async (author) => {
-    const authorResults = await getFileBySlug('authors', [author])
-    return authorResults.frontMatter
-  })
-  const authorDetails = await Promise.all(authorPromise)
+  const allNotes = await getAllFilesFrontMatter('notes')
+  const notes = await getFileBySlug('notes', params.slug.join('/'))
 
-  return { props: { post, authorDetails, prev, next } }
+  return { props: { notes } }
 }
 
-export default function Post({ post, authorDetails, prev, next }) {
-  const { mdxSource, toc, frontMatter } = post
+export default function Note({ notes }) {
+  const { mdxSource, toc, frontMatter } = notes
 
   return (
     <>
@@ -43,9 +34,6 @@ export default function Post({ post, authorDetails, prev, next }) {
           toc={toc}
           mdxSource={mdxSource}
           frontMatter={frontMatter}
-          authorDetails={authorDetails}
-          prev={prev}
-          next={next}
         />
       ) : (
         <div className="mt-24 text-center">

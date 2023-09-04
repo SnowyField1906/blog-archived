@@ -6,20 +6,16 @@ import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
 import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-import { HiOutlinePencil, HiOutlineClock, HiOutlineEye } from 'react-icons/hi'
+import { HiOutlinePencil, HiOutlineClock } from 'react-icons/hi'
 import { BsCalendarDate } from 'react-icons/bs'
 import TableOfContents from '@/components/TableOfContents'
 
-export default function NoteView({ frontMatter, toc, authorDetails, next, prev, children }) {
-  const { slug, date, title, summary, readingTime } = frontMatter
+export default function NoteView({ frontMatter, toc, children }) {
+  const { slug, date, title, readingTime } = frontMatter
 
   return (
     <SectionContainer>
-      <PostSEO
-        url={`${siteMetadata.siteUrl}/posts/${slug}`}
-        authorDetails={authorDetails}
-        {...frontMatter}
-      />
+      <PostSEO url={`${siteMetadata.siteUrl}/posts/${slug}`} {...frontMatter} />
       <ScrollTopAndComment />
       <article>
         <div className="mx-auto max-w-5xl xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">

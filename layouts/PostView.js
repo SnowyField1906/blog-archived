@@ -26,7 +26,7 @@ const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/posts/$
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 export default function PostView({ frontMatter, toc, authorDetails, next, prev, children }) {
-  const { slug, fileName, date, title, images, tags, readingTime } = frontMatter
+  const { slug, fileName, date, title, tags, readingTime } = frontMatter
   const postUrl = `${siteMetadata.siteUrl}/posts/${slug}`
   return (
     <SectionContainer>
@@ -79,49 +79,47 @@ export default function PostView({ frontMatter, toc, authorDetails, next, prev, 
               <dt className="sr-only">Authors</dt>
               <dd>
                 <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
-                  {authorDetails.map((author) => (
-                    <li className="flex items-center space-x-2" key={author.name}>
-                      {author.avatar && (
-                        <Image
-                          src={author.avatar}
-                          width="38px"
-                          height="38px"
-                          alt="avatar"
-                          className="h-10 w-10 rounded-full"
-                          placeholder="blur"
-                          blurDataURL="/static/images/placeholder.png"
-                        />
-                      )}
-                      <dl className="whitespace-nowrap text-sm font-medium leading-5">
-                        <dt className="sr-only">Name</dt>
-                        <dd className="text-gray-900 dark:text-gray-100">{author.name}</dd>
-                        <dt className="sr-only">Twitter</dt>
-                        <dd>
-                          {author.twitter && (
-                            <Link
-                              href={author.twitter}
-                              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                  <li className="flex items-center space-x-2" key={authorDetails.name}>
+                    {authorDetails.avatar && (
+                      <Image
+                        src={authorDetails.avatar}
+                        width="38px"
+                        height="38px"
+                        alt="avatar"
+                        className="h-10 w-10 rounded-full"
+                        placeholder="blur"
+                        blurDataURL="/static/images/placeholder.png"
+                      />
+                    )}
+                    <dl className="whitespace-nowrap text-sm font-medium leading-5">
+                      <dt className="sr-only">Name</dt>
+                      <dd className="text-gray-900 dark:text-gray-100">{authorDetails.name}</dd>
+                      <dt className="sr-only">Twitter</dt>
+                      <dd>
+                        {authorDetails.twitter && (
+                          <Link
+                            href={authorDetails.twitter}
+                            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                          >
+                            {authorDetails.twitter.replace('https://twitter.com/', '@')}
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              className="ml-0.5 inline-block h-4 w-4 fill-current"
                             >
-                              {author.twitter.replace('https://twitter.com/', '@')}
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                className="ml-0.5 inline-block h-4 w-4 fill-current"
-                              >
-                                <g data-name="Layer 2">
-                                  <g data-name="external-link">
-                                    <rect width="24" height="24" opacity="0" />
-                                    <path d="M20 11a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6a1 1 0 0 0 0-2H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-6a1 1 0 0 0-1-1z" />
-                                    <path d="M16 5h1.58l-6.29 6.28a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L19 6.42V8a1 1 0 0 0 1 1 1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-4a1 1 0 0 0 0 2z" />
-                                  </g>
+                              <g data-name="Layer 2">
+                                <g data-name="external-link">
+                                  <rect width="24" height="24" opacity="0" />
+                                  <path d="M20 11a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6a1 1 0 0 0 0-2H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-6a1 1 0 0 0-1-1z" />
+                                  <path d="M16 5h1.58l-6.29 6.28a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L19 6.42V8a1 1 0 0 0 1 1 1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-4a1 1 0 0 0 0 2z" />
                                 </g>
-                              </svg>
-                            </Link>
-                          )}
-                        </dd>
-                      </dl>
-                    </li>
-                  ))}
+                              </g>
+                            </svg>
+                          </Link>
+                        )}
+                      </dd>
+                    </dl>
+                  </li>
                 </ul>
               </dd>
               <footer>

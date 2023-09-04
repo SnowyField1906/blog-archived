@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import siteMetadata from '@/data/siteMetadata'
 
-const CommonSEO = ({ title, description, ogType, ogImage, canonicalUrl }) => {
+const CommonSEO = ({ title, description, ogType, ogImage }) => {
   const router = useRouter()
   return (
     <Head>
@@ -23,10 +23,7 @@ const CommonSEO = ({ title, description, ogType, ogImage, canonicalUrl }) => {
       <meta name="twitter:site" content={siteMetadata.twitter} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <link
-        rel="canonical"
-        href={canonicalUrl ? canonicalUrl : `${siteMetadata.siteUrl}${router.asPath}`}
-      />
+      <link rel="canonical" href={`${siteMetadata.siteUrl}${router.asPath}`} />
     </Head>
   )
 }
@@ -57,19 +54,12 @@ export const TagSEO = ({ title, description }) => {
 export const PostSEO = ({ title, summary, date, url, thumbnail }) => {
   const publishedAt = new Date(date).toISOString()
 
-  const featuredImages = thumbnail
-    ? {
-        '@type': 'ImageObject',
-        url: thumbnail.includes('http')
-          ? thumbnail
-          : siteMetadata.siteUrl + 'static/images/thumbnails/' + thumbnail,
-      }
-    : {
-        '@type': 'ImageObject',
-        url: siteMetadata.siteUrl + siteMetadata.socialBanner,
-      }
+  const featuredImages = {
+    '@type': 'ImageObject',
+    url: siteMetadata.siteUrl + (thumbnail ?? siteMetadata.socialBanner),
+  }
 
-  let authorList = {
+  let author = {
     '@type': 'Person',
     name: siteMetadata.author,
   }
@@ -84,7 +74,7 @@ export const PostSEO = ({ title, summary, date, url, thumbnail }) => {
     headline: title,
     image: featuredImages,
     datePublished: publishedAt,
-    author: authorList,
+    author: author,
     publisher: {
       '@type': 'Organization',
       name: siteMetadata.author,

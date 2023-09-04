@@ -125,7 +125,7 @@ const LayoutWrapper = ({ children }) => {
               <div
                 key={index}
                 className={
-                  index === segments.length - 1 && 'overflow-hidden truncate text-ellipsis'
+                  index === segments.length - 1 ? 'overflow-hidden truncate text-ellipsis' : ''
                 }
               >
                 /
