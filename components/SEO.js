@@ -50,10 +50,10 @@ export const TagSEO = ({ title, description }) => {
 export const PostSEO = ({ title, summary, date, url, thumbnail }) => {
   const publishedAt = new Date(date).toISOString()
 
-  // const featuredImage = {
-  //   '@type': 'ImageObject',
-  //   url: siteMetadata.siteUrl + (thumbnail ?? siteMetadata.socialBanner),
-  // }
+  const featuredImage = {
+    '@type': 'ImageObject',
+    url: siteMetadata.siteUrl + (thumbnail ?? siteMetadata.socialBanner),
+  }
 
   const ogImage = siteMetadata.siteUrl + (thumbnail ?? siteMetadata.socialBanner)
 
