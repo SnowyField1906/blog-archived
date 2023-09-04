@@ -17,7 +17,7 @@ export default function Track(track) {
               height={48}
               alt=""
               placeholder="blur"
-              blurDataURL="/static/images/SVG-placeholder.png"
+              blurDataURL="/static/images/placeholder.png"
             />
           )}
         </div>

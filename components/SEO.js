@@ -54,15 +54,20 @@ export const TagSEO = ({ title, description }) => {
   )
 }
 
-export const PostSEO = ({ title, summary, date, url, thumbnail, canonicalUrl }) => {
+export const PostSEO = ({ title, summary, date, url, thumbnail }) => {
   const publishedAt = new Date(date).toISOString()
 
-  const featuredImages = {
-    '@type': 'ImageObject',
-    url: thumbnail.includes('http')
-      ? thumbnail
-      : siteMetadata.siteUrl + 'static/images/thumbnails/' + thumbnail,
-  }
+  const featuredImages = thumbnail
+    ? {
+        '@type': 'ImageObject',
+        url: thumbnail.includes('http')
+          ? thumbnail
+          : siteMetadata.siteUrl + 'static/images/thumbnails/' + thumbnail,
+      }
+    : {
+        '@type': 'ImageObject',
+        url: siteMetadata.siteUrl + siteMetadata.socialBanner,
+      }
 
   let authorList = {
     '@type': 'Person',

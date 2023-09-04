@@ -89,7 +89,7 @@ export default function PostView({ frontMatter, toc, authorDetails, next, prev, 
                           alt="avatar"
                           className="h-10 w-10 rounded-full"
                           placeholder="blur"
-                          blurDataURL="/static/images/SVG-placeholder.png"
+                          blurDataURL="/static/images/placeholder.png"
                         />
                       )}
                       <dl className="whitespace-nowrap text-sm font-medium leading-5">
