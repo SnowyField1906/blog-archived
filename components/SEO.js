@@ -14,11 +14,7 @@ const CommonSEO = ({ title, description, ogType, ogImage }) => {
       <meta property="og:site_name" content={siteMetadata.title} />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
-      {ogImage.constructor.name === 'Array' ? (
-        ogImage.map(({ url }) => <meta property="og:image" content={url} key={url} />)
-      ) : (
-        <meta property="og:image" content={ogImage} key={ogImage} />
-      )}
+      <meta property="og:image" content={ogImage} key={ogImage} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={siteMetadata.twitter} />
       <meta name="twitter:title" content={title} />
@@ -54,10 +50,12 @@ export const TagSEO = ({ title, description }) => {
 export const PostSEO = ({ title, summary, date, url, thumbnail }) => {
   const publishedAt = new Date(date).toISOString()
 
-  const featuredImages = {
-    '@type': 'ImageObject',
-    url: siteMetadata.siteUrl + (thumbnail ?? siteMetadata.socialBanner),
-  }
+  // const featuredImage = {
+  //   '@type': 'ImageObject',
+  //   url: siteMetadata.siteUrl + (thumbnail ?? siteMetadata.socialBanner),
+  // }
+
+  const ogImage = siteMetadata.siteUrl + (thumbnail ?? siteMetadata.socialBanner)
 
   let author = {
     '@type': 'Person',
@@ -72,7 +70,7 @@ export const PostSEO = ({ title, summary, date, url, thumbnail }) => {
       '@id': url,
     },
     headline: title,
-    image: featuredImages,
+    image: featuredImage,
     datePublished: publishedAt,
     author: author,
     publisher: {
@@ -88,7 +86,7 @@ export const PostSEO = ({ title, summary, date, url, thumbnail }) => {
 
   return (
     <>
-      <CommonSEO title={title} description={summary} ogType="article" ogImage={featuredImages} />
+      <CommonSEO title={title} description={summary} ogType="article" ogImage={ogImage} />
       <Head>
         {date && <meta property="article:published_time" content={publishedAt} />}
         <script
