@@ -1,18 +1,18 @@
 ---
-title: Chi tiết về thuật toán mã hóa cho Mental Poker
+title: Giới thiệu chi tiết về bài toán Mental Poker
 date: '2023-09-01'
 tags: ['Poker', 'ZKP', 'Blockchain', 'Cryptography']
 draft: false
-summary: Tìm hiểu về Mental Poker, tính khả thi trong việc triển khai Poker trên Blockchain bằng Zero-Knowledge Proof
+summary: Tìm hiểu về thuật toán mã hóa cho Mental Poker, tính khả thi trong việc triển khai Poker trên Blockchain bằng Zero-Knowledge Proof
 layout: PostView
-thumbnail: '/static/images/thumbnails/chi-tiet-ve-thuat-toan-ma-hoa-cho-mental-poker.png'
+thumbnail: '/static/images/thumbnails/gioi-thieu-chi-tiet-ve-bai-toan-mental-poker.png'
 ---
 
 _Các trò chơi online ngày nay đang trở thành một phần quan trọng của cuộc sống giải trí của con người. Tuy nhiên, với sự phát triển của các trò chơi này, việc đảm bảo tính bảo mật và an toàn cho người dùng trong những trò chơi yêu cầu tính bảo mật và ẩn danh cao là một thách thức lớn. Điều này trở nên đặc biệt quan trọng khi chúng ta xem xét đến các trò chơi sử dụng tiền bạc thật như các casino._
 
 _Tuy nhiên, vấn đề này có thể được giải quyết bằng cách sử dụng Zero-Knowledge Proof (ZKP) và Blockchain để loại bỏ bên thứ 3, tăng tính bảo mật cho người chơi và tính minh bạch cho trò chơi._
 
-<img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/chi-tiet-ve-thuat-toan-ma-hoa-cho-mental-poker.png" alt="Chi tiết về thuật toán mã hóa cho Mental Poker" />
+<img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/gioi-thieu-chi-tiet-ve-bai-toan-mental-poker.png" alt="Chi tiết về thuật toán mã hóa cho Mental Poker" />
 
 Trước khi đi vào bài viết, chúng ta có thể tìm hiểu về ZKP tại bài viết [Zero-Knowledge Proof là gì và cách hoạt động](https://snowyfield.vercel.app/posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong).
 
@@ -173,7 +173,7 @@ $$
 \end{cases}
 $$
 
-Với cấp số $p$, ta có tập $\mathbb{Z}_p$ là một [Multiplicative Group of Integers Modulo](https://en.wikipedia.org/wiki/Multiplicative_groud_of_integers_modulo_n) (Nhóm Nhân của Số Nguyên Modulo) với module là $p$, do đó đảm bảo mọi giá trị trong tập này thuộc $\{1, 2, \ldots, p-1\}$.
+Với cấp số $p$, ta có tập $\mathbb{Z}_p$ là một [Multiplicative Group of Integers Modulo](https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n) (Nhóm Nhân của Số Nguyên Modulo) với modulo là $p$, do đó đảm bảo mọi giá trị trong tập này thuộc $\{1, 2, \ldots, p-1\}$.
 
 ### Quy trình
 

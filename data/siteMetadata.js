@@ -10,7 +10,7 @@ const siteMetadata = {
   siteRepo: 'https://github.com/SnowyField1906/blog',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
-  socialBanner: '/static/images/twitter-card.png',
+  socialBanner: '/static/images/banner.png',
   email: 'snowyfield1906@gmail.com',
   github: 'https://github.com/SnowyField1906',
   twitter: 'https://twitter.com/SnowyField1906',

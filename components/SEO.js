@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import siteMetadata from '@/data/siteMetadata'
 
-const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl }) => {
+const CommonSEO = ({ title, description, ogType, ogImage, canonicalUrl }) => {
   const router = useRouter()
   return (
     <Head>
@@ -23,7 +23,6 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
       <meta name="twitter:site" content={siteMetadata.twitter} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={twImage} />
       <link
         rel="canonical"
         href={canonicalUrl ? canonicalUrl : `${siteMetadata.siteUrl}${router.asPath}`}
@@ -34,31 +33,15 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
 
 export const PageSEO = ({ title, description }) => {
   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
-  const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
-  return (
-    <CommonSEO
-      title={title}
-      description={description}
-      ogType="website"
-      ogImage={ogImageUrl}
-      twImage={twImageUrl}
-    />
-  )
+  return <CommonSEO title={title} description={description} ogType="website" ogImage={ogImageUrl} />
 }
 
 export const TagSEO = ({ title, description }) => {
   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
-  const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   const router = useRouter()
   return (
     <>
-      <CommonSEO
-        title={title}
-        description={description}
-        ogType="website"
-        ogImage={ogImageUrl}
-        twImage={twImageUrl}
-      />
+      <CommonSEO title={title} description={description} ogType="website" ogImage={ogImageUrl} />
       <Head>
         <link
           rel="alternate"
@@ -71,46 +54,19 @@ export const TagSEO = ({ title, description }) => {
   )
 }
 
-export const PostSEO = ({
-  authorDetails,
-  title,
-  summary,
-  date,
-  lastmod,
-  url,
-  images = [],
-  canonicalUrl,
-}) => {
-  const router = useRouter()
+export const PostSEO = ({ title, summary, date, url, thumbnail, canonicalUrl }) => {
   const publishedAt = new Date(date).toISOString()
-  const modifiedAt = new Date(lastmod || date).toISOString()
-  let imagesArr =
-    images.length === 0
-      ? [siteMetadata.socialBanner]
-      : typeof images === 'string'
-      ? [images]
-      : images
 
-  const featuredImages = imagesArr.map((img) => {
-    return {
-      '@type': 'ImageObject',
-      url: img.includes('http') ? img : siteMetadata.siteUrl + img,
-    }
-  })
+  const featuredImages = {
+    '@type': 'ImageObject',
+    url: thumbnail.includes('http')
+      ? thumbnail
+      : siteMetadata.siteUrl + 'static/images/thumbnails/' + thumbnail,
+  }
 
-  let authorList
-  if (authorDetails) {
-    authorList = authorDetails.map((author) => {
-      return {
-        '@type': 'Person',
-        name: author.name,
-      }
-    })
-  } else {
-    authorList = {
-      '@type': 'Person',
-      name: siteMetadata.author,
-    }
+  let authorList = {
+    '@type': 'Person',
+    name: siteMetadata.author,
   }
 
   const structuredData = {
@@ -123,7 +79,6 @@ export const PostSEO = ({
     headline: title,
     image: featuredImages,
     datePublished: publishedAt,
-    dateModified: modifiedAt,
     author: authorList,
     publisher: {
       '@type': 'Organization',
@@ -136,21 +91,11 @@ export const PostSEO = ({
     description: summary,
   }
 
-  const twImageUrl = featuredImages[0].url
-
   return (
     <>
-      <CommonSEO
-        title={title}
-        description={summary}
-        ogType="article"
-        ogImage={featuredImages}
-        twImage={twImageUrl}
-        canonicalUrl={canonicalUrl}
-      />
+      <CommonSEO title={title} description={summary} ogType="article" ogImage={featuredImages} />
       <Head>
         {date && <meta property="article:published_time" content={publishedAt} />}
-        {lastmod && <meta property="article:modified_time" content={modifiedAt} />}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
