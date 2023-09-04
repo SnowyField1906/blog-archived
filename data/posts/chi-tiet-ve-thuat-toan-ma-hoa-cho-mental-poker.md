@@ -14,7 +14,7 @@ _Tuy nhiên, vấn đề này có thể được giải quyết bằng cách s�
 
 <img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/chi-tiet-ve-thuat-toan-ma-hoa-cho-mental-poker.png" alt="Chi tiết về thuật toán mã hóa cho Mental Poker" />
 
-Trước khi đi vào bài viết, chúng ta có thể tìm hiểu về ZKP tại bài viết [Zero-Knowledge Proof là gì và cách hoạt động](https://blog-snowyfield.vercel.app/posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong).
+Trước khi đi vào bài viết, chúng ta có thể tìm hiểu về ZKP tại bài viết [Zero-Knowledge Proof là gì và cách hoạt động](https://snowyfield.vercel.app/posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong).
 
 ## Giới thiệu về Mental Poker
 

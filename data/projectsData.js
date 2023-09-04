@@ -3,7 +3,7 @@ const projectsData = [
     title: 'Blog',
     description: 'This server-side rendered blog.',
     imgSrc: '',
-    href: 'https://blog-snowyfield.vercel.app/',
+    href: 'https://snowyfield.vercel.app/',
     github: 'https://github.com/snowyfield1906/blog',
     tech1: 'Next.js',
     tech2: 'Next-auth',

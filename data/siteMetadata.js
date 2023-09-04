@@ -6,7 +6,7 @@ const siteMetadata = {
   notes: 'Reuseable code notes collected by SnowyField',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://blog-snowyfield.vercel.app/',
+  siteUrl: 'https://snowyfield.vercel.app/',
   siteRepo: 'https://github.com/SnowyField1906/blog',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
@@ -15,7 +15,7 @@ const siteMetadata = {
   github: 'https://github.com/SnowyField1906',
   twitter: 'https://twitter.com/SnowyField1906',
   linkedin: 'https://www.linkedin.com/in/NHThuan/',
-  website: 'https://blog-snowyfield.vercel.app/',
+  website: 'https://snowyfield.vercel.app/',
   locale: 'en-US',
   analytics: {
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app

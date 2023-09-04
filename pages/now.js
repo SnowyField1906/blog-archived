@@ -251,8 +251,7 @@ export default function Now(currentlyReading) {
           <br />
           <p>
             I'm a Spotify addict, you can check out my Spotify stats{' '}
-            <Link href={'https://blog-snowyfield.vercel.app/stats'}>here</Link>. By the way, this is
-            the{' '}
+            <Link href={'https://snowyfield.vercel.app/stats'}>here</Link>. By the way, this is the{' '}
             <Link
               href={'https://open.spotify.com/playlist/0J9wMOS5qXCWnTCk5hPgIY?si=9b36b1607c1e42f2'}
             >
