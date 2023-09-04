@@ -125,7 +125,7 @@ $$
 i \in \{1, 2, \ldots, l\}
 $$
 
-Và bộ bài $P$ được sử dụng gồm các lá bài:
+Và bộ bài $D$ được sử dụng gồm các lá bài:
 
 $$
 D = \{d_1, d_2, \ldots, d_{52}\}
@@ -147,6 +147,8 @@ $$
 G = G(q, +) \in \mathbb{G}
 $$
 
+> **📝 Nhắc lại**
+>
 > Một nhóm Abel hữu hạn sinh là một nhóm Abel mà có thể được tạo ra bằng cách sử dụng một số hữu hạn các phần tử.
 >
 > Cụ thể, tồn tại một tập hữu hạn các phần tử $G = \{g_1, g_2, \ldots, g_n\}$ trong nhóm $\mathbb{G}$ sao cho mọi phần tử $\alpha$ trong $\mathbb{G}$ có thể biểu diễn được dưới dạng [Linear Combination](https://en.wikipedia.org/wiki/Linear_combination) (Tổ hợp Tuyến tính) của các phần tử trong tập này:

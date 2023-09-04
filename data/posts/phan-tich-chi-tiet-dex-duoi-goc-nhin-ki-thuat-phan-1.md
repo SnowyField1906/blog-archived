@@ -130,6 +130,8 @@ y &= \frac{k}{x} \newline
 \end{align*}
 $$
 
+> **📝 Nhắc lại**
+>
 > Đường thẳng tiếp tuyến với đường cong tại điểm giá $(x_0, y_0)$ có phương trình:
 >
 > $$

@@ -47,9 +47,9 @@ và muốn chứng minh cho Bob rằng _"Alice biết cụm từ bí mật"_ mà
 
 Quy ước rằng các con đường bên trái và bên phải từ lối vào được gọi là $A$ và $B$.
 
-> - **Chứng minh**: Mệnh đề _"Alice biết cụm từ bí mật"_ là đúng.
-> - **Prover**: Alice
-> - **Verifier**: Bob
+> **🎯 Mục tiêu**
+>
+> **Prover Alice** chứng minh mệnh đề _"Alice biết cụm từ bí mật"_ là đúng cho **Verifier Bob**.
 
 #### Quá trình chứng minh bài toán hang Ali Baba
 
@@ -113,9 +113,9 @@ Vì vậy Bob muốn Alice giúp anh ta kèm theo một khoảng thù lao.
 Nhưng để khoảng thù lao trên không bị lãng phí trong trường hợp Alice ranh mãnh lừa dối anh ấy,
 Bob yêu cầu rằng Alice phải chứng minh cho Bob một cách thuyết phục.
 
-> - **Chứng minh**: Mệnh đề _"Hai trái bóng khác màu"_ là đúng.
-> - **Prover**: Alice
-> - **Verifier**: Bob
+> **🎯 Mục tiêu**
+>
+> **Prover Alice** chứng minh mệnh đề _"Hai trái bóng khác màu"_ là đúng cho **Verifier Bob**.
 
 #### Quá trình chứng minh bài toán màu sắc
 
@@ -147,9 +147,9 @@ Tuy nhiên, cả hai đều không muốn nói ra có bao nhiêu thanh socola m�
 
 Bây giờ, chúng ta đặt giả định rằng, số lượng socola trong túi nằm trong khoảng từ 1 đến 4.
 
-> - **Chứng minh**: Mệnh đề _"Alice và Bob có cùng số lượng socola"_ là đúng (hoặc ngược lại).
-> - **Prover**: Alice và Bob
-> - **Verifier**: Alice và Bob
+> **🎯 Mục tiêu**
+>
+> **Alice và Bob** chứng minh mệnh đề _"Alice và Bob có cùng số lượng socola"_ là đúng (hoặc ngược lại).
 
 #### Quá trình chứng minh bài toán túi socola bí mật
 
@@ -180,10 +180,11 @@ Trong cả 3 ví dụ trên, vẫn sẽ tồn tại khả năng Alice lừa Bob.
 
 Cụ thể hơn, trong ví dụ 3, Alice có thể đặt tờ giấy vào hộp có nhãn **không phải** là số lượng socola mà cô ấy nhận được.
 
-Lúc này Verifier là Bob sẽ bị lừa nhưng bản thân Alice cũng là Verifier và sẽ không thể biết được số lượng socola của nhau.
+Lúc này Verifier là Bob sẽ bị lừa nhưng bản thân Alice cũng là Verifier và sẽ không thể xác thực được số lượng socola của nhau.
 Có nghĩa là, cả Alice và Bob đều không có động cơ nào để làm điều này vì họ đều muốn xác minh liệu khẳng định đó đúng hay sai.
 
-Mặt khác, Prover sẽ luôn muốn chứng minh rằng khẳng định của mình là đúng và Verifier sẽ luôn muốn chứng minh rằng khẳng định của Prover là sai đến khi hoàn toàn bị thuyết phục.
+Mặt khác, Prover sẽ luôn muốn chứng minh rằng khẳng định của mình là đúng và Verifier sẽ cố gắng xác thực thông tin cho đến khi hoàn toàn bị thuyết phục.
+Đây là điều được thể hiện trong tính chất [Soundness](#soundness) của Zero-Knowledge Proof, khi mà Prover gian lận sẽ không thể làm ảnh hưởng đến hệ thống.
 
 ## Key Generator và Trusted Setup
 
@@ -226,6 +227,8 @@ Với ZKP, ta sẽ thực hiện bằng cách dùng một số ngẫu nhiên đ�
 Bây giờ toàn bộ lá bài đã được mã hóa và xáo trộn bởi Public Key cả hai mà không ai biết được thứ tự của chúng.
 
 Cơ chế Trusted Setup cũng hoạt động tơng tự như vậy, nó sẽ bắt đầu bằng việc tạo các Key ngẫu nhiên và dùng chúng để tính toán các thông số và mã hóa dữ liệu.
+
+> Đọc thêm về Nental Poker tại bài viết [Zero-Knowledge Proof là gì và cách hoạt động](https://blog-snowyfield.vercel.app/posts/chi-tiet-ve-thuat-toan-ma-hoa-cho-mental-poker).
 
 ## Chi tiết về Zero-Knowledge Proof
 
