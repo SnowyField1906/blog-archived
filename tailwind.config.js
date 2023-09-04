@@ -184,6 +184,7 @@ module.exports = {
               textAlign: 'justify',
               marginTop: '10px',
               marginBottom: '10px',
+              textUnderlineOffset: '3px',
             },
             figcaption: {
               textAlign: 'center',

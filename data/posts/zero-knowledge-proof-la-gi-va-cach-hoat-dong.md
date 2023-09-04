@@ -10,7 +10,7 @@ thumbnail: '/static/images/thumbnails/zero-knowledge-proof-la-gi-va-cach-hoat-do
 
 _Ngày nay, chúng ta đã chứng kiến nhiều tiến bộ đã thay đổi cuộc sống hàng ngày cũng như hoạt động kinh doanh. Chúng ta được kết nối hơn bao giờ hết với nhiều thiết bị trong tay, cho phép thực hiện giao dịch tài chính, chia sẻ thông tin cá nhân và mua sản phẩm, dịch vụ._
 
-_Tuy nhiên, người dùng ngày càng phải đối mặt với các vấn đề liên quan đến việc sử dụng dữ liệu độc hại cùng việc đảm bảo tính bảo mật cao hơn. Vậy, ví dụ về Zero-Knowledge Proof có vai trò gì trong bối cảnh vấn đề an ninh thông tin và quyền riêng tư hiện đại? Độc giả có thể khám phá hai loại ví dụ khác nhau để thể hiện zero-knowledge proof một cách tốt._
+_Tuy nhiên, người dùng ngày càng phải đối mặt với các vấn đề liên quan đến việc sử dụng dữ liệu độc hại cùng việc đảm bảo tính bảo mật cao hơn. Vậy, ví dụ về Zero-Knowledge Proof có vai trò gì trong bối cảnh vấn đề an ninh thông tin và quyền riêng tư hiện đại? Để hiểu rõ hơn về vấn đề này, hãy cùng đi qua Zero-Knowledge Proof và cách hoạt động._
 
 <img src='/static/images/thumbnails/zero-knowledge-proof-la-gi-va-cach-hoat-dong.png' alt="Zero-Knowledge Proof là gì và cách hoạt động" />
 
@@ -304,13 +304,13 @@ Cloudflare, một công ty bảo mật và cơ sở hạ tầng web của Mỹ �
 
 Một trong những ứng dụng của ZKP là thực thi hành vi trung thực trong khi vẫn duy trì quyền riêng tư.
 
-Nói một cách đại khái, ý tưởng là buộc người dùng phải chứng minh bằng cách sử dụng ZKP rằng hành vi của họ là đúng (trên giao thức của no).
+Nói một cách đại khái, ý tưởng là buộc người dùng phải chứng minh bằng cách sử dụng ZKP rằng hành vi của họ là đúng (trên giao thức của nó).
 Vì tính **Soundness**, người dùng phải thực sự hành động trung thực mới có thể đưa ra bằng chứng xác đáng.
 Và vì tính **Zero-Knowledge**, người dùng không được xâm phạm quyền riêng tư về bí mật trong quá trình cung cấp bằng chứng.
 
 Flow Blockchain đã triển khai [SPocK](https://flow.com/technical-paper) (Specialized Proof of Confidential Knowledge) để đảm bảo tính trung thực của các node Execution và Verification trong mạng.
 
-> Đọc thêm về SPoCK tại bài viết [này](https://blog-snowyfield.vercel.app/posts/flow-top-blockchain-danh-cho-nft#spock).
+> Đọc thêm về SPoCK tại bài viết [Flow - Top Blockchain dành cho NFT](https://blog-snowyfield.vercel.app/posts/flow-top-blockchain-danh-cho-nft#spock).
 
 #### Học máy và trí tuệ nhân tạo
 
