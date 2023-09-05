@@ -1,7 +1,7 @@
 ---
 title: GPA Calculator
 date: '2023-07-31'
-tags: ['Script', 'Tool']
+tags: ['Script', 'Tool', 'HCMUS']
 draft: false
 summary: Script calculates total accumulated GPA in University of Science.
 images: []

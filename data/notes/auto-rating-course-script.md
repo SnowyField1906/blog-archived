@@ -1,7 +1,7 @@
 ---
 title: Auto Rating Courses Script
 date: '2023-07-31'
-tags: ['Script', 'Tool']
+tags: ['Script', 'Tool', 'HCMUS']
 draft: false
 summary: Script automatically rates to all courses in University of Science.
 images: []

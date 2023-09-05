@@ -166,7 +166,7 @@ $$
 Khi đó, tồn tại ánh xạ $\mathcal{M}$ chiếu từ các lá bài sang các phần tử sinh của $\mathbb{G}$. Cho trước một lá bài $d$, có thể tính được $M = \mathcal{M}(d)$ là một phần tử sinh của $\mathbb{G}$.
 
 $$
-\mathcal{M}: P \rightarrow \mathbb{G} \enspace \text{với} \enspace
+\mathcal{M}: D \rightarrow \mathbb{G} \enspace \text{với} \enspace
 \begin{cases}
     \mathcal{M}(d) \in \mathbb{G} \\
     \mathcal{M}(d) = \mathcal{M}(d') \Leftrightarrow d = d'
