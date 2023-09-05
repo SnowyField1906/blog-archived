@@ -260,7 +260,7 @@ export default function PostView({ frontMatter, toc, authorDetails, next, prev, 
                   </Link>
                 </div>
               </div>
-              <Comments frontMatter={frontMatter} />
+              <Comments />
             </div>
             {toc.length > 1 && <TableOfContents className="min-h-full" toc={toc} />}
           </div>

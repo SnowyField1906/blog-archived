@@ -18,10 +18,8 @@ const siteMetadata = {
   website: 'https://snowyfield.vercel.app/',
   locale: 'en-US',
   analytics: {
-    plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
-    simpleAnalytics: false, // true or false
-    umamiWebsiteId: '', // e.g. 123e4567-e89b-12d3-a456-426614174000
-    googleAnalyticsId: 'G-F6V2QTJ628', // e.g. UA-000000-2 or G-XXXXXXX
+    umamiWebsiteId: '8cdb28da-322d-4adf-b081-27e579f84252',
+    googleAnalyticsId: 'G-KYY35T59NC',
   },
   newsletter: {
     provider: 'emailOctopus',
@@ -46,7 +44,7 @@ const siteMetadata = {
     },
   },
   socialAccount: {
-    twitter: 'NHThuan',
+    twitter: 'snowyfield1906',
   },
 }
 

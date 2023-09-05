@@ -62,7 +62,7 @@ export default function Home({ posts }) {
                 multiline={true}
                 className="text-slate-200"
               >
-                Computer/Data Science Student
+                Knowledge Engineering Student
               </RoughNotation>{' '}
               who is passionate about Science, Mathematics and Researching. In my free time, I like
               developing side projects and learning new technologies.

@@ -6,7 +6,7 @@ const GAScript = () => {
   return (
     <>
       <Script
-        strategy="lazyOnload"
+        async
         src={`https://www.googletagmanager.com/gtag/js?id=${siteMetadata.analytics.googleAnalyticsId}`}
       />
 
@@ -15,9 +15,7 @@ const GAScript = () => {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${siteMetadata.analytics.googleAnalyticsId}', {
-              page_path: window.location.pathname,
-            });
+            gtag('config', '${siteMetadata.analytics.googleAnalyticsId}');
         `}
       </Script>
     </>

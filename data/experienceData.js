@@ -32,12 +32,12 @@ const experienceData = [
     text3: 'Carrying out quality assurance tests to discover errors and optimize usability',
   },
   {
-    title: 'Computer/Data Scientist',
+    title: 'Knowledge Engineering Student',
     company: 'University of Science - VNUHCM',
     location: 'Ho Chi Minh City, Vietnam',
     range: 'September 2021 - Present',
     url: 'https://en.hcmus.edu.vn/',
-    text1: 'Studying Computer/Data Science in the University Ranked 1 at IT in Vietnam',
+    text1: 'Studying Knowledge Engineering in the University Ranked 1 at IT in Vietnam',
     text2: 'Having 3.0/4.0 Major-GPA calculated until the second year',
     text3:
       'Still ensuring good project and grade outcomes thanks to strong research abilities in spite of not participating in 100% of the classes',
