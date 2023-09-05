@@ -1,13 +1,13 @@
 import PageTitle from '@/components/PageTitle'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
-
-const DEFAULT_LAYOUT = 'PostView'
+import { PageSEO } from '@/components/SEO'
+import siteMetadata from '@/data/siteMetadata'
 
 export async function getStaticPaths() {
-  const notess = getFiles('notes')
+  const notes = getFiles('notes')
   return {
-    paths: notess.map((p) => ({
+    paths: notes.map((p) => ({
       params: {
         slug: formatSlug(p).split('/'),
       },
@@ -19,22 +19,29 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const allNotes = await getAllFilesFrontMatter('notes')
   const notes = await getFileBySlug('notes', params.slug.join('/'))
+  const authorDetails = await getFileBySlug('authors', ['default']).then(
+    (author) => author.frontMatter
+  )
 
-  return { props: { notes } }
+  return { props: { notes, authorDetails } }
 }
 
-export default function Note({ notes }) {
+export default function Note({ notes, authorDetails }) {
   const { mdxSource, toc, frontMatter } = notes
 
   return (
     <>
       {frontMatter.draft !== true ? (
-        <MDXLayoutRenderer
-          layout={frontMatter.layout || DEFAULT_LAYOUT}
-          toc={toc}
-          mdxSource={mdxSource}
-          frontMatter={frontMatter}
-        />
+        <>
+          <PageSEO title={`Notes - ${siteMetadata.author}`} description={siteMetadata.notes} />
+          <MDXLayoutRenderer
+            layout={'NoteView'}
+            toc={toc}
+            mdxSource={mdxSource}
+            frontMatter={frontMatter}
+            authorDetails={authorDetails}
+          />
+        </>
       ) : (
         <div className="mt-24 text-center">
           <PageTitle>

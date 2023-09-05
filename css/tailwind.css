@@ -106,7 +106,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
   transition: background-color 600000s 0s, color 600000s 0s;
@@ -152,46 +151,31 @@ input:-webkit-autofill:focus {
   border-radius: 12px;
 }
 
-/* light table */
-
 .table-fill {
   border-collapse: collapse;
   width: 100%;
   animation: float 5s infinite;
 }
-
 th {
-  color: white;
-  background: var(--primary-500);
   padding: 10px 30px;
   text-align: center;
+  vertical-align: middle;
+}
+td {
+  padding: 10px 20px;
+  font-weight: 300;
   vertical-align: middle;
 }
 
 th:first-child {
   border-top-left-radius: 5px;
 }
-
 th:last-child {
   border-top-right-radius: 5px;
 }
-
 tr {
   color: black;
 }
-
-tr:hover td {
-  background: var(--primary-100);
-}
-
-tr:nth-child(odd) td {
-  background: var(--primary-100);
-}
-
-tr:nth-child(odd):hover td {
-  background: var(--primary-200);
-}
-
 tr:last-child td:first-child {
   border-bottom-left-radius: 5px;
 }
@@ -200,44 +184,60 @@ tr:last-child td:last-child {
   border-bottom-right-radius: 5px;
 }
 
-td {
-  background: white;
-  text-align: left;
-  vertical-align: middle;
-  font-weight: 300;
-  padding: 5px 30px;
+.light th {
+  color: white;
+  background: var(--primary-500);
 }
-
-/* dark table */
+.light tr {
+  color: black;
+}
+.light td {
+  background: white;
+}
+.light tr:hover td {
+  background: var(--primary-100);
+}
+.light tr:nth-child(odd) td {
+  background: var(--primary-100);
+}
+.light tr:nth-child(odd):hover td {
+  background: var(--primary-200);
+}
+.light tr:hover td {
+  background: var(--primary-100);
+}
+.light tr:nth-child(odd) td {
+  background: var(--primary-100);
+}
+.light tr:nth-child(odd):hover td {
+  background: var(--primary-200);
+}
 
 .dark th {
-  color: white;
-  background: var(--primary-700);
-  padding: 10px 30px;
-  text-align: center;
-  vertical-align: middle;
+  color: black;
+  background: var(--primary-500);
 }
-
 .dark tr {
   color: white;
 }
-
+.dark td {
+  background: black;
+}
 .dark tr:hover td {
   background: var(--primary-900);
 }
-
 .dark tr:nth-child(odd) td {
   background: var(--primary-900);
 }
-
 .dark tr:nth-child(odd):hover td {
   background: var(--primary-800);
 }
-
-.dark td {
-  background: black;
-  text-align: left;
-  vertical-align: middle;
-  font-weight: 300;
-  padding: 5px 30px;
+.dark tr:hover td {
+  background: var(--primary-900);
+}
+.dark tr:nth-child(odd) td {
+  background: var(--primary-900);
+}
+.dark tr:nth-child(odd):hover td {
+  background: var(--primary-800);
 }

@@ -3,7 +3,7 @@ title: Prerequisite Knowledge Technology Courses
 date: '2023-09-05'
 tags: ['Note', 'HCMUS']
 draft: false
-summary: This is a list of prerequisite courses for enrolling in courses at HCMUS, specializing in Knowledge Technology.
+summary: Prerequisite courses at University of Science, specializing in Knowledge Technology.
 layout: NoteView
 ---
 
@@ -11,7 +11,7 @@ layout: NoteView
 
 ### Required Courses
 
-Minimum Required Credits $T \geqslant 16$ (equivalent to $4$ Courses).
+Minimum **Required Credits** $T \geqslant 16$ (equivalent to $4$ Courses).
 
 | Course ID | Course Name                                    | Prerequisite Course ID | Prerequisite Course Name                                    |
 | --------- | ---------------------------------------------- | ---------------------- | ----------------------------------------------------------- |
@@ -30,7 +30,7 @@ Minimum Required Credits $T \geqslant 16$ (equivalent to $4$ Courses).
 
 ### Elective Courses
 
-Minimum Elective Credits $V \geqslant 8$ (equivalent to $2$ Courses).
+Minimum **Elective Credits** $V \geqslant 8$ (equivalent to $2$ Courses).
 
 | Course ID | Course Name                               | Prerequisite Course ID | Prerequisite Course Name             |
 | --------- | ----------------------------------------- | ---------------------- | ------------------------------------ |
@@ -47,7 +47,7 @@ Minimum Elective Credits $V \geqslant 8$ (equivalent to $2$ Courses).
 
 ### Additional Elective Courses
 
-If $T + V < 34$, Additional Elective Courses must be chosen so that the Total Additional Elective Credits $F \geqslant 34 - T - V$.
+If $T + V < 34$, **Additional Elective Courses** must be chosen so that the total **Additional Elective Credits** $F \geqslant 34 - T - V$.
 
 ### Graduation Requirements
 
@@ -61,9 +61,9 @@ If $T + V < 34$, Additional Elective Courses must be chosen so that the Total Ad
 
 ## Phiên bản tiếng Việt
 
-### Học phần bắt buộc
+### Học phần Bắt buộc
 
-Số Tín chỉ Bắt buộc $T \geqslant 16$ (tương đương $4$ Học phần).
+Số **Tín chỉ Bắt buộc** $T \geqslant 16$ (tương đương $4$ Học phần).
 
 | Mã học phần | Tên học phần                               | Mã học phần tiên quyết | Tên học phần tiên quyết                            |
 | ----------- | ------------------------------------------ | ---------------------- | -------------------------------------------------- |
@@ -80,9 +80,9 @@ Số Tín chỉ Bắt buộc $T \geqslant 16$ (tương đương $4$ Học phần
 | CSC15011    | Nhập môn Ngôn ngữ học Thống kê và Ứng dụng | MTH00040, CSC10001     | Nhập môn Lập trình, Xác suất Thống kê              |
 | CSC15010    | Blockchain và Ứng dụng                     | CSC10002               | Kỹ thuật Lập trình                                 |
 
-### Học phần tự chọn
+### Học phần Tự chọn
 
-Số Tín chỉ Tự chọn $V \geqslant 8$ (tương đương $2$ Học phần).
+Số **Tín chỉ Tự chọn** $V \geqslant 8$ (tương đương $2$ Học phần).
 
 | Mã học phần | Tên học phần                             | Mã học phần tiên quyết | Tên học phần tiên quyết       |
 | ----------- | ---------------------------------------- | ---------------------- | ----------------------------- |
@@ -99,7 +99,7 @@ Số Tín chỉ Tự chọn $V \geqslant 8$ (tương đương $2$ Học phần).
 
 ### Học phần Tự do
 
-Nếu $T + V < 34$ thì phải chọn thêm Học phần Tự do sao cho số Tín chỉ Tự do $F \geqslant 34 - T - V$.
+Nếu $T + V < 34$ thì phải chọn thêm **Học phần Tự do** sao cho số **Tín chỉ Tự do** $F \geqslant 34 - T - V$.
 
 ### Kiến thức Tốt nghiệp
 

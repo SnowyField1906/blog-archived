@@ -3,7 +3,6 @@ import PageTitle from '@/components/PageTitle'
 import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
-const DEFAULT_LAYOUT = 'PostView'
 
 export async function getStaticPaths() {
   const posts = getFiles('posts')
@@ -43,7 +42,7 @@ export default function Post({ post, authorDetails, prev, next }) {
     <>
       {frontMatter.draft !== true ? (
         <MDXLayoutRenderer
-          layout={frontMatter.layout || DEFAULT_LAYOUT}
+          layout={'PostView'}
           toc={toc}
           mdxSource={mdxSource}
           frontMatter={frontMatter}

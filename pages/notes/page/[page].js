@@ -2,11 +2,12 @@ import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import NotesLayout from '@/layouts/NotesLayout'
-import { POSTS_PER_PAGE } from '../../notes'
+import { NOTES_PER_PAGE } from '../../notes'
+import { getAllTags } from '@/lib/tags'
 
 export async function getStaticPaths() {
-  const totalPosts = await getAllFilesFrontMatter('notes')
-  const totalPages = Math.ceil(totalPosts.length / POSTS_PER_PAGE)
+  const totalNotes = await getAllFilesFrontMatter('notes')
+  const totalPages = Math.ceil(totalNotes.length / NOTES_PER_PAGE)
   const paths = Array.from({ length: totalPages }, (_, i) => ({
     params: { page: (i + 1).toString() },
   }))
@@ -21,35 +22,40 @@ export async function getStaticProps(context) {
   const {
     params: { page },
   } = context
-  const posts = await getAllFilesFrontMatter('notes')
+  const notes = await getAllFilesFrontMatter('notes')
   const pageNumber = parseInt(page)
-  const initialDisplayPosts = posts.slice(
-    POSTS_PER_PAGE * (pageNumber - 1),
-    POSTS_PER_PAGE * pageNumber
+  const initialDisplayPosts = notes.slice(
+    NOTES_PER_PAGE * (pageNumber - 1),
+    NOTES_PER_PAGE * pageNumber
   )
   const pagination = {
     currentPage: pageNumber,
-    totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
+    totalPages: Math.ceil(notes.length / NOTES_PER_PAGE),
   }
+
+  const [tags] = await getAllTags('notes')
 
   return {
     props: {
-      posts,
+      notes,
       initialDisplayPosts,
       pagination,
+      pageNumber,
+      tags,
     },
   }
 }
 
-export default function PostPage({ posts, initialDisplayPosts, pagination }) {
+export default function NotePage({ notes, initialDisplayPosts, pagination, pageNumber, tags }) {
   return (
     <>
-      <PageSEO title={`Notes - ${siteMetadata.author}`} description={siteMetadata.notes} />
+      <PageSEO title={`Notes page ${pageNumber}`} description={siteMetadata.notes} />
       <NotesLayout
-        posts={posts}
+        notes={notes}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title="All Notes"
+        title={`Page ${pageNumber}`}
+        tags={tags}
       />
     </>
   )

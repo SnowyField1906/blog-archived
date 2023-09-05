@@ -1,5 +1,5 @@
 ---
-title: GPA Calculator
+title: HCMUS GPA Calculator
 date: '2023-07-31'
 tags: ['Script', 'Tool', 'HCMUS']
 draft: false

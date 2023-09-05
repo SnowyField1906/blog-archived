@@ -3,6 +3,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import PostsLayout from '@/layouts/PostsLayout'
 import { POSTS_PER_PAGE } from '../../posts'
+import { getAllTags } from '@/lib/tags'
 
 export async function getStaticPaths() {
   const totalPosts = await getAllFilesFrontMatter('posts')
@@ -32,24 +33,32 @@ export async function getStaticProps(context) {
     totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
   }
 
+  const [tags] = await getAllTags('posts')
+
   return {
     props: {
       posts,
       initialDisplayPosts,
       pagination,
+      pageNumber,
+      tags,
     },
   }
 }
 
-export default function PostPage({ posts, initialDisplayPosts, pagination }) {
+export default function PostPage({ posts, initialDisplayPosts, pagination, pageNumber, tags }) {
   return (
     <>
-      <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+      <PageSEO
+        title={`Posts page ${pageNumber} - ${siteMetadata.author}`}
+        description={siteMetadata.description}
+      />
       <PostsLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title="All Posts"
+        title={`Page ${pageNumber}`}
+        tags={tags}
       />
     </>
   )

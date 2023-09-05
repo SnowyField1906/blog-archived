@@ -4,7 +4,7 @@ import NotesLayout from '@/layouts/NotesLayout'
 import { PageSEO } from '@/components/SEO'
 import { getAllTags } from '@/lib/tags'
 
-export const NOTES_PER_PAGE = 5
+export const NOTES_PER_PAGE = 6
 
 export async function getStaticProps() {
   const notes = await getAllFilesFrontMatter('notes')
