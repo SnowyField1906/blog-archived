@@ -3,7 +3,7 @@ import prisma from 'lib/prisma'
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
-    const entries = await prisma.guestbook.findMany({
+    const entries = await prisma.checkin.findMany({
       orderBy: {
         updated_at: 'desc',
       },
@@ -27,7 +27,7 @@ export default async function handler(req, res) {
   }
 
   if (req.method === 'POST') {
-    const newEntry = await prisma.guestbook.create({
+    const newEntry = await prisma.checkin.create({
       data: {
         email,
         body: (req.body.body || '').slice(0, 500),

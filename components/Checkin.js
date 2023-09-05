@@ -10,16 +10,16 @@ import ErrorMessage from '@/components/ErrorMessage'
 import LoadingSpinner from '@/components/LoadingSpinner'
 import { FaGoogle, FaGithub } from 'react-icons/fa'
 
-function GuestbookEntry({ entry, user }) {
+function CheckinEntry({ entry, user }) {
   const { mutate } = useSWRConfig()
   const deleteEntry = async (e) => {
     e.preventDefault()
 
-    await fetch(`/api/guestbook/${entry.id}`, {
+    await fetch(`/api/checkin/${entry.id}`, {
       method: 'DELETE',
     })
 
-    mutate('/api/guestbook')
+    mutate('/api/checkin')
   }
 
   return (
@@ -51,21 +51,21 @@ function GuestbookEntry({ entry, user }) {
   )
 }
 
-export default function Guestbook({ fallbackData }) {
+export default function Checkin({ fallbackData }) {
   const { data: session } = useSession()
   const [isLoadingGoogle, setIsLoadingGoogle] = useState()
   const [isLoadingGithub, setIsLoadingGithub] = useState()
   const { mutate } = useSWRConfig()
   const [form, setForm] = useState(false)
   const inputEl = useRef(null)
-  const { data: entries } = useSWR('/api/guestbook', fetcher, {
+  const { data: entries } = useSWR('/api/checkin', fetcher, {
     fallbackData,
   })
 
   const leaveEntry = async (e) => {
     e.preventDefault()
     setForm({ state: 'loading' })
-    const res = await fetch('/api/guestbook', {
+    const res = await fetch('/api/checkin', {
       body: JSON.stringify({
         body: inputEl.current.value,
       }),
@@ -85,10 +85,10 @@ export default function Guestbook({ fallbackData }) {
     }
 
     inputEl.current.value = ''
-    mutate('/api/guestbook')
+    mutate('/api/checkin')
     setForm({
       state: 'success',
-      message: `Hooray! Thanks for signing my Guestbook.`,
+      message: `Yayyyy! Thanks for making the check-in here!`,
     })
   }
 
@@ -97,7 +97,7 @@ export default function Guestbook({ fallbackData }) {
       <div className="my-2 w-full rounded-md border border-gray-200 bg-white px-6 py-2 shadow-md shadow-gray-400 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
         <div className="grid items-center justify-center">
           <h5 className="mt-2 text-lg font-semibold text-gray-900 dark:text-gray-100 md:text-lg">
-            Sign the Guestbook
+            Make your mark on my blog
           </h5>
         </div>
         {!session && (
@@ -178,7 +178,7 @@ export default function Guestbook({ fallbackData }) {
       </div>
       <div className="w-full">
         {entries?.map((entry) => (
-          <GuestbookEntry key={entry.id} entry={entry} user={session?.user} />
+          <CheckinEntry key={entry.id} entry={entry} user={session?.user} />
         ))}
       </div>
     </>

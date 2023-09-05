@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   const { id } = req.query
   const { email } = session.user
 
-  const entry = await prisma.guestbook.findUnique({
+  const entry = await prisma.checkin.findUnique({
     where: {
       id: Number(id),
     },
@@ -27,7 +27,7 @@ export default async function handler(req, res) {
   }
 
   if (req.method === 'DELETE') {
-    await prisma.guestbook.delete({
+    await prisma.checkin.delete({
       where: {
         id: Number(id),
       },
@@ -39,7 +39,7 @@ export default async function handler(req, res) {
   if (req.method === 'PUT') {
     const body = (req.body.body || '').slice(0, 500)
 
-    await prisma.guestbook.update({
+    await prisma.checkin.update({
       where: {
         id: Number(id),
       },

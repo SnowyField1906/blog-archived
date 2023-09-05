@@ -1,19 +1,19 @@
 import prisma from 'lib/prisma'
-import Guestbook from '@/components/Guestbook'
+import Checkin from '@/components/Checkin'
 import siteMetadata from '@/data/siteMetadata'
 import { PageSEO } from '@/components/SEO'
 
-export default function GuestbookPage({ fallbackData }) {
+export default function CheckinPage({ fallbackData }) {
   return (
     <>
       <PageSEO
-        title={`Guestbook - ${siteMetadata.author}`}
-        description="Guestbook for my future visitors"
+        title={`Check-in - ${siteMetadata.author}`}
+        description="Checkin for my future visitors"
       />
       <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">
         {/* <h1 className="mb-4 text-3xl font-bold 
       tracking-tight text-black dark:text-white md:text-5xl">
-        Guestbook
+        Checkin
       </h1>
       <p className="mb-4 text-gray-600 dark:text-gray-400">
         Leave a comment below. It could be anything – appreciation, information, wisdom, or even
@@ -25,13 +25,17 @@ export default function GuestbookPage({ fallbackData }) {
             write anything!
           </p>
         </div>
-        <Guestbook fallbackData={fallbackData} />
+        <Checkin fallbackData={fallbackData} />
       </div>
     </>
   )
 }
 export async function getStaticProps() {
-  const entries = await prisma.guestbook.findMany({
+  let a = await prisma.checkin
+
+  console.log('a', a)
+
+  const entries = await prisma.checkin.findMany({
     orderBy: {
       updated_at: 'desc',
     },

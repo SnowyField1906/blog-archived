@@ -250,7 +250,7 @@ export default function DropMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/guestbook">
+                <Link href="/checkin">
                   <a
                     className={classNames(
                       active
@@ -260,7 +260,7 @@ export default function DropMenu() {
                     )}
                   >
                     <div className="flex flex-row">
-                      <ChatBubbleIcon className="mr-4 mt-0.5" /> Guestbook
+                      <ChatBubbleIcon className="mr-4 mt-0.5" /> Check-in
                     </div>
                   </a>
                 </Link>
