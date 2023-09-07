@@ -1,9 +1,9 @@
 ---
 title: Giới thiệu chi tiết về bài toán Mental Poker
 date: '2023-09-01'
-tags: ['Poker', 'ZKP', 'Blockchain', 'Cryptography']
+tags: ['Poker', 'ZKP', 'Cryptography']
 draft: false
-summary: Tìm hiểu về thuật toán mã hóa cho Mental Poker, tính khả thi trong việc triển khai Poker trên Blockchain bằng Zero-Knowledge Proof
+summary: Tìm hiểu chi tiết về cách triển khai Mental Poker bằng một số thuật toán mã hóa đặc biệt cùng với Zero-Knowledge Proof.
 layout: PostView
 thumbnail: '/static/images/thumbnails/gioi-thieu-chi-tiet-ve-bai-toan-mental-poker.png'
 ---
@@ -23,33 +23,53 @@ Trước khi đi vào bài viết, chúng ta có thể tìm hiểu về ZKP tạ
 Nhưng tại sao lại là Poker? Vì nó là một ví dụ hoàn hảo để đại diện cho vấn đề trên.
 Trong bài viết này, quy ước rằng Poker được đề cập đến là Texas Hold'em.
 
-### Vấn đề
+### Vấn đề của trò chơi online hiện nay
 
-Để hiểu rõ hơn, trong khi mọi người cùng nhau chơi một ván bài ngoài đời thực.
-Sẽ rất khó để ai đó có thể gian lận (như xem bài của người khác, hoặc thay đổi bài của mình) mà không bị phát hiện.
+Để hiểu rõ hơn, trong khi mọi người cùng nhau chơi **một ván bài ngoài đời thực**.
+Sẽ rất khó để ai đó có thể gian lận (như xem bài của người khác, thay đổi bài của mình,...) mà không bị phát hiện, vì mọi người lúc này đều có thể nhìn thấy các hành động của nhau.
 
-Nhưng khi chúng ta chơi từ xa (qua bưu điện hay online), mọi thứ sẽ trở nên khác.
-Chúng ta sẽ không thể biết được những người khác có đang thực sự trung thực, hay liệu các hành động của mình có được thực sự bảo mật để không bị người khác biết được hay không.
+Nhưng hãy tưởng tượng những gì sẽ xảy ra nếu đây là **một ván bài từ xa** thông qua bưu điện?
 
-Để tránh điều này, hầu hết các trò chơi online đều tổ chức theo kiểu Dealer (Nhà cái) và người chơi.
-Dealer sẽ quản lí và nắm giữ thông tin của các người chơi để tránh việc người chơi tương tác trực tiếp với nhau nhằm gian lận.
-Ví dụ trong một ván bài, Dealer sẽ xáo bài và đưa ra các quyết định.
+Sẽ có hai cách để chơi:
 
-Nó tuy an toàn hơn việc người chơi tự xáo bài nhưng điều này buộc chúng ta phải tin tưởng vào Dealer tuyệt đối, vì:
+1. **Mô hình Peer-to-Peer**: Một người chơi nắm giữ bộ bài và xáo bài, sau đó gửi đi cho những người chơi khác.
+2. **Mô hình Client-Server**: Nhờ một người khác làm trung tâm, thực hiện xáo bài và quản lí các lá bài của mọi người.
 
-- Dealer hoàn toàn biết được toàn bộ lá bài và có thể bị đọc được bởi các quản trị viên của nó.
-- Hacker có thể có được thông tin về các lá bài của người chơi khi tấn công vào trò chơi.
-- Dealer có thể thao túng làm thay đổi giá trị của các lá bài mà người chơi không thể biết.
+#### Cách 1: Mô hình Peer-to-Peer
 
-Rõ ràng Dealer là một client (máy chủ), hoàn toàn có thể bị hack hoặc bị thâm nhập bởi các quản trị viên của nó.
-Tồi tệ hơn là chúng ta không thể biết được ván bài vừa rồi có bị hack hay bị quản trị viên thao túng hay không.
+Cách này có mô hình **Peer-to-Peer** (Ngang hàng), đây là một kiểu tương tác giữa các người dùng trong một network. Trong đó, không có một trung tâm nào kiểm soát những người khác, mọi người sẽ tương tác trực tiếp với nhau mà không thông qua bất kì một bên nào.
+
+Nhưng bộ bài lúc này buộc phải nằm trên tay một người chơi nào đó, người thực hiện xáo bài và gửi đi cho những người chơi khác. Điều này đồng nghĩa với việc chúng ta buộc phải tin tưởng không chỉ người này mà toàn bộ những người khác.
+
+Bởi vì người đó có thể biết được toàn bộ bài của mọi người. Hơn nữa, không ai có thể kiểm soát, đưa ra các quyết định hay làm chứng được những gì đang xảy ra.
+
+Vì vậy, cách thứ 2 trông có vẻ ổn hơn.
+
+#### Cách 2: Mô hình Client-Server
+
+Mô hình **Client-Server** (Tập trung) là cách không những các trò chơi online mà hầu đều các dịch vụ internet hiện nay đều sử dụng. Đây cũng là một kiểu tương tác giữa các người dùng trong một network. Trong đó, bất kì thông tin nào cũng đều sẽ phải thông qua một Client (Máy chủ) trung tâm, client này sẽ nắm giữ, quản lí và xử lí các thông tin giữa các Server (Máy khách).
+
+Với cách này, chúng ta sẽ tổ chức trò chơi theo kiểu Dealer (Nhà cái) và người chơi. Dealer sẽ xáo bài và nắm giữ các lá bài của mọi người. Lúc này, người chơi sẽ chỉ việc nhận các thông tin của ván bài từ dealer và gửi các quyết định của mình cho dealer.
+
+Việc dealer nắm giữ thông tin của các người chơi để tránh việc người chơi tương tác trực tiếp với nhau nhằm gian lận là một điều tất yếu. Tuy nhiên, điều này lại đồng nghĩa với việc chúng ta phải tin tưởng vào dealer tuyệt đối, trong khi:
+
+- Dealer hoàn toàn biết được toàn bộ lá bài và có thể thông đồng với một ai đó để giúp họ gian lận.
+- Ai đó có thể đe dọa hoặc âm thầm theo dõi dealer để gian lận.
+- Dealer có thể thao túng, nói dối người chơi hoặc âm thầm thay đổi giá trị của các lá bài.
+
+#### Kết luận vấn đề
+
+Việc **chơi poker qua bưu điện** chính là một mô hình hóa của hình thức chơi poker online hiện nay (hoàn toàn tương đương nhau).
+
+Rõ ràng dealer là một client (máy chủ), hoàn toàn có thể bị hack hoặc bị thâm nhập bởi các quản trị viên của nó.
+Tồi tệ hơn là chúng ta không thể biết được ván bài vừa rồi có bị hack hay bị thao túng hay không.
 
 ### Giải pháp
 
 Để giải quyết vấn đề này, chúng ta cần phải loại bỏ dealer ra khỏi trò chơi.
-Nhưng lúc này, người thực hiện việc xáo bài chính là người chơi, dẫn đến một số vấn đề mới như người xáo bài cuối cùng hoàn toàn biết được toàn bộ các lá bài.
+Nhưng lúc này, người thực hiện việc xáo bài và giám sát chính là nhưỡng người chơi, dẫn đến những vấn đề đã đuoọc đề cập [cách 1](#cách-1-mô-hình-peer-to-peer).
 
-Do đó, trò chơi phải được triển khai bằng những bằng những thuật toán mã hóa đặc biệt để giúp người chơi tương tác trực tiếp với nhau mà không cần phải tin tưởng nhau.
+Do đó, trò chơi phải được triển khai bằng những bằng những thuật toán mã hóa đặc biệt để giúp người chơi tương tác trực tiếp với nhau nhưng vẫn không cần phải tin tưởng nhau.
 
 ## Commutative Encryption
 
@@ -65,12 +85,13 @@ Ví dụ, khi Bob có một tin nhắn từ Alice và tin nhắn này bị mã h
 - Nhưng đối với Commutative Encryption, chúng ta chỉ việc khóa thêm một ổ khóa.
   Lúc này, chúng ta có thể mở được hộp mà không cần phải quan tâm đến thứ tự mở khóa.
 
-## Giới thiệu về thuật toán
+## Đi vào thuật toán
 
 Để đảm bảo người xáo bài cuối cùng không biết được toàn bộ các lá bài, chúng ta cần phải sử dụng một thuật toán xáo bài đặc biệt sử dụng Commutative Encryption.
-Thuật toán này sẽ được thực hiện như ví dụ sau:
 
-### Ví dụ
+Thuật toán này sẽ được thực hiện tương tự ví dụ sau.
+
+### Ví dụ về thuật toán
 
 Alice và Bob cùng nhau chơi một ván bài Poker và cùng đồng ý một bộ bài nhất định, có nghĩa là họ biết được và đồng ý về các giá trị và số lượng của các lá bài này.
 
@@ -106,45 +127,67 @@ Alice và Bob cùng nhau chơi một ván bài Poker và cùng đồng ý một 
     Hay nói cách khác, nếu xảy ra gian lận, chỉ có thể rằng tất cả mọi người cùng nhau đồng ý gian lận.
 18. Khi đến với phần xác định người thắng cuộc, Alice và Bob sẽ giải mã các lá bài của nhau để xem bài.
 
-### Kết luận
+### Kết luận về thuật toán
 
 Như vậy, với thuật toán này, chúng ta có thể đảm bảo rằng người xáo bài cuối cùng không biết được toàn bộ các lá bài.
 Đối với những sòng có nhiều người chơi hơn, chúng ta chỉ cần thêm các bước mã hóa và giải mã của họ trong mỗi giai đoạn.
 
-## Chi tiết quá trình triển khai
+## Triển khai thuật toán
+
+Phía trên là thuật toán chung cho mental poker, do đó chúng ta có nhiều cách để triển khai nó.
+
+Bài viết này sẽ giới thiệu một cách triển khai của Adam Barnett và Nigel P. Smart, chi tiết về nghiên cứu này tại [đây](https://www.researchgate.net/publication/225143036_Mental_Poker_Revisited).
 
 ### Quy ước kí hiệu
 
-Kí hiệu là $\alpha \overset{{\scriptscriptstyle \operatorname{R}}}{\leftarrow}\mathbb{G}$ cho biết phần tử $\alpha$ được chọn ngẫu nhiên từ $\mathbb{G}$.
+Kí hiệu $\alpha \overset{{\scriptscriptstyle \operatorname{R}}}{\leftarrow}\mathbb{G}$ cho biết phần tử $\alpha$ được **chọn ngẫu nhiên** từ $\mathbb{G}$.
+
+Kí hiệu $X \hookrightarrow Y$ cho biết ánh xạ $X$ sang $Y$ là một **song ánh**, hay nói cách khác, nó là một ánh xạ một-một và toàn phần.
 
 ### Giả định
 
 Cho một nhóm gồm $l$ người chơi được đánh dấu bằng chỉ số $i$:
 
 $$
+\begin{align}
 i \in \{1, 2, \ldots, l\}
+\end{align}
 $$
 
-Và bộ bài $D$ được sử dụng gồm các lá bài:
+Bộ bài hợp lệ $D$ được dùng trong trò chơi gồm 52 lá bài được biểu diễn như sau:
 
 $$
+\begin{align}
 D = \{d_1, d_2, \ldots, d_{52}\}
+\end{align}
 $$
 
-Biết rằng với mỗi lá bài $d_i$ có thể được biểu diễn như sau:
+Và 52 lá bài này được đánh dấu bằng chỉ số $j$:
 
 $$
-d_i = (s_i, r_i) \enspace \text{với} \enspace
+\begin{align}
+j \in J = \{1, 2, \ldots, 52\}
+\end{align}
+$$
+
+Biết rằng với mỗi lá bài $d$ có thể được biểu diễn bằng chất $s$ và bậc $r$:
+
+$$
+\begin{align}
+d = (s, r) \enspace \text{với} \enspace
 \begin{cases}
-    s_i \in \{1, 2, 3, 4\} \\
-    r_i \in \{1, 2, \ldots, 13\}
+    s \in \{1, 2, 3, 4\} \\
+    r \in \{1, 2, \ldots, 13\}
 \end{cases}
+\end{align}
 $$
 
 Giả định rằng các người chơi đồng ý sử dụng [Finitely Generated Abelian Group](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group) (Nhóm Abel Hữu hạn Sinh) $\mathbb{G}$ cấp $p$ (là một số nguyên tố) và phép toán nhóm $+$, khi đó $G$ là một phần tử sinh:
 
 $$
+\begin{align}
 G = G(q, +) \in \mathbb{G}
+\end{align}
 $$
 
 > **📝 Nhắc lại**
@@ -166,83 +209,191 @@ $$
 Khi đó, tồn tại ánh xạ $\mathcal{M}$ chiếu từ các lá bài sang các phần tử sinh của $\mathbb{G}$. Cho trước một lá bài $d$, có thể tính được $M = \mathcal{M}(d)$ là một phần tử sinh của $\mathbb{G}$.
 
 $$
+\begin{align}
 \mathcal{M}: D \rightarrow \mathbb{G} \enspace \text{với} \enspace
 \begin{cases}
     \mathcal{M}(d) \in \mathbb{G} \\
-    \mathcal{M}(d) = \mathcal{M}(d') \Leftrightarrow d = d'
+    \mathcal{M}(d) = \mathcal{M}(d') \iff d = d'
 \end{cases}
+\end{align}
 $$
 
-Với cấp số $p$, ta có tập $\mathbb{Z}_p$ là một [Multiplicative Group of Integers Modulo](https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n) (Nhóm Nhân của Số Nguyên Modulo) với modulo là $p$, do đó đảm bảo mọi giá trị trong tập này thuộc $\{1, 2, \ldots, p-1\}$.
+Với cấp số $p$, ta có tập $\mathbb{Z}_p$ là một [Multiplicative Group of Integers Modulo](https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n) (Nhóm Nhân của Số Nguyên Modulo) với modulo là $p$, do đó đảm bảo mọi giá trị từ $\mathbb{Z}$ đều thuộc tập $\{1, 2, \ldots, p-1\}$. Các secret key sẽ được chọn ngẫu nhiên từ tập này.
 
 ### Quy trình
 
 #### Tạo khóa
 
-Mỗi người chơi $i$ sẽ tạo cho mình một secret key $sk_i \overset{{\scriptscriptstyle \operatorname{R}}}{\leftarrow}\mathbb{Z}_{q}$, từ đó tính được public key $pk_i = sk_i \cdot G$.
-
-Để ngăn chặn việc người chơi cố tình sử dụng các khóa công khai giả mạo nhằm đánh lừa hoặc phá vỡ hệ thống trò chơi, các người chơi cũng sẽ phải chứng minh được rằng họ thực sự có secret key tương ứng với public key của mình. Việc này có thể được thực hiện bằng cách sử dụng [Schnorr’s Identification Protocol](https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/) (Giao thức Xác thực Schnorr).
-
-Một khi đã có được các public key của tất cả các người chơi, chúng ta có thể tính được public key chung $P$ của tất cả mọi người:
+Mỗi người chơi $i$ sẽ tạo cho mình một secret key $sk_i$ và public key $pk_i$ tương ứng:
 
 $$
+\begin{align}
+sk_i & \overset{{\scriptscriptstyle \operatorname{R}}}{\leftarrow}\mathbb{Z}_{q} \\
+pk_i &= sk_i \cdot G
+\end{align}
+$$
+
+Để ngăn chặn việc người chơi cố tình sử dụng các khóa công khai giả mạo nhằm đánh lừa hoặc phá vỡ hệ thống trò chơi, các người chơi cũng sẽ phải chứng minh được rằng họ thực sự có secret key tương ứng với public key của mình mà không cần phải tiết lộ secret key đó.
+
+Việc này có thể được thực hiện bằng cách sử dụng một giao thức Zero-Knowledge khá cơ bản gọi là [Schnorr’s Identification Protocol](https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/) (Giao thức Xác thực Schnorr).
+
+Một khi đã có được tất cả public key hợp lệ từ mọi người, chúng ta sẽ dùng nó để tính public key chung $P$:
+
+$$
+\begin{align}
 P = \sum_{i=1}^{l} pk_i = \sum_{i=1}^{l} sk_iG
+\end{align}
 $$
 
 #### Mã hóa lá bài
 
-Mã hóa toàn bộ các lá bài bằng cách sử dụng một **hàm mã hóa** $\varepsilon$ lên từng lá bài, thực tế hàm này là một [Mã hóa ElGamal](https://en.wikipedia.org/wiki/ElGamal_encryption). Lá bài $M \in \mathbb{G}$ sẽ được mã hóa thành $C \in \mathbb{G} \times \mathbb{G}$ theo công thức sau:
+Mã hóa toàn bộ các lá bài bằng cách sử dụng một **hàm mã hóa** $\varepsilon$ lên từng lá bài, thực tế hàm này là một [Mã hóa ElGamal](https://en.wikipedia.org/wiki/ElGamal_encryption).
+
+Lá bài đã mã hóa $C$ có thể được mã hóa thêm lần nữa bằng cách cộng với một **số bí mật** $\delta$ như sau:
 
 $$
-C = \varepsilon_P(M) = \begin{pmatrix}
-    C_1 \\
-    C_2
-\end{pmatrix} = \begin{pmatrix}
-    rG \\
-    M + rP
-\end{pmatrix} \enspace \text{với} \enspace r \overset{{\scriptscriptstyle \operatorname{R}}}{\leftarrow}\mathbb{Z}_{q}
+\begin{align}
+C' &= \varepsilon_P(C) \\
+&= C + \delta \\
+&= \begin{pmatrix} C_1 \\ C_2 \end{pmatrix} + \begin{pmatrix} rG \\ rP \end{pmatrix} \\
+&= \begin{pmatrix} C_1 + rG \\ C_2 + rP\end{pmatrix} \enspace \text{với} \enspace r \overset{{\scriptscriptstyle \operatorname{R}}}{\leftarrow}\mathbb{Z}_{q}
+\end{align}
 $$
 
-$r$ là một số ngẫu nhiên bí mật được tạo ra bởi người chơi đó để mã hóa lá bài.
+Trong đó, $r$ là một **số ngẫu nhiên bí mật** được tạo ra bởi người chơi đó để mã hóa lá bài.
 
-#### Mã hóa đè lá bài
-
-Lá bài có thể đuọc mã hóa lần nữa thông qua một **hàm mã hóa đè** $\varepsilon'$, hàm này sẽ được sử dụng để mã hóa lá bài $C$ thành $C'$:
+Tuy nhiên ở lượt mã hóa đầu tiên, lá bài vẫn đang ở dạng chuẩn $M \in \mathbb{G}$, cho nên nó sẽ được chuyển hóa thành $C \in \mathbb{G} \times \mathbb{G}$ như sau:
 
 $$
-C' = \varepsilon'(P, C) = \begin{pmatrix}
-    C'_1 \\
-    C'_2
-\end{pmatrix} = C + \begin{pmatrix}
-    r'G \\
-    r'P
-\end{pmatrix} = \begin{pmatrix}
-    C_1 + r'G \\
-    C_2 + r'P
-\end{pmatrix} \enspace \text{với} \enspace r' \overset{{\scriptscriptstyle \operatorname{R}}}{\leftarrow}\mathbb{Z}_{q}
+\begin{align}
+C = \begin{pmatrix} C_1 \\ C_2 \end{pmatrix} = \begin{pmatrix} 0 \\ M \end{pmatrix}
+\end{align}
+$$
+
+Do đó, ở lượt mã hóa đầu tiên, kết quả sẽ là:
+
+$$
+\begin{align}
+C' = \begin{pmatrix} rG \\ M + rP \end{pmatrix}
+\end{align}
 $$
 
 #### Giải mã lá bài
 
 Qua các công thức trên, ta có thể thấy một lá bài được mã hóa
-$C = \begin{pmatrix}
-C_1 \\
-C_2
-\end{pmatrix}$
-gồm hai thành phần $C_1$ và $C_2$ và chúng có cùng hệ số $r$. Để giải mã lá bài được mã hóa $C$, người chơi $i$ cần sử dụng secret key $sk_i$ của mình để tính giá trị $D = sk_i \cdot C_1$, tập hợp các giá trị $D$ từ những người đã mã hóa lá bài bài sẽ giải mã được lá bài $C$:
+$C = \begin{pmatrix} C_1 \\ C_2 \end{pmatrix}$
+gồm hai thành phần $C_1$ và $C_2$ và chúng có cùng hệ số $r$. Để giải mã lá bài được mã hóa $C$, người chơi $i$ cần sử dụng secret key $sk_i$ của mình để tính giá trị $D$:
 
 $$
+\begin{align}
+D &= sk_i \cdot C_1 \\
+\end{align}
+$$
+
+Tập hợp các giá trị $D$ từ tất cả mọi người (những người đã mã hóa lá bài) sẽ giải mã được $C$:
+
+$$
+\begin{align}
 M = C_2 - \sum_{i=1}^{l} D_i
+\end{align}
 $$
 
-Ta có thể chứng minh được công thức trên như sau:
+> **💁‍♀️ Giải thích**
+>
+> Ta có thể chứng minh được công thức trên như sau:
+>
+> $$
+> \begin{align*}
+> C_2 - \sum_{i=1}^{l} D_i &= C_2 - \sum_{i=1}^{l} sk_iC_1 \\
+> &= (M + rP) - \sum_{i=1}^{l} sk_i(rG) \\
+> &= M + rP - r\sum_{i=1}^{l} sk_iG \\
+> &= M + rP - rP \tag*{\text{xem lại} (9)} \\
+> &= M
+> \end{align*}
+> $$
+
+#### Xáo bài
+
+Làm sao để đảm bảo bộ bài mà ai đó xáo là hợp lệ? Hay nói cách khác, bộ bài sau khi được xáo phải khớp với bộ bài ban đầu, không có lá bài nào bị thêm vào hay bị bỏ đi.
+
+Lúc này, chúng ta sẽ áp dụng Zero-Knowledge Proof để chứng minh rằng bộ bài sau khi **mã hóa và xáo** là hợp lệ mà không cần phải tiết lộ **thứ tự các lá bài**, **quá trình xáo** hoặc **quá trình mã hóa**.
+
+Trước tiên, cơ chế **mã hóa và xáo** được thực hiện cùng lúc bằng cách chọn một **tập hợp các số bí mật** $\Delta$ dùng để mã hóa:
 
 $$
-\begin{aligned}
-    C_2 - \sum_{i=1}^{l} D_i &= C_2 - \sum_{i=1}^{l} sk_iC_1 \\
-    &= (M + rP) - \sum_{i=1}^{l} sk_i(rG) \\
-    &= M + rP - r\sum_{i=1}^{l} sk_iG \\
-    &= M + rP - rP \\
-    &= M
-\end{aligned}
+\begin{align}
+\Delta = \{\delta_1, \delta_2, \ldots, \delta_{52} \}
+\end{align}
 $$
+
+Và một **hàm hoán vị bí mật** $\Pi$, đóng vai trò như một **hàm hoán vị** dùng để xáo trộn thứ tự của các chỉ mục $j$ cho lá bài, do đó có thể xem đây là một song ánh:
+
+$$
+\begin{align}
+\Pi: J \hookrightarrow  J' \enspace \text{với} \enspace J = J'
+\end{align}
+$$
+
+Vì tổng có tính chất giao hoán, nên tổng của các chỉ mục $J$ ban đầu sẽ luôn bằng tổng của các chỉ mục $J'$ sau khi hoán vị:
+
+$$
+\begin{align}
+\text{Đặt} \enspace \pi_j = \Pi(j) \implies \sum_{j=1}^{52} j = \sum_{j=1}^{52} \pi_j
+\end{align}
+$$
+
+Khi đó bộ bài $D$ sẽ được xáo thành $D'$ với theo từng lá bài:
+
+$$
+\begin{align}
+d'_j = d_{\pi_j} + \delta_j
+\end{align}
+$$
+
+##### Chứng minh
+
+Chọn ngẫu nhiên một số $z \overset{{\scriptscriptstyle \operatorname{R}}}{\leftarrow}\mathbb{Z}_{q} \setminus \{0, 1\}$, lí do $z \notin \{0, 1\}$ là vì chúng ta sẽ dùng số này để nhân với các lá bài.
+
+Một lượt xáo bài hợp lệ là khi:
+
+$$
+\begin{align}
+\sum_{j=1}^{52} z^{j}d_j = \sum_{j=1}^{52} z^{\pi_j}(d_j' - \delta_j)
+\end{align}
+$$
+
+Vế trái sẽ là đa thức của Verifier (người xáo bài trước) vì vế này chỉ sử dụng $d_j$ là thứ tự các lá bài mà người này thực hiện xáo.
+
+Trong khi đó vế phải là đa thức của Prover (người xáo bài lần này), vì chỉ người này mới có những thông tin bí mật như $\delta_j$ hay $\pi_j$.
+
+Khi đó, một người sau khi xáo bài xong sẽ gửi cho người trước một Zero-Knowledge Proof là $\sum_{j=1}^{52} z^{\pi_j}\delta_j$. Với ZKP này, người trước có thể kiểm tra được rằng bộ bài sau khi xáo là hợp lệ mà vẫn không biết được thông tin về thứ tự các lá bài.
+
+##### Giải thích
+
+Chúng ta sẽ chứng minh công thức trên như sau.
+
+Cho một nhân tử $G$ là một phần tử sinh của $\mathbb{G}$, khi đó:
+
+$$
+\begin{alignat}{7}
+& Đặt \enspace && x_j && = \frac{d_j}{G}, && \quad y_j && = \frac{d_j'}{G}, && \quad z_j && = \frac{\delta_j}{G} \notag \\
+& \implies && d_j && = x_jG, && \quad d_j' && = y_jG, && \quad \delta_j && = z_jG \\
+\end{alignat}
+$$
+
+Thay những giá trị này vào công thức trên, ta được:
+
+$$
+\begin{align*}
+\left(\sum_{j=1}^{52} z^{j}x_j\right)G &= \left(\sum_{j=1}^{52} z^{\pi_j}(y_j - z_j)\right)G \\
+\iff \sum_{j=1}^{52} z^{j}x_j &= \sum_{j=1}^{52} z^{\pi_j}(y_j - z_j) \\
+\iff \sum_{j=1}^{52} z^{\pi_j}x_{\pi_j} &= \sum_{j=1}^{52} z^{\pi_j}(y_j - z_j) \tag*{\text{xem lại} (19)} \\
+\iff x_{\pi_j} &= y_j - z_j \\
+\implies x_{\pi_j}G &= y_jG - z_jG \\
+\iff d_{\pi_j} &= d_j' - \delta_j \tag*{\text{xem lại} (22)}
+\end{align*}
+$$
+
+## Kết luận
+
+Pheeew! Chúng ta đã đi qua rất nhiều công thức phức tạp, nhưng nếu hiểu được nó, chúng ta có thể dễ dàng chuyển đổi nó thành code. Còn nếu không thì hãy bình luận bên dưới những thắc mắc để được trợ giúp nhé 😉

@@ -190,9 +190,13 @@ module.exports = {
               textAlign: 'center',
               color: theme('colors.gray.600'),
             },
-            '[class~="math"]': {
+            '[class~="math-display"]': {
               textAlign: 'center',
               overflowX: 'auto',
+              width: '100%',
+            },
+            '[class~="tag"]': {
+              paddingLeft: '10px',
             },
             img: {
               //w-full md:w-1/2 flex justify-center mx-auto

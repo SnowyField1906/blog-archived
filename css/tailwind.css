@@ -241,3 +241,8 @@ tr:last-child td:last-child {
 .dark tr:nth-child(odd):hover td {
   background: var(--primary-800);
 }
+
+.katex-display > .katex > .katex-html > .tag {
+  position: relative !important;
+  right: 0;
+}

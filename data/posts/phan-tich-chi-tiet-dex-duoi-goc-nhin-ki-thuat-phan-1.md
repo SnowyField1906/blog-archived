@@ -64,7 +64,7 @@ Mỗi điểm trên đường cong biểu thị một trạng thái có thể x�
 
 $$
 xy = k \newline
-\Rightarrow \ x = \frac{k}{y} \quad \text{hay} \quad  y = \frac{k}{x}
+\implies \ x = \frac{k}{y} \quad \text{hay} \quad  y = \frac{k}{x}
 $$
 
 Trong đó:
@@ -94,12 +94,12 @@ Vì $k$ không bị thay đổi sau khi swap, chúng ta có thể tính được
 $$
 \begin{align*}
 (x + r\Delta x)(y - \Delta y) &= xy \newline
-\Leftrightarrow y - \Delta y &= \frac{xy}{x + r\Delta x} \newline
-\Leftrightarrow -\Delta y &= \frac{xy}{x + r\Delta x} - y \newline
-\Leftrightarrow -\Delta y &= \frac{xy - y({x + r\Delta x})}{x + r\Delta x} \newline
-\Leftrightarrow -\Delta y &= \frac{xy - xy - y r \Delta x}{x + r\Delta x} \newline
-\Leftrightarrow -\Delta y &= \frac{- y r \Delta x}{x + r\Delta x} \newline
-\Leftrightarrow \Delta y &= \frac{y r \Delta x}{x + r\Delta x} \newline
+\iff y - \Delta y &= \frac{xy}{x + r\Delta x} \newline
+\iff -\Delta y &= \frac{xy}{x + r\Delta x} - y \newline
+\iff -\Delta y &= \frac{xy - y({x + r\Delta x})}{x + r\Delta x} \newline
+\iff -\Delta y &= \frac{xy - xy - y r \Delta x}{x + r\Delta x} \newline
+\iff -\Delta y &= \frac{- y r \Delta x}{x + r\Delta x} \newline
+\iff \Delta y &= \frac{y r \Delta x}{x + r\Delta x} \newline
 \end{align*}
 $$
 
@@ -108,12 +108,12 @@ Tương tự với $\Delta x$:
 $$
 \begin{align*}
 (x + r\Delta x)(y - \Delta y) &= xy \newline
-\Leftrightarrow x + r\Delta x &= \frac{xy}{y - \Delta y} \newline
-\Leftrightarrow r\Delta x &= \frac{xy}{y - \Delta y} - x \newline
-\Leftrightarrow r\Delta x &= \frac{xy - x(y - \Delta y)}{y - \Delta y} \newline
-\Leftrightarrow r\Delta x &= \frac{xy - xy + x \Delta y}{y - \Delta y} \newline
-\Leftrightarrow r\Delta x &= \frac{x \Delta y}{y - \Delta y} \newline
-\Leftrightarrow \Delta x &= \frac{x \Delta y}{r(y - \Delta y)} \newline
+\iff x + r\Delta x &= \frac{xy}{y - \Delta y} \newline
+\iff r\Delta x &= \frac{xy}{y - \Delta y} - x \newline
+\iff r\Delta x &= \frac{xy - x(y - \Delta y)}{y - \Delta y} \newline
+\iff r\Delta x &= \frac{xy - xy + x \Delta y}{y - \Delta y} \newline
+\iff r\Delta x &= \frac{x \Delta y}{y - \Delta y} \newline
+\iff \Delta x &= \frac{x \Delta y}{r(y - \Delta y)} \newline
 \end{align*}
 $$
 
@@ -124,9 +124,9 @@ Ta có thể chứng minh **Đạo hàm của đường cong** tại một đi�
 $$
 \begin{align*}
 y &= \frac{k}{x} \newline
-\Leftrightarrow \frac{dy}{dx} &= \frac{d}{dx}(\frac{k}{x}) \newline
-\Leftrightarrow \frac{dy}{dx} &= -\frac{k}{x^2} \newline
-\Leftrightarrow \frac{dy}{dx} &= -\frac{y}{x} \newline
+\iff \frac{dy}{dx} &= \frac{d}{dx}(\frac{k}{x}) \newline
+\iff \frac{dy}{dx} &= -\frac{k}{x^2} \newline
+\iff \frac{dy}{dx} &= -\frac{y}{x} \newline
 \end{align*}
 $$
 

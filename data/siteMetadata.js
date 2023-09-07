@@ -1,7 +1,7 @@
 const siteMetadata = {
   title: 'Blog | SnowyField',
   author: 'SnowyField',
-  headerTitle: 'Mere Musings',
+  headerTitle: 'Blog | SnowyField',
   description: 'My personal blog where I share my musings',
   notes: 'Reuseable code notes collected by SnowyField',
   language: 'en-us',
