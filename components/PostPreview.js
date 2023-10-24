@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import kebabCase from '@/lib/utils/kebabCase'
 import formatDate from '@/lib/utils/formatDate'
 import ViewCounter from '@/components/ViewCounter'
 import Tag from '@/components/Tag'
@@ -23,7 +22,7 @@ const PostPreview = ({ slug, date, title, summary, tags, thumbnail }) => {
         <article className="space-y-2 p-2 lg:grid lg:items-baseline lg:space-y-3">
           <dl>
             <dd className="text-sm font-normal leading-6 text-gray-600 dark:text-gray-400">
-              <time dateTime={date}>{formatDate(date)}</time>
+              <time dateTime={date}>{formatDate(date, true)}</time>
               {' ✨'}
               <ViewCounter className="mx-1" slug={slug} />
               views

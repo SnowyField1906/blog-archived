@@ -19,7 +19,7 @@ export default function Stats() {
         description="Statistics about my blog, Github, Twitter and more"
       />
       <div className="mx-auto max-w-2xl overflow-hidden">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5 ">
+        <div className="space-y-2 pt-6 pb-8 sm:space-y-5 ">
           <h1 className="text-4xl font-extrabold leading-14 tracking-tight text-gray-900 dark:text-gray-100">
             Stats
           </h1>
@@ -46,13 +46,13 @@ export default function Stats() {
         <div>
           <NowPlaying />
         </div>
-        <div className="flex flex-row justify-evenly">
+        <div className="flex flex-row justify-evenly text-center text-sm font-normal sm:text-base">
           <button
             onClick={() => {
               isRange('short_term')
               isMultiply(1)
             }}
-            className={`text-md rounded-full border px-8 py-2 text-center font-normal transition-colors hover:border-green-600 hover:bg-green-600 hover:text-white dark:text-gray-200 ${
+            className={`rounded-full border px-4 py-2 transition-colors hover:border-green-600 hover:bg-green-600 hover:text-white dark:text-gray-200 sm:px-8 ${
               range === 'short_term' ? 'border-green-600 bg-green-600 text-white' : ''
             }`}
           >
@@ -63,7 +63,7 @@ export default function Stats() {
               isRange('medium_term')
               isMultiply(1)
             }}
-            className={`text-md rounded-full border px-8 py-2 text-center font-normal transition-colors hover:border-green-600 hover:bg-green-600 hover:text-white dark:text-gray-200 ${
+            className={`rounded-full border px-4 py-2 transition-colors hover:border-green-600 hover:bg-green-600 hover:text-white dark:text-gray-200 sm:px-8 ${
               range === 'medium_term' ? 'border-green-600 bg-green-600 text-white' : ''
             }`}
           >
@@ -74,7 +74,7 @@ export default function Stats() {
               isRange('long_term')
               isMultiply(1)
             }}
-            className={`text-md rounded-full border px-8 py-2 text-center font-normal transition-colors hover:border-green-600 hover:bg-green-600 hover:text-white dark:text-gray-200 ${
+            className={`rounded-full border px-4 py-2 transition-colors hover:border-green-600 hover:bg-green-600 hover:text-white dark:text-gray-200 sm:px-8 ${
               range === 'long_term' ? 'border-green-600 bg-green-600 text-white' : ''
             }`}
           >

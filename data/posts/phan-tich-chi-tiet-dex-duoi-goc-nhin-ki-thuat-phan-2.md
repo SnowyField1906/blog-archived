@@ -50,7 +50,7 @@ Lí do là vì Order Book cung cấp nhiều khả năng cũng như linh hoạt 
 
 ### Khái niệm và nguyên tắc hoạt động của Order Book
 
-**Order Book** (Sổ lệnh) là một hệ thống ghi chép các bid/ask order (lệnh mua/bán) từ người dùng.
+**Order Book** (Sổ Lệnh) là một hệ thống ghi chép các bid/ask order (lệnh mua/bán) từ người dùng.
 
 Thông qua Order Book, chúng ta có thể đặt một bid/ask order với giá mong muốn và đợi cho đến khi có một bid/ask order khác khớp với giá mà chúng ta đã đưa ra.
 Cách hoạt động này mô phỏng hoàn chỉnh một thị trường trong tự nhiên, nơi mà người mua và người bán có thể tự do tìm nhau và thỏa thuận về giá.

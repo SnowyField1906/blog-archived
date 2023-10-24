@@ -228,7 +228,7 @@ Bây giờ toàn bộ lá bài đã được mã hóa và xáo trộn bởi Publ
 
 Cơ chế Trusted Setup cũng hoạt động tơng tự như vậy, nó sẽ bắt đầu bằng việc tạo các Key ngẫu nhiên và dùng chúng để tính toán các thông số và mã hóa dữ liệu.
 
-> Đọc thêm về Nental Poker tại bài viết [Zero-Knowledge Proof là gì và cách hoạt động](https://snowyfield.vercel.app/posts/chi-tiet-ve-thuat-toan-ma-hoa-cho-mental-poker).
+> Đọc thêm về Mental Poker tại bài viết [Giới thiệu chi tiết về bài toán Mental Poker](https://snowyfield.vercel.app/posts/gioi-thieu-chi-tiet-ve-bai-toan-mental-poker).
 
 ## Chi tiết về Zero-Knowledge Proof
 

@@ -3,3 +3,5 @@ Sitemap: https://snowyfield.vercel.app//sitemap.xml
 User-agent: *
 Allow: /
 Disallow: /api/*
+Disallow: /*.json$
+Disallow: /*.js$

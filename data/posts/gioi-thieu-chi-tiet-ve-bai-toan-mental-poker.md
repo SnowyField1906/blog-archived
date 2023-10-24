@@ -14,7 +14,7 @@ _Tuy nhiên, vấn đề này có thể được giải quyết bằng cách s�
 
 <img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/gioi-thieu-chi-tiet-ve-bai-toan-mental-poker.png" alt="Chi tiết về thuật toán mã hóa cho Mental Poker" />
 
-Trước khi đi vào bài viết, chúng ta có thể tìm hiểu về ZKP tại bài viết [Zero-Knowledge Proof là gì và cách hoạt động](https://snowyfield.vercel.app/posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong).
+> Khuyến nghị đọc trước [Zero-Knowledge Proof là gì và cách hoạt động](https://snowyfield.vercel.app/posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Giới thiệu về Mental Poker
 
@@ -366,13 +366,13 @@ Vế trái sẽ là đa thức của Verifier (người xáo bài trước) vì 
 
 Trong khi đó vế phải là đa thức của Prover (người xáo bài lần này), vì chỉ người này mới có những thông tin bí mật như $\delta_j$ hay $\pi_j$.
 
-Khi đó, một người sau khi xáo bài xong sẽ gửi cho người trước một Zero-Knowledge Proof là $\sum_{j=1}^{52} z^{\pi_j}\delta_j$. Với ZKP này, người trước có thể kiểm tra được rằng bộ bài sau khi xáo là hợp lệ mà vẫn không biết được thông tin về thứ tự các lá bài.
+Khi đó, một người sau khi xáo xong sẽ gửi cho người trước một Zero-Knowledge Proof là $\sum_{j=1}^{52} z^{j}d_j$. Với ZKP này, người trước có thể kiểm tra được rằng bộ bài sau khi xáo là hợp lệ mà vẫn không biết được thông tin về thứ tự các lá bài.
 
 ##### Giải thích
 
 Chúng ta sẽ chứng minh công thức trên như sau.
 
-Cho một nhân tử $G$ là một phần tử sinh của $\mathbb{G}$, khi đó:
+Cho một nhân tử bất kì $G$ là một phần tử sinh của $\mathbb{G}$, con số bất kì này không quan trọng:
 
 $$
 \begin{alignat}{7}
@@ -387,10 +387,10 @@ $$
 \begin{align*}
 \left(\sum_{j=1}^{52} z^{j}x_j\right)G &= \left(\sum_{j=1}^{52} z^{\pi_j}(y_j - z_j)\right)G \\
 \iff \sum_{j=1}^{52} z^{j}x_j &= \sum_{j=1}^{52} z^{\pi_j}(y_j - z_j) \\
-\iff \sum_{j=1}^{52} z^{\pi_j}x_{\pi_j} &= \sum_{j=1}^{52} z^{\pi_j}(y_j - z_j) \tag*{\text{xem lại} (19)} \\
+\iff \sum_{j=1}^{52} z^{\pi_j}x_{\pi_j} &= \sum_{j=1}^{52} z^{\pi_j}(y_j - z_j) \tag*{\text{xem lại} (20)} \\
 \iff x_{\pi_j} &= y_j - z_j \\
 \implies x_{\pi_j}G &= y_jG - z_jG \\
-\iff d_{\pi_j} &= d_j' - \delta_j \tag*{\text{xem lại} (22)}
+\iff d_{\pi_j} &= d_j' - \delta_j \tag*{\text{xem lại} (23)}
 \end{align*}
 $$
 

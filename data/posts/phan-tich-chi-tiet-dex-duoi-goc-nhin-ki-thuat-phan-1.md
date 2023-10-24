@@ -38,8 +38,8 @@ Trong đó AMM là mô hình được sử dụng rộng rãi nhất, trong khi 
 
 ### Khái niệm và nguyên tắc hoạt động của AMM
 
-**Automated market Maker** (Tạo lập thị trường tự động) là một loại DEX rất phổ biến trong hệ sinh thái DeFi vì sự đơn giản và tối ưu của nó.
-AMM hoạt động dựa trên một công thức toán học để định giá một cặp tài sản, công thức này có thể khác nhau tùy vào từng giao thức, nhưng phổ biến nhất vẫn là **Inverse Proportion Formula** (Công thức tỉ lệ nghịch):
+**Automated market Maker** (Tạo lập Thị trường Tự động) là một loại DEX rất phổ biến trong hệ sinh thái DeFi vì sự đơn giản và tối ưu của nó.
+AMM hoạt động dựa trên một công thức toán học để định giá một cặp tài sản, công thức này có thể khác nhau tùy vào từng giao thức, nhưng phổ biến nhất vẫn là **Inverse Proportion Formula** (Công thức Tỉ lệ Nghịch):
 
 <figure>
 <img

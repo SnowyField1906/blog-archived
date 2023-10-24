@@ -52,7 +52,7 @@ Hiện nay Flow vừa ra mắt **Hybrid Custody** (Lưu ký đa phương thức)
 #### Dễ quản lí tài sản
 
 Các Smart Contract trên Flow được viết bằng Cadence, một ngôn ngữ **Resource-Oriented Programming** (Lâp trình hướng Tài nguyên),
-Giúp cho việc quản lí tài sản và các quyền là vô cùng dễ dàng. Một ngôn ngữ ROP tương tự khác là Move của Diem/Libra (Blockchain được phát triển bởi Facebook).
+Giúp cho việc quản lí tài sản và các quyền là vô cùng dễ dàng.
 
 #### Kiến trúc hiện đại
 
@@ -218,21 +218,23 @@ Một số kỹ thuật khác như **truebit** và **Arbitrum** cũng đã đư�
 
 #### Giới thiệu
 
-Cadence là một Interpreted Language (Ngôn ngữ thông dịch) viết bằng Golang và được thiết kế đặc biệt cho việc viết Smart Contract (Hợp đồng thông minh) trên Flow.
+Cadence là một **Interpreted Language** (Ngôn ngữ Thông dịch) viết bằng Golang và được thiết kế đặc biệt cho việc viết **Smart Contract** (Hợp đồng thông minh) trên Flow.
 
-Lấy ý tưởng từ ngôn ngữ Move của Diem (tên cũ là Libra, Blockchain được phát hành bởi Facebook), Cadence có cốt lõi là một ngôn ngữ Resource-Oriented Programming (Lập trình hướng Tài nguyên).
-Đây là một mô hình mới kết hợp các Type (Loại) và Capability (Khả năng) của một Object (Đối tượng), gọi là Resource (Tài nguyên) dùng để đại diện cho một Digital Asset (Tài sản Kỹ thuật số).
+Lấy ý tưởng từ ngôn ngữ Move của Diem (tên cũ là Libra, Blockchain được phát hành bởi Facebook), Cadence có cốt lõi là một ngôn ngữ **Resource-Oriented Programming** (Lập trình hướng Tài nguyên).
+Đây là một mô hình mới kết hợp các **Type** (Loại) và **Capability** (Khả năng) của một **Object** (Đối tượng), gọi là **Resource** (Tài nguyên) dùng để đại diện cho một Digital Asset (Tài sản Kỹ thuật số).
 Do đó nó chỉ chỉ có thể tồn tại ở một vị trí tại một thời điểm, không thể được sao chép và không thể vô tình bị mất hoặc bị xóa và được quản lí xoay quanh các Capability của nó.
 
 Việc sử dụng và các bảo mật đều dựa trên hệ thống Capability, trong đó thực thi quyền truy cập vào các đối tượng chỉ bị hạn chế đối với chủ sở hữu của Resource và những người có Reference (Tham chiếu) hợp lệ đối với đối tượng đó. Đây là hình thức kiểm soát truy cập chính của Cadence.
+
+Ngoài Cadence, **SUI Move** của SUI và **Aptos Move** của Aptos cũng là các ngôn ngữ lập trình được thiết kế dựa trên Move với một số thay đổi nhất định.
 
 #### Giải thích về Resource-Oriented Programming
 
 Để hiểu đơn giản, chúng ta sẽ đến với một ví dụ về một khu chợ.
 
-##### Đối với kiểu Ledger
+##### Đối với kiểu OOP (Ledger)
 
-Tất cả mọi mặt hàng đều được lưu trữ trong một **Kho Lưu Trữ Trung Tâm** (là một Smart Contract).
+Chương trình sẽ được tổ chức theo kiểu **Ledger** (Sổ cái), khi tất cả mọi mặt hàng đều được lưu trữ trong một **Kho Lưu Trữ Trung Tâm** (là một Smart Contract).
 
 Khi thực hiện bán hàng, chúng ta phải đi đến **Kho Lưu Trữ Trung Tâm** và giao nộp mặt hàng cho kho.
 
@@ -265,11 +267,11 @@ Và tất nhiên, chúng ta hoàn toàn có thể hủy các quyền nếu khôn
 
 Vì Resource về cơ bản là một Object, cho nên nó cũng chứa các function (hàm). Vì thế Resource ngoài việc dùng để đại diện cho một Digital Asset, nó còn có thể được sử dụng như một "tấm vé" để thực hiện một số hành động được hạn chế. Hay nói cách khác, Resource có tính phân quyền.
 
-Ví dụ, đối với khu chợ, chúng ta sẽ nâng cấp lên thành một nơi với nhiều người cho thuê sạp (diện tích) để bán hàng. Khi đó sẽ có 4 cấp độ là: **Chủ khu chợ**, các **Chủ sạp**, các **Thương nhân** và cuối cùng là **Khách hàng**.
+Ví dụ, đối với khu chợ, chúng ta sẽ nâng cấp lên thành một nơi với nhiều người cho thuê sạp (diện tích) để bán hàng. Khi đó sẽ có 4 cấp độ là: **Chủ khu chợ**, các **Chủ sạp**, các **Người buôn** và cuối cùng là **Khách hàng**.
 
-Mỗi người sẽ có một số quyền hạn - Capability cho các thao tác - function khác nhau, mà khi đó, các function sẽ được lưu trong Resource (ví dụ: chỉ **Thương nhân** mới có quyền quản lí và truy cập thông tin các **Khách hàng** của mình).
+Mỗi người sẽ có một số quyền hạn - Capability cho các thao tác - function khác nhau, mà khi đó, các function sẽ được lưu trong Resource (ví dụ: chỉ **Người buôn** mới có quyền quản lí và truy cập thông tin các **Khách hàng** của mình).
 Để thực hiện một hành động, chúng ta sẽ lấy Resource ra và gọi đến function tương ứng. Do đó nếu không có Resource đó, chúng ta sẽ không thể thực hiện được hành động đó.
-Và các resource này (nên) được cung cấp bởi một số điều kiện nhất định (ví dụ: chỉ khi thuê một sạp mới có thể trở thành **Thương nhân**).
+Và các resource này (nên) được cung cấp bởi một số điều kiện nhất định (ví dụ: chỉ khi thuê một sạp mới có thể trở thành **Người buôn**).
 
 ##### Reference và các quyền
 
@@ -290,7 +292,7 @@ Như vậy, quay lại ví dụ trước, với một Resource là mặt hàng, 
 Ngoài ra, chúng ta có thể có các quyền khác cho Resource mặt hàng như:
 
 - Quyền xem nó (biết được màu sắc, hình dáng,...)
-- Quyền chụp ảnh nó
+- Quyền chụp ảnh / photocopy nó (tạo ra một bản sao với những chức năng được cho phép)
 - Quyền thay đổi nó (lấy đi hay thay đổi một vài linh kiện)
 - Quyền sử dụng nó (thực hiện các thao tác mà nó cung cấp)
 - Quyền xóa nỏ (chỉ người sở hữu - người có nó trên tay mới có thể làm điều này)

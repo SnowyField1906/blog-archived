@@ -7,6 +7,8 @@ const ContentSecurityPolicy = `
   img-src * blob: data:;
   media-src 'none';
   connect-src *;
+  default-src 'self';
+  script-src 'self' www.facebook.com connect.facebook.net;
 `
 
 const securityHeaders = [

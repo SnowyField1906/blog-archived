@@ -67,11 +67,8 @@ export default function Home({ posts }) {
               who is passionate about Science, Mathematics and Researching. In my free time, I like
               developing side projects and learning new technologies.
             </p>
-            <p className="pt-5 text-lg leading-7 text-slate-600 dark:text-slate-300 sm:block md:hidden lg:hidden">
-              This is my place for thoughts, reflections & everything in between. Have a good read!
-            </p>
             <p className="pt-10 text-lg leading-7 text-slate-600 dark:text-slate-300 md:block">
-              This is my place for{' '}
+              This is a place where I share my{' '}
               <RoughNotation
                 animate="true"
                 type="box"
@@ -82,7 +79,7 @@ export default function Home({ posts }) {
                 multiline={true}
                 className="text-slate-600 dark:text-slate-300"
               >
-                thoughts, reflections & everything
+                knowledge, experience, thoughts and everything
               </RoughNotation>{' '}
               in between. Have a good read!{' '}
               <div className="mt-8 text-slate-600 dark:text-slate-400">
@@ -92,7 +89,7 @@ export default function Home({ posts }) {
                 </span>{' '}
                 <span className="text-sm">+ </span>
                 <span className="rounded-md bg-gray-300 p-1 text-sm text-gray-900 dark:bg-gray-400">
-                  K
+                  Q
                 </span>{' '}
                 <span className="text-sm">to start</span>
               </div>
@@ -248,7 +245,7 @@ export default function Home({ posts }) {
             className=" special-underline-new text-primary-600 hover:text-white hover:no-underline dark:text-primary-400 hover:dark:text-white"
             aria-label="all posts"
           >
-            All Posts &rarr;
+            All posts &rarr;
           </Link>
         </div>
       )}

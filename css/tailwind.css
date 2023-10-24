@@ -242,7 +242,25 @@ tr:last-child td:last-child {
   background: var(--primary-800);
 }
 
-.katex-display > .katex > .katex-html > .tag {
-  position: relative !important;
-  right: 0;
+@media (max-width: 600px) {
+  .katex-display > .katex > .katex-html > .tag {
+    position: relative !important;
+    right: 0;
+  }
+}
+
+@media (min-width: 600px) {
+  .katex-display > .katex > .katex-html > .tag {
+    position: absolute !important;
+    right: 0;
+  }
+}
+
+/* downscale latex font size by 80% */
+.math-display > .katex-display > .katex > .katex-html {
+  font-size: 90%;
+}
+
+.math-inline > .katex > .katex-html {
+  font-size: 90%;
 }

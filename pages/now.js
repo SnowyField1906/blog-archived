@@ -193,8 +193,7 @@ export default function Now(currentlyReading) {
           <p>
             I'm currently pursuing my favorite major at my dream university, but I've been enduring
             a lot of pain and frustration with it due to various reasons. I wish to leave it as soon
-            as possible and my goal is to apply to a remote university abroad in the near future. It
-            sounds pretty cool, doesn't it?
+            as possible and my goal is to apply to a remote university abroad in the near future.
           </p>
           <br />
           <p>

@@ -197,6 +197,7 @@ module.exports = {
             },
             '[class~="tag"]': {
               paddingLeft: '10px',
+              paddingRight: '2px',
             },
             img: {
               //w-full md:w-1/2 flex justify-center mx-auto

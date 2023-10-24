@@ -17,7 +17,7 @@ export default function Timeline() {
             <FaGraduationCap />
           </span>
           <h3 className="text-base font-semibold text-gray-900 dark:text-white">
-            Knowledge Engineering Student in the University Ranked 1 at IT in Vietnam
+            Knowledge Engineering and Information Security Student in University of Science
             <span className="mr-2 ml-3 rounded bg-blue-100 px-2.5 py-0.5 text-sm font-medium text-blue-800 dark:bg-blue-200 dark:text-blue-800">
               Present
             </span>
@@ -26,8 +26,8 @@ export default function Timeline() {
             September 25th, 2023
           </time>
           <p className="mt-1 text-sm font-normal text-gray-600 dark:text-gray-400">
-            Even though I did not spend my time on my univeristy except semester exams, I was lucky
-            to win against other veteran students with 3.0/4.0 Major-GPA
+            This major is not welcomed by students in my university but I find it pretty good.
+            Enrolled with 3.0/4.0 Major-GPA.
           </p>
         </li>
         <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
@@ -112,7 +112,7 @@ export default function Timeline() {
             <BsBuilding />
           </span>
           <h3 className="text-base font-semibold text-gray-900 dark:text-white">
-            Introduction Program in the University Ranked 1 at IT in Vietnam
+            Introduction Program in University of Science
           </h3>
           <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
             September 25th, 2021
