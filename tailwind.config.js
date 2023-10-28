@@ -25,10 +25,7 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        lora: ['Lora', ...defaultTheme.fontFamily.sans],
-        brygada: ['Brygada 1918', ...defaultTheme.fontFamily.sans],
         cambria: ['Cambria', ...defaultTheme.fontFamily.serif],
-        georgia: ['Georgia', ...defaultTheme.fontFamily.serif],
       },
       gradientColorStops: {
         // https://coolors.co/2d00f7-6a00f4-8900f2-a100f2-b100e8-bc00dd-d100d1-db00b6-e500a4-f20089

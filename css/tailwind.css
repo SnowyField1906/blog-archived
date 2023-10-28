@@ -43,11 +43,6 @@
   src: url('fonts/cambria/cambria.ttc') format('truetype');
 }
 
-@font-face {
-  font-family: Georgia;
-  src: url('fonts/georgia/GeorgiaPro-CondLight.ttf') format('truetype');
-}
-
 .task-list-item::before {
   @apply hidden;
 }

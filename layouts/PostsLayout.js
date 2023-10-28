@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Pagination from '@/components/Pagination'
 import PostPreview from '@/components/PostPreview'
 import kebabCase from '@/lib/utils/kebabCase'
+import siteMetadata from '@/data/siteMetadata'
 
 export default function PostsLayout({
   posts,
@@ -32,7 +33,7 @@ export default function PostsLayout({
             {title}
           </h1>
           <p className="text-md leading-7 text-gray-600 dark:text-gray-400">
-            I post about my knowledge and experience here, I hope you find something useful.
+            {siteMetadata.description.posts}
           </p>
           <div className="flex flex-wrap">
             {Object.keys(tags).length === 0 && 'No tags found.'}

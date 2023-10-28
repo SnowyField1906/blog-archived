@@ -1,5 +1,6 @@
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
+import siteMetadata from '@/data/siteMetadata'
 import { useState } from 'react'
 import Pagination from '@/components/Pagination'
 import kebabCase from '@/lib/utils/kebabCase'
@@ -31,8 +32,7 @@ export default function NotesLayout({
             {title}
           </h1>
           <p className="text-md leading-7 text-gray-600 dark:text-gray-400">
-            I save my important notes and reusable code snippets here, they might be not much useful
-            for you.
+            {siteMetadata.description.notes}
           </p>
           <div className="flex flex-wrap">
             {Object.keys(tags).length === 0 && 'No tags found.'}

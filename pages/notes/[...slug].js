@@ -32,16 +32,13 @@ export default function Note({ notes, authorDetails }) {
   return (
     <>
       {frontMatter.draft !== true ? (
-        <>
-          <PageSEO title={`Notes - ${siteMetadata.author}`} description={siteMetadata.notes} />
-          <MDXLayoutRenderer
-            layout={'NoteView'}
-            toc={toc}
-            mdxSource={mdxSource}
-            frontMatter={frontMatter}
-            authorDetails={authorDetails}
-          />
-        </>
+        <MDXLayoutRenderer
+          layout={'NoteView'}
+          toc={toc}
+          mdxSource={mdxSource}
+          frontMatter={frontMatter}
+          authorDetails={authorDetails}
+        />
       ) : (
         <div className="mt-24 text-center">
           <PageTitle>

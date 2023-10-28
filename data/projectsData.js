@@ -1,9 +1,20 @@
 const projectsData = [
   {
+    title: 'NFTify Marketplace',
+    description:
+      'Fusion of AI and Blockchain. Empowering creators, amplifying uniqueness, walletless onboarding. Discover, trade, withdraw own AI-generated NFTs.',
+    imgSrc: '',
+    href: 'https://devpost.com/software/nft-origin',
+    github: 'https://github.com/snowyfield1906/nft-generator',
+    tech1: 'Solidity',
+    tech2: 'Rootstock',
+    tech3: 'Bitcoin Core',
+  },
+  {
     title: 'Blog',
     description: 'This server-side rendered blog.',
     imgSrc: '',
-    href: 'https://snowyfield.vercel.app/',
+    href: 'https://snowyfield.software/',
     github: 'https://github.com/snowyfield1906/blog',
     tech1: 'Next.js',
     tech2: 'Next-auth',

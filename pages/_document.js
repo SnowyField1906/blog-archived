@@ -100,7 +100,7 @@ class MyDocument extends Document {
           <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
           <meta
             name="description"
-            content="Welcome to my personal blog where I share my musings. I am a Data Engineer passionate about Data Science, building pipelines and Automation."
+            content="Welcome to my personal blog where I share my knowledge, experiences, thoughts and everything."
           />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -115,10 +115,6 @@ class MyDocument extends Document {
             crossOrigin="anonymous"
           />
           <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
-          <meta
-            name="google-site-verification"
-            content="_Ba0lKk4Dl9XMvABJ9gZEtoMPITT5Vr5TGx2M-34Z_I"
-          />
         </Head>
         <body className="bg-white text-black antialiased dark:bg-background-color dark:text-white">
           <Main />

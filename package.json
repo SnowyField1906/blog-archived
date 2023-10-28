@@ -5,9 +5,9 @@
   "author": {
     "name": "SnowyField",
     "email": "snowyfield1906@gmail.com",
-    "url": "https://snowyfield.vercel.app/"
+    "url": "https://snowyfield.software/"
   },
-  "homepage": "https://snowyfield.vercel.app/",
+  "homepage": "https://snowyfield.software/",
   "scripts": {
     "start": "cross-env SOCKET=true node ./scripts/next-remote-watch.js ./data npx prisma generate",
     "dev": "next dev",

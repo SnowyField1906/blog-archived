@@ -5,6 +5,7 @@ import Experience from '@/components/Experience'
 import experienceData from '@/data/experienceData'
 import { RoughNotation } from 'react-rough-notation'
 import { AiOutlineTwitter } from 'react-icons/ai'
+import siteMetadata from '@/data/siteMetadata'
 
 export default function AuthorLayout({ children, frontMatter }) {
   const {
@@ -23,14 +24,14 @@ export default function AuthorLayout({ children, frontMatter }) {
 
   return (
     <>
-      <PageSEO title={`About - ${name}`} description={`A little trivia me`} />
+      <PageSEO title={`About - ${name}`} description={siteMetadata.description.about} />
       <div className="">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5 md:pl-16">
           <h1 className="text-4xl font-extrabold leading-14 tracking-tight text-gray-900 dark:text-gray-100">
             About
           </h1>
           <p className="text-md leading-7 text-gray-600 dark:text-gray-400">
-            I put technical details about me and this blog here.
+            {siteMetadata.description.about}
           </p>
         </div>
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">

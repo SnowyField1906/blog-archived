@@ -24,7 +24,7 @@ export default function Notes({ notes, initialDisplayNotes, pagination, tags }) 
     <>
       <PageSEO
         title={`Notes - ${siteMetadata.author}`}
-        description="Notes and reuseable collected by SnowyField"
+        description={siteMetadata.description.notes}
       />
       <NotesLayout
         notes={notes}

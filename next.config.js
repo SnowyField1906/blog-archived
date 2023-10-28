@@ -4,11 +4,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
-  img-src * blob: data:;
-  media-src 'none';
-  connect-src *;
-  default-src 'self';
-  script-src 'self' www.facebook.com connect.facebook.net;
+img-src * blob: data:;
+media-src 'none';
+connect-src *;
 `
 
 const securityHeaders = [
@@ -50,7 +48,7 @@ const securityHeaders = [
 ]
 
 module.exports = withBundleAnalyzer({
-  reactStrictMode: true,
+  reactStrictMode: false,
   images: {
     domains: [
       'i.scdn.co', // Spotify Album Art

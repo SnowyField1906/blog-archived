@@ -14,7 +14,7 @@ _Trong bài viết này, chúng ta sẽ cùng nhau khám phá một cách chi ti
 
 <img src='/static/images/thumbnails/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat.png' alt="Phân tích chi tiết DEX dưới góc nhìn kĩ thuật" />
 
-Ở [Phần 1 - AMM](https://snowyfield.vercel.app/posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-1), chúng ta đã tìm hiểu về cách hoạt động của một AMM.
+Ở [Phần 1 - AMM](https://snowyfield.software/posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-1), chúng ta đã tìm hiểu về cách hoạt động của một AMM.
 Lần này, chúng ta sẽ đến với một mô hình DEX khác là Order Book.
 
 ## Giới thiệu về DEX

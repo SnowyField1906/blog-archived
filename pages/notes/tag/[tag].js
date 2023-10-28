@@ -45,7 +45,7 @@ export default function Tag({ notes, tag, tags }) {
     <>
       <TagSEO
         title={`${tag} - ${siteMetadata.author}`}
-        description={`${tag} tag - ${siteMetadata.author}`}
+        description={`${tag} tag - ${siteMetadata.description.notes}`}
       />
       <NotesLayout notes={notes} title={tag} tags={tags} />
     </>

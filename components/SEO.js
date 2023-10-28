@@ -15,6 +15,7 @@ const CommonSEO = ({ title, description, ogType, ogImage }) => {
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:image" content={ogImage} key={ogImage} />
+      <meta property="fb:app_id" content={siteMetadata.facebookAppId} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={siteMetadata.twitter} />
       <meta name="twitter:title" content={title} />
@@ -52,10 +53,10 @@ export const PostSEO = ({ title, summary, date, url, thumbnail }) => {
 
   const featuredImage = {
     '@type': 'ImageObject',
-    url: siteMetadata.siteUrl + (thumbnail ?? siteMetadata.socialBanner),
+    url: siteMetadata.siteUrl + thumbnail,
   }
 
-  const ogImage = siteMetadata.siteUrl + (thumbnail ?? siteMetadata.socialBanner)
+  const ogImage = siteMetadata.siteUrl + thumbnail
 
   let author = {
     '@type': 'Person',

@@ -21,7 +21,7 @@ export default function Recommends(reviews) {
     <>
       <PageSEO
         title={`Recommendations - ${siteMetadata.author}`}
-        description="Recommended movies, books and more"
+        description={siteMetadata.description.recommended}
       />
       <div className="mx-auto max-w-3xl">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
@@ -29,7 +29,7 @@ export default function Recommends(reviews) {
             Recommends
           </h1>
           <p className="text-md leading-7 text-gray-600 dark:text-gray-400">
-            A list of recommended movies, books and more
+            {siteMetadata.description.recommended}
           </p>
         </div>
         <div className="space-y-2 pt-3 md:space-y-5">

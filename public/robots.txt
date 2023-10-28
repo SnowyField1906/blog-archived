@@ -1,4 +1,4 @@
-Sitemap: https://snowyfield.vercel.app//sitemap.xml
+Sitemap: https://snowyfield.software//sitemap.xml
 
 User-agent: *
 Allow: /

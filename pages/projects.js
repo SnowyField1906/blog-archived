@@ -8,7 +8,7 @@ export default function Projects() {
     <>
       <PageSEO
         title={`Projects - ${siteMetadata.author}`}
-        description="A list of projects I have built"
+        description={siteMetadata.description.projects}
       />
       <div className="mx-auto max-w-6xl divide-y divide-gray-400">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
@@ -16,7 +16,7 @@ export default function Projects() {
             Projects
           </h1>
           <p className="text-md leading-7 text-gray-600 dark:text-gray-400">
-            A list of projects I have been working on or built
+            {siteMetadata.description.projects}
           </p>
         </div>
         <div className="container py-8">

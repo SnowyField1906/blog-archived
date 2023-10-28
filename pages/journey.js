@@ -6,11 +6,14 @@ import { motion } from 'framer-motion'
 export default function Journey() {
   return (
     <>
-      <PageSEO title={`Journey - ${siteMetadata.author}`} description="My journey" />
+      <PageSEO
+        title={`Journey - ${siteMetadata.author}`}
+        description={siteMetadata.description.journey}
+      />
       <div className="mx-auto max-w-2xl">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <p className="text-md leading-7 text-gray-600 dark:text-gray-400">
-            Trying not to compare myself to others. Taking baby steps everyday.
+            {siteMetadata.description.journey}
           </p>
         </div>
         <motion.div

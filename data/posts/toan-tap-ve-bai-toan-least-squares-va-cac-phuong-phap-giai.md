@@ -12,9 +12,9 @@ _Hồi quy là một bài toán kinh điển trong Machine Learning mà Least Sq
 
 _Trong bài viết này, chúng ta sẽ tìm hiểu về Least Squares và các phương pháp giải cụ thể và chi tiết cho bài toán này._
 
-<img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/toan-tap-ve-bai-toan-least-squares-va-cac-phuong-phap-giai.png" alt="Least Squares bằng QR decomposition và SVD" />
+<img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/toan-tap-ve-bai-toan-least-squares-va-cac-phuong-phap-giai.png" alt="Least Squares bằng QR Decomposition và SVD" />
 
-> Khuyến nghị đọc trước [QR decomposition là gì và chi tiết cách tính](https://snowyfield.vercel.app/posts/qr-decomposition-la-gi-va-chi-tiet-cach-tinh) và [Singular Value Decomposition là gì và chi tiết cách tính](https://snowyfield.vercel.app/posts/singular-value-decomposition-la-gi-va-chi-tiet-cach-tinh) để sẵn sàng trước khi đi vào bài viết này.
+> Khuyến nghị đọc trước [QR Decomposition là gì và chi tiết cách tính](https://snowyfield.software/posts/qr-decomposition-la-gi-va-chi-tiet-cach-tinh) và [Singular Value Decomposition là gì và chi tiết cách tính](https://snowyfield.software/posts/singular-value-decomposition-la-gi-va-chi-tiet-cach-tinh) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Bài toán Least Squares
 
@@ -309,11 +309,11 @@ $$
 <figcaption className="text-center text-gray-500">Nghiệm của bài toán là $y = -0.43 + 1.42x - 0.02x^2$</figcaption>
 </figure>
 
-## QR decomposition
+## QR Decomposition
 
-**QR decomposition** (Phân rã QR) là một phương pháp phân rã một ma trận bất kì thành tích của hai ma trận $\mathbf{Q}$ và $\mathbf{R}$, trong đó $\mathbf{Q}$ là một **Orthonormal Matrix** (Ma trận Trực chuẩn) và $\mathbf{R}$ là một **Upper Triangular Matrix** (Ma trận Tam giác trên).
+**QR Decomposition** (Phân rã QR) là một phương pháp phân rã một ma trận bất kì thành tích của hai ma trận $\mathbf{Q}$ và $\mathbf{R}$, trong đó $\mathbf{Q}$ là một **Orthonormal Matrix** (Ma trận Trực chuẩn) và $\mathbf{R}$ là một **Upper Triangular Matrix** (Ma trận Tam giác trên).
 
-### Giải bài toán Least Squares bằng QR decomposition
+### Giải bài toán Least Squares bằng QR Decomposition
 
 Một khi thể phân rã $\mathbf{A}$ thành tích của hai ma trận $\mathbf{Q}$ và $\mathbf{R}$, thay vì dùng ma trận giả nghịch như $(9)$, ta có thể biến đổi thành:
 
@@ -328,7 +328,7 @@ $$
 
 ## Singular Value Decomposition
 
-**Singular Value Decomposition** (Phân tích Kì dị) là một phương pháp phân rã một ma trận bất kì thành tích của ba ma trận $\mathbf{U}$, $\mathbf{\Sigma}$ và $\mathbf{V}^T$, trong đó $\mathbf{U}$ và $\mathbf{V}$ là các **Orthonormal Matrix** (Ma trận Trực chuẩn) và $\mathbf{\Sigma}$ là một **Diagonal Matrix** (Ma trận Đường chéo).
+**Singular Value Decomposition** (Phân tích Suy biến) là một phương pháp phân rã một ma trận bất kì thành tích của ba ma trận $\mathbf{U}$, $\mathbf{\Sigma}$ và $\mathbf{V}^T$, trong đó $\mathbf{U}$ và $\mathbf{V}$ là các **Orthonormal Matrix** (Ma trận Trực chuẩn) và $\mathbf{\Sigma}$ là một **Diagonal Matrix** (Ma trận Đường chéo).
 
 ### Giải bài toán Least Squares bằng Singular Value Decomposition
 

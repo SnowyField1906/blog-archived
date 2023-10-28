@@ -14,7 +14,7 @@ _Tôi đã dự định làm những bài viết phân tích chi tiết về ph�
 
 <img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/gioi-thieu-ve-uniswap-v3.png" alt="Giới thiệu về Uniswap V3" />
 
-Khuyến nghị đọc trước [Phân tích chi tiết DEX dưới góc nhìn kĩ thuật (Phần 1 - AMM)](https://snowyfield.vercel.app/posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-1) để sẵn sàng trước khi đi vào bài viết này.
+Khuyến nghị đọc trước [Phân tích chi tiết DEX dưới góc nhìn kĩ thuật (Phần 1 - AMM)](https://snowyfield.software/posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-1) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Tổng quan
 

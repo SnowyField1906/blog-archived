@@ -16,7 +16,7 @@ export default function Stats() {
     <>
       <PageSEO
         title={`Stats - ${siteMetadata.author}`}
-        description="Statistics about my blog, Github, Twitter and more"
+        description={siteMetadata.description.stats}
       />
       <div className="mx-auto max-w-2xl overflow-hidden">
         <div className="space-y-2 pt-6 pb-8 sm:space-y-5 ">
@@ -24,8 +24,7 @@ export default function Stats() {
             Stats
           </h1>
           <p className="text-md leading-7 text-gray-600 dark:text-gray-400">
-            I use this dashboard to track various metrics across platforms like Spotify, GitHub, and
-            more.
+            {siteMetadata.description.stats}
           </p>
         </div>
         <div className="pt-2">

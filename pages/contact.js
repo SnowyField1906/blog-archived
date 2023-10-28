@@ -5,7 +5,10 @@ import { PageSEO } from '@/components/SEO'
 const Contact = () => {
   return (
     <>
-      <PageSEO title={`Contact - ${siteMetadata.author}`} description="All my contacts" />
+      <PageSEO
+        title={`Contact - ${siteMetadata.author}`}
+        description={siteMetadata.description.contact}
+      />
       <div className="mx-auto max-w-3xl overflow-hidden">
         <div className="pt-10 pb-8">
           <ul className="font-semi-bold flex flex-col space-y-4">

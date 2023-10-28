@@ -20,6 +20,7 @@ import {
 import { SocialIcon } from 'react-social-icons'
 import { HiOutlinePencil, HiOutlineClock, HiOutlineEye } from 'react-icons/hi'
 import { BsCalendarDate } from 'react-icons/bs'
+import { fr } from 'date-fns/locale'
 
 const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/posts/${fileName}`
 
@@ -30,11 +31,7 @@ export default function PostView({ frontMatter, toc, authorDetails, next, prev, 
   const postUrl = `${siteMetadata.siteUrl}/posts/${slug}`
   return (
     <SectionContainer>
-      <PostSEO
-        url={`${siteMetadata.siteUrl}/posts/${slug}`}
-        authorDetails={authorDetails}
-        {...frontMatter}
-      />
+      <PostSEO url={`${siteMetadata.siteUrl}/posts/${slug}`} {...frontMatter} />
       <ScrollTopAndComment />
       <article>
         <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">

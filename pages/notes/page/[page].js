@@ -49,7 +49,7 @@ export async function getStaticProps(context) {
 export default function NotePage({ notes, initialDisplayPosts, pagination, pageNumber, tags }) {
   return (
     <>
-      <PageSEO title={`Notes page ${pageNumber}`} description={siteMetadata.notes} />
+      <PageSEO title={`Notes page ${pageNumber}`} description={siteMetadata.description.notes} />
       <NotesLayout
         notes={notes}
         initialDisplayPosts={initialDisplayPosts}

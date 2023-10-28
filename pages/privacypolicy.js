@@ -6,7 +6,7 @@ export default function PrivacyPolicy() {
     <>
       <PageSEO
         title={`Privacy Policy - ${siteMetadata.author}`}
-        description="Privacy Policy for my website"
+        description={siteMetadata.description.privacyPolicy}
       />
       <div className="mx-auto max-w-3xl overflow-hidden">
         <div className="prose pt-7 text-gray-600 dark:text-gray-300">
@@ -104,11 +104,11 @@ export default function PrivacyPolicy() {
                 <strong className="dark:text-gray-100">Website</strong> refers to Blog, accessible
                 from{' '}
                 <a
-                  href="https://snowyfield.vercel.app//"
+                  href="https://snowyfield.software//"
                   rel="external nofollow noopener noreferrer"
                   target="_blank"
                 >
-                  https://snowyfield.vercel.app//
+                  https://snowyfield.software//
                 </a>
               </p>
             </li>

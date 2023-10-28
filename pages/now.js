@@ -127,12 +127,12 @@ export default function Now(currentlyReading) {
     <>
       <PageSEO
         title={`Now - ${siteMetadata.author}`}
-        description="What I'm working on now"
+        description={siteMetadata.description.now}
         url={siteMetadata.url}
       />
       <div>
         <div className="my-2">
-          <h3>Where am I and what am I doing?</h3>
+          <h3>{siteMetadata.description.now}</h3>
           <div className=" mt-4 mb-6 text-xs text-neutral-700 dark:text-neutral-400">
             This page was automatically updated @ {date}-{month}-{year} {hour}:{minute}:{second}
           </div>
@@ -250,7 +250,7 @@ export default function Now(currentlyReading) {
           <br />
           <p>
             I'm a Spotify addict, you can check out my Spotify stats{' '}
-            <Link href={'https://snowyfield.vercel.app/stats'}>here</Link>. By the way, this is the{' '}
+            <Link href={'https://snowyfield.software/stats'}>here</Link>. By the way, this is the{' '}
             <Link
               href={'https://open.spotify.com/playlist/0J9wMOS5qXCWnTCk5hPgIY?si=9b36b1607c1e42f2'}
             >

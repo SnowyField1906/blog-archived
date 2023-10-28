@@ -16,10 +16,10 @@ export async function getStaticProps() {
 export default function Home({ posts }) {
   return (
     <>
-      <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+      <PageSEO title={siteMetadata.title} description={siteMetadata.description[0]} />
       <div className="mx-auto max-w-6xl px-2">
         <div className="mb-12 flex-row justify-between gap-10 lg:flex">
-          <div className="mt-10 w-full font-lora lg:w-2/3">
+          <div className="mt-10 w-full lg:w-2/3">
             <RoughNotation
               animate="true"
               type="bracket"
@@ -79,7 +79,7 @@ export default function Home({ posts }) {
                 multiline={true}
                 className="text-slate-600 dark:text-slate-300"
               >
-                knowledge, experience, thoughts and everything
+                knowledge, experiences, thoughts and everything
               </RoughNotation>{' '}
               in between. Have a good read!{' '}
               <div className="mt-8 text-slate-600 dark:text-slate-400">
@@ -159,7 +159,7 @@ export default function Home({ posts }) {
               <div className="my-2 grid items-start gap-8">
                 <div className="group relative">
                   <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-fuchsia-600 to-emerald-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
-                  <Link href="https://snowyfield.vercel.app/checkin">
+                  <Link href="https://snowyfield.software/checkin">
                     <span className="relative flex items-center justify-between divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
                       <span className="flex space-x-5">
                         <svg
@@ -190,7 +190,7 @@ export default function Home({ posts }) {
               <div className="my-2 grid items-start gap-8">
                 <div className="group relative">
                   <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r  from-pink-600 to-purple-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
-                  <Link href="http://snowyfield.vercel.app/resume.pdf">
+                  <Link href="http://snowyfield.software/resume.pdf">
                     <span className="relative flex items-center justify-between divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
                       <span className="flex space-x-5">
                         <svg
@@ -224,9 +224,9 @@ export default function Home({ posts }) {
           </div>
         </div>
         <div className="pb-6">
-          <h1 className="text-4xl font-extrabold leading-14 tracking-tight text-gray-900 dark:text-gray-100">
+          <h2 className="text-4xl font-extrabold leading-14 tracking-tight text-gray-900 dark:text-gray-100">
             Latest
-          </h1>
+          </h2>
           <p className="text-md leading-7 text-gray-600 dark:text-gray-400">
             There are my latest posts, if you don't see it change over time, it means I'm struggling
             with my life 😂
