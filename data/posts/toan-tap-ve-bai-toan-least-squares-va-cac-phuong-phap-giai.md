@@ -1,7 +1,7 @@
 ---
 title: Toàn tập về bài toán Least Squares và các phương pháp giải
 date: '2023-10-16'
-tags: ['Machine Learning', 'Mathematics']
+tags: ['Machine Learning', 'Mathematics', 'Optimization']
 draft: false
 summary: Giới thiệu chi tiết về phương pháp Least Squares và cách giải bài toán Least Squares bằng các phương pháp khác nhau.
 layout: PostView
@@ -12,7 +12,7 @@ _Hồi quy là một bài toán kinh điển trong Machine Learning mà Least Sq
 
 _Trong bài viết này, chúng ta sẽ tìm hiểu về Least Squares và các phương pháp giải cụ thể và chi tiết cho bài toán này._
 
-<img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/toan-tap-ve-bai-toan-least-squares-va-cac-phuong-phap-giai.png" alt="Least Squares bằng QR Decomposition và SVD" />
+<img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/toan-tap-ve-bai-toan-least-squares-va-cac-phuong-phap-giai.png" alt="Toàn tập về bài toán Least Squares và các phương pháp giải" />
 
 > Khuyến nghị đọc trước [QR Decomposition là gì và chi tiết cách tính](https://snowyfield.software/posts/qr-decomposition-la-gi-va-chi-tiet-cach-tinh) và [Singular Value Decomposition là gì và chi tiết cách tính](https://snowyfield.software/posts/singular-value-decomposition-la-gi-va-chi-tiet-cach-tinh) để sẵn sàng trước khi đi vào bài viết này.
 
@@ -42,7 +42,7 @@ Nghiệm của bài toán Least Squares là tập hợp giá trị của các **
 
 ### Công thức
 
-Gọi sự chênh lệch lữa giá trị quan sát được và giá trị mà model dự đoán là $e$:
+Gọi sự chênh lệch giữa giá trị quan sát được $y$ và giá trị mà model dự đoán $\hat{y}$ là $e$.
 
 $$
 \begin{align*}
@@ -55,18 +55,27 @@ Ta có thể tính được tổng bình phương sai số $S$:
 
 $$
 \begin{align*}
-S &= \sum_{i=1}^{n} e_i^2 \tag{2} \\
+S &= \sum_{i=1}^{n} (\hat{y_i} - y_i) \\
 \end{align*}
 $$
 
-Lí do $e$ được bình phương là để tránh các giá trị âm và dương bị triệt tiêu lẫn nhau, đảm bảo $S$ chỉ bằng $0$ khi và chỉ khi tất cả các phần tử đều đồng thời bằng $0$.
+Tuy nhiên $e$ có thể nhận giá trị âm, dẫn đến việc không thể so sánh được với các giá trị khác. Vì vậy chúng ta sẽ nâng cấp hàm $S$ như sau:
 
 $$
-\begin{align*}
-\sum_{i=1}^{n} e_i &= 0 \\
-\sum_{i=1}^{n} e_i^2 &\neq 0
-\end{align*}
+\begin{aligned}
+S &= \sum_{i=1}^{n} |\hat{y_i} - y_i|
+\end{aligned}
 $$
+
+Lúc này $S$ đã phản ánh đúng chức năng của việc mô phỏng độ lệch giữa 2 tập giá trị, tuy nhiên hàm trị tuyệt đối $|x|$ là một hàm không khả vi tại $x = 0$, nên chúng ta không thể dùng nó để tính đạo hàm / gradient. Vì vậy chúng ta sẽ sử dụng hàm bình phương để thay thế cho hàm trị tuyệt đối:
+
+$$
+\begin{aligned}
+L = \frac{1}{2}(\hat{y} - y)^2 \tag{2}
+\end{aligned}
+$$
+
+Lí do $\frac{1}{2}$ được thêm vào là để đơn giản hóa việc tính đạo hàm / gradient của $L$: $\nabla L = \hat{y} - y$.
 
 Sau khi tìm được nghiệm, chúng ta có thể quan sát được vị trí tương quan giữa các điểm dữ liệu và model.
 
@@ -77,18 +86,19 @@ Sau khi tìm được nghiệm, chúng ta có thể quan sát được vị trí
 
 ### Lời giải
 
-Cho $f(x, \theta)$ là một model có $m$ parameter $\theta_0, \theta_1, \dots, \theta_m$.
+Cho $f(x, \theta)$ là một model có $m$ tham số: $\theta = \{\theta_0, \theta_1, \dots, \theta_m\}$.
 
 Để $S$ đạt giá trị nhỏ nhất, ta sẽ phải tìm các parameter $\theta$ sao cho $S$ đạt cực trị, vì cực trị duy nhất của $S$ sẽ luôn rơi vào trường hợp cực tiểu do đây là tổng của các $r^2 \geq 0$.
 
-Để $S$ đạt cực trị, ta chỉ cần đặt đạo hàm / gradient $S$ về $0$. $S$ sẽ được đạo hàm trên từng parameter $\theta$ vì lúc này $\theta$ có vai trò như là một biến/ẩn.
+Lúc này, ta chỉ cần đặt gradient của $S$ về $0$, hay đặt đạo hàm của $S$ về $0$ theo từng parameter $\theta$, vì lúc này $\theta$ có vai trò như là một biến/ẩn.
 
 $$
 \begin{align*}
+\nabla S(\theta) &= \vec{0} \\
 \frac{\partial S}{\partial \theta_j} &= 0 \quad \text{với} \quad j = 0, 1, \dots, m \\
-\frac{\partial}{\partial \theta_j} \sum_{i=1}^{n} r_i^2 &= 0 \\
-2 \sum_{i=1}^{n} r_i \frac{\partial r_i}{\partial \theta_j} &= 0 \\
-2 \sum_{i=1}^{n} (f(x_i, \theta) - y_i) \frac{\partial (f(x_i, \theta) - y_i)}{\partial \theta_j} &= 0 \\
+\frac{\partial}{\partial \theta_j} \left( \frac{1}{2} \sum_{i=1}^{n} r_i^2 \right) &= 0 \\
+\sum_{i=1}^{n} r_i \frac{\partial r_i}{\partial \theta_j} &= 0 \\
+\sum_{i=1}^{n} (f(x_i, \theta) - y_i) \frac{\partial (f(x_i, \theta) - y_i)}{\partial \theta_j} &= 0 \\
 \sum_{i=1}^{n} (f(x_i, \theta) - y_i) \frac{\partial f(x_i, \theta)}{\partial \theta_j} &= 0 \tag{3} \\
 \end{align*}
 $$
@@ -282,9 +292,9 @@ $$
 >
 > Ý nghĩa hình học của **Inverse Matrix** (Ma trận Nghịch đảo) là nếu $\mathbf{A}$ biến đổi một không gian nào đó thì $\mathbf{A}^{-1}$ sẽ biến đổi lại về không gian ban đầu. Trong khi đó **Pseudo Inverse Matrix** sẽ biến đổi về một không gian với các chiều gần giống không gian ban đầu nhất.
 
-Nếu ma trận A khả nghịch (full rank và vuông) thì đồng nghĩa với việc phương trình $\mathbf{A} \mathbf{x} = \mathbf{b}$ có nghiệm duy nhất. Đồng nghĩa với việc tồn tại một đường đi qua tất cả các điểm đã cho.
+Trong trường hợp lí tưởng, khi mà ma trận $\mathbf{A}$ khả nghịch (full rank và vuông) thì đồng nghĩa với việc phương trình $\mathbf{A} \mathbf{x} = \mathbf{b}$ có nghiệm duy nhất. Đồng nghĩa với việc tồn tại một đường đi qua tất cả các điểm đã cho.
 
-Tất nhiên rất hiếm trường hợp nào mà phương trình trên có nghiệm, vì vậy hầu hết trong mọi trường hợp ma trận $\mathbf{A}$ không khả nghịch. Do đó chúng ta nhờ đến **Pseudo Inverse Matrix** vì nó sẽ giúp ta xấp xỉ được đường thẳng gần nhất của bài toán.
+Tất nhiên, trong mọi trường hợp thì hầu hết thì phương trình trên sẽ vô nghiệm, hay ma trận $\mathbf{A}$ sẽ không khả nghịch. Do đó chúng ta nhờ đến **Pseudo Inverse Matrix** vì nó sẽ giúp ta xấp xỉ được nghiệm lí tưởng cho bài toán.
 
 ### Ví dụ
 

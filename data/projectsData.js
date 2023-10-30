@@ -1,8 +1,8 @@
 const projectsData = [
   {
-    title: 'NFTify Marketplace',
+    title: 'NFTify - Hackathon Winner',
     description:
-      'Fusion of AI and Blockchain. Empowering creators, amplifying uniqueness, walletless onboarding. Discover, trade, withdraw own AI-generated NFTs.',
+      'Fusion of AI and Blockchain. Empowering creators, amplifying uniqueness, walletless onboarding. Bitcoin Olympics Hackathon winner: Rootstock 3rd place.',
     imgSrc: '',
     href: 'https://devpost.com/software/nft-origin',
     github: 'https://github.com/snowyfield1906/nft-generator',
@@ -12,7 +12,7 @@ const projectsData = [
   },
   {
     title: 'Blog',
-    description: 'This server-side rendered blog.',
+    description: 'This server-side rendered blog',
     imgSrc: '',
     href: 'https://snowyfield.software/',
     github: 'https://github.com/snowyfield1906/blog',
@@ -54,9 +54,9 @@ const projectsData = [
     tech3: 'Flow CLI',
   },
   {
-    title: 'iCollection / NFTee',
+    title: 'iCollection / NFTee - Hackathon Winner',
     description:
-      'Decentralized NFT/Asset storefront which built on ICON protocol - ICON Hyperbuild Hackathon winner: Best Social Impact / Public Good award.',
+      'Decentralized NFT/Asset storefront which built on ICON protocol. ICON Hyperbuild Hackathon winner: Best Social Impact / Public Good award.',
     imgSrc: '',
     href: 'https://snowyfield1906.github.io/iCollection',
     github: 'https://github.com/snowyfield1906/iCollection',

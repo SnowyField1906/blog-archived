@@ -131,7 +131,7 @@ export default function Now(currentlyReading) {
         url={siteMetadata.url}
       />
       <div>
-        <div className="my-2">
+        <div className="mt-16 mb-5">
           <h3>{siteMetadata.description.now}</h3>
           <div className=" mt-4 mb-6 text-xs text-neutral-700 dark:text-neutral-400">
             This page was automatically updated @ {date}-{month}-{year} {hour}:{minute}:{second}
@@ -263,16 +263,16 @@ export default function Now(currentlyReading) {
           &#126;&#126; Movie &#126;&#126;
         </div>
         <div className="py-4">
-          <p>I have a special love on anime, but I don't have much time to watch.</p>
+          <p>I have a special love on Anime, but I don't have much time to watch.</p>
           <br />
           <p>
-            My go-to genres are Supernatural, Drama, and Romance. An anime movie blending all three
+            My go-to genres are Supernatural, Drama, and Romance. An Anime movie blending all three
             is a magnum opus to me. A romantic love, gripping with drama's touch, and spiced up with
             supernatural plot twists. Absolutely astounding, isn't it?
           </p>
           <br />
           <p>
-            Besides anime, I also enjoy indulging in J-dramas, Documentaries, and Science films.
+            Besides Anime, I also enjoy indulging in J-dramas, Documentaries, and Science films.
             However, I specifically prefer movies over series due to my lack of patience.
           </p>
         </div>
@@ -287,9 +287,8 @@ export default function Now(currentlyReading) {
           </p>
           <br />
           <p>
-            It's fortunate that mine is exactly INFJ type, which means all aspects of my being
-            interlock flawlessly and seamlessly with every aspect of INFJ's. Nevertheless, it's
-            prone to lead me entering the negative{' '}
+            It's fortunate that mine is exactly INFJ type. Nevertheless, it's prone to lead me
+            entering the negative{' '}
             <Link href={'https://introvertedgrowth.com/ni-ti-loop/'}>Ni-Ti Loop</Link>, which makes
             me incredibly draining.
           </p>
@@ -298,7 +297,7 @@ export default function Now(currentlyReading) {
           <br />
           <ul className="list-inside list-disc">
             <li>
-              <b>MBTI</b> (Jung theory) &nbsp;—&nbsp; Code:{' '}
+              MBTI (Jung theory) &nbsp;—&nbsp; Code:{' '}
               <Link href={'https://personalityjunkie.com/the-infj/'}>INFJ</Link> &nbsp;
               <i>
                 (Dominant: Ni &nbsp;•&nbsp; Auxiliary: Fe &nbsp;•&nbsp; Tertiary: Ti &nbsp;•&nbsp;
@@ -306,7 +305,7 @@ export default function Now(currentlyReading) {
               </i>
             </li>
             <li>
-              <b>Enneagram</b> &nbsp;—&nbsp; Code:{' '}
+              Enneagram &nbsp;—&nbsp; Code:{' '}
               <Link
                 href={
                   'https://enneagramuniverse.com/enneagram/learn/enneagram-types/enneagram-type-4-the-individualist/'
@@ -334,7 +333,7 @@ export default function Now(currentlyReading) {
               </Link>
             </li>
             <li>
-              <b>Socionics</b> &nbsp;—&nbsp; Code:{' '}
+              Socionics &nbsp;—&nbsp; Code:{' '}
               <Link href={'https://classicsocionics.wordpress.com/augusta-eii/'}>EII</Link> &nbsp;
               <i>
                 (Ego Blocks: Fi-Ne &nbsp;•&nbsp; Super-Ego Blocks: Ti-Se &nbsp;•&nbsp; Super-Id
@@ -342,11 +341,11 @@ export default function Now(currentlyReading) {
               </i>
             </li>
             <li>
-              <b>Global 5</b> (SLOAN) &nbsp;—&nbsp; Code:{' '}
+              Global 5 (SLOAN) &nbsp;—&nbsp; Code:{' '}
               <Link href={'https://similarminds.com/global5/rloai.html'}>RLOAI</Link>
             </li>
             <li>
-              <b>Attitudinal Psyche</b>: &nbsp;—&nbsp; Code:{' '}
+              Attitudinal Psyche: &nbsp;—&nbsp; Code:{' '}
               <Link href={'https://www.attitudinalpsyche.com/personality-profiles/exi/levf/'}>
                 LEVF
               </Link>{' '}
@@ -357,7 +356,7 @@ export default function Now(currentlyReading) {
               </i>
             </li>
             <li>
-              <b>Four Temperaments</b>: &nbsp;—&nbsp; Code:{' '}
+              Four Temperaments: &nbsp;—&nbsp; Code:{' '}
               <Link
                 href={
                   'https://plus.catholicmatch.com/temperaments/melancholic/melancholic-phlegmatic'

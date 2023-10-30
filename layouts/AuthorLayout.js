@@ -74,7 +74,7 @@ export default function AuthorLayout({ children, frontMatter }) {
             >
               <p>
                 Currently, I'm working as a{' '}
-                <span className="font-semibold">Blockchain Developer</span> at{' '}
+                <span className="font-semibold">Artificial Intelligence Researcher</span> at{' '}
                 <Link
                   href={'https://lecle.vn'}
                   className="special-underline hover:text-white dark:hover:text-white"

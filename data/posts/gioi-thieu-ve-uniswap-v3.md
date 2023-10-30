@@ -10,7 +10,7 @@ thumbnail: '/static/images/thumbnails/gioi-thieu-ve-uniswap-v3.png'
 
 _Sau khi ra mắt V2, kì lân Uniswap đã trở thành gã khổng lồ thống trị và thay đổi cuộc chơi trong lĩnh vực DeFi. Vào cuối tháng 5/2021, Uniswap đã chính thức ra mắt phiên bản V3 với nhiều cải tiến đáng kể. Bài viết này sẽ tập trung giới thiệu về Uniswap V3 và các cải tiến của nó._
 
-_Tôi đã dự định làm những bài viết phân tích chi tiết về phần toán học và kĩ thuật bên trong Uniswap V3 nhưng thực sự tôi khá lười vì nó sẽ rất dài, đơn giản là vì cơ chế bên trong Uniswap rất phức tạp và cực kì khó hiểu._
+_Mình đã dự định làm những bài viết phân tích chi tiết về phần toán học và kĩ thuật bên trong Uniswap V3 nhưng thực sự mình khá lười vì nó sẽ rất dài, đơn giản là vì cơ chế bên trong Uniswap rất phức tạp và cực kì khó hiểu._
 
 <img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/gioi-thieu-ve-uniswap-v3.png" alt="Giới thiệu về Uniswap V3" />
 
@@ -18,7 +18,7 @@ Khuyến nghị đọc trước [Phân tích chi tiết DEX dưới góc nhìn k
 
 ## Tổng quan
 
-Uniswap V3 là **Concentrated Liquidity** DEX đầu tiên để giải quyết các vấn đề trong Uniswap V2.
+Uniswap V3 là **Concentrated Liquidity** DEX đầu tiên để giải quyết các vấn đề trong Uniswap V2 nói chung và các DEX AMM bấy giờ nói riêng.
 
 ### Các vấn đề của Uniswap V2
 
@@ -49,7 +49,7 @@ Trong Uniswap V2, vì liquidity được cung cấp trên toàn bộ đường c
 
 Ví dụ, nếu LP có $1$ ETH và $5.000$ USDT và muốn cung cấp liquidity cho một pool ETH/USDT có giá là $2.000$. Thì LP chỉ có thể cung cấp $1$ ETH và $2.000$ USDT, còn $3.000$ USDT còn lại sẽ không được sử dụng.
 
-Mấu chốt của việc giá của pool bị dịch chuyển và vì điểm giá này nằm trong đoạn liquidity đang cung cấp. Với cách giải quyết chia bể thành nhiều đoạn, LP có thể cung cấp liquidity cho một loại token mà họ muốn nếu đoạn cung cấp này nằm ngoài điểm giá.
+Mấu chốt của việc giá của pool bị dịch chuyển và vì điểm giá này nằm trong đoạn liquidity đang cung cấp. Với cách giải quyết chia bể thành nhiều đoạn, LP có thể cung cấp liquidity cho một loại token mà họ muốn nếu đoạn cung cấp này nằm ngoài điểm giá vì giá sẽ không bị ảnh hưởng.
 
 ### Các ưu điểm của Uniswap V3
 
@@ -105,6 +105,8 @@ Các price range này hoạt động hoàn toàn giống như 1 pool V2, tuy nhi
 />
 <figcaption>Source: uniswapv3book.com</figcaption>
 </figure>
+
+Do đó chúng ta gọi những đường cong này là _Virtual Curve_ (Đường cong Ảo) vì thực thế nó là đường cong V2 nhưng bị dịch vào gần gốc tọa độ $O$ một khoảng để giao với 2 trục tọa độ $x$ và $y$.
 
 ### Công thức mới
 

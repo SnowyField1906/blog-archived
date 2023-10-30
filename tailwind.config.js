@@ -150,14 +150,18 @@ module.exports = {
               borderRadius: '0.25rem',
             },
             hr: { borderColor: theme('colors.gray.200') },
+            ol: {
+              marginLeft: '30px',
+            },
+            ul: {
+              marginLeft: '30px',
+            },
             'ol li::marker': {
-              textIndent: '0px',
-              // paddingLeft: '20px',
+              fontWeight: '600',
               color: theme('colors.gray.700'),
             },
             'ul li::marker': {
-              textIndent: '0px',
-              // paddingLeft: '20px',
+              fontWeight: '600',
               backgroundColor: theme('colors.gray.700'),
             },
             strong: { color: theme('colors.gray.700') },
