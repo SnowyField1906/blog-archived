@@ -1,0 +1,24 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>Blog | SnowyField</title>
+      <link>https://blog-snowyfield.vercel.app//posts</link>
+      <description>My personal blog where I share my musings</description>
+      <language>en-us</language>
+      <managingEditor>snowyfield1906@gmail.com (SnowyField)</managingEditor>
+      <webMaster>snowyfield1906@gmail.com (SnowyField)</webMaster>
+      <lastBuildDate>Wed, 06 Jul 2022 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://blog-snowyfield.vercel.app//posts/tag/tech/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://blog-snowyfield.vercel.app//posts/Apple-Privacy</guid>
+    <title>Apple doesn&#39;t care about privacy, and it&#39;s showing.</title>
+    <link>https://blog-snowyfield.vercel.app//posts/Apple-Privacy</link>
+    <description>Apple announced that it would begin checking content uploaded to iCloud Photos, against a list of known CSAM material. This is fine on it&#39;s own, however the system could easily be abused.</description>
+    <pubDate>Wed, 06 Jul 2022 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>Apple</category><category>Tech</category><category>Privacy</category>
+  </item>
+
+    </channel>
+  </rss>

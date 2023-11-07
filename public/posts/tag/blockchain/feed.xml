@@ -1,0 +1,74 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>Blog | SnowyField</title>
+      <link>https://snowyfield.vercel.app//posts</link>
+      <description>My personal blog where I share my musings</description>
+      <language>en-us</language>
+      <managingEditor>snowyfield1906@gmail.com (SnowyField)</managingEditor>
+      <webMaster>snowyfield1906@gmail.com (SnowyField)</webMaster>
+      <lastBuildDate>Sat, 16 Sep 2023 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://snowyfield.vercel.app//posts/tag/blockchain/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://snowyfield.vercel.app//posts/gioi-thieu-ve-uniswap-v3</guid>
+    <title>Giới thiệu về Uniswap V3</title>
+    <link>https://snowyfield.vercel.app//posts/gioi-thieu-ve-uniswap-v3</link>
+    <description>Tìm hiểu về những vấn đề của Uniswap V2, cùng với những cải tiến và đặc điểm nổi bật của Uniswap V3.</description>
+    <pubDate>Sat, 16 Sep 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>Uniswap</category><category>DEX</category><category>Blockchain</category>
+  </item>
+
+  <item>
+    <guid>https://snowyfield.vercel.app//posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong</guid>
+    <title>Zero-Knowledge Proof là gì và cách hoạt động</title>
+    <link>https://snowyfield.vercel.app//posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong</link>
+    <description>Zero-Knowledge Proof là một công nghệ Cryptography đang được nhiều người quan tâm trong thời gian gần đây nhờ vào Blockchain, bài viết này sẽ giới thiệu cho chúng ta cái nhìn tổng quát về công nghệ này.</description>
+    <pubDate>Tue, 29 Aug 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>ZKP</category><category>Blockchain</category><category>Cryptography</category>
+  </item>
+
+  <item>
+    <guid>https://snowyfield.vercel.app//posts/flow-top-blockchain-danh-cho-nft</guid>
+    <title>Flow - Top Blockchain dành cho NFT</title>
+    <link>https://snowyfield.vercel.app//posts/flow-top-blockchain-danh-cho-nft</link>
+    <description>Flow - một Blockchain mới nhưng đã có rất nhiều thành công trong việc hỗ trợ cho các ứng dụng NFT và GameFi. Hãy cùng tìm hiểu nhữg điều đặc biệt làm nên một chain khác biệt này.</description>
+    <pubDate>Wed, 16 Aug 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>Flow</category><category>Blockchain</category>
+  </item>
+
+  <item>
+    <guid>https://snowyfield.vercel.app//posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-2</guid>
+    <title>Phân tích chi tiết DEX dưới góc nhìn kĩ thuật (Phần 2 - Order Book)</title>
+    <link>https://snowyfield.vercel.app//posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-2</link>
+    <description>Qua bài viết này chúng ta sẽ hiểu được chi tiết cách hoạt động của 2 mô hình DEX phổ biến hiện nay là Automated Market Maker và Order Book.</description>
+    <pubDate>Tue, 08 Aug 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>DEX</category><category>DeFi</category><category>Blockchain</category>
+  </item>
+
+  <item>
+    <guid>https://snowyfield.vercel.app//posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-1</guid>
+    <title>Phân tích chi tiết DEX dưới góc nhìn kĩ thuật (Phần 1 - AMM)</title>
+    <link>https://snowyfield.vercel.app//posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-1</link>
+    <description>Qua bài viết này chúng ta sẽ hiểu được chi tiết cách hoạt động của 2 mô hình DEX phổ biến hiện nay là Automated Market Maker và Order Book.</description>
+    <pubDate>Mon, 07 Aug 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>DEX</category><category>DeFi</category><category>Blockchain</category>
+  </item>
+
+  <item>
+    <guid>https://snowyfield.vercel.app//posts/tat-ca-moi-thu-ban-can-biet-ve-defi</guid>
+    <title>Tất cả mọi thứ bạn cần biết về DeFi</title>
+    <link>https://snowyfield.vercel.app//posts/tat-ca-moi-thu-ban-can-biet-ve-defi</link>
+    <description>Tổng quan về DeFi và vai trò quan trọng của nó trong thế giới tiền mã hóa. Tìm hiểu về khái niệm DeFi, sự khác biệt với hệ thống tài chính truyền thống, lợi ích và rủi ro, cùng với các hoạt động quan trọng khác.</description>
+    <pubDate>Sat, 05 Aug 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>DeFi</category><category>Blockchain</category>
+  </item>
+
+    </channel>
+  </rss>

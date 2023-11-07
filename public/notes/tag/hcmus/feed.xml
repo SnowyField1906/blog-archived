@@ -1,0 +1,44 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>Blog | SnowyField</title>
+      <link>https://snowyfield.vercel.app//posts</link>
+      <description>My personal blog where I share my musings</description>
+      <language>en-us</language>
+      <managingEditor>snowyfield1906@gmail.com (SnowyField)</managingEditor>
+      <webMaster>snowyfield1906@gmail.com (SnowyField)</webMaster>
+      <lastBuildDate>Tue, 05 Sep 2023 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://snowyfield.vercel.app//notes/tag/hcmus/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://snowyfield.vercel.app//posts/prerequisite-courses</guid>
+    <title>Prerequisite Knowledge Technology Courses</title>
+    <link>https://snowyfield.vercel.app//posts/prerequisite-courses</link>
+    <description>Prerequisite courses at University of Science, specializing in Knowledge Technology.</description>
+    <pubDate>Tue, 05 Sep 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>Note</category><category>HCMUS</category>
+  </item>
+
+  <item>
+    <guid>https://snowyfield.vercel.app//posts/auto-rating-course-script</guid>
+    <title>Auto Rating Courses Script</title>
+    <link>https://snowyfield.vercel.app//posts/auto-rating-course-script</link>
+    <description>Script automatically rates to all courses in University of Science.</description>
+    <pubDate>Mon, 31 Jul 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>Script</category><category>Tool</category><category>HCMUS</category>
+  </item>
+
+  <item>
+    <guid>https://snowyfield.vercel.app//posts/hcmus-gpa-calculator</guid>
+    <title>HCMUS GPA Calculator</title>
+    <link>https://snowyfield.vercel.app//posts/hcmus-gpa-calculator</link>
+    <description>Script calculates total accumulated GPA in University of Science.</description>
+    <pubDate>Mon, 31 Jul 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>Script</category><category>Tool</category><category>HCMUS</category>
+  </item>
+
+    </channel>
+  </rss>

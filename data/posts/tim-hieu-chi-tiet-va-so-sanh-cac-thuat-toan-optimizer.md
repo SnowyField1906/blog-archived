@@ -10,7 +10,7 @@ thumbnail: '/static/images/thumbnails/tim-hieu-chi-tiet-va-so-sanh-cac-thuat-toa
 
 _Các thuật toán Optimizer (Tối ưu) là một phần quan trọng lĩnh vực Machine Learning. Chúng giúp cho việc tìm kiếm cực trị của Loss Function (Hàm Mất mát) nhanh và hiệu quả hơn. Điều này sẽ giúp tăng tốc quá trình train model nhưng vẫn đảm bảo độ chính xác cao._
 
-_Để hiểu rõ hơn về các thuật toán optimizer, chúng ta sẽ cùng tìm hiểu về các thuật toán optimizer thông dụng nhất và so sánh hiệu quả của chúng trong bài viết này. Bao gồm: Gradient Descent, SGD, Momentum, NAG, Adagrad, RMSProp._
+_Để hiểu rõ hơn về các thuật toán optimizer, chúng ta sẽ cùng tìm hiểu về các thuật toán optimizer thông dụng nhất và so sánh hiệu quả của chúng trong bài viết này. Bao gồm: Gradient Descent, SGD, Momentum, NAG, Adagrad, RMSProp/Adadelta và Adam._
 
 <img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/tim-hieu-chi-tiet-va-so-sanh-cac-thuat-toan-optimizer.png" alt="Tìm hiểu chi tiết và so sánh các thuật toán optimizer" />
 
@@ -175,18 +175,37 @@ Ví dụ, ta có một lớp học với 100 học sinh, thay vì tính điểm 
 - Thường rơi vào các local minima thay vì global minima.
 - Không thể thoát ra khỏi saddle point.
 
+### Mini-Batch GD
+
+Là một thuật toán hoàn toàn giống với **SGD**, chỉ khác là thay vì tính trên $1$ điểm dữ liệu duy nhất, ta sẽ tính trên $n$ điểm dữ liệu ngẫu nhiên (lớn hơn $1$ nhưng vẫn nhỏ hơn tổng số điểm dữ liệu rất nhiều).
+
+Chúng ta sẽ không cần phải đi vào chi tiết thuật toán này.
+
 ### Momentum
 
 **Momentum** (Quán tính) hay **Stochastic Gradient Descent with Momentum** là một biến thể của **SGD**, phương pháp này sinh ra nhằm giải quyết vấn đề dao động mạnh trong quá trình tìm kiếm cực trị của **SGD**. Phương pháp này cũng giải quyết được việc không thể thoát ra khỏi local minima hay saddle point.
 
-Ý tưởng của phương pháp này là giả lập một lực quán tính, tăng tốc độ của việc di chuyển theo hướng đang đi và giảm tốc độ khi đổi hướng theo một hệ số $\alpha$. Điều này giúp cho việc di chuyển nhanh hơn và giảm thiểu sự dao động của đường đi. Do đó các đường zigzag sẽ hẹp hơn và tiến về phía cực trị nhanh hơn, ngoài ra lực quán tính này cũng có khả năng vượt qua được các local minima hay thoát ra khỏi saddle point.
+Ý tưởng của phương pháp này là giả lập một lực quán tính, làm giảm tốc độ khi đổi hướng theo một hệ số $\alpha$. Điều này giúp cho việc di chuyển nhanh hơn và giảm thiểu sự dao động của đường đi. Do đó các đường zigzag sẽ hẹp hơn và tiến về phía cực trị nhanh hơn, ngoài ra lực quán tính này cũng có khả năng vượt qua được các local minima hay thoát ra khỏi saddle point.
 
-Lúc này, thay vì cộng trực tiếp $\Delta w$ vào $w$, ta sẽ cộng thông qua một vector quán tính $v$. Vector này sẽ được tính bằng cách lấy vector $v$ trước đó nhân với một hệ số $\alpha$ thể hiện mức độ quán tính rồi trừ đi vector $\Delta w$. Đảm bảo vector mới đã được giữ lại một phần của vector trước đó tùy thuộc vào hệ số $\alpha$.
+Thuật toán này được triển khai bằng cách thay vì trừ trực tiếp gradient hiện tại vào $w$, ta sẽ trừ với tổng của 2 vector là vector trước đó và gradient hiện tại:
+
+<figure>
+<img
+    className="w-full md:w-1/2 flex justify-center mx-auto"
+    src="/static/images/posts/momentum-vector.png"
+    alt="Mô phỏng quá trình Momentum so với SGD"
+/>
+<figcaption>Source: cs231n.github.io</figcaption>
+</figure>
+
+Qua hình ảnh ta có thể hình dung được hướng đi của **Momentum** là tổng của 2 vector: hướng đi trước đó và gradient hiện tại.
+
+Lúc này, vector mới vừa có thông tin của gradient hiện tại vừa giữ lại được một phần của vector trước đó tùy thuộc vào hệ số $\alpha$.
 
 $$
 \begin{aligned}
-v' &= \alpha v - \Delta w \\
-&= \alpha v - \eta \nabla L(\hat{w}) \\
+v' &= \alpha v + \Delta w \\
+&= \alpha v + \eta \nabla L(\hat{w}) \\
 \end{aligned} \tag{7}
 $$
 
@@ -197,15 +216,15 @@ $$
 1. Tìm $L$ dựa trên một điểm dữ liệu ngẫu nhiên $j$ đã chọn: $L = \frac{1}{2} (\hat{y}_j - y_j)^2$
 2. Tính gradient của $L$ tại $w$: $\nabla L(w)$
 3. Tìm $\Delta w$: $\Delta w = \eta \nabla L(w)$.
-4. Tính momentum $v$: $v' = \alpha v - \Delta w$
-5. Cập nhật lại các parameter $w$: $w' = w + v$.
+4. Cập nhật lại vận tốc $v$: $v' = \alpha v + \Delta w$
+5. Cập nhật lại các parameter $w$: $w' = w - v'$.
 6. Lặp lại các bước 1-5 trên cho đến khi đạt được điều kiện dừng.
 
 **Công thức tổng quát:**
 
 $$
 \begin{aligned}
-w_t &= w_{t-1} + \alpha v_t - \eta \nabla L(w_{t-1}) \\
+w_t &= w_{t-1} - \alpha v_t - \eta \nabla L(w_{t-1}) \\
 \end{aligned} \tag{8}
 $$
 
@@ -215,7 +234,7 @@ $$
 <img
     className="w-full md:w-1/2 flex justify-center mx-auto"
     src="/static/images/posts/sgd-vs-momentum-example-plot.png"
-    alt="Mô phỏng quá trình Momentum so với SGD"
+    alt="Mô phỏng vector Momentum"
 />
 <figcaption>Source: eloquentarduino.github.io</figcaption>
 </figure>
@@ -237,13 +256,26 @@ Ta có thể thấy rằng đường đi của **Momentum** đã hẹp hơn so v
 
 **Nesterov Accelerated Gradient** (NAG) là một biến thể của **Momentum**, phương pháp này sinh ra nhằm giải quyết vấn đề mất thời gian dao động khi đến đích của **Momentum**.
 
-Ý tưởng của phương pháp này là dự đoán trước vị trí tiếp theo của $w$ dựa trên vector quán tính $v$ và hệ số $\alpha$ trước đó. Sau đó, ta sẽ tính gradient của $L$ tại vị trí dự đoán này, và dùng nó để cập nhật lại $v$ và $w$.
+Ý tưởng của phương pháp này là dự đoán trước vị trí tiếp theo của $w$ dựa trên vector quán tính $v$ và hệ số $\alpha$ trước đó.
 
 $$
 \begin{aligned}
 \hat{w} &= w - \alpha v \\
 \end{aligned} \tag{9}
 $$
+
+Sau đó, ta sẽ tính gradient của tại vị trí dự đoán này và dùng nó để cập nhật lại các parameter $w$.
+
+<figure>
+<img
+    className="w-full md:w-1/2 flex justify-center mx-auto"
+    src="/static/images/posts/nag-vector.png"
+    alt="Mô phỏng vector NAG"
+/>
+<figcaption>Source: cs231n.github.io</figcaption>
+</figure>
+
+Qua hình ảnh ta có thể hình dung được hướng đi của **NAG** là tổng của 2 vector: hướng đi trước đó và gradient tại vị trí dự đoán.
 
 #### Thuật toán NAG
 
@@ -252,16 +284,16 @@ $$
 1. Tìm $L$ dựa trên một điểm dữ liệu ngẫu nhiên $j$ đã chọn: $L = \frac{1}{2} (\hat{y}_j - y_j)^2$
 2. Dự đoán vị trí tiếp theo của $w$: $\hat{w} = w - \alpha v$
 3. Tính gradient của $L$ tại $\hat{w}$: $\nabla L(\hat{w})$
-4. Tìm $\Delta w$: $\Delta w = \eta \nabla L(\hat{w})$.
-5. Cập nhật vận tốc $v$: $v' = \alpha v - \Delta w$
-6. Cập nhật lại các parameter $w$: $w' = w + v'$.
+4. Tìm $\Delta \hat{w}$: $\Delta \hat{w} = \eta \nabla L(\hat{w})$.
+5. Cập nhật lại vận tốc $v$: $v' = \alpha v + \Delta \hat{w}$
+6. Cập nhật lại các parameter $w$: $w' = w - v'$.
 7. Lặp lại các bước 1-6 trên cho đến khi đạt được điều kiện dừng.
 
 **Công thức tổng quát:**
 
 $$
 \begin{aligned}
-w_t &= w_{t-1} + \alpha v_{t-1} - \eta \nabla L(w_{t-1} - \alpha v_{t-1}) \\
+w_t &= w_{t-1} - \alpha v_{t-1} - \eta \nabla L(w_{t-1} - \alpha v_{t-1}) \\
 \end{aligned} \tag{10}
 $$
 
@@ -313,7 +345,7 @@ Nhờ đó, ta có thể cài đặt learning rate ban đầu thật cao để g
 1. Tìm $L$ dựa trên một điểm dữ liệu ngẫu nhiên $j$ đã chọn: $L = \frac{1}{2} (\hat{y}_j - y_j)^2$
 2. Tính gradient của $L$ tại $w$: $\nabla L(w)$
 3. Tính $G$: $G' = G + \nabla L(w)^2$
-4. Cập nhật lại learning rate $\eta$: $\eta' = \frac{\eta}{\sqrt{G' + \epsilon}}$
+4. Tính learning rate $\eta$: $\eta' = \frac{\eta}{\sqrt{G' + \epsilon}}$
 5. Tìm $\Delta w$: $\Delta w = \eta' \nabla L(w)$.
 6. Cập nhật lại các parameter $w$: $w' = w - \Delta w$.
 7. Lặp lại các bước 1-5 trên cho đến khi đạt được điều kiện dừng.
@@ -326,59 +358,140 @@ w_t &= w_{t-1} - \frac{\eta}{\sqrt{G_{t-1} + \nabla L(w_{t-1})^2 + \epsilon}} \n
 \end{aligned} \tag{12}
 $$
 
-#### Ưu điểm của Adaptive Gradient
+#### Ưu điểm của Adagrad
 
 - Nhanh hơn nhiều so với SGD.
 - Giảm thiểu sự dao động của đường đi.
 - Có thể tránh được saddle point.
 
-#### Nhược điểm của Adaptive Gradient
+#### Nhược điểm của Adagrad
 
 - Phụ thuộc vào parameter số $w$ khởi tạo ban đầu.
 - Thường rơi vào các local minima thay vì global minima.
 - Tổng bình phương của các gradient có thể trở nên quá lớn khiến cho learning rate giảm nhanh và dừng lại trước khi đạt được cực trị.
 
-### RMSProp
+### RMSProp/Adadelta
 
-**RMSProp** là một biến thể của **Adagrad**, phương pháp này sinh ra nhằm giải quyết vấn đề tổng bình phương của các gradient có thể trở nên quá lớn khiến cho learning rate giảm nhanh và dừng lại trước khi đạt được cực trị.
+**RMSProp/Adadelta** là hai biến thể của **Adagrad**,
+hai phương pháp này được phát triển đồng thời và độc lập, nhằm giải quyết vấn đề tổng bình phương của các gradient có thể trở nên quá lớn khiến cho learning rate giảm nhanh và dừng lại trước khi đạt được cực trị.
 
-Ý tưởng của hai phương pháp này là thay vì dùng tổng bình phương của toàn bộ các gradient đã tính trước đó, ta sẽ chỉ cần bình phương của gradient trước cùng với một hệ số $\alpha$ (thường được chọn là $0.9$) thể hiện mức độ quên đi gradient đó.
+Ý tưởng của hai phương pháp này là thay vì cho $G$ là tổng bình phương của toàn bộ các gradient đã tính trước đó, ta sẽ cho $G$ là trung bình cộng của chính nó với bình phương của gradient hiện tại. Với ý nghĩa này, $G$ sẽ phụ thuộc vào phần lớn gradient trước đó.
+
+Hệ số $\beta$ (thường được chọn là $0.9$) thể hiện mức độ quên đi gradient này.
 
 $$
 \begin{aligned}
-G' &= \alpha G + (1 - \alpha) \nabla L(w)^2 \\
+G' &= \beta G + (1 - \beta) \nabla L(w)^2 \\
 \eta' &= \frac{\eta}{\sqrt{G' + \epsilon}}
 \end{aligned} \tag{13}
 $$
 
-#### Thuật toán RMSProp
+#### Thuật toán RMSProp/Adadelta
 
 **Các bước thực hiện:**
 
 1. Tìm $L$ dựa trên một điểm dữ liệu ngẫu nhiên $j$ đã chọn: $L = \frac{1}{2} (\hat{y}_j - y_j)^2$
 2. Tính gradient của $L$ tại $w$: $\nabla L(w)$
-3. Tính $G$: $G' = \alpha G + (1 - \alpha) \nabla L(w)^2$
-4. Cập nhật lại learning rate $\eta$: $\eta' = \frac{\eta}{\sqrt{G' + \epsilon}}$
+3. Tính $G$: $G' = \beta G + (1 - \beta) \nabla L(w)^2$
+4. Tính learning rate $\eta$: $\eta' = \frac{\eta}{\sqrt{G' + \epsilon}}$
 5. Tìm $\Delta w$: $\Delta w = \eta' \nabla L(w)$.
 6. Cập nhật lại các parameter $w$: $w' = w - \Delta w$.
-7. Lặp lại các bước 1-5 trên cho đến khi đạt được điều kiện dừng.
+7. Lặp lại các bước 1-6 trên cho đến khi đạt được điều kiện dừng.
 
 **Công thức tổng quát:**
 
 $$
 \begin{aligned}
-w_t &= w_{t-1} - \frac{\eta}{\sqrt{\alpha G_{t-1} + (1 - \alpha) \nabla L(w_{t-1})^2 + \epsilon}}  \nabla L(w_{t-1}) \\
+w_t &= w_{t-1} - \frac{\eta}{\sqrt{\beta G_{t-1} + (1 - \beta) \nabla L(w_{t-1})^2 + \epsilon}} \nabla L(w_{t-1}) \\
 \end{aligned} \tag{14}
 $$
 
-#### Ưu điểm của RMSProp
+#### Ưu điểm của RMSProp/Adadelta
 
 - Nhanh hơn so với Adagrad.
 - Giảm thiểu sự dao động của đường đi.
 - Có thể tránh được saddle point.
 - Không xảy ra tình trạng learning rate giảm nhanh và dừng lại trước khi đạt được cực trị.
 
-#### Nhược điểm của RMSProp
+#### Nhược điểm của RMSProp/Adadelta
 
 - Phụ thuộc vào parameter số $w$ khởi tạo ban đầu.
 - Thường rơi vào các local minima thay vì global minima.
+
+### Adam
+
+Chúng ta có thể thấy từ **SGD** sinh ra hai trường phái khác nhau, một cái sử dụng lực quán tính, một cái sử dụng learning rate biến thiên. Và đây chính là ý tưởng của **Adam** (Adaptive Moment Estimation), phương pháp này thống nhất cả hai ý tưởng trên lại với nhau tạo nên một thuật toán mạnh mẽ. Đây cũng là thuật toán optimizer được sử dụng nhiều nhất hiện nay.
+
+Ngoài $G$ dùng để lưu trữ trung bình cộng của bình phương các gradient, **Adam** định nghĩa thêm $M$ dùng để lưu trữ trung bình cộng của các gradient.
+
+$$
+\begin{aligned}
+G' &= \beta_1 G + (1 - \beta_1) \nabla L(w)^2 \\
+M' &= \beta_2 G + (1 - \beta_2) \nabla L(w) \\
+\end{aligned} \tag{15}
+$$
+
+Như **RSMProp**, $\beta_1$ thường được cho là $0.9$, còn $\beta_2$ thường được cho là $0.999$.
+
+Tuy nhiên vì $(1- \beta)$ quá nhỏ, do đó các giá trị này có xu hướng tiến về về $0$ sau khi khởi tạo, ta sẽ tính lại:
+
+$$
+\begin{aligned}
+\hat{G} &= \frac{G}{1 - \beta_1} \\
+\hat{M} &= \frac{M}{1 - \beta_1}
+\end{aligned}
+$$
+
+#### Thuật toán Adam
+
+**Các bước thực hiện:**
+
+1. Tìm $L$ dựa trên một điểm dữ liệu ngẫu nhiên $j$ đã chọn: $L = \frac{1}{2} (\hat{y}_j - y_j)^2$
+2. Tính gradient của $L$ tại $w$: $\nabla L(w)$
+3. Tính $G$: $G' = \beta_1 G + (1 - \beta_1) \nabla L(w)^2$
+4. Tính $M$: $M' = \beta_2 G + (1 - \beta_2) \nabla L(w)$
+5. Tính $\hat{G}'$: $\hat{G}' = \frac{G'}{1 - \beta_1}$
+6. Tính $\hat{M}'$: $\hat{M}' = \frac{M'}{1 - \beta_2}$
+7. Tính learning rate $\eta$: $\eta' = \frac{\eta}{\sqrt{\hat{G}' + \epsilon}}$
+8. Tìm $\Delta w$: $\Delta w = \eta' \hat{M}$.
+9. Cập nhật lại các parameter $w$: $w' = w - \Delta w$.
+10. Lặp lại các bước 1-8 trên cho đến khi đạt được điều kiện dừng.
+
+**Công thức tổng quát:**
+
+$$
+\begin{aligned}
+w_t &= w_{t-1} - \frac{\eta}{\sqrt{\frac{\beta_1 G_{t-1} + (1 - \beta_1) \nabla L(w_{t-1})^2}{1 - \beta_1} + \epsilon}} \frac{\beta_2 M_{t-1} + (1 - \beta_2) \nabla L(w_{t-1})}{1 - \beta_2} \\
+\end{aligned} \tag{16}
+$$
+
+#### Ưu điểm của Adam
+
+- Nhanh hơn so với RMSProp/Adadelta.
+- Giảm thiểu sự dao động của đường đi.
+- Có thể tránh được saddle point.
+- Không xảy ra tình trạng learning rate giảm nhanh và dừng lại trước khi đạt được cực trị.
+- Có thể thoát ra khỏi local minima.
+- Không phụ thuộc vào parameter số $w$ khởi tạo ban đầu.
+- Không phụ thuộc vào learning rate $\eta$.
+
+#### Nhược điểm của Adam
+
+Không có nhược điểm nào đáng kể.
+
+### Nadam
+
+Có lẽ chúng ta đã quên **NAG** với ý tưởng skip một bước bằng cách sử dụng gradient cho vị trí dự doán. **Nadam** (Nesterov-accelerated Adaptive Moment Estimation) là một biến thể của **Adam** kết hợp với **NAG**. Cho ra một thuật toán optimizer hoàn hảo và toàn diện.
+
+Chúng ta sẽ không cần phải đi vào chi tiết thuật toán này.
+
+## Kết luận
+
+<figure>
+<img
+    className="w-full md:w-1/2 flex justify-center mx-auto"
+    src="/static/images/posts/optimizers-comparison.gif"
+    alt="So sánh các thuật toán optimizer"
+/>
+<figcaption>Source: analyticsvidhya.com/</figcaption>
+</figure>

@@ -1,0 +1,34 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>Blog | SnowyField</title>
+      <link>https://blog-snowyfield.vercel.app//posts</link>
+      <description>My personal blog where I share my musings</description>
+      <language>en-us</language>
+      <managingEditor>snowyfield1906@gmail.com (SnowyField)</managingEditor>
+      <webMaster>snowyfield1906@gmail.com (SnowyField)</webMaster>
+      <lastBuildDate>Tue, 08 Aug 2023 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://blog-snowyfield.vercel.app//posts/tag/dex/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://blog-snowyfield.vercel.app//posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-2</guid>
+    <title>Phân tích chi tiết DEX dưới góc nhìn kĩ thuật (Phần 2 - Order Book)</title>
+    <link>https://blog-snowyfield.vercel.app//posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-2</link>
+    <description>Qua bài viết này chúng ta sẽ hiểu được chi tiết cách hoạt động của 2 mô hình DEX phổ biến hiện nay là Automated Market Maker và Order Book.</description>
+    <pubDate>Tue, 08 Aug 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>DEX</category><category>DeFi</category><category>Blockchain</category>
+  </item>
+
+  <item>
+    <guid>https://blog-snowyfield.vercel.app//posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-1</guid>
+    <title>Phân tích chi tiết DEX dưới góc nhìn kĩ thuật (Phần 1 - AMM)</title>
+    <link>https://blog-snowyfield.vercel.app//posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-1</link>
+    <description>Qua bài viết này chúng ta sẽ hiểu được chi tiết cách hoạt động của 2 mô hình DEX phổ biến hiện nay là Automated Market Maker và Order Book.</description>
+    <pubDate>Mon, 07 Aug 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>DEX</category><category>DeFi</category><category>Blockchain</category>
+  </item>
+
+    </channel>
+  </rss>

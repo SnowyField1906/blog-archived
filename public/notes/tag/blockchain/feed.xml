@@ -1,0 +1,34 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>Blog | SnowyField</title>
+      <link>https://snowyfield.vercel.app//posts</link>
+      <description>My personal blog where I share my musings</description>
+      <language>en-us</language>
+      <managingEditor>snowyfield1906@gmail.com (SnowyField)</managingEditor>
+      <webMaster>snowyfield1906@gmail.com (SnowyField)</webMaster>
+      <lastBuildDate>Fri, 01 Sep 2023 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://snowyfield.vercel.app//notes/tag/blockchain/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://snowyfield.vercel.app//posts/blockchain-security-assignment</guid>
+    <title>Blockchain Security Assignment</title>
+    <link>https://snowyfield.vercel.app//posts/blockchain-security-assignment</link>
+    <description>Assignment for Blockchain Security</description>
+    <pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>Blockchain</category><category>Security</category><category>Assignment</category>
+  </item>
+
+  <item>
+    <guid>https://snowyfield.vercel.app//posts/zero-knowledge-references</guid>
+    <title>Zero-Knowledge References</title>
+    <link>https://snowyfield.vercel.app//posts/zero-knowledge-references</link>
+    <description>Useful references for researching Zero-Knowledge Proof purpose.</description>
+    <pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>ZKP</category><category>Blockchain</category><category>References</category>
+  </item>
+
+    </channel>
+  </rss>
