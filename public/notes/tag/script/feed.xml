@@ -2,28 +2,28 @@
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>Blog | SnowyField</title>
-      <link>https://blog-snowyfield.vercel.app//posts</link>
-      <description>My personal blog where I share my musings</description>
+      <link>https://snowyfield.software/posts</link>
+      <description>My personal blog where I share my knowledge, experiences, thoughts and everything.</description>
       <language>en-us</language>
       <managingEditor>snowyfield1906@gmail.com (SnowyField)</managingEditor>
       <webMaster>snowyfield1906@gmail.com (SnowyField)</webMaster>
       <lastBuildDate>Mon, 31 Jul 2023 00:00:00 GMT</lastBuildDate>
-      <atom:link href="https://blog-snowyfield.vercel.app//notes/tag/script/feed.xml" rel="self" type="application/rss+xml"/>
+      <atom:link href="https://snowyfield.software/notes/tag/script/feed.xml" rel="self" type="application/rss+xml"/>
       
   <item>
-    <guid>https://blog-snowyfield.vercel.app//posts/auto-rating-course-script</guid>
+    <guid>https://snowyfield.software/posts/auto-rating-course-script</guid>
     <title>Auto Rating Courses Script</title>
-    <link>https://blog-snowyfield.vercel.app//posts/auto-rating-course-script</link>
+    <link>https://snowyfield.software/posts/auto-rating-course-script</link>
     <description>Script automatically rates to all courses in University of Science.</description>
     <pubDate>Mon, 31 Jul 2023 00:00:00 GMT</pubDate>
     <author>snowyfield1906@gmail.com (SnowyField)</author>
-    <category>Script</category><category>Tool</category>
+    <category>Script</category><category>Tool</category><category>HCMUS</category>
   </item>
 
   <item>
-    <guid>https://blog-snowyfield.vercel.app//posts/douyin-videos-downloader</guid>
+    <guid>https://snowyfield.software/posts/douyin-videos-downloader</guid>
     <title>Douyin Videos Downloader</title>
-    <link>https://blog-snowyfield.vercel.app//posts/douyin-videos-downloader</link>
+    <link>https://snowyfield.software/posts/douyin-videos-downloader</link>
     <description>Script downloads all videos from a Douyin user.</description>
     <pubDate>Mon, 31 Jul 2023 00:00:00 GMT</pubDate>
     <author>snowyfield1906@gmail.com (SnowyField)</author>
@@ -31,13 +31,13 @@
   </item>
 
   <item>
-    <guid>https://blog-snowyfield.vercel.app//posts/hcmus-gpa-calculator</guid>
-    <title>GPA Calculator</title>
-    <link>https://blog-snowyfield.vercel.app//posts/hcmus-gpa-calculator</link>
+    <guid>https://snowyfield.software/posts/hcmus-gpa-calculator</guid>
+    <title>HCMUS GPA Calculator</title>
+    <link>https://snowyfield.software/posts/hcmus-gpa-calculator</link>
     <description>Script calculates total accumulated GPA in University of Science.</description>
     <pubDate>Mon, 31 Jul 2023 00:00:00 GMT</pubDate>
     <author>snowyfield1906@gmail.com (SnowyField)</author>
-    <category>Script</category><category>Tool</category>
+    <category>Script</category><category>Tool</category><category>HCMUS</category>
   </item>
 
     </channel>

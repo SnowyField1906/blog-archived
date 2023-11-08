@@ -7,9 +7,19 @@
       <language>en-us</language>
       <managingEditor>snowyfield1906@gmail.com (SnowyField)</managingEditor>
       <webMaster>snowyfield1906@gmail.com (SnowyField)</webMaster>
-      <lastBuildDate>Sat, 28 Oct 2023 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Wed, 08 Nov 2023 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://snowyfield.software/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://snowyfield.software/posts/gioi-thieu-ve-markov-chain-va-ung-dung</guid>
+    <title>Giới thiệu về Markov Chain và ứng dụng</title>
+    <link>https://snowyfield.software/posts/gioi-thieu-ve-markov-chain-va-ung-dung</link>
+    <description>Giới thiệu tổng quan về Markov Chain và các ứng dụng, hướng dẫn chi tiết cách tính Markov Chain và triển khai bằng Python</description>
+    <pubDate>Wed, 08 Nov 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>Machine Learning</category><category>Mathematics</category>
+  </item>
+
   <item>
     <guid>https://snowyfield.software/posts/tim-hieu-chi-tiet-va-so-sanh-cac-thuat-toan-optimizer</guid>
     <title>Tìm hiểu chi tiết và so sánh các thuật toán optimizer</title>
@@ -26,16 +36,6 @@
     <link>https://snowyfield.software/posts/singular-value-decomposition-la-gi-va-chi-tiet-cach-tinh</link>
     <description>Giới thiệu về Singular Value Decomposition và các khái niệm liên quan, hướng dẫn chi tiết cách tính Singular Value Decomposition và triển khai bằng Python.</description>
     <pubDate>Mon, 23 Oct 2023 00:00:00 GMT</pubDate>
-    <author>snowyfield1906@gmail.com (SnowyField)</author>
-    <category>Machine Learning</category><category>Mathematics</category>
-  </item>
-
-  <item>
-    <guid>https://snowyfield.software/posts/gioi-thieu-ve-markov-chain-va-ung-dung</guid>
-    <title>QR Decomposition là gì và chi tiết cách tính</title>
-    <link>https://snowyfield.software/posts/gioi-thieu-ve-markov-chain-va-ung-dung</link>
-    <description>Giới thiệu về QR Decomposition và các khái niệm liên quan, hướng dẫn chi tiết cách tính QR Decomposition và triển khai bằng Python.</description>
-    <pubDate>Sun, 22 Oct 2023 00:00:00 GMT</pubDate>
     <author>snowyfield1906@gmail.com (SnowyField)</author>
     <category>Machine Learning</category><category>Mathematics</category>
   </item>

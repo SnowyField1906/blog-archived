@@ -1,150 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://snowyfield.vercel.app//about</loc>
+    <loc>https://snowyfield.software/about</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//activity</loc>
+    <loc>https://snowyfield.software/checkin</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//checkin</loc>
+    <loc>https://snowyfield.software/contact</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//contact</loc>
+    <loc>https://snowyfield.software</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app/</loc>
+    <loc>https://snowyfield.software/journey</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//journey</loc>
+    <loc>https://snowyfield.software/notes</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//notes</loc>
+    <loc>https://snowyfield.software/now</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//now</loc>
+    <loc>https://snowyfield.software/posts</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//posts</loc>
+    <loc>https://snowyfield.software/privacypolicy</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//privacypolicy</loc>
+    <loc>https://snowyfield.software/projects</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//projects</loc>
+    <loc>https://snowyfield.software/recommends</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//recommends</loc>
+    <loc>https://snowyfield.software/stats</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//stats</loc>
+    <loc>https://snowyfield.software/posts/flow-top-blockchain-danh-cho-nft</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//posts/flow-top-blockchain-danh-cho-nft</loc>
-  </url>
-
-  <url>
-    <loc>https://snowyfield.vercel.app//posts/gioi-thieu-chi-tiet-ve-bai-toan-mental-poker</loc>
+    <loc>https://snowyfield.software/posts/gioi-thieu-chi-tiet-ve-bai-toan-mental-poker</loc>
   </url>
 
   <url>
     <loc
-      >https://snowyfield.vercel.app//posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-1</loc
+      >https://snowyfield.software/posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-1</loc
     >
   </url>
 
   <url>
     <loc
-      >https://snowyfield.vercel.app//posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-2</loc
+      >https://snowyfield.software/posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-2</loc
     >
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//posts/qr-decomposition-la-gi-va-chi-tiet-cach-tinh</loc>
+    <loc>https://snowyfield.software/posts/qr-decomposition-la-gi-va-chi-tiet-cach-tinh</loc>
   </url>
 
   <url>
     <loc
-      >https://snowyfield.vercel.app//posts/singular-value-decomposition-la-gi-va-chi-tiet-cach-tinh</loc
+      >https://snowyfield.software/posts/singular-value-decomposition-la-gi-va-chi-tiet-cach-tinh</loc
     >
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//posts/tat-ca-moi-thu-ban-can-biet-ve-defi</loc>
+    <loc>https://snowyfield.software/posts/tat-ca-moi-thu-ban-can-biet-ve-defi</loc>
   </url>
 
   <url>
     <loc
-      >https://snowyfield.vercel.app//posts/toan-tap-ve-bai-toan-least-squares-va-cac-phuong-phap-giai</loc
+      >https://snowyfield.software/posts/tim-hieu-chi-tiet-va-so-sanh-cac-thuat-toan-optimizer</loc
     >
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong</loc>
+    <loc
+      >https://snowyfield.software/posts/toan-tap-ve-bai-toan-least-squares-va-cac-phuong-phap-giai</loc
+    >
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//notes/auto-rating-course-script</loc>
+    <loc>https://snowyfield.software/posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//notes/blockchain-security-assignment</loc>
+    <loc>https://snowyfield.software/notes/auto-rating-course-script</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//notes/douyin-videos-downloader</loc>
+    <loc>https://snowyfield.software/notes/blockchain-security-assignment</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//notes/hcmus-gpa-calculator</loc>
+    <loc>https://snowyfield.software/notes/douyin-videos-downloader</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//notes/prerequisite-courses</loc>
+    <loc>https://snowyfield.software/notes/hcmus-gpa-calculator</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//notes/zero-knowledge-references</loc>
+    <loc>https://snowyfield.software/notes/prerequisite-courses</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//posts/tag/blockchain</loc>
+    <loc>https://snowyfield.software/notes/zero-knowledge-references</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//posts/tag/cryptography</loc>
+    <loc>https://snowyfield.software/posts/tag/blockchain</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//posts/tag/flow</loc>
+    <loc>https://snowyfield.software/posts/tag/cryptography</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//posts/tag/defi</loc>
+    <loc>https://snowyfield.software/posts/tag/defi</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//posts/tag/tech</loc>
+    <loc>https://snowyfield.software/posts/tag/dex</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//posts/tag/zkp</loc>
+    <loc>https://snowyfield.software/posts/tag/flow</loc>
   </url>
 
   <url>
-    <loc>https://snowyfield.vercel.app//posts/tag/dex</loc>
+    <loc>https://snowyfield.software/posts/tag/machine-learning</loc>
+  </url>
+
+  <url>
+    <loc>https://snowyfield.software/posts/tag/mathematics</loc>
+  </url>
+
+  <url>
+    <loc>https://snowyfield.software/posts/tag/optimization</loc>
+  </url>
+
+  <url>
+    <loc>https://snowyfield.software/posts/tag/poker</loc>
+  </url>
+
+  <url>
+    <loc>https://snowyfield.software/posts/tag/tech</loc>
+  </url>
+
+  <url>
+    <loc>https://snowyfield.software/posts/tag/zkp</loc>
   </url>
 </urlset>

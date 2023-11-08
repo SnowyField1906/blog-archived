@@ -2,18 +2,18 @@
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>Blog | SnowyField</title>
-      <link>https://blog-snowyfield.vercel.app//posts</link>
-      <description>My personal blog where I share my musings</description>
+      <link>https://snowyfield.software/posts</link>
+      <description>My personal blog where I share my knowledge, experiences, thoughts and everything.</description>
       <language>en-us</language>
       <managingEditor>snowyfield1906@gmail.com (SnowyField)</managingEditor>
       <webMaster>snowyfield1906@gmail.com (SnowyField)</webMaster>
       <lastBuildDate>Tue, 08 Aug 2023 00:00:00 GMT</lastBuildDate>
-      <atom:link href="https://blog-snowyfield.vercel.app//posts/tag/defi/feed.xml" rel="self" type="application/rss+xml"/>
+      <atom:link href="https://snowyfield.software/posts/tag/defi/feed.xml" rel="self" type="application/rss+xml"/>
       
   <item>
-    <guid>https://blog-snowyfield.vercel.app//posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-2</guid>
+    <guid>https://snowyfield.software/posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-2</guid>
     <title>Phân tích chi tiết DEX dưới góc nhìn kĩ thuật (Phần 2 - Order Book)</title>
-    <link>https://blog-snowyfield.vercel.app//posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-2</link>
+    <link>https://snowyfield.software/posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-2</link>
     <description>Qua bài viết này chúng ta sẽ hiểu được chi tiết cách hoạt động của 2 mô hình DEX phổ biến hiện nay là Automated Market Maker và Order Book.</description>
     <pubDate>Tue, 08 Aug 2023 00:00:00 GMT</pubDate>
     <author>snowyfield1906@gmail.com (SnowyField)</author>
@@ -21,9 +21,9 @@
   </item>
 
   <item>
-    <guid>https://blog-snowyfield.vercel.app//posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-1</guid>
+    <guid>https://snowyfield.software/posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-1</guid>
     <title>Phân tích chi tiết DEX dưới góc nhìn kĩ thuật (Phần 1 - AMM)</title>
-    <link>https://blog-snowyfield.vercel.app//posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-1</link>
+    <link>https://snowyfield.software/posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-1</link>
     <description>Qua bài viết này chúng ta sẽ hiểu được chi tiết cách hoạt động của 2 mô hình DEX phổ biến hiện nay là Automated Market Maker và Order Book.</description>
     <pubDate>Mon, 07 Aug 2023 00:00:00 GMT</pubDate>
     <author>snowyfield1906@gmail.com (SnowyField)</author>
@@ -31,9 +31,9 @@
   </item>
 
   <item>
-    <guid>https://blog-snowyfield.vercel.app//posts/tat-ca-moi-thu-ban-can-biet-ve-defi</guid>
+    <guid>https://snowyfield.software/posts/tat-ca-moi-thu-ban-can-biet-ve-defi</guid>
     <title>Tất cả mọi thứ bạn cần biết về DeFi</title>
-    <link>https://blog-snowyfield.vercel.app//posts/tat-ca-moi-thu-ban-can-biet-ve-defi</link>
+    <link>https://snowyfield.software/posts/tat-ca-moi-thu-ban-can-biet-ve-defi</link>
     <description>Tổng quan về DeFi và vai trò quan trọng của nó trong thế giới tiền mã hóa. Tìm hiểu về khái niệm DeFi, sự khác biệt với hệ thống tài chính truyền thống, lợi ích và rủi ro, cùng với các hoạt động quan trọng khác.</description>
     <pubDate>Sat, 05 Aug 2023 00:00:00 GMT</pubDate>
     <author>snowyfield1906@gmail.com (SnowyField)</author>
