@@ -20,13 +20,13 @@ export default function NoteView({ frontMatter, toc, children }) {
       <article>
         <div className="mx-auto max-w-5xl xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
           <header>
-            <div className="space-y-1 border-b border-gray-200 pb-10 text-center dark:border-gray-700">
+            <div className="pt-6 space-y-1 border-b border-gray-200 pb-10 text-center dark:border-gray-700">
               <dl>
                 <div>
                   <dt className="sr-only">Published on</dt>
                   <dd className="text-base font-medium leading-6 text-gray-600 dark:text-gray-400">
                     <time dateTime={date}>
-                      <BsCalendarDate className="mr-1 -mt-1 inline h-4 w-4" /> {formatDate(date)}
+                      <BsCalendarDate className="mr-1.5 -mt-1. inline h-4 w-4" /> {formatDate(date)}
                     </time>
                   </dd>
                 </div>
@@ -34,7 +34,7 @@ export default function NoteView({ frontMatter, toc, children }) {
               <div>
                 <PageTitle>{title}</PageTitle>
               </div>
-              <div className="flex justify-center gap-5 py-4">
+              <div className="flex justify-center gap-5 pt-1">
                 <span className="flex items-center gap-1.5">
                   <HiOutlinePencil className="h-5 w-5" />
                   {readingTime.words} words

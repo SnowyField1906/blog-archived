@@ -1,7 +1,7 @@
 ---
 title: Singular Value Decomposition là gì và chi tiết cách tính
 date: '2023-10-23'
-tags: ['Machine Learning', 'Mathematics']
+tags: ['Machine Learning', 'Linear Algebra', 'Mathematics']
 draft: false
 summary: Giới thiệu về Singular Value Decomposition và các khái niệm liên quan, hướng dẫn chi tiết cách tính Singular Value Decomposition và triển khai bằng Python.
 layout: PostView
@@ -519,7 +519,7 @@ def inverse(A: np.array) -> np.array:
     return np.linalg.inv(A)
 ```
 
-### Kiểm tra kết quả
+### Kiểm thử
 
 ```python
 A = np.array([

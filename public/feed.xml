@@ -7,9 +7,29 @@
       <language>en-us</language>
       <managingEditor>snowyfield1906@gmail.com (SnowyField)</managingEditor>
       <webMaster>snowyfield1906@gmail.com (SnowyField)</webMaster>
-      <lastBuildDate>Wed, 08 Nov 2023 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Sun, 12 Nov 2023 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://snowyfield.software/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://snowyfield.software/posts/hieu-sau-ve-markov-decision-process-phan-2</guid>
+    <title>Hiểu sâu về Markov Decision Process (Phần 2 - Policy Iteration)</title>
+    <link>https://snowyfield.software/posts/hieu-sau-ve-markov-decision-process-phan-2</link>
+    <description>Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Markov Decision Process cùng với cách xây dựng và triển khai hai thuật toán phổ biến là Policy Iteration và Value Iteration</description>
+    <pubDate>Sun, 12 Nov 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>Reinforcement Learning</category><category>Machine Learning</category><category>Probability</category><category>Mathematics</category>
+  </item>
+
+  <item>
+    <guid>https://snowyfield.software/posts/hieu-sau-ve-markov-decision-process-phan-1</guid>
+    <title>Hiểu sâu về Markov Decision Process (Phần 1 - Tổng quan)</title>
+    <link>https://snowyfield.software/posts/hieu-sau-ve-markov-decision-process-phan-1</link>
+    <description>Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Markov Decision Process cùng với cách xây dựng và triển khai hai thuật toán phổ biến là Policy Iteration và Value Iteration</description>
+    <pubDate>Fri, 10 Nov 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>Reinforcement Learning</category><category>Machine Learning</category><category>Probability</category><category>Mathematics</category>
+  </item>
+
   <item>
     <guid>https://snowyfield.software/posts/gioi-thieu-ve-markov-chain-va-ung-dung</guid>
     <title>Giới thiệu về Markov Chain và ứng dụng</title>
@@ -17,7 +37,7 @@
     <description>Giới thiệu tổng quan về Markov Chain và các ứng dụng, hướng dẫn chi tiết cách tính Markov Chain và triển khai bằng Python</description>
     <pubDate>Wed, 08 Nov 2023 00:00:00 GMT</pubDate>
     <author>snowyfield1906@gmail.com (SnowyField)</author>
-    <category>Machine Learning</category><category>Mathematics</category>
+    <category>Machine Learning</category><category>Probability</category><category>Mathematics</category>
   </item>
 
   <item>
@@ -27,7 +47,7 @@
     <description>Giới thiệu chi tiết về các thuật toán optimizer và so sánh hiệu quả của chúng, khi nào nên sử dụng thuật toán nào.</description>
     <pubDate>Sat, 28 Oct 2023 00:00:00 GMT</pubDate>
     <author>snowyfield1906@gmail.com (SnowyField)</author>
-    <category>Machine Learning</category><category>Mathematics</category><category>Optimization</category>
+    <category>Supervised Learning</category><category>Machine Learning</category><category>Optimization</category><category>Calculus</category><category>Mathematics</category>
   </item>
 
   <item>
@@ -37,7 +57,7 @@
     <description>Giới thiệu về Singular Value Decomposition và các khái niệm liên quan, hướng dẫn chi tiết cách tính Singular Value Decomposition và triển khai bằng Python.</description>
     <pubDate>Mon, 23 Oct 2023 00:00:00 GMT</pubDate>
     <author>snowyfield1906@gmail.com (SnowyField)</author>
-    <category>Machine Learning</category><category>Mathematics</category>
+    <category>Machine Learning</category><category>Linear Algebra</category><category>Mathematics</category>
   </item>
 
   <item>
@@ -47,7 +67,7 @@
     <description>Giới thiệu về QR Decomposition và các khái niệm liên quan, hướng dẫn chi tiết cách tính QR Decomposition và triển khai bằng Python.</description>
     <pubDate>Sun, 22 Oct 2023 00:00:00 GMT</pubDate>
     <author>snowyfield1906@gmail.com (SnowyField)</author>
-    <category>Machine Learning</category><category>Mathematics</category>
+    <category>Machine Learning</category><category>Linear Algebra</category><category>Mathematics</category>
   </item>
 
   <item>
@@ -57,7 +77,7 @@
     <description>Giới thiệu chi tiết về phương pháp Least Squares và cách giải bài toán Least Squares bằng các phương pháp khác nhau.</description>
     <pubDate>Mon, 16 Oct 2023 00:00:00 GMT</pubDate>
     <author>snowyfield1906@gmail.com (SnowyField)</author>
-    <category>Machine Learning</category><category>Mathematics</category><category>Optimization</category>
+    <category>Supervised Learning</category><category>Machine Learning</category><category>Optimization</category><category>Linear Algebra</category><category>Calculus</category><category>Mathematics</category>
   </item>
 
   <item>
@@ -67,7 +87,7 @@
     <description>Tìm hiểu chi tiết về cách triển khai Mental Poker bằng một số thuật toán mã hóa đặc biệt cùng với Zero-Knowledge Proof.</description>
     <pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate>
     <author>snowyfield1906@gmail.com (SnowyField)</author>
-    <category>Poker</category><category>ZKP</category><category>Cryptography</category>
+    <category>ZKP</category><category>Cryptography</category>
   </item>
 
   <item>
@@ -77,7 +97,7 @@
     <description>Zero-Knowledge Proof là một công nghệ Cryptography đang được nhiều người quan tâm trong thời gian gần đây nhờ vào Blockchain, bài viết này sẽ giới thiệu cho chúng ta cái nhìn tổng quát về công nghệ này.</description>
     <pubDate>Tue, 29 Aug 2023 00:00:00 GMT</pubDate>
     <author>snowyfield1906@gmail.com (SnowyField)</author>
-    <category>ZKP</category><category>Blockchain</category><category>Cryptography</category>
+    <category>ZKP</category><category>Cryptography</category><category>Blockchain</category>
   </item>
 
   <item>

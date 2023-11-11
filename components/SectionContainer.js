@@ -1,6 +1,6 @@
 export default function SectionContainer({ children }) {
   return (
-    <div className="big-scroll mx-auto max-w-5xl px-2 md:px-6 xl:max-w-[90%] xl:px-0">
+    <div className="big-scroll mx-auto px-2 md:px-4 lg:px-8 xl:px-12">
       {children}
     </div>
   )

@@ -233,7 +233,7 @@ export default function Home({ posts }) {
           </p>
         </div>
         <hr className="border-gray-200 dark:border-gray-700" />
-        <ul>
+        <ul className="divide-y divide-dotted divide-gray-400">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => PostPreview(frontMatter))}
         </ul>

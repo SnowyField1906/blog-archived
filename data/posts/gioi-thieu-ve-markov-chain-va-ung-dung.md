@@ -1,24 +1,24 @@
 ---
 title: Giới thiệu về Markov Chain và ứng dụng
 date: '2023-11-08'
-tags: ['Machine Learning', 'Mathematics']
+tags: ['Machine Learning', 'Probability', 'Mathematics']
 draft: false
 summary: Giới thiệu tổng quan về Markov Chain và các ứng dụng, hướng dẫn chi tiết cách tính Markov Chain và triển khai bằng Python
 layout: PostView
 thumbnail: '/static/images/thumbnails/gioi-thieu-ve-markov-chain-va-ung-dung.png'
 ---
 
-_Markov Chain là một mô hình xác suất được sử dụng để mô tả các quá trình ngẫu nhiên. Tuy mô hình này đơn giản nhưng nó lại được ứng dụng rộng rãi trong hầu hết các lĩnh vực trong đời sống nói chung và Machine Leaning nói riêng._
+_Markov Chain là một mô hình xác suất được sử dụng để mô tả các quá trình ngẫu nhiên dựa trên trạng thái trước đó Tuy mô hình này đơn giản nhưng nó lại được ứng dụng rộng rãi trong hầu hết các lĩnh vực trong đời sống nói chung và Machine Leaning nói riêng._
 
 _Bài viết này sẽ giới thiệu tổng quan về Markov Chain và các ứng dụng của nó, hướng dẫn chi tiết cách tính Markov Chain và triển khai bằng Python._
 
 <img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/gioi-thieu-ve-markov-chain-va-ung-dung.png" alt="Giới thiệu về Markov Chain và ứng dụng" />
 
-## Giới thiệu về Markov Chain
+## Khái niệm
 
 **Markov Chain** (Chuỗi Markov) là một mô hình xác suất mô tả một chuỗi các sự kiện có thể xảy ra. Đặc điểm quan trọng của Markov Chain là tính **memorylessness** (không có trí nhớ), nghĩa là xác suất của một sự kiện tiếp theo chỉ phụ thuộc vào sự kiện hiện tại, các sự kiện trước đó sẽ không được ghi nhớ.
 
-Hay nói cách khác, sự phân bố của các trạng thái tương lai chỉ phụ thuộc vào trạng thái hiện tại chứ không phụ thuộc vào cách nó đến trạng thái hiện tại, tính chất này còn được gọi là **Markov Property** (Tính Markov).
+Hay nói cách khác, sự phân bố của các trạng thái tương lai chỉ phụ thuộc vào trạng thái hiện tại chứ không phụ thuộc vào cách nó đến trạng thái hiện tại, tính chất này còn được gọi là **Markov Property** hay **Markovian** (Tính Markov).
 
 Một ván cờ có tính Markov, vì xác suất chiến thắng chỉ phụ thuộc vào vị trí hiện tại của các quân cờ, không phụ thuộc vào các nước đi trước đó. Trong khi đó, hành động lấy bóng trong một chiếc hộp có thể không có tính Markov, vì xác suất lấy được quả bóng cần tìm phụ thuộc vào các quả bóng đã lấy trước đó.
 
@@ -32,7 +32,7 @@ Tất cả xe đạp phải được trả lại trạm vào cuối ngày tại 
 - Trong các xe đạp mượn từ trạm $B$, có $10\%$ đến trạm $A$, $60\%$ được trả lại trạm $B$ và $30\%$ đến trạm $C$.
 - Trong các xe đạp mượn từ trạm $C$, có $10\%$ đến trạm $A$, $10\%$ đến trạm $B$ và $80\%$ được trả lại trạm $C$.
 
-Khi đó ta có thể biểu diễn chuỗi Markov của dịch vụ thuê xe đạp này như hình bên dưới.
+Khi đó ta có thể biểu diễn Markov Chain của dịch vụ thuê xe đạp này như hình bên dưới.
 
 <figure>
 <img
@@ -51,13 +51,13 @@ Qua đó, ta có thể thấy rằng Markov Chain có thể được biểu di�
 
 ### State
 
-**State** (Trạng thái) là một tập hợp các trạng thái có thể xảy ra trong chuỗi Markov.
+**State** (Trạng thái) là một tập hợp các trạng thái có thể xảy ra trong Markov Chain.
 
 Ở ví dụ trên, ta có 3 trạng thái là $\{A, B, C\}$, vì một chiếc xe đạp khi muốn đưa về trạm thì chỉ xảy ra 1 trong 3 trường hợp này.
 
 ### State Vector
 
-**State Vector** (Vector Trạng thái) là một ma trận có một hàng mô tả xác suất của mỗi trạng thái trong chuỗi Markov.
+**State Vector** (Vector Trạng thái) là một ma trận có một hàng mô tả xác suất của mỗi trạng thái trong Markov Chain.
 
 $$
 \begin{align}
@@ -79,7 +79,7 @@ $$
 
 ### Transition Matrix
 
-**Transition Matrix** (Ma trận Chuyển tiếp) là một ma trận mô tả xác suất chuyển từ một trạng thái này sang một trạng thái khác trong chuỗi Markov. Đây là **ma trận chuyển trạng thái ổn định**.
+**Transition Matrix** (Ma trận Chuyển tiếp) là một ma trận mô tả xác suất chuyển từ một trạng thái này sang một trạng thái khác trong Markov Chain.
 
 $$
 \begin{align}
@@ -303,7 +303,7 @@ $$
 \end{align*}
 $$
 
-Tính $\mathbf{P}^5$:
+Tính $\mathbf{P}^3$:
 
 $$
 \begin{align*}
@@ -402,7 +402,7 @@ def predict_words(chain, first_word, number_of_words=5):
         return "Word not in corpus"
 ```
 
-### Kiểm tra kết quả
+### Kiểm thử
 
 ```python
 m = Markov('./shakespeare.txt')
@@ -425,3 +425,5 @@ Markov Chain được ứng dụng rộng rãi trong nhiều lĩnh vực khác n
 - **Computer Vision** (Thị giác Máy tính)
 - **Speech Recognition** (Nhận dạng Giọng nói)
 - ...
+
+Trong đó, có 2 khái niệm quan trọng là **Hidden Markov Model** (Mô hình Markov Ẩn) và **Markov Decision Process** (Quy trình Quyết định Markov). Sẽ được giới thiệu trong các bài viết tiếp theo.

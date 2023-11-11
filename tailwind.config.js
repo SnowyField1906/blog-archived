@@ -88,7 +88,7 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            fontSize: '20px',
+            fontSize: '19px',
             color: theme('colors.gray.700'),
             a: {
               color: theme('colors.primary.600'),
@@ -106,21 +106,24 @@ module.exports = {
               fontSize: '34px',
               fontWeight: '900',
               color: theme('colors.gray.900'),
+              justifyContent: 'center',
+              textAlign: 'center',
             },
             h3: {
               fontSize: '30px',
               fontWeight: '800',
-              color: theme('colors.gray.900'),
+              color: theme('colors.gray.800'),
             },
             h4: {
-              fontSize: '26px',
+              fontSize: '24px',
               fontWeight: '700',
-              color: theme('colors.gray.900'),
+              color: theme('colors.gray.700'),
             },
             h5: {
-              fontSize: '22px',
-              fontWeight: '600',
-              color: theme('colors.gray.900'),
+              fontSize: '20px',
+              fontWeight: '700',
+              color: theme('colors.gray.700'),
+              marginTop: '25px',
             },
             pre: {
               backgroundColor: theme('colors.gray.800'),
@@ -139,6 +142,9 @@ module.exports = {
             },
             'code::after': {
               content: 'none',
+            },
+            '[class~="code-line"]': {
+              fontSize: '14px',
             },
             details: {
               textIndent: '0px',

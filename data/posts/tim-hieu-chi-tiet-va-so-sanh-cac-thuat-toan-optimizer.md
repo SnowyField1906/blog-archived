@@ -1,7 +1,7 @@
 ---
 title: Tìm hiểu chi tiết và so sánh các thuật toán optimizer
 date: '2023-10-28'
-tags: ['Machine Learning', 'Mathematics', 'Optimization']
+tags: ['Supervised Learning', 'Machine Learning', 'Optimization', 'Calculus', 'Mathematics']
 draft: false
 summary: Giới thiệu chi tiết về các thuật toán optimizer và so sánh hiệu quả của chúng, khi nào nên sử dụng thuật toán nào.
 layout: PostView

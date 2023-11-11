@@ -1,7 +1,15 @@
 ---
 title: Toàn tập về bài toán Least Squares và các phương pháp giải
 date: '2023-10-16'
-tags: ['Machine Learning', 'Mathematics', 'Optimization']
+tags:
+  [
+    'Supervised Learning',
+    'Machine Learning',
+    'Optimization',
+    'Linear Algebra',
+    'Calculus',
+    'Mathematics',
+  ]
 draft: false
 summary: Giới thiệu chi tiết về phương pháp Least Squares và cách giải bài toán Least Squares bằng các phương pháp khác nhau.
 layout: PostView

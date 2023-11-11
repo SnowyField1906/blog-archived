@@ -1,7 +1,7 @@
 ---
 title: QR Decomposition là gì và chi tiết cách tính
 date: '2023-10-22'
-tags: ['Machine Learning', 'Mathematics']
+tags: ['Machine Learning', 'Linear Algebra', 'Mathematics']
 draft: false
 summary: Giới thiệu về QR Decomposition và các khái niệm liên quan, hướng dẫn chi tiết cách tính QR Decomposition và triển khai bằng Python.
 layout: PostView
@@ -384,7 +384,7 @@ def append(A: np.array, v: np.array) -> np.array:
     return np.insert(A, len(A[0]), v, axis=1)
 ```
 
-### Kiểm tra kết quả
+### Kiểm thử
 
 ```python
 A = np.array([

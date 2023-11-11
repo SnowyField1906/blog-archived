@@ -1,7 +1,7 @@
 ---
 title: Zero-Knowledge Proof là gì và cách hoạt động
 date: '2023-08-29'
-tags: ['ZKP', 'Blockchain', 'Cryptography']
+tags: ['ZKP', 'Cryptography', 'Blockchain']
 draft: false
 summary: Zero-Knowledge Proof là một công nghệ Cryptography đang được nhiều người quan tâm trong thời gian gần đây nhờ vào Blockchain, bài viết này sẽ giới thiệu cho chúng ta cái nhìn tổng quát về công nghệ này.
 layout: PostView

@@ -35,10 +35,10 @@ export default function PostsLayout({
           <p className="text-md leading-7 text-gray-600 dark:text-gray-400">
             {siteMetadata.description.posts}
           </p>
-          <div className="flex flex-wrap">
+          <div className="flex overflow-x-auto">
             {Object.keys(tags).length === 0 && 'No tags found.'}
             {sortedTags.map((t) => (
-              <div key={t}>
+              <div key={t} className="flex items-center w-fit">
                 <Tag page="posts" text={t} num={tags[t]} isCurrent={t === title} />
                 <Link
                   href={`posts/tag/${kebabCase(t)}`}
@@ -71,7 +71,7 @@ export default function PostsLayout({
             </svg>
           </div>
         </div>
-        <ul>
+        <ul className="divide-y divide-dotted divide-gray-400">
           {!filteredPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => PostPreview(frontMatter))}
         </ul>

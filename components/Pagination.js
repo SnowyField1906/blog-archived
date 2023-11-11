@@ -6,7 +6,7 @@ export default function Pagination({ totalPages, currentPage }) {
 
   return (
     <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-      <nav className="flex justify-evenly">
+      <nav className="grid grid-cols-3 text-center">
         {!prevPage && (
           <div className="cursor-default font-medium opacity-30 hover:no-underline">Previous</div>
         )}

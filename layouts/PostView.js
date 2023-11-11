@@ -51,7 +51,7 @@ export default function PostView({ frontMatter, toc, authorDetails, next, prev, 
               <div>
                 <PageTitle>{title}</PageTitle>
               </div>
-              <div className="flex justify-center gap-5 py-4">
+              <div className="flex justify-center gap-5 pt-1">
                 <span className="flex items-center gap-1.5 text-sm md:text-base">
                   <HiOutlinePencil className="h-5 w-5" />
                   {readingTime.words} words
@@ -72,7 +72,7 @@ export default function PostView({ frontMatter, toc, authorDetails, next, prev, 
             className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:grid xl:grid-cols-5 xl:gap-x-6 xl:divide-y-0"
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
-            <dl className="h-min pt-6 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
+            <dl className="h-min pt-10 xl:sticky xl:top-0 xl:border-b xl:border-gray-200 xl:pt-14 xl:dark:border-gray-700">
               <dt className="sr-only">Authors</dt>
               <dd>
                 <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
@@ -161,7 +161,7 @@ export default function PostView({ frontMatter, toc, authorDetails, next, prev, 
               </footer>
             </dl>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-none pt-10 pb-8 font-cambria first-letter:float-left first-letter:mr-2 first-letter:font-serif first-letter:text-[6.56295rem] first-letter:font-semibold first-letter:not-italic first-letter:leading-none dark:prose-dark">
+              <div className="prose max-w-none pt-10 pb-8 font-cambria first-letter:float-left first-letter:mr-2 first-letter:font-serif first-letter:text-[6.2346rem] first-letter:font-semibold first-letter:not-italic first-letter:leading-none dark:prose-dark">
                 {children}
               </div>
               <div className="grid place-items-center pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
