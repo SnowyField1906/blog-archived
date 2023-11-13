@@ -437,8 +437,8 @@ Tuy nhiên vì $(1- \beta)$ quá nhỏ, do đó các giá trị này có xu hư�
 
 $$
 \begin{aligned}
-\hat{G} &= \frac{G}{1 - \beta_1} \\
-\hat{M} &= \frac{M}{1 - \beta_1}
+\widehat{G} &= \frac{G}{1 - \beta_1} \\
+\widehat{M} &= \frac{M}{1 - \beta_1}
 \end{aligned}
 $$
 
@@ -450,10 +450,10 @@ $$
 2. Tính gradient của $L$ tại $w$: $\nabla L(w)$
 3. Tính $G$: $G' = \beta_1 G + (1 - \beta_1) \nabla L(w)^2$
 4. Tính $M$: $M' = \beta_2 G + (1 - \beta_2) \nabla L(w)$
-5. Tính $\hat{G}'$: $\hat{G}' = \frac{G'}{1 - \beta_1}$
-6. Tính $\hat{M}'$: $\hat{M}' = \frac{M'}{1 - \beta_2}$
-7. Tính learning rate $\eta$: $\eta' = \frac{\eta}{\sqrt{\hat{G}' + \epsilon}}$
-8. Tìm $\Delta w$: $\Delta w = \eta' \hat{M}$.
+5. Tính $\widehat{G}'$: $\widehat{G}' = \frac{G'}{1 - \beta_1}$
+6. Tính $\widehat{M}'$: $\widehat{M}' = \frac{M'}{1 - \beta_2}$
+7. Tính learning rate $\eta$: $\eta' = \frac{\eta}{\sqrt{\widehat{G}' + \epsilon}}$
+8. Tìm $\Delta w$: $\Delta w = \eta' \widehat{M}$.
 9. Cập nhật lại các parameter $w$: $w' = w - \Delta w$.
 10. Lặp lại các bước 1-8 trên cho đến khi đạt được điều kiện dừng.
 

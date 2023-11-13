@@ -10,7 +10,8 @@ export default function PrivacyPolicy() {
       />
       <div className="mx-auto max-w-3xl overflow-hidden">
         <div className="prose pt-7 text-gray-600 dark:text-gray-300">
-          <h1 className="dark:text-gray-300">Privacy Policy</h1>
+          <h1 className="text-4xl font-extrabold leading-14 tracking-tight text-gray-900 dark:text-gray-100">
+            Privacy Policy</h1>
           <p>Last updated: July 11, 2022</p>
           <p>
             This Privacy Policy describes Our policies and procedures on the collection, use and

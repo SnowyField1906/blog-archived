@@ -27,20 +27,49 @@
   font-family: CambriaBold;
   src: url('fonts/cambria/cambriab.ttf') format('truetype');
 }
-
 @font-face {
   font-family: CambriaItalic;
   src: url('fonts/cambria/cambriai.ttf') format('truetype');
 }
-
 @font-face {
   font-family: CambriaBoldItalic;
   src: url('fonts/cambria/cambriaz.ttf') format('truetype');
 }
-
 @font-face {
   font-family: Cambria;
   src: url('fonts/cambria/cambria.ttc') format('truetype');
+}
+
+@font-face {
+  font-family: UVN_I;
+  src: url('fonts/uvn/UVNHongHaHep_I.TTF') format('truetype');
+}
+@font-face {
+  font-family: UVN_R;
+  font-weight: 500;
+  src: url('fonts/uvn/UVNHongHaHep_R.TTF') format('truetype');
+}
+@font-face {
+  font-family: UVN_B;
+  src: url('fonts/uvn/UVNHongHaHep_B.TTF') format('truetype');
+}
+@font-face {
+  font-family: UVN_BI;
+  src: url('fonts/uvn/UVNHongHaHep_BI.TTF') format('truetype');
+}
+
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+button,
+div {
+  letter-spacing: 0.06em;
 }
 
 .task-list-item::before {
@@ -253,9 +282,11 @@ tr:last-child td:last-child {
 
 /* downscale latex font size by 80% */
 .math-display > .katex-display > .katex > .katex-html {
-  font-size: 90%;
+  font-size: 85%;
+  letter-spacing: -0.03em;
 }
 
 .math-inline > .katex > .katex-html {
-  font-size: 90%;
+  font-size: 85%;
+  letter-spacing: -0.03em;
 }

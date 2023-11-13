@@ -18,7 +18,7 @@ Khuyến nghị đọc trước [Giới thiệu về Markov Chain và ứng dụ
 
 ## Khái niệm
 
-**Markov Decision Process** (Quy trình Quyết định Markov) là một quy trình quyết định trong môi trường ngẫu nhiên. Nó được mô hình hóa bằng một **Markov Chain** (Xích Markov) với các hành động được thực hiện bởi **Agent** (Tác nhân).
+**Markov Decision Process** (Quy trình Quyết định Markov) là một quy trình quyết định trong môi trường ngẫu nhiên. Nó được mô hình hóa bằng một **Markov Chain** (Xích Markov) với các hành động được thực hiện bởi **Agent** (Tác nhân). Do đó các hành động trong tương lai sẽ không bị ảnh hưởng bởi những hành động trong quá khứ.
 
 MDP là tiền đề của bài toán [Reinforcement Learning](https://en.wikipedia.org/wiki/Reinforcement_learning) (Học Tăng cường), chúng ta sẽ bỏ qua các khái niệm về Reinforcement Learning và cùng nhau xây dựng toàn bộ từ đầu.
 
@@ -71,6 +71,30 @@ Ví dụ, xe tự lái có tính chất Collaborative, vì các Agent sẽ phả
 #### Triển khai Agent cho game Pac-Man
 
 Agent chính là Pac-Man, thực thể có thể lựa chọn và thực hiện các Action như di chuyển lên, xuống, trái, phải đến khi đạt được mục đích.
+
+### Task
+
+**Task** (Nhiệm vụ) phản ánh công việc mà Agent sẽ phải thực hiện.
+
+#### Các loại Task
+
+Task có 2 loại là **Episodic** (Theo tập) và **Continuing** (Liên tục).
+
+##### Episodic
+
+Task được gọi là **Episodic** (Theo tập) khi nó có **Terminal State** (Trạng thái Kết thúc) và Agent sẽ phải thực hiện các Action để đạt được Terminal State đó. Sau khi kết thúc, Agent sẽ bắt đầu lại từ đầu, mỗi lần như vậy được gọi là một **Episode** (Tập).
+
+Ví dụ, cờ vua có tính chất Episodic, vì ta sẽ phải chơi đến khi đạt được một trạng thái kết thúc là chiến thắng hoặc đối phương đầu hàng.
+
+##### Continuing
+
+Task được gọi là **Continuing** (Liên tục) khi nó không có Terminal State và Agent sẽ phải thực hiện các Action liên tục cho đến khi ta chủ động dừng lại.
+
+Ví dụ, học tập là một Continuing Task, vì lúc này sẽ không có một điểm dừng nào cả.
+
+#### Triển khai Task cho game Pac-Man
+
+Task trong game Pac-Man ta sẽ định nghĩa là đi đến thức ăn, tức là Terminal State của game là tại vị trí của thức ăn, và Pac-Man sẽ phải di chuyển đến khi vị trí này.
 
 ### Environment
 
@@ -290,46 +314,6 @@ Ta cũng sẽ định nghĩa rằng nếu Pac-Man đang ở biên mà thực hi�
 
 Đây là lúc Stochastic phát huy tác dụng vì nếu chẳng may Policy tại đó là một Action đi ra ngoài, Pac-Man sẽ có thể trốn thoát khỏi đó sau vài lần lặp nhờ vào một **Random Rate** (Mức độ Ngãu nhiên) nhỏ, còn không Pac-Man sẽ mãi mãi đứng yên.
 
-### Reward
-
-#### Khái niệm Reward
-
-Là cốt lõi của bài toán Reinforcement Learning, **Reward** (Phần thưởng) là một giá trị mà Agent nhận được sau khi thực hiện một Action. Tuỳ thuộc vào mỗi State mà Reward sẽ khác nhau.
-
-Các Reward sẽ được định nghĩa từ trước, và đây là giá trị mà Agent phải dựa vào để đưa ra quyết định. Ngoài ra, Agent cũng phải tối ưu hoá giá trị tích luỹ (có thể là tổng) của các Reward nhận được trong lời giải của mình, giá trị tích luỹ này càng lớn thì lời giải càng tối ưu.
-
-Reward, kí hiệu là $r \in \mathbb{R}$, với $k$ là số lượng Reward có thể nhận được:
-
-$$
-\begin{align}
-r \in R &= \{r_1, r_2, r_3, ..., r_k\} \subset \mathbb{R} \\
-\end{align}
-$$
-
-Vì mỗi State tương ứng với một Reward, ta có thể truy xuất một Reward từ một State bằng mapping function $\mathcal{R}$:
-
-$$
-\begin{align}
-\mathcal{R} : S &\mapsto R \notag \\
-\mathcal{R}(s) &= r \\
-\end{align}
-$$
-
-#### Triển khai Reward cho game Pac-Man
-
-Chúng ta sẽ định nghĩa các các ô thức ăn có reward là $+10$, các ô quái có reward là $-10$ và các ô trống có reward là $-0.1$ (để Pac-Man tìm đường đi ngắn nhất, tránh lặp lại các hành động vô nghĩa).
-
-$$
-\begin{align}
-\mathcal{R}(s) &= \begin{cases}
-+10 & \text{if} \enspace \mathbf{E}[\mathcal{S}^{-1}(s)] = \text{goal} \\
--10 & \text{if} \enspace \mathbf{E}[\mathcal{S}^{-1}(s)] = \text{pit} \\
--0.1 & \text{if} \enspace \mathbf{E}[\mathcal{S}^{-1}(s)] = \text{empty} \\
-\text{NaN} & \text{otherwise} \\
-\end{cases} \\
-\end{align}
-$$
-
 ### Policy
 
 #### Khái niệm Policy
@@ -366,6 +350,82 @@ Trong ví dụ sắp tới, chúng ta sẽ cho Random Rate là $0.2$ theo quy t�
 - $80\%$ Pac-Man sẽ đi theo hướng như Policy đã chỉ định
 - $20\%$ Pac-Man sẽ đi theo 2 hướng bên cạnh Policy.
 
+### Reward
+
+#### Khái niệm Reward
+
+Là cốt lõi của bài toán Reinforcement Learning, **Reward** (Phần thưởng) là một giá trị mà Agent nhận được sau khi thực hiện một Action. Tuỳ thuộc vào mỗi State mà Reward sẽ khác nhau.
+
+Các Reward sẽ được định nghĩa từ trước, và đây là giá trị mà Agent phải dựa vào để đưa ra quyết định.
+
+Reward, kí hiệu là $r \in \mathbb{R}$, với $k$ là số lượng Reward có thể nhận được:
+
+$$
+\begin{align}
+r \in R &= \{r_1, r_2, r_3, ..., r_k\} \subset \mathbb{R} \\
+\end{align}
+$$
+
+Vì mỗi State tương ứng với một Reward, ta có thể truy xuất một Reward từ một State bằng mapping function $\mathcal{R}$:
+
+$$
+\begin{align}
+\mathcal{R} : S &\mapsto R \notag \\
+\mathcal{R}(s) &= r \\
+\end{align}
+$$
+
+#### Triển khai Reward cho game Pac-Man
+
+Chúng ta sẽ định nghĩa các các ô thức ăn có reward là $+10$, các ô quái có reward là $-10$ và các ô trống có reward là $-0.1$ (để Pac-Man tìm đường đi ngắn nhất, tránh lặp lại các hành động vô nghĩa).
+
+$$
+\begin{align}
+\mathcal{R}(s) &= \begin{cases}
++10 & \text{if} \enspace \mathbf{E}[\mathcal{S}^{-1}(s)] = \text{goal} \\
+-10 & \text{if} \enspace \mathbf{E}[\mathcal{S}^{-1}(s)] = \text{pit} \\
+-0.1 & \text{if} \enspace \mathbf{E}[\mathcal{S}^{-1}(s)] = \text{empty} \\
+\text{NaN} & \text{otherwise} \\
+\end{cases} \\
+\end{align}
+$$
+
+### Cumulative Reward
+
+#### Khái niệm Cumulative Reward
+
+**Cumulative Reward** (Phần thưởng Tích luỹ) là giá trị thể hiện số Reward đã tích luỹ được trong lời giải của mình. Giá trị này sẽ ảnh hưởng đến việc đánh giá một Policy là tốt hay xấu, do đó, nhiệm vụ của Agent là tìm ra lời giải sao cho giá trị này là lớn nhất.
+
+Cucumlative Reward có thể đơn giản là tổng của các Reward, nhưng cũng có thể là một công thức phức tạp (sẽ được giới thiệu ở bài viết sau).
+
+Gọi $R^+$ là tập hợp các Reward đã nhận được trong một Episode với $p$ Action đã thực hiện:
+
+$$
+\begin{align}
+R^+ &= [r_1, r_2, r_3, ..., r_p] \\
+\end{align}
+$$
+
+Khi đó, mapping function $\mathcal{C}$ sẽ nhận một tập hợp gồm $p$ phần tử Reward và trả về một Cucumlative Reward $c$ nhằm phản ánh mức độ tối ưu của lời giải hiện tại:
+
+$$
+\begin{align}
+\mathcal{C} : R^{p} &\mapsto \mathbb{R} \notag \\
+\mathcal{C}(R^+) &= c \\
+\end{align}
+$$
+
+#### Triển khai Cucumlative Reward cho game Pac-Man
+
+Ta sẽ định nghĩa Cucumlative Reward là tổng của các Reward đã nhận được trên đường đi:
+
+$$
+\begin{align}
+\mathcal{C}(r = R^+) &= \sum_{t = 0}^{p-1} r_t \notag \\
+&= r_0 + r_1 + r_2 + \ldots + r_{p - 1} \\
+\end{align}
+$$
+
 ### Transition Model
 
 #### Khái niệm Transition Model
@@ -383,12 +443,12 @@ $$
 \end{align}
 $$
 
-Khi đó với mỗi cặp State và Action cho trước, ta có thể truy xuất được một hàm phân phối xác suất $\mathcal{P}$ tương ứng. Đặt mapping function này là $\mathcal{T}$u:
+Khi đó với mỗi cặp State và Action cho trước, ta có thể truy xuất được một hàm phân phối xác suất $\mathcal{P}$ tương ứng. Đặt mapping function này là $\mathcal{T}$:
 
 $$
 \begin{align}
-\mathcal{T} : S \times A &\mapsto \mathcal{P} \notag \\
-\mathcal{T}(s, a) &= \mathcal{P}_s \\
+\mathcal{T} : S \times A &\mapsto \mathcal{P}^{m \times n} \notag \\
+\mathcal{T}(s, a) &= \mathcal{P} \\
 \mathcal{T}(s' | s, a) &= p \\
 \end{align}
 $$
@@ -473,7 +533,7 @@ Rõ ràng nhiệm vụ của chúng ta là tạo ra một Policy hợp lí. Như
 
 Giả sử Pac-Man bắt đầu ở vị trí $(0, 2)$, nó sẽ đi sang phải $(0, 3)$, sau đó bị mắc kẹt vì không thể đi lên trên được nữa. Với lượng Random Rate $20\%$ đã cho (thực tế chỉ còn $10\%$ vì sẽ bị dội ngược lại nếu di chuyển sang phải), có thể Pac-Man sẽ quay về bên trái nhưng sau đó lại có tới $80\%$ đi tiếp sang phải. Rõ ràng Policy này không ổn chút nào.
 
-Chúng ta có thể kiểm chứng bằng cách thả Pac-Man vào vị trí $(0, 0)$ và cho nó di chuyển dưới dự ảnh hưởng của Policy này $100$ lần. Đối với những lần Pac-Man đến ô thức ăn màu xanh, ta sẽ kiểm tra tổng Reward nhận được trong quá trình di chuyển:
+Chúng ta có thể kiểm chứng bằng cách thả Pac-Man vào vị trí $(0, 0)$ và cho nó di chuyển dưới dự ảnh hưởng của Policy này $100$ lần. Đối với những lần Pac-Man đến ô thức ăn màu xanh, ta sẽ kiểm tra Cucumlative Reward nhận được trong quá trình di chuyển:
 
 <figure>
 <img
@@ -483,7 +543,7 @@ Chúng ta có thể kiểm chứng bằng cách thả Pac-Man vào vị trí $(0
 />
 </figure>
 
-Có thể thấy vì là ngẫu nhiên nên biểu đồ của chúng ta không phân bố đều. Đặc biệt là tổng Reward lớn nhất chỉ có $-10$, trong số đó cũng xảy ra một vài trường hợp chỉ còn $-14$ sau khi đến được ô màu xanh. Chứng tỏ Pac-Man đã đi lòng vòng khá nhiều trước khi có thể đến được đích.
+Có thể thấy vì là ngẫu nhiên nên biểu đồ của chúng ta không phân bố đều. Đặc biệt là Cucumlative Reward lớn nhất chỉ có $-10$, trong số đó cũng xảy ra một vài trường hợp chỉ còn $-14$ sau khi đến được ô màu xanh. Chứng tỏ Pac-Man đã đi lòng vòng khá nhiều trước khi có thể đến được đích.
 
 ### Policy 2
 
@@ -492,12 +552,12 @@ Hãy thử tạo ngẫu nhiên một Policy khác:
 <figure>
 <img
     className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-policy-1.png"
+    src="/static/images/posts/mdp-world-policy-2.png"
     alt="Ví dụ Policy trong game Pac-Man"
 />
 </figure>
 
-Thoạt nhìn Policy này trông có vẻ ổn hơn, có một số vị trí không cần phải dựa vào Random Rate vẫn dến được đích như vị trí $(0, 2)$. Bây giờ hãy kiểm tra tổng số Reward thu được khi bắt đầu tại vị trí $(0, 0)$:
+Thoạt nhìn Policy này trông có vẻ ổn hơn, có một số vị trí không cần phải dựa vào Random Rate vẫn dến được đích như vị trí $(0, 2)$. Bây giờ hãy kiểm tra Cucumlative Reward thu được khi bắt đầu tại vị trí $(0, 0)$:
 
 <figure>
 <img
@@ -507,7 +567,7 @@ Thoạt nhìn Policy này trông có vẻ ổn hơn, có một số vị trí kh
 />
 </figure>
 
-Kết quả khá ấn tượng khi tổng Reward cao nhất lên đến xấp xỉ $+10$, đây cũng là điểm số tối ưu nhất vì chỉ có Reward của đích đến là dương và là $+10$, chứng tỏ nó đã tốn rất ít bước di chuyển.
+Kết quả khá ấn tượng khi Cucumlative Reward cao nhất lên đến xấp xỉ $+10$, đây cũng là điểm số tối ưu nhất vì chỉ có Reward của đích đến là dương và là $+10$, chứng tỏ nó đã tốn rất ít bước di chuyển.
 
 Tuy nhiên đây chỉ là do chúng ta mặc định bắt đầu tại $(0, 0)$, hãy thử một vị trí khác là $(2, 0)$:
 
@@ -533,7 +593,7 @@ Lần này chúng ta sẽ không tạo Policy một cách ngẫu nhiên nữa m�
 />
 </figure>
 
-Đây là một Policy "nhân tạo" đã được can thiệp, trông có vẻ rất hợp lí vì bất kì vị trí nào cũng đều dẫn đến ô màu xanh một cách ngắn nhất. Hãy kiểm tra tổng số Reward thu được khi bắt đầu tại vị trí $(0, 0)$:
+Đây là một Policy "nhân tạo" đã được can thiệp, trông có vẻ rất hợp lí vì bất kì vị trí nào cũng đều dẫn đến ô màu xanh một cách ngắn nhất. Hãy kiểm tra Cucumlative Reward thu được khi bắt đầu tại vị trí $(0, 0)$:
 
 <figure>
 <img
@@ -543,7 +603,7 @@ Lần này chúng ta sẽ không tạo Policy một cách ngẫu nhiên nữa m�
 />
 </figure>
 
-Một kết quả xuất sắc, tổng Reward cao nhất là $9.4$, có nghĩa là nó chỉ mất $0.6$ điểm, tương đương với $6$ bước di chuyển để đi đến đích. Với các lần thử khác, Random Rate đã khiến nó mất thêm một ít điểm nhưng không vấn đề gì. Chúng ta không cần phải kiểm tra các vị trí khác vì kết quả cũng sẽ tương tự.
+Một kết quả xuất sắc, Cucumlative Reward cao nhất là $9.4$, có nghĩa là nó chỉ mất $0.6$ điểm, tương đương với $6$ bước di chuyển để đi đến đích. Với các lần thử khác, Random Rate đã khiến nó mất thêm một ít điểm nhưng không vấn đề gì. Chúng ta không cần phải kiểm tra các vị trí khác vì kết quả cũng sẽ tương tự.
 
 ### Kết luận
 
@@ -553,35 +613,34 @@ $$
 \frac{1}{4^{16}} \approx 2.33 \times 10^{-10}
 $$
 
-Tỉ lệ này tương đương với việc chọn trúng Trái Đất trong giữa **Milky Way** (Dải Ngân Hà) rộng lớn với hơn $100$ tỷ ngôi sao. Chắc chắn việc tạo ngẫu nhiên Policy là một ý tưởng tồi.
+Tỉ lệ này tương đương với việc chọn trúng Hệ Mặt Trời của chúng ta trong giữa Dải Ngân Hà rộng lớn với hơn $100$ tỷ Ngôi Sao. Chắc chắn việc tạo ngẫu nhiên Policy là một ý tưởng tồi.
 
 Do đó ta có 2 thuật toán chính để giúp chúng ta làm điều này, đó là **Policy Iteration** (Lặp theo Policy) và **Value Iteration** (Lặp theo Value).
 
 ## Triển khai code Python
 
-Toàn bộ code có thể xem chi tiết tại: [snowyfield1906/ai-general-research/reinforment_learning](https://github.com/SnowyField1906/ai-general-research/reinforment_learning).
+Toàn bộ code có thể xem chi tiết tại: [snowyfield1906/ai-general-research/reinforcement_learning](https://github.com/SnowyField1906/ai-general-research/reinforcement_learning).
 
 ### Thuật toán chính
 
-Xem tại [World.py](https://github.com/SnowyField1906/ai-general-research/reinforment_learning/World.py).
+Xem tại [World.py](https://github.com/SnowyField1906/ai-general-research/blob/main/reinforcement_learning/World.py).
 
 #### Khởi tạo
 
 ```python
-class World:
-    def __init__(self, filename, reward=default_reward, random_rate=default_random_rate):
-        file = open(filename)
-        self.map = np.array(
-            [list(map(float, s.strip().split(","))) for s in file.readlines()]
-        )
-        file.close()
-        self.n_rows = self.map.shape[0]
-        self.n_cols = self.map.shape[1]
-        self.n_states = self.n_rows * self.n_cols
-        self.reward = reward
-        self.random_rate = random_rate
-        self.reward_function = self.get_reward_function()
-        self.transition_model = self.get_transition_model()
+def __init__(self, filename, reward=default_reward, random_rate=default_random_rate):
+    file = open(filename)
+    self.map = np.array(
+        [list(map(float, s.strip().split(","))) for s in file.readlines()]
+    )
+    file.close()
+    self.n_rows = self.map.shape[0]
+    self.n_cols = self.map.shape[1]
+    self.n_states = self.n_rows * self.n_cols
+    self.reward = reward
+    self.random_rate = random_rate
+    self.reward_function = self.get_reward_function()
+    self.transition_model = self.get_transition_model()
 ```
 
 #### Các mapping function
@@ -589,11 +648,11 @@ class World:
 - Mapping function $\mathcal{S}$ và $\mathcal{S}^{-1}$:
 
 ```python
-    def get_state_from_pos(self, pos):
-        return pos[0] * self.n_cols + pos[1]
+def get_state_from_pos(self, pos):
+    return pos[0] * self.n_cols + pos[1]
 
-    def get_pos_from_state(self, state):
-        return state // self.n_cols, state % self.n_cols
+def get_pos_from_state(self, state):
+    return state // self.n_cols, state % self.n_cols
 ```
 
 - Mapping function $\mathcal{A}$ và $\mathcal{N}$:
@@ -652,12 +711,9 @@ def get_transition_model(self):
     return transition_model
 ```
 
-#### Các hàm Policy
+- Mapping function $\mathcal{C}$:
 
 ```python
-def generate_random_policy(self):
-    return np.random.randint(A.LEN, size=self.n_states)
-
 def execute_policy(self, policy, start_pos, time_limit=default_time_limit):
     s = self.get_state_from_pos(start_pos)
     r = self.reward_function[s]
@@ -682,8 +738,8 @@ def execute_policy(self, policy, start_pos, time_limit=default_time_limit):
 
 ### Các hàm phụ trợ
 
-Xem tại [Visualizer.py](https://github.com/SnowyField1906/ai-general-research/reinforment_learning/Visualizer.py).
+Xem tại [Visualizer.py](https://github.com/SnowyField1906/ai-general-research/blob/main/reinforcement_learning/Visualizer.py).
 
 ### Kiểm thử
 
-Xem tại [test-World.py](https://github.com/SnowyField1906/ai-general-research/reinforment_learning/test-World.py).
+Xem tại [test-World.py](https://github.com/SnowyField1906/ai-general-research/blob/main/reinforcement_learning/test-World.py).

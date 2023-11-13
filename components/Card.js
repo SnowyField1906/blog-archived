@@ -18,7 +18,7 @@ const Card = ({ title, description, imgSrc, href, github, tech1, tech2, tech3 })
             </div>
           </div>
         </div>
-        <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight">{title}</h2>
+        <h2 className="font-uvn mb-3 text-2xl leading-8 ">{title}</h2>
 
         <p className="mb-3 max-w-none text-gray-600 dark:text-gray-400">{description}</p>
         <div className="flex flex-row justify-between">

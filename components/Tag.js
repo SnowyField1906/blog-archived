@@ -14,7 +14,7 @@ const Tag = ({ page, text, num, isCurrent }) => {
     <Link href={`/${page}/tag/${kebabCase(text)}`}>
       <a
         className={`${currentA +
-          ' group my-1 mx-1 block w-max rounded-3xl border-2 border-primary-600 py-0.5 px-4 text-base font-medium transition duration-200 ease-in-out'
+          ' group my-1 mx-1 block w-max rounded-3xl border-2 border-primary-600 py-0.5 px-4 text-base font-semibold transition duration-200 ease-in-out'
           }`}
       >
         {text}

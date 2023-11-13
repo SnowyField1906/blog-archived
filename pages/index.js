@@ -29,7 +29,7 @@ export default function Home({ posts }) {
               animationDuration={2500}
               brackets={['left', 'right']}
               strokeWidth={4}
-              className="self-center text-4xl font-extrabold leading-9 tracking-wide text-gray-900 dark:text-gray-100 md:text-6xl md:leading-14"
+              className="font-uvn self-center text-4xl font-extrabold leading-9 tracking-wide text-gray-900 dark:text-gray-100 md:text-6xl md:leading-14"
             >
               Hi, I am <br />
               <span className="text-6xl text-primary-600 dark:text-primary-400">SnowyField</span>

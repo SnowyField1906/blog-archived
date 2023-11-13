@@ -29,7 +29,7 @@ const PostPreview = ({ slug, date, title, summary, tags, thumbnail }) => {
                     views
                   </dd>
                 </dl>
-                <h2 className="font-cambria text-2xl font-medium leading-8 tracking-tight text-gray-900 transition duration-200 ease-in-out hover:text-primary-600 dark:text-gray-100 dark:hover:text-primary-400">
+                <h2 className="text-2xl tracking-tighter font-semibold text-gray-700 transition duration-200 ease-in-out hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400">
                   <Link href={`/posts/${slug}`} className="">
                     {title}
                   </Link>
@@ -44,7 +44,7 @@ const PostPreview = ({ slug, date, title, summary, tags, thumbnail }) => {
                 </div>
               </div>
 
-              <p className="col-span-1 md:col-span-5 lg:col-span-1 pt-2 text-justify font-cambria text-lg text-gray-600 dark:text-gray-400 w-fit">
+              <p className="font-cambria tracking-tight col-span-1 md:col-span-5 lg:col-span-1 pt-2 text-justify text-lg text-gray-600 dark:text-gray-400 w-fit">
                 {summary}
               </p>
             </div>

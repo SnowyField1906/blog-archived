@@ -35,12 +35,12 @@ export default function PostView({ frontMatter, toc, authorDetails, next, prev, 
       <ScrollTopAndComment />
       <article>
         <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
-          <header className="pt-6 xl:pb-5">
+          <header className="pt-10 xl:pb-5">
             <div className="space-y-1 text-center">
               <dl className="space-y-10">
                 <div>
                   <dt className="sr-only">Published on</dt>
-                  <dd className="text-base font-medium leading-6 text-gray-600 dark:text-gray-400">
+                  <dd className="text-base font-uvn leading-6 text-gray-600 dark:text-gray-400">
                     <time dateTime={date}>
                       <BsCalendarDate className="mr-1.5 -mt-1.5 inline h-4 w-4" />
                       {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
@@ -69,7 +69,7 @@ export default function PostView({ frontMatter, toc, authorDetails, next, prev, 
             </div>
           </header>
           <div
-            className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:grid xl:grid-cols-5 xl:gap-x-6 xl:divide-y-0"
+            className="divide-y mt-5 mb-10 divide-gray-200 pb-8 dark:divide-gray-700 xl:grid xl:grid-cols-5 xl:gap-x-6 xl:divide-y-0"
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
             <dl className="h-min pt-10 xl:sticky xl:top-0 xl:border-b xl:border-gray-200 xl:pt-14 xl:dark:border-gray-700">

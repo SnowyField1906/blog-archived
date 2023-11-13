@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import Link from 'next/link'
 
-const CustomLink = ({ href, ...rest }) => {
+const CustomLink = ({ href, wide = false, ...rest }) => {
   const isInternalLink = href && href.startsWith('/')
   const isAnchorLink = href && href.startsWith('#')
 
@@ -19,7 +19,7 @@ const CustomLink = ({ href, ...rest }) => {
 
   return (
     <a
-      className="special-underline-new no-underline hover:text-white dark:hover:text-white"
+      className={`${wide ? 'tracking-wide' : 'tracking-tight'} special-underline-new no-underline hover:text-white dark:hover:text-white`}
       target="_blank"
       rel="noopener noreferrer"
       href={href}

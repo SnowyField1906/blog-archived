@@ -36,7 +36,6 @@ export const getServerSideProps = async () => {
 
 export default function Now(currentlyReading) {
   const { data } = useSWR('/api/now-playing', fetcher)
-  let currentlyReadingData = currentlyReading['currentlyReading']
   let weatherData = currentlyReading['data']
   const { temp: temperature } = weatherData.main
   const { icon: weatherIcon, description: weatherDescription } = weatherData.weather[0]

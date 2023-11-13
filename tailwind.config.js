@@ -25,7 +25,9 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
+        sans: ['UVN_R', ...defaultTheme.fontFamily.sans],
         cambria: ['Cambria', ...defaultTheme.fontFamily.serif],
+        uvn: ['UVN_B', ...defaultTheme.fontFamily.sans],
       },
       gradientColorStops: {
         // https://coolors.co/2d00f7-6a00f4-8900f2-a100f2-b100e8-bc00dd-d100d1-db00b6-e500a4-f20089
@@ -88,8 +90,9 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            fontSize: '19px',
+            fontSize: '20px',
             color: theme('colors.gray.700'),
+
             a: {
               color: theme('colors.primary.600'),
               '&:hover': {
@@ -101,6 +104,7 @@ module.exports = {
               fontSize: '38px',
               fontWeight: '900',
               color: theme('colors.gray.900'),
+              letterSpacing: '0.05em'
             },
             h2: {
               fontSize: '34px',
@@ -108,22 +112,26 @@ module.exports = {
               color: theme('colors.gray.900'),
               justifyContent: 'center',
               textAlign: 'center',
+              letterSpacing: '-0.06em',
             },
             h3: {
               fontSize: '30px',
               fontWeight: '800',
               color: theme('colors.gray.800'),
+              letterSpacing: '-0.05em',
             },
             h4: {
               fontSize: '24px',
               fontWeight: '700',
               color: theme('colors.gray.700'),
+              letterSpacing: '-0.04em',
             },
             h5: {
               fontSize: '20px',
               fontWeight: '700',
               color: theme('colors.gray.700'),
               marginTop: '25px',
+              letterSpacing: '-0.03em',
             },
             pre: {
               backgroundColor: theme('colors.gray.800'),
@@ -145,6 +153,7 @@ module.exports = {
             },
             '[class~="code-line"]': {
               fontSize: '14px',
+              letterSpacing: '-0.02em',
             },
             details: {
               textIndent: '0px',
@@ -161,6 +170,9 @@ module.exports = {
             },
             ul: {
               marginLeft: '30px',
+            },
+            li: {
+              letterSpacing: '-0.02em',
             },
             'ol li::marker': {
               fontWeight: '600',
@@ -192,6 +204,7 @@ module.exports = {
               marginTop: '10px',
               marginBottom: '10px',
               textUnderlineOffset: '3px',
+              letterSpacing: '-0.02em',
             },
             figcaption: {
               textAlign: 'center',

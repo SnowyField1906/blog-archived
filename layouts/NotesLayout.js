@@ -34,13 +34,13 @@ export default function NotesLayout({
           <p className="text-md leading-7 text-gray-600 dark:text-gray-400">
             {siteMetadata.description.notes}
           </p>
-          <div className="flex flex-wrap">
+          <div className="flex overflow-x-auto">
             {Object.keys(tags).length === 0 && 'No tags found.'}
             {sortedTags.map((t) => (
-              <div key={t}>
-                <Tag page="notes" text={t} num={tags[t]} isCurrent={t === title} />
+              <div key={t} className="flex items-center w-fit">
+                <Tag page="posts" text={t} num={tags[t]} isCurrent={t === title} />
                 <Link
-                  href={`notes/tag/${kebabCase(t)}`}
+                  href={`posts/tag/${kebabCase(t)}`}
                   className="text-sm font-semibold text-gray-600 dark:text-gray-300"
                 ></Link>
               </div>
@@ -95,13 +95,14 @@ export default function NotesLayout({
                           {title}
                         </Link>
                       </h2>
-                      <div className="prose prose-base max-w-none text-gray-600 dark:text-gray-400 sm:prose-lg">
+                      <div className="font-cambria tracking-tight my-2 max-w-none text-gray-600 dark:text-gray-400 sm:prose-lg">
                         {summary}
                       </div>
-
-                      <div className="flex flex-wrap pt-2">
-                        {tags.map((tag) => (
-                          <Tag page="notes" key={tag} text={tag} />
+                      <div className="flex overflow-x-auto">
+                        {tags.map((t) => (
+                          <div key={t} className="flex items-center w-fit">
+                            <Tag page="notes" key={t} text={t} />
+                          </div>
                         ))}
                       </div>
                     </div>
