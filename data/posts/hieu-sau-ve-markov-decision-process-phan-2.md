@@ -1,7 +1,7 @@
 ---
 title: Hiểu sâu về Markov Decision Process (Phần 2 - Policy Iteration)
 date: '2023-11-12'
-tags: ['Reinforcement Learning', 'Machine Learning', 'Probability', 'Mathematics']
+tags: ['Reinforcement Learning', 'Machine Learning', 'Optimization', 'Probability', 'Mathematics']
 draft: false
 summary: Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Markov Decision Process cùng với cách xây dựng và triển khai hai thuật toán phổ biến là Policy Iteration và Value Iteration
 layout: PostView
@@ -292,7 +292,7 @@ Như đã nói ở trên, Policy Evaluation là bước tìm ra các Value mới
 
 Thuật toán Policy Evaluation có 2 cách triển khai chính là **Xấp xỉ Value** và **Giải hệ phương trình tuyến tính**.
 
-Trước hết, ta sẽ mượn lại Polivy ở ví dụ trên:
+Trước hết, ta sẽ mượn lại Policy ở ví dụ trên:
 
 <figure>
 <img
@@ -327,7 +327,7 @@ $$
 
 ### Cách 1: Xấp xỉ Value
 
-Ở phương pháp này, các Value ban đầu sẽ được khởi tạo bằng $0$. Lúc này, ta chỉ cần thay Value trước đó vào Value hiện tại để tính toán:
+Ở phương pháp này, các Value ban đầu sẽ được khởi tạo bằng $0$. Lúc này, ta chỉ cần thay Value trước đó vào Value hiện tại để tính toán.
 
 $$
 \begin{align}
@@ -350,7 +350,7 @@ $$
 \end{align}
 $$
 
-Sau đó, ta lại tiếp tục thay các Value vừa rồi vào phương trình để tính toán các Value mới:
+Sau đó, ta lại tiếp tục thay các Value vừa rồi vào phương trình để tính toán các Value mới.
 
 $$
 \begin{align}
@@ -373,7 +373,7 @@ $$
 \end{align}
 $$
 
-Tiếp tục một lần quét nữa:
+Tiếp tục quét 1 lần nữa:
 
 $$
 \begin{align}
@@ -396,7 +396,7 @@ $$
 \end{align}
 $$
 
-Như vậy, sau mỗi vòng lặp, các Value sẽ hội tụ đến một "điểm tới hạn". Chúng ta có thể đặt một giá trị $\text{delta}$ theo dõi sự thay đổi lớn nhất của các Value trong mỗi lần lặp. Khi $\text{delta} \leq \epsilon$ (trong đó $\epsilon$ là một giá trị rất nhỏ, có thể đặt là $10^{-3}$), ta có thể cho dừng thuật toán.
+Như vậy, sau mỗi lần quét, các Value sẽ hội tụ đến một "điểm tới hạn". Chúng ta có thể đặt một giá trị $\text{delta}$ theo dõi sự thay đổi lớn nhất của các Value trong mỗi lần quét. Khi $\text{delta} \leq \epsilon$ (trong đó $\epsilon$ là một giá trị rất nhỏ, có thể đặt là $10^{-3}$), ta có thể cho dừng thuật toán.
 
 ### Cách 2: Giải hệ phương trình tuyến tính
 
@@ -529,7 +529,15 @@ Ta có kết quả sau:
 
 ### Kết luận
 
-Vì Policy sau lần Improvement th 2 không có sự thay đổi nào so với Policy Improvement lần 1 nên thuật toán sẽ dừng lại.
+Vì Policy sau lần Improvement thứ 2 không có sự thay đổi nào so với Policy Improvement lần 1 nên thuật toán sẽ dừng lại.
+
+<figure>
+<img
+    className="w-full md:w-1/2 flex justify-center mx-auto"
+    src="/static/images/posts/mdp-world-final-pi.png"
+    alt="Kết quả Policy trong game Pac-Man"
+/>
+</figure>
 
 ## Triển khai code Python
 
@@ -595,23 +603,23 @@ def run_policy_evaluation(self, tol=default_tol, epoch_limit=default_evaluation_
     return len(delta_history)
 ```
 
-- Policy Evaluation
+- Policy Improvement
 
 ```python
 def run_policy_improvement(self):
     update_policy_count = 0
 
-    for s in range(self.n_states):
-        temp = self.policy[s]
+    for state in range(self.n_states):
+        temp = self.policy[state]
         neighbor_values = np.zeros(A.LEN)
 
-        for a in A.ACTIONS:
-            p = self.transition_model[s, a]
-            neighbor_values[a] = np.inner(p, self.values)
+        for action in A.ACTIONS:
+            probability = self.transition_model[state, action]
+            neighbor_values[action] = np.inner(probability, self.values)
 
-        self.policy[s] = np.argmax(neighbor_values)
+        self.policy[state] = np.argmax(neighbor_values)
 
-        if temp != self.policy[s]:
+        if temp != self.policy[state]:
             update_policy_count += 1
 
     return update_policy_count
@@ -638,4 +646,4 @@ Xem tại [Visualizer.py](https://github.com/SnowyField1906/ai-general-research/
 
 ### Kiểm thử
 
-Xem tại [test-World.py](https://github.com/SnowyField1906/ai-general-research/blob/main/reinforcement_learning/test-PolicyIteration.py).
+Xem tại [test-PolicyIteration.py](https://github.com/SnowyField1906/ai-general-research/blob/main/reinforcement_learning/test-PolicyIteration.py).

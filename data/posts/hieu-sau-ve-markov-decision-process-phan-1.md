@@ -1,7 +1,7 @@
 ---
 title: Hiểu sâu về Markov Decision Process (Phần 1 - Tổng quan)
 date: '2023-11-10'
-tags: ['Reinforcement Learning', 'Machine Learning', 'Probability', 'Mathematics']
+tags: ['Reinforcement Learning', 'Machine Learning', 'Optimization', 'Probability', 'Mathematics']
 draft: false
 summary: Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Markov Decision Process cùng với cách xây dựng và triển khai hai thuật toán phổ biến là Policy Iteration và Value Iteration
 layout: PostView
@@ -149,12 +149,12 @@ $$
 
 $$
 \begin{align}
-e_{i, j} &\in O \quad \forall i \in \{1, 2, ..., \text{rows}\}, j \in \{1, 2, ..., \text{cols}\} \notag \\
+e_{i, j} &\in O \quad \forall i \in \{0, 1, ..., \text{rows} - 1\}, j \in \{0, 1, ..., \text{cols} - 1\} \notag \\
 \mathbf{E} &= \begin{bmatrix}
-e_{1, 1} & e_{1, 2} & \cdots & e_{1, \text{cols}} \\
-e_{2, 1} & e_{2, 2} & \cdots & e_{2, \text{cols}} \\
+e_{0, 0} & e_{0, 1} & \cdots & e_{0, \text{cols} - 1} \\
+e_{1, 0} & e_{1, 1} & \cdots & e_{1, \text{cols} - 1} \\
 \vdots & \vdots & \ddots & \vdots \\
-e_{\text{rows}, 1} & e_{\text{rows}, 2} & \cdots & e_{\text{rows}, \text{cols}} \\
+e_{\text{rows} - 1, 0} & e_{\text{rows} - 1, 1} & \cdots & e_{\text{rows} - 1, \text{cols} - 1} \\
 \end{bmatrix} \\
 \end{align}
 $$
@@ -171,7 +171,7 @@ State thường được định nghĩa là vị trí của Agent trong Environm
 
 $$
 \begin{align}
-s \in S &= \{s_1, s_2, s_3, ..., s_n\} \subset \mathbb{N} \\
+s \in S &= \{s_0, s_1, s_2, ..., s_{n - 1}\} \subset \mathbb{N} \\
 \end{align}
 $$
 
@@ -235,7 +235,7 @@ Ta cho một Action là $a \in \mathbb{N}$, với $m$ là số lượng Action c
 
 $$
 \begin{align}
-a \in A &= \{a_1, a_2, a_3, ..., a_m\} \subset \mathbb{N} \\
+a \in A &= \{a_0, a_1, a_2, ..., a_{m - 1}\} \subset \mathbb{N} \\
 \end{align}
 $$
 
@@ -402,7 +402,7 @@ Gọi $R^+$ là tập hợp các Reward đã nhận được trong một Episode
 
 $$
 \begin{align}
-R^+ &= [r_1, r_2, r_3, ..., r_p] \\
+R^+ &= [r_0, r_1, r_2, ..., r_{p - 1}] \\
 \end{align}
 $$
 

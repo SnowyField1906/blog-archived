@@ -7,9 +7,19 @@
       <language>en-us</language>
       <managingEditor>snowyfield1906@gmail.com (SnowyField)</managingEditor>
       <webMaster>snowyfield1906@gmail.com (SnowyField)</webMaster>
-      <lastBuildDate>Sun, 12 Nov 2023 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Tue, 14 Nov 2023 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://snowyfield.software/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://snowyfield.software/posts/hieu-sau-ve-markov-decision-process-phan-3</guid>
+    <title>Hiểu sâu về Markov Decision Process (Phần 3 - Value Iteration)</title>
+    <link>https://snowyfield.software/posts/hieu-sau-ve-markov-decision-process-phan-3</link>
+    <description>Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Markov Decision Process cùng với cách xây dựng và triển khai hai thuật toán phổ biến là Policy Iteration và Value Iteration</description>
+    <pubDate>Tue, 14 Nov 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>Reinforcement Learning</category><category>Machine Learning</category><category>Optimization</category><category>Probability</category><category>Mathematics</category>
+  </item>
+
   <item>
     <guid>https://snowyfield.software/posts/hieu-sau-ve-markov-decision-process-phan-2</guid>
     <title>Hiểu sâu về Markov Decision Process (Phần 2 - Policy Iteration)</title>
@@ -17,7 +27,7 @@
     <description>Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Markov Decision Process cùng với cách xây dựng và triển khai hai thuật toán phổ biến là Policy Iteration và Value Iteration</description>
     <pubDate>Sun, 12 Nov 2023 00:00:00 GMT</pubDate>
     <author>snowyfield1906@gmail.com (SnowyField)</author>
-    <category>Reinforcement Learning</category><category>Machine Learning</category><category>Probability</category><category>Mathematics</category>
+    <category>Reinforcement Learning</category><category>Machine Learning</category><category>Optimization</category><category>Probability</category><category>Mathematics</category>
   </item>
 
   <item>
@@ -27,7 +37,7 @@
     <description>Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Markov Decision Process cùng với cách xây dựng và triển khai hai thuật toán phổ biến là Policy Iteration và Value Iteration</description>
     <pubDate>Fri, 10 Nov 2023 00:00:00 GMT</pubDate>
     <author>snowyfield1906@gmail.com (SnowyField)</author>
-    <category>Reinforcement Learning</category><category>Machine Learning</category><category>Probability</category><category>Mathematics</category>
+    <category>Reinforcement Learning</category><category>Machine Learning</category><category>Optimization</category><category>Probability</category><category>Mathematics</category>
   </item>
 
   <item>
