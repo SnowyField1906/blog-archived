@@ -628,17 +628,16 @@ Xem tại [World.py](https://github.com/SnowyField1906/ai-general-research/blob/
 #### Khởi tạo
 
 ```python
-def __init__(self, filename, reward=default_reward, random_rate=default_random_rate):
+def __init__(self, filename):
     file = open(filename)
     self.map = np.array(
         [list(map(float, s.strip().split(","))) for s in file.readlines()]
     )
     file.close()
+
     self.n_rows = self.map.shape[0]
     self.n_cols = self.map.shape[1]
     self.n_states = self.n_rows * self.n_cols
-    self.reward = reward
-    self.random_rate = random_rate
     self.reward_function = self.get_reward_function()
     self.transition_model = self.get_transition_model()
 ```
@@ -680,9 +679,9 @@ def get_reward_function(self):
 
     for r in range(self.n_rows):
         for c in range(self.n_cols):
-            curr_pos = (r, c)
-            s = self.get_state_from_pos(curr_pos)
-            reward_table[s] = self.reward[self.map[curr_pos]]
+            pos = (r, c)
+            state = self.get_state_from_pos(pos)
+            reward_table[state] = T.REWARD[self.map[pos]]
 
     return reward_table
 
@@ -691,22 +690,22 @@ def get_transition_model(self):
 
     for r in range(self.n_rows):
         for c in range(self.n_cols):
-            curr_pos = (r, c)
-            s = self.get_state_from_pos(curr_pos)
-            neighbor_s = np.zeros(A.LEN)
+            pos = (r, c)
+            state = self.get_state_from_pos(pos)
+            next_state = np.zeros(A.LEN)
 
-            if self.map[curr_pos] == 0:
-                for a in A.ACTIONS:
-                    next_pos = self.get_next_pos(curr_pos, a)
-                    neighbor_s[a] = self.get_state_from_pos(next_pos)
+            if self.map[pos] == 0:
+                for action in A.ACTIONS:
+                    next_pos = self.get_next_pos(pos, action)
+                    next_state[action] = self.get_state_from_pos(next_pos)
             else:
-                neighbor_s = np.ones(A.LEN) * s
+                next_state = np.ones(A.LEN) * state
 
-            for a in A.ACTIONS:
-                main, likely1, likely2 = self.get_likely_action(a)
-                transition_model[s, a, int(neighbor_s[main])] += 1 - self.random_rate
-                transition_model[s, a, int(neighbor_s[likely1])] += self.random_rate / 2.0
-                transition_model[s, a, int(neighbor_s[likely2])] += self.random_rate / 2.0
+            for action in A.ACTIONS:
+                main, likely1, likely2 = self.get_likely_action(action)
+                transition_model[state, action, int(next_state[main])] += 1 - T.RANDOM_RATE
+                transition_model[state, action, int(next_state[likely1])] += T.RANDOM_RATE / 2.0
+                transition_model[state, action, int(next_state[likely2])] += T.RANDOM_RATE / 2.0
 
     return transition_model
 ```
@@ -715,21 +714,23 @@ def get_transition_model(self):
 
 ```python
 def execute_policy(self, policy, start_pos, time_limit=default_time_limit):
-    s = self.get_state_from_pos(start_pos)
-    r = self.reward_function[s]
-    total_reward = r
+    state = self.get_state_from_pos(start_pos)
+    reward = self.reward_function[state]
+    total_reward = reward
 
     start_time = int(round(time() * 1000))
     overtime = False
 
-    while r != self.reward[1] and r != self.reward[2]:
-        s = np.random.choice(self.n_states, p=self.transition_model[s, policy[s]])
-        r = self.reward_function[s]
-        total_reward += r
+    while reward not in T.TERMINAL:
+        state = np.random.choice(self.n_states, p=self.transition_model[state, policy[state]])
+        reward = self.reward_function[state]
+        total_reward += reward
         cur_time = int(round(time() * 1000)) - start_time
+
         if cur_time > time_limit:
             overtime = True
             break
+
     if overtime is True:
         return float('-inf')
     else:

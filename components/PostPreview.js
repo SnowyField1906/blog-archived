@@ -29,8 +29,8 @@ const PostPreview = ({ slug, date, title, summary, tags, thumbnail }) => {
                     views
                   </dd>
                 </dl>
-                <h2 className="text-2xl tracking-tighter font-semibold text-gray-700 transition duration-200 ease-in-out hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400">
-                  <Link href={`/posts/${slug}`} className="">
+                <h2 className="text-2xl font-semibold text-gray-700 transition duration-200 ease-in-out hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400">
+                  <Link href={`/posts/${slug}`} className="tracking-tighter">
                     {title}
                   </Link>
                 </h2>

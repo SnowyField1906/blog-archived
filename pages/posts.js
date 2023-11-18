@@ -4,7 +4,7 @@ import PostsLayout from '@/layouts/PostsLayout'
 import { PageSEO } from '@/components/SEO'
 import { getAllTags } from '@/lib/tags'
 
-export const POSTS_PER_PAGE = 5
+export const POSTS_PER_PAGE = 6
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('posts')

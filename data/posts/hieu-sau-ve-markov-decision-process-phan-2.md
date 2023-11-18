@@ -95,21 +95,55 @@ $$
 
 ## Xây dựng Policy Iteration
 
-### Xây dựng công thức cho Policy
+### Xây dựng Policy
 
 Ở phần trước chúng ta chỉ đề cập đến Policy là một hàm mapping từ State sang Action, phần này chúng ta sẽ thiết lập thuật toán của Policy.
 
 Policy và Value có mối quan hệ mật thiết với nhau, Value được tính dựa trên Policy, và Policy sẽ thay đổi theo Value. Policy ban đầu sẽ được tạo ngẫu nhiên, sau đó tính Value dựa trên Policy đó, và cuối cùng cập nhật lại Policy dựa trên Value mới.
 
+#### Bỏ qua Random Rate
+
 Hành động này sẽ được lặp đi lặp lại đến khi Policy không còn thay đổi. Vì Policy sẽ cho ra Action dẫn đến State có Value cao nhất trong các State có thể đến được. Do đó thuật toán cập nhật Policy sau khi tính được Value mới đơn giản như sau:
 
 $$
 \begin{align}
-\mathcal{\pi}(s) = \arg \max_{a \in A} [\mathcal{V}(\mathcal{M}(s, a))] \\
+\mathcal{\pi}(s) = \arg \max_{a \in A} [\mathcal{V}(s')] \text{ với } s' = \mathcal{M}(s, a) \\
 \end{align}
 $$
 
-### Xây dựng công thức cho Value
+#### Bao gồm Random Rate
+
+Tuy nhiên, chúng ta có một Random Rate có thể dẫn đến một State ngoài ý muốn. Vì vậy, công thức này còn phải phụ thuộc vào các State đó theo một hệ số thay vì chỉ một State duy nhất, hệ số này chính là xác suất mà Agent ngẫu nhiên đến State đó. Và đây chính là [Expected Value](https://en.wikipedia.org/wiki/Expected_value) (Giá trị Kì vọng) của State đó với Phân phối xác suất $\mathcal{P}$:
+
+$$
+\begin{align}
+\mathcal{\pi}(s) &= \arg \max_{a \in A} \mathbb{E_\mathcal{P}} \left[ \mathcal{V}(s') \right] \text{ với } s' = \mathcal{M}(s, a) \notag \\
+&= \arg \max_{a \in A} \left[ \sum_{s' \in S} \mathcal{P}(s') \mathcal{V}(s') \right] \notag \\
+& = \arg \max_{a \in A} \left[ \sum_{s' \in S} \mathcal{T}(s' \mid s, a) \mathcal{V}(s') \right] \\
+\end{align}
+$$
+
+Ví dụ, cho $\mathcal{V} = \{s_1 = 0.3, s_2 = 0.1, s_3 = -1.5, \dots \}$ và State $s$ với:
+
+- Action $a$ có $\mathcal{P} = [s_1 = 0.8, s_2 = 0.1, s_3 = 0.1, \dots]$.
+- Action $a'$ có $\mathcal{P}' = [s_1 = 0.2, s_2 = 0.8, s_3 = 0, \dots]$.
+
+Theo trực giác (cách trước đó), chúng ta sẽ cho Policy $\pi(s) = a$ vì Action $a$ trực tiếp đi đến State $s_1$, State có Value cao nhất.
+
+Tuy nhiên $a$ có rủi ro lớn hơn vì Action này có $10\%$ rơi vào $s_3$, một State có Value chỉ $-1.5$. Trong khi đó $a'$ an toàn hơn khi không có xác suất rơi vào $s_3$ nhưng Value cho ra lại thấp hơn. Để biết nên chọn phương án nào trong 2 phương án trên, chúng ta sẽ nhờ tới tính chất của Expected Value:
+
+$$
+\begin{aligned}
+\mathbb{E} \left[ \mathcal{V}(s) \right] &= 0.8 \times 0.3 + 0.1 \times 0.1 + 0.1 \times -1.5 \\
+&= 0.1 \\
+\mathbb{E} \left[ \mathcal{V}(s') \right] &= 0.2 \times 0.3 + 0.8 \times 0.1 + 0 \times -1.5 \\
+&= 0.14 \\
+\end{aligned}
+$$
+
+Như vậy, $a$ sẽ "kì vọng" một Value là $0.1$, còn $a'$ sẽ "kì vọng" một Value là $0.14$. Do đó, chúng ta sẽ chọn $a'$ là Policy của State $s$.
+
+### Xây dựng Value
 
 Chúng ta đã biết Value là một giá trị thể hiện mức độ "tiềm năng" của một State, Value càng cao thì State đó càng gần với Terminal State (đối với Policy hiện tại). Do đó chúng ta sẽ định nghĩa Value của một State là Cumulative Reward mà Agent có thể nhận được trong một Episode khi bắt đầu tại State đó.
 
@@ -233,7 +267,7 @@ $$
 
 Tuy nhiên đối với bài toán Stochastic Action, State tiếp theo có thể là một State nằm ngoài Policy theo hệ số Random Rate.
 
-Vì thế, thay vì đặt $\mathcal{V}$ là tổng của các State tiếp theo. Ta sẽ cho $\mathcal{V}$ là [Expected Value](https://en.wikipedia.org/wiki/Expected_value) (Giá trị Kì vọng) của toàn bộ State dựa trên Probability Distribution $\mathcal{P}$ từ phần trước:
+Vì thế, thay vì đặt $\mathcal{V}$ là tổng của các State tiếp theo. Ta sẽ cho $\mathcal{V}$ là Expected Value của toàn bộ State dựa trên Probability Distribution $\mathcal{P}$ từ phần trước:
 
 $$
 \begin{align}
@@ -248,7 +282,7 @@ $$
 \begin{align}
 \mathcal{V}(s_0) &= \mathcal{R}(s_0) + \gamma \mathbb{E}_{\mathcal{P}}\left[\mathcal{V}(s_1)\right] \notag \\
 &= \mathcal{R}(s_0) + \gamma \sum \mathcal{P}(s_1) \mathcal{V}(s_1) \notag \\
-&= \mathcal{R}(s_0) + \gamma \sum \mathcal{T}(s_1 | s_0, \pi(s_0)) \mathcal{V}(s_1) \\
+&= \mathcal{R}(s_0) + \gamma \sum \mathcal{T}(s_1 \mid s_0, \pi(s_0)) \mathcal{V}(s_1) \\
 \end{align}
 $$
 
@@ -550,11 +584,10 @@ Xem tại [PolicyIteration.py](https://github.com/SnowyField1906/ai-general-rese
 #### Khởi tạo
 
 ```python
-def __init__(self, reward_function, transition_model, gamma=default_gamma, init_policy=None, init_value=None):
+def __init__(self, reward_function, transition_model, init_policy=None, init_value=None):
     self.n_states = transition_model.shape[0]
     self.reward_function = np.nan_to_num(reward_function)
     self.transition_model = transition_model
-    self.gamma = gamma
 
     if init_policy is None:
         self.policy = np.random.randint(0, A.LEN, self.n_states)
@@ -571,7 +604,7 @@ def __init__(self, reward_function, transition_model, gamma=default_gamma, init_
 - Policy Evaluation
 
 ```python
-def one_policy_evaluation(self):
+def one_evaluation(self):
     old = self.values
     new = np.zeros(self.n_states)
 
@@ -580,10 +613,10 @@ def one_policy_evaluation(self):
     #     action = self.policy[state]
     #     probability = self.transition_model[state, action]
     #     reward = self.reward_function[state]
-    #     new[state] = reward + self.gamma * np.inner(probability, old)
+    #     new[state] = reward + T.DISCOUNT_FACTOR * np.inner(probability, old)
 
     # Approach 2
-    A = np.eye(self.n_states) - self.gamma * self.transition_model[range(self.n_states), self.policy]
+    A = np.eye(self.n_states) - T.DISCOUNT_FACTOR * self.transition_model[range(self.n_states), self.policy]
     b = self.reward_function
     new = np.linalg.solve(A, b)
 
@@ -592,12 +625,12 @@ def one_policy_evaluation(self):
 
     return delta
 
-def run_policy_evaluation(self, tol=default_tol, epoch_limit=default_evaluation_limit):
+def evaluation(self):
     delta = float('inf')
     delta_history = []
 
-    while delta > tol and len(delta_history) < epoch_limit:
-        delta = self.one_policy_evaluation()
+    while delta > T.STOP_CRITERION and len(delta_history) < T.EVALUATION_LIMIT:
+        delta = self.one_evaluation()
         delta_history.append(delta)
 
     return len(delta_history)
@@ -606,18 +639,18 @@ def run_policy_evaluation(self, tol=default_tol, epoch_limit=default_evaluation_
 - Policy Improvement
 
 ```python
-def run_policy_improvement(self):
+def policy_improvement(self):
     update_policy_count = 0
 
     for state in range(self.n_states):
         temp = self.policy[state]
-        neighbor_values = np.zeros(A.LEN)
+        next_values = np.zeros(A.LEN)
 
         for action in A.ACTIONS:
             probability = self.transition_model[state, action]
-            neighbor_values[action] = np.inner(probability, self.values)
+            next_values[action] = np.inner(probability, self.values)
 
-        self.policy[state] = np.argmax(neighbor_values)
+        self.policy[state] = np.argmax(next_values)
 
         if temp != self.policy[state]:
             update_policy_count += 1
@@ -628,16 +661,14 @@ def run_policy_improvement(self):
 #### Thuật toán Policy Iteration
 
 ```python
-def train(self, epoch_limit=default_training_limit):
-    policy_changes = float('inf')
-    eval_sweeps_history = []
-    policy_changes_history = []
+def train(self):
+    delta = float('inf')
+    eval_history = []
 
-    while policy_changes != 0 and len(eval_sweeps_history) < epoch_limit:
-        eval_sweeps = self.run_policy_evaluation()
-        policy_changes = self.run_policy_improvement()
-        eval_sweeps_history.append(eval_sweeps)
-        policy_changes_history.append(policy_changes)
+    while delta != 0 and len(eval_history) < T.IMPROVEMENT_LIMIT:
+        sweeps = self.evaluation()
+        delta = self.policy_improvement()
+        eval_history.append(sweeps)
 ```
 
 ### Các hàm phụ trợ

@@ -60,8 +60,6 @@
 
 p,
 li,
-h1,
-h2,
 h3,
 h4,
 h5,
@@ -69,7 +67,14 @@ h6,
 a,
 button,
 div {
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
+}
+
+table > thead > tr > th {
+  letter-spacing: -0.05em;
+}
+table > tbody > tr > td {
+  letter-spacing: -0.05em;
 }
 
 .task-list-item::before {

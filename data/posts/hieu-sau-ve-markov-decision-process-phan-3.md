@@ -51,7 +51,7 @@ $$
 \begin{align}
 \mathcal{V}(s_0) &= \mathcal{R}(s_0) + \gamma \mathbb{E}_{\mathcal{P}}\left[\mathcal{V}(s_1)\right] \notag \\
 &= \mathcal{R}(s_0) + \gamma \sum \mathcal{P}(s_1) \mathcal{V}(s_1) \notag \\
-&= \mathcal{R}(s_0) + \gamma \sum \mathcal{T}(s_1 | s_0, \pi(s_0)) \mathcal{V}(s_1) \\
+&= \mathcal{R}(s_0) + \gamma \sum \mathcal{T}(s_1 \mid s_0, \pi(s_0)) \mathcal{V}(s_1) \\
 \end{align}
 $$
 
@@ -59,7 +59,7 @@ $$
 
 $$
 \begin{align}
-\mathcal{\pi}(s) = \arg \max_{a \in A} [\mathcal{V}(\mathcal{M}(s, a))] \\
+\mathcal{\pi}(s) = \arg \max_{a \in A} \left[\sum \mathcal{T}(s' \mid s, a) \mathcal{V}(s')\right]
 \end{align}
 $$
 
@@ -71,7 +71,7 @@ Thay vì tính Value dựa trên một Action duy nhất theo Policy, chúng ta 
 
 $$
 \begin{align}
-\mathcal{V}(s_0 | a_i) &= \mathcal{R}(s_0) + \gamma \sum \mathcal{T}(s_1 | s_0, a_i) \mathcal{V}(s_1) \\
+\mathcal{V}(s_0 \mid a_i) &= \mathcal{R}(s_0) + \gamma \sum \mathcal{T}(s_1 \mid s_0, a_i) \mathcal{V}(s_1) \\
 \end{align}
 $$
 
@@ -89,7 +89,7 @@ Ta sẽ tính được một tập:
 
 $$
 \begin{align}
-V(s_0) = \{\mathcal{V}(s_0 | a_0), \mathcal{V}(s_0 | a_1), \mathcal{V}(s_0 | a_2), \dots, \mathcal{V}(s_0 | a_{m - 1})\}
+V(s_0) = \{\mathcal{V}(s_0 \mid a_0), \mathcal{V}(s_0 \mid a_1), \mathcal{V}(s_0 \mid a_2), \dots, \mathcal{V}(s_0 \mid a_{m - 1})\}
 \end{align}
 $$
 
@@ -97,8 +97,8 @@ Và sau đó chỉ cần lấy Value lớn nhất. Công thức sẽ là:
 
 $$
 \begin{align}
-\mathcal{V}(s_0) &= \max_{a \in A}\left[\mathcal{R}(s_0) + \gamma \sum \mathcal{T}(s_1 | s_0, a) \mathcal{V}(s_1)\right] \notag \\
-&= \mathcal{R}(s_0) + \gamma \max_{a \in A}\left[\sum \mathcal{T}(s_1 | s_0, a) \mathcal{V}(s_1)\right]
+\mathcal{V}(s_0) &= \max_{a \in A}\left[\mathcal{R}(s_0) + \gamma \sum \mathcal{T}(s_1 \mid s_0, a) \mathcal{V}(s_1)\right] \notag \\
+&= \mathcal{R}(s_0) + \gamma \max_{a \in A}\left[\sum \mathcal{T}(s_1 \mid s_0, a) \mathcal{V}(s_1)\right]
 \end{align}
 $$
 
@@ -122,7 +122,7 @@ Trước hết, ta sẽ mượn lại bản đồ từ ví dụ trước (không
 />
 </figure>
 
-Ta sẽ chỉ liệt kê State đầu tiên làm ví dụ, ở phần trước, $\mathcal{V}(0)$ được biểu diễn như sau:
+Ta sẽ chỉ liệt kê một State làm ví dụ, ở phần trước, $\mathcal{V}(11)$ được biểu diễn như sau:
 
 $$
 \begin{align}
@@ -227,11 +227,10 @@ Xem tại [ValueIteration.py](https://github.com/SnowyField1906/ai-general-resea
 #### Khởi tạo
 
 ```python
-def __init__(self, reward_function, transition_model, gamma=default_gamma, init_value=None):
+def __init__(self, reward_function, transition_model, init_value=None):
     self.n_states = transition_model.shape[0]
     self.reward_function = np.nan_to_num(reward_function)
     self.transition_model = transition_model
-    self.gamma = gamma
 
     self.policy = (np.ones(self.n_states) * -1).astype(int)
 
@@ -246,7 +245,7 @@ def __init__(self, reward_function, transition_model, gamma=default_gamma, init_
 - Value Evaluation
 
 ```python
-def one_value_evaluation(self):
+def one_evaluation(self):
     old = self.values
     new = np.zeros(self.n_states)
 
@@ -256,7 +255,7 @@ def one_value_evaluation(self):
 
         for action in A.ACTIONS:
             probability = self.transition_model[state, action]
-            values[action] = reward + self.gamma * np.inner(probability, self.values)
+            values[action] = reward + T.DISCOUNT_FACTOR * np.inner(probability, self.values)
 
         new[state] = max(values)
 
@@ -269,13 +268,13 @@ def one_value_evaluation(self):
 - Policy Improvement
 
 ```python
-def run_policy_improvement(self):
+def policy_improvement(self):
     for state in range(self.n_states):
         neighbor_values = np.zeros(A.LEN)
 
         for action in A.ACTIONS:
             probability = self.transition_model[state, action]
-            neighbor_values[action] = self.reward_function[state] + self.gamma * np.inner(probability, self.values)
+            neighbor_values[action] = np.inner(probability, self.values)
 
         self.policy[state] = np.argmax(neighbor_values)
 ```
@@ -283,15 +282,15 @@ def run_policy_improvement(self):
 #### Thuật toán Value Iteration
 
 ```python
-def train(self, tol=default_tol, epoch_limit=default_training_limit):
-    delta = self.one_value_evaluation()
-    delta_history = [delta]
+def train(self):
+    delta = float('inf')
+    delta_history = []
 
-    while delta > tol and len(delta_history) < epoch_limit:
-        delta = self.one_value_evaluation()
+    while delta > T.STOP_CRITERION and len(delta_history) < T.EVALUATION_LIMIT:
+        delta = self.one_evaluation()
         delta_history.append(delta)
 
-    self.run_policy_improvement()
+    self.policy_improvement()
 ```
 
 ### Các hàm phụ trợ

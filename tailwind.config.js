@@ -208,7 +208,9 @@ module.exports = {
             },
             figcaption: {
               textAlign: 'center',
-              color: theme('colors.gray.600'),
+              fontFamily: 'UVN_R',
+              letterSpacing: '0.02em',
+              color: theme('colors.gray.400'),
             },
             '[class~="math-display"]': {
               textAlign: 'center',

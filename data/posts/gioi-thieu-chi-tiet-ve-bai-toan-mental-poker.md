@@ -1,7 +1,7 @@
 ---
 title: Giới thiệu chi tiết về bài toán Mental Poker
 date: '2023-09-01'
-tags: ['ZKP', 'Cryptography']
+tags: ['ZKP', 'Cryptography', 'Poker Theory']
 draft: false
 summary: Tìm hiểu chi tiết về cách triển khai Mental Poker bằng một số thuật toán mã hóa đặc biệt cùng với Zero-Knowledge Proof.
 layout: PostView
