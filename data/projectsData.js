@@ -1,5 +1,16 @@
 const projectsData = [
   {
+    title: 'NEXT HYPE - Hackathon Winner',
+    description:
+      'Fusion of AI and Blockchain. Empowering creators, amplifying uniqueness, walletless onboarding, unlimited events and social sharing. Chainlink Constellation winner.',
+    imgSrc: '',
+    href: 'https://devpost.com/software/next-hype',
+    github: 'https://github.com/LECLE-Youngz/next-hype',
+    tech1: 'Solidity',
+    tech2: 'Chainlink',
+    tech3: 'Avalanche',
+  },
+  {
     title: 'NFTify - Hackathon Winner',
     description:
       'Fusion of AI and Blockchain. Empowering creators, amplifying uniqueness, walletless onboarding. Bitcoin Olympics Hackathon winner: Rootstock 3rd place.',
@@ -17,7 +28,7 @@ const projectsData = [
     href: 'https://snowyfield.software/',
     github: 'https://github.com/snowyfield1906/blog',
     tech1: 'Next.js',
-    tech2: 'Next-auth',
+    tech2: 'Prisma',
     tech3: 'TailwindCSS',
   },
   {

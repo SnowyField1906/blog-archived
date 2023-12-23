@@ -287,11 +287,11 @@ tr:last-child td:last-child {
 
 /* downscale latex font size by 80% */
 .math-display > .katex-display > .katex > .katex-html {
-  font-size: 85%;
-  letter-spacing: -0.03em;
+  font-size: 90%;
+  letter-spacing: -0.05em;
 }
 
 .math-inline > .katex > .katex-html {
-  font-size: 85%;
-  letter-spacing: -0.03em;
+  font-size: 90%;
+  letter-spacing: -0.05em;
 }

@@ -153,7 +153,7 @@ $$
 \begin{align}
 &\alpha \leftarrow \mathcal{U}(0, 1) \notag \\
 &\begin{cases}
-a \overset{{\scriptscriptstyle \operatorname{R}}}{\leftarrow}{A} &\text{if } \alpha < \epsilon_t \\
+a \overset{{\scriptscriptstyle \operatorname{R}}}{\leftarrow}{A} &\text{if } \alpha < \epsilon \\
 a = \pi(s) &\text{otherwise}
 \end{cases}
 \end{align}
@@ -190,8 +190,8 @@ Quá trình cập nhật sẽ được thực hiện bằng Policy Iteration ho�
 
 $$
 \begin{align}
-(\pi_{t+1}, \mathcal{V}_{t+1}) &= \text{Policy/Value Iteration}(\mathcal{R}, \mathcal{T}, \pi_t, \mathcal{V}_t) \notag \\
-\epsilon_{t+1} &= \epsilon_t \cdot \xi
+(\pi, \mathcal{V}) &= \text{Policy/Value Iteration}(\mathcal{R}, \mathcal{T}, \pi, \mathcal{V}) \notag \\
+\epsilon &= \epsilon \times \xi \\
 \end{align}
 $$
 
@@ -286,23 +286,15 @@ def actuate(self, next_state):
 
 ```python
 def one_evaluation(self, state):
-    win = False
-    reward_game = 0
-
     while True:
         action = self.actuate(state)
         next_state, reward = self.blackbox_move(state, action)
         self.percept(state, action, next_state, reward)
 
-        reward_game += reward
-
         if reward in T.TERMINAL:
-            win = reward == T.WIN
             break
         else:
             state = next_state
-
-    return reward_game, win
 ```
 
 - Improvement:
@@ -324,20 +316,10 @@ def policy_improvement(self):
 #### Thuật toán ADP
 
 ```python
-def train(self):
-    reward_history = np.zeros(T.EVALUATION_LIMIT)
-    total_reward_history = np.zeros(T.EVALUATION_LIMIT)
-    total_reward = 0
-    game_win = np.zeros(T.EVALUATION_LIMIT)
-
+def train(self, start_state):
     for i in range(T.EVALUATION_LIMIT):
-        reward_episode, win_episode = self.one_evaluation(0)
+        self.one_evaluation(start_state)
         self.policy_improvement()
-
-        total_reward += reward_episode
-        game_win[i] = win_episode
-        reward_history[i] = reward_episode
-        total_reward_history[i] = total_reward
 ```
 
 ### Các hàm phụ trợ

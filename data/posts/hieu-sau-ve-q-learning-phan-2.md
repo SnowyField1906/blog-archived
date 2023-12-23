@@ -26,9 +26,9 @@ Chúng ta đã biết cách hoạt động và các khái niệm quan trọng c�
 
 ## Khái niệm
 
-Giống với ADP, **Monte Carlo** (Mô phỏng Monte Carlo) cũng là một thuật toán giúp Agent có thể học được các thông tin quan trọng thông qua việc thử nhiều lần và rút ra kinh nghiệm. Tuy nhiên thuật toán này sẽ không cần dùng đến Reward và Transition Model như ADP.
+Giống với ADP, Monte Carlo cũng là một thuật toán giúp Agent có thể học được các thông tin quan trọng thông qua việc thử nhiều lần và rút ra kinh nghiệm. Tuy nhiên thuật toán này sẽ không cần dùng đến Reward và Transition Model như ADP.
 
-Do đó, ta gọi Monte Carlo là một thuật toán **Model-free** (Không dựa trên Model), trong khi ADP là thuật toán **Model-based** (Dựa trên Model).
+Do đó, ta gọi Monte Carlo là một thuật toán Model-free (Không dựa trên Model), trong khi ADP là thuật toán Model-based (Dựa trên Model).
 
 ### Nguồn gốc cái tên Monte Carlo
 
@@ -247,7 +247,7 @@ $$
 \begin{align}
 &\alpha \leftarrow \mathcal{U}(0, 1) \notag \\
 &\begin{cases}
-a \overset{{\scriptscriptstyle \operatorname{R}}}{\leftarrow}{A} &\text{if } \alpha < \epsilon_t \\
+a \overset{{\scriptscriptstyle \operatorname{R}}}{\leftarrow}{A} &\text{if } \alpha < \epsilon \\
 a = \pi(s) &\text{otherwise}
 \end{cases}
 \end{align}
@@ -280,7 +280,7 @@ $$
 \mathbf{Q}[s, a] &= \mathbf{Q}[s, a] + \frac{\mathbf{C}[s, a] - \mathbf{Q}[s, a]}{\mathbf{N}[s, a]} \\
 \end{cases} \notag \\
 \pi(s) &= \arg \max_a \mathbf{Q}[s, a] \notag \\
-\epsilon_{t+1} &= \epsilon_t \cdot \xi
+\epsilon &= \epsilon \times \xi \\
 \end{align}
 $$
 
@@ -395,9 +395,6 @@ def actuate(self, next_state):
 
 ```python
 def one_evaluation(self, state):
-    win = 0
-    reward_game = 0
-
     while True:
         action = self.actuate(state)
         next_state, reward = self.blackbox_move(state, action)
@@ -405,12 +402,9 @@ def one_evaluation(self, state):
         reward_game += reward
 
         if reward in T.TERMINAL:
-            win = reward == T.WIN
             break
         else:
             state = next_state
-
-    return reward_game, win
 ```
 
 - Improvement:
@@ -433,20 +427,10 @@ def policy_improvement(self):
 #### Thuật toán Monte Carlo
 
 ```python
-def train(self):
-    reward_history = np.zeros(T.EVALUATION_LIMIT)
-    total_reward_history = np.zeros(T.EVALUATION_LIMIT)
-    total_reward = 0
-    game_win = np.zeros(T.EVALUATION_LIMIT)
-
+def train(self, start_state):
     for i in range(T.EVALUATION_LIMIT):
-        reward_episode, win_episode = self.one_evaluation(0)
+        self.one_evaluation(start_state)
         self.policy_improvement()
-
-        total_reward += reward_episode
-        game_win[i] = win_episode
-        reward_history[i] = reward_episode
-        total_reward_history[i] = total_reward
 ```
 
 ### Các hàm phụ trợ

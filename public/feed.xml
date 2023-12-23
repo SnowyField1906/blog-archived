@@ -7,9 +7,19 @@
       <language>en-us</language>
       <managingEditor>snowyfield1906@gmail.com (SnowyField)</managingEditor>
       <webMaster>snowyfield1906@gmail.com (SnowyField)</webMaster>
-      <lastBuildDate>Sat, 18 Nov 2023 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Fri, 24 Nov 2023 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://snowyfield.software/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://snowyfield.software/posts/hieu-sau-ve-q-learning-phan-3</guid>
+    <title>Hiểu sâu về Q-Learning (Phần 3 - Q-Learning)</title>
+    <link>https://snowyfield.software/posts/hieu-sau-ve-q-learning-phan-3</link>
+    <description>Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Q-Learning cùng với cách xây dựng và triển khai hai thuật toán quan trọng là Adaptive Dynamic Programming và Monte Carlo.</description>
+    <pubDate>Fri, 24 Nov 2023 00:00:00 GMT</pubDate>
+    <author>snowyfield1906@gmail.com (SnowyField)</author>
+    <category>Reinforcement Learning</category><category>Machine Learning</category><category>Optimization</category><category>Probability</category><category>Mathematics</category>
+  </item>
+
   <item>
     <guid>https://snowyfield.software/posts/hieu-sau-ve-q-learning-phan-2</guid>
     <title>Hiểu sâu về Q-Learning (Phần 2 - Monte Carlo)</title>
