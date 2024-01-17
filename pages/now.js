@@ -233,24 +233,42 @@ export default function Now(currentlyReading) {
           </p>
           <br />
           <p>
-            My favourite rapper is <Link wide href={'https://www.youtube.com/@EvBRecords'}>B Ray</Link>,
-            he has a profound personal significance to me. His music has accompanied me through
+            My favourite rapper is{' '}
+            <Link wide href={'https://www.youtube.com/@EvBRecords'}>
+              B Ray
+            </Link>
+            , he has a profound personal significance to me. His music has accompanied me through
             various stages of my life, and his lyrics resonate deeply with my experiences.
           </p>
           <br />
           <p>
             Lately, I've been looping{' '}
-            <Link wide href={'https://www.youtube.com/@HustlangRecord'}>Hustlang Robber</Link> songs
-            quite a bit. However, if I could recommend some rappers to you, they would be{' '}
-            <Link wide href={'https://www.youtube.com/@hoanglongmck'}>MCK</Link>,{' '}
-            <Link wide href={'https://www.youtube.com/@wxrdie'}>Wxrdie</Link>, and{' '}
-            <Link wide href={'https://www.youtube.com/@BinzDaPoet'}>Binz</Link>.
+            <Link wide href={'https://www.youtube.com/@HustlangRecord'}>
+              Hustlang Robber
+            </Link>{' '}
+            songs quite a bit. However, if I could recommend some rappers to you, they would be{' '}
+            <Link wide href={'https://www.youtube.com/@hoanglongmck'}>
+              MCK
+            </Link>
+            ,{' '}
+            <Link wide href={'https://www.youtube.com/@wxrdie'}>
+              Wxrdie
+            </Link>
+            , and{' '}
+            <Link wide href={'https://www.youtube.com/@BinzDaPoet'}>
+              Binz
+            </Link>
+            .
           </p>
           <br />
           <p>
             I'm a Spotify addict, you can check out my Spotify stats{' '}
-            <Link wide href={'https://snowyfield.software/stats'}>here</Link>. By the way, this is the{' '}
-            <Link wide
+            <Link wide href={'https://snowyfield.me/stats'}>
+              here
+            </Link>
+            . By the way, this is the{' '}
+            <Link
+              wide
               href={'https://open.spotify.com/playlist/0J9wMOS5qXCWnTCk5hPgIY?si=9b36b1607c1e42f2'}
             >
               Spotify playlist
@@ -288,8 +306,10 @@ export default function Now(currentlyReading) {
           <p>
             It's fortunate that mine is exactly INFJ type. Nevertheless, it's prone to lead me
             entering the negative{' '}
-            <Link wide href={'https://introvertedgrowth.com/ni-ti-loop/'}>Ni-Ti Loop</Link>, which makes
-            me incredibly draining.
+            <Link wide href={'https://introvertedgrowth.com/ni-ti-loop/'}>
+              Ni-Ti Loop
+            </Link>
+            , which makes me incredibly draining.
           </p>
           <br />
           <p>Here's a bit more about me:</p>
@@ -297,7 +317,10 @@ export default function Now(currentlyReading) {
           <ul className="list-inside list-disc">
             <li>
               MBTI (Jung theory) &nbsp;—&nbsp; Code:{' '}
-              <Link wide href={'https://personalityjunkie.com/the-infj/'}>INFJ</Link> &nbsp;
+              <Link wide href={'https://personalityjunkie.com/the-infj/'}>
+                INFJ
+              </Link>{' '}
+              &nbsp;
               <i>
                 (Dominant: Ni &nbsp;•&nbsp; Auxiliary: Fe &nbsp;•&nbsp; Tertiary: Ti &nbsp;•&nbsp;
                 Inferior: Se)
@@ -305,7 +328,8 @@ export default function Now(currentlyReading) {
             </li>
             <li>
               Enneagram &nbsp;—&nbsp; Code:{' '}
-              <Link wide
+              <Link
+                wide
                 href={
                   'https://enneagramuniverse.com/enneagram/learn/enneagram-types/enneagram-type-4-the-individualist/'
                 }
@@ -313,7 +337,8 @@ export default function Now(currentlyReading) {
                 4
               </Link>{' '}
               &nbsp;<i>(Triad: Heart)</i> &nbsp;•&nbsp; Wing:{' '}
-              <Link wide
+              <Link
+                wide
                 href={
                   'https://enneagramuniverse.com/enneagram/learn/enneagram-wings/enneagram_4w5/'
                 }
@@ -321,9 +346,12 @@ export default function Now(currentlyReading) {
                 5
               </Link>{' '}
               &nbsp;•&nbsp; Instinctual Variant:{' '}
-              <Link wide href={'https://introvertedgrowth.com/so-sp-2/'}>SO/SP</Link> &nbsp;•&nbsp;
-              Tritype:{' '}
-              <Link wide
+              <Link wide href={'https://introvertedgrowth.com/so-sp-2/'}>
+                SO/SP
+              </Link>{' '}
+              &nbsp;•&nbsp; Tritype:{' '}
+              <Link
+                wide
                 href={
                   'https://personalityprofilinghell.tumblr.com/post/134436263161/my-tritype-is-4-6-1-what-does-that-actually'
                 }
@@ -333,7 +361,10 @@ export default function Now(currentlyReading) {
             </li>
             <li>
               Socionics &nbsp;—&nbsp; Code:{' '}
-              <Link wide href={'https://classicsocionics.wordpress.com/augusta-eii/'}>EII</Link> &nbsp;
+              <Link wide href={'https://classicsocionics.wordpress.com/augusta-eii/'}>
+                EII
+              </Link>{' '}
+              &nbsp;
               <i>
                 (Ego Blocks: Fi-Ne &nbsp;•&nbsp; Super-Ego Blocks: Ti-Se &nbsp;•&nbsp; Super-Id
                 Blocks: Te-Si &nbsp;•&nbsp; Id Blocks: Fe-Ni)
@@ -341,7 +372,9 @@ export default function Now(currentlyReading) {
             </li>
             <li>
               Global 5 (SLOAN) &nbsp;—&nbsp; Code:{' '}
-              <Link wide href={'https://similarminds.com/global5/rloai.html'}>RLOAI</Link>
+              <Link wide href={'https://similarminds.com/global5/rloai.html'}>
+                RLOAI
+              </Link>
             </li>
             <li>
               Attitudinal Psyche: &nbsp;—&nbsp; Code:{' '}
@@ -356,7 +389,8 @@ export default function Now(currentlyReading) {
             </li>
             <li>
               Four Temperaments: &nbsp;—&nbsp; Code:{' '}
-              <Link wide
+              <Link
+                wide
                 href={
                   'https://plus.catholicmatch.com/temperaments/melancholic/melancholic-phlegmatic'
                 }

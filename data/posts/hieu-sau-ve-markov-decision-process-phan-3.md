@@ -14,7 +14,7 @@ _Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Markov Decision P
 
 <img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/hieu-sau-ve-markov-decision-process.png" alt="Hiểu sâu về Markov Decision Process" />
 
-Khuyến nghị đọc trước [Phần 2](https://snowyfield.software/posts/hieu-sau-ve-markov-decision-process-phan-2) để sẵn sàng trước khi đi vào bài viết này.
+Khuyến nghị đọc trước [Phần 2](https://snowyfield.me/posts/hieu-sau-ve-markov-decision-process-phan-2) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Nhắc lại
 

@@ -228,7 +228,7 @@ Bây giờ toàn bộ lá bài đã được mã hóa và xáo trộn bởi Publ
 
 Cơ chế Trusted Setup cũng hoạt động tơng tự như vậy, nó sẽ bắt đầu bằng việc tạo các Key ngẫu nhiên và dùng chúng để tính toán các thông số và mã hóa dữ liệu.
 
-> Đọc thêm về Mental Poker tại bài viết [Giới thiệu chi tiết về bài toán Mental Poker](https://snowyfield.software/posts/gioi-thieu-chi-tiet-ve-bai-toan-mental-poker).
+> Đọc thêm về Mental Poker tại bài viết [Giới thiệu chi tiết về bài toán Mental Poker](https://snowyfield.me/posts/gioi-thieu-chi-tiet-ve-bai-toan-mental-poker).
 
 ## Chi tiết về Zero-Knowledge Proof
 
@@ -313,7 +313,7 @@ Và vì tính **Zero-Knowledge**, người dùng không được xâm phạm quy
 
 Flow Blockchain đã triển khai [SPocK](https://flow.com/technical-paper) (Specialized Proof of Confidential Knowledge) để đảm bảo tính trung thực của các node Execution và Verification trong mạng.
 
-> Đọc thêm về SPoCK tại bài viết [Flow - Top Blockchain dành cho NFT](https://snowyfield.software/posts/flow-top-blockchain-danh-cho-nft#spock).
+> Đọc thêm về SPoCK tại bài viết [Flow - Top Blockchain dành cho NFT](https://snowyfield.me/posts/flow-top-blockchain-danh-cho-nft#spock).
 
 #### Học máy và trí tuệ nhân tạo
 

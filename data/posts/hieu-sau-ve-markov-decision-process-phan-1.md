@@ -14,7 +14,7 @@ _Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Markov Decision P
 
 <img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/hieu-sau-ve-markov-decision-process.png" alt="Hiểu sâu về Markov Decision Process" />
 
-Khuyến nghị đọc trước [Giới thiệu về Markov Chain và ứng dụng](https://snowyfield.software/posts/gioi-thieu-ve-markov-chain-va-ung-dung) để sẵn sàng trước khi đi vào bài viết này.
+Khuyến nghị đọc trước [Giới thiệu về Markov Chain và ứng dụng](https://snowyfield.me/posts/gioi-thieu-ve-markov-chain-va-ung-dung) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Khái niệm
 
@@ -505,7 +505,7 @@ $$
 \end{align}
 $$
 
-Còn đối với việc truy xuất thông qua $a$, mỗi Action sẽ tương ứng với một [Transition Matrix](https://en.wikipedia.org/wiki/Stochastic_matrix) (Ma trận Chuyển tiếp) như trong [Markov Chain](https://snowyfield.software/posts/gioi-thieu-ve-markov-chain-va-ung-dung), thể hiện quá trình chuyển đổi qua lại giữa các State.
+Còn đối với việc truy xuất thông qua $a$, mỗi Action sẽ tương ứng với một [Transition Matrix](https://en.wikipedia.org/wiki/Stochastic_matrix) (Ma trận Chuyển tiếp) như trong [Markov Chain](https://snowyfield.me/posts/gioi-thieu-ve-markov-chain-va-ung-dung), thể hiện quá trình chuyển đổi qua lại giữa các State.
 
 ## Xây dựng MDP
 

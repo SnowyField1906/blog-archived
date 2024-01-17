@@ -30,7 +30,7 @@ export default function Home({ posts }) {
               animationDuration={2500}
               brackets={['left', 'right']}
               strokeWidth={4}
-              className="font-uvn self-center text-4xl font-extrabold leading-9 tracking-wide text-gray-900 dark:text-gray-100 md:text-6xl md:leading-14"
+              className="self-center font-uvn text-4xl font-extrabold leading-9 tracking-wide text-gray-900 dark:text-gray-100 md:text-6xl md:leading-14"
             >
               Hi, I am <br />
               <span className="text-6xl text-primary-600 dark:text-primary-400">SnowyField</span>
@@ -130,7 +130,7 @@ export default function Home({ posts }) {
                 <div className="group relative">
                   <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-pink-600 to-purple-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
                   <Link href="/projects">
-                    <span className="relative flex items-center justify-between divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black tracking-tight">
+                    <span className="relative flex items-center justify-between divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none tracking-tight dark:bg-black">
                       <span className="flex space-x-5">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +160,7 @@ export default function Home({ posts }) {
               <div className="my-2 grid items-start gap-8">
                 <div className="group relative">
                   <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-fuchsia-600 to-emerald-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
-                  <Link href="https://snowyfield.software/checkin">
+                  <Link href="https://snowyfield.me/checkin">
                     <span className="relative flex items-center justify-between divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
                       <span className="flex space-x-5">
                         <svg
@@ -191,7 +191,7 @@ export default function Home({ posts }) {
               <div className="my-2 grid items-start gap-8">
                 <div className="group relative">
                   <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r  from-pink-600 to-purple-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
-                  <Link href="http://snowyfield.software/resume.pdf">
+                  <Link href="http://snowyfield.me/resume.pdf">
                     <span className="relative flex items-center justify-between divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
                       <span className="flex space-x-5">
                         <svg
@@ -251,7 +251,9 @@ export default function Home({ posts }) {
         </div>
       )}
       {siteMetadata.newsletter.provider !== '' && (
-        <div className="flex items-center justify-center pt-4"><NewsletterForm /></div>
+        <div className="flex items-center justify-center pt-4">
+          <NewsletterForm />
+        </div>
       )}
     </>
   )

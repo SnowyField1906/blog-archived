@@ -311,4 +311,4 @@ Như vậy đã xảy ra trượt giá $\approx 8\%$. Giả sử nếu chúng ta
 ---
 
 Vậy là chúng ta đã đi qua cách hoạt động của mô hình AMM.
-Đến với [Phần 2 - Order Book](https://snowyfield.software/posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-2), chúng ta đã tìm hiểu về cách hoạt động của một Order Book.
+Đến với [Phần 2 - Order Book](https://snowyfield.me/posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-2), chúng ta đã tìm hiểu về cách hoạt động của một Order Book.

@@ -14,7 +14,7 @@ _Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Q-Learning cùng 
 
 <img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/hieu-sau-ve-q-learning.png" alt="Hiểu sâu về Q-Learning" />
 
-Khuyến nghị đọc trước series [Hiểu sâu về Markov Decision Process](https://snowyfield.software/posts/hieu-sau-ve-markov-decision-process-phan-1/) để sẵn sàng trước khi đi vào bài viết này.
+Khuyến nghị đọc trước series [Hiểu sâu về Markov Decision Process](https://snowyfield.me/posts/hieu-sau-ve-markov-decision-process-phan-1/) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Nhắc lại
 
@@ -34,7 +34,7 @@ Do đó, ta gọi ADP là một thuật toán **Model-based** (Dựa trên Model
 
 Như đã nói ở trên, Q-Learning là một bài toán MDP nhưng bị khuyết đi 2 thông tin quan trọng là Reward và Transition Model. Vì vậy, chúng ta sẽ cần phải xây dựng lại 2 thông tin này thông qua việc thử nghiệm nhiều lần.
 
-> Phần này giả sử người đọc đã nắm được các kí hiệu và ví dụ ở series [Hiểu sâu về Markov Decision Process](https://snowyfield.software/posts/hieu-sau-ve-markov-decision-process/).
+> Phần này giả sử người đọc đã nắm được các kí hiệu và ví dụ ở series [Hiểu sâu về Markov Decision Process](https://snowyfield.me/posts/hieu-sau-ve-markov-decision-process/).
 
 ### Xây dựng Reward
 

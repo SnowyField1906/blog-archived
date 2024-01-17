@@ -21,7 +21,7 @@ const siteMetadata = {
   },
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://snowyfield.software',
+  siteUrl: 'https://snowyfield.me',
   siteRepo: 'https://github.com/SnowyField1906/blog',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
@@ -30,7 +30,7 @@ const siteMetadata = {
   github: 'https://github.com/SnowyField1906',
   twitter: 'https://twitter.com/SnowyField1906',
   linkedin: 'https://www.linkedin.com/in/NHThuan/',
-  website: 'https://snowyfield.software/',
+  website: 'https://snowyfield.me/',
   locale: 'en-US',
   facebookAppId: '666473352092910',
   analytics: {

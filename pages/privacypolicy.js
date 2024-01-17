@@ -11,7 +11,8 @@ export default function PrivacyPolicy() {
       <div className="mx-auto max-w-3xl overflow-hidden">
         <div className="prose pt-7 text-gray-600 dark:text-gray-300">
           <h1 className="text-4xl font-extrabold leading-14 tracking-tight text-gray-900 dark:text-gray-100">
-            Privacy Policy</h1>
+            Privacy Policy
+          </h1>
           <p>Last updated: July 11, 2022</p>
           <p>
             This Privacy Policy describes Our policies and procedures on the collection, use and
@@ -105,11 +106,11 @@ export default function PrivacyPolicy() {
                 <strong className="dark:text-gray-100">Website</strong> refers to Blog, accessible
                 from{' '}
                 <a
-                  href="https://snowyfield.software//"
+                  href="https://snowyfield.me//"
                   rel="external nofollow noopener noreferrer"
                   target="_blank"
                 >
-                  https://snowyfield.software//
+                  https://snowyfield.me//
                 </a>
               </p>
             </li>

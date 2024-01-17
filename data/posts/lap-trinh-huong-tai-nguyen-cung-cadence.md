@@ -14,7 +14,7 @@ _**Ý kiến chủ quan**: Cá nhân mình thực sự không thích cách gọi
 
 <img src='/static/images/thumbnails/lap-trinh-huong-tai-nguyen-cung-cadence.png' alt="Lập trình hướng tài nguyên cùng Cadence" />
 
-Khuyến nghị đọc trước [Flow - Top Blockchain dành cho NFT](https://snowyfield.software/posts/flow-top-blockchain-danh-cho-nft) để sẵn sàng trước khi đi vào bài viết này.
+Khuyến nghị đọc trước [Flow - Top Blockchain dành cho NFT](https://snowyfield.me/posts/flow-top-blockchain-danh-cho-nft) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Tổng quan
 
