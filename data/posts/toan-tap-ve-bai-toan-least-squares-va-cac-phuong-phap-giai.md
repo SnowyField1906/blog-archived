@@ -257,7 +257,7 @@ y &= a_1 \phi_1(x) + a_2 \phi_2(x) + \dots + a_n \phi_n(x) \\
 \end{align*}
 $$
 
-Trong đó, $\mathbf{A} \in \mathbb{R}^{m \times n}$ là một ma trận chứa giá trị của các **Basic Function** (Hàm số Cơ bản) $\phi$ tại các điểm $x$ đã cho.
+Trong đó, $\mathbf{A} \in \mathbb{R}^{m \times n}$ là một ma trận chứa giá trị của các **Basic Function** (Hàm số Cơ bản) $\phi$ tại các điểm $x$ đã cho. Và $\mathbf{x} \in \mathbb{R}^n$ là một vector chứa các **parameter** $a$, hay còn gọi là **Coefficient Vector** (Vector Hệ số).
 
 > **📝 Nhắc lại**
 >

@@ -19,7 +19,9 @@ const CustomLink = ({ href, wide = false, ...rest }) => {
 
   return (
     <a
-      className={`${wide ? 'tracking-wide' : 'tracking-tight'} special-underline-new no-underline hover:text-white dark:hover:text-white`}
+      className={`${
+        wide ? 'tracking-wide' : 'tracking-tight'
+      } special-underline-new no-underline hover:text-white dark:hover:text-white`}
       target="_blank"
       rel="noopener noreferrer"
       href={href}

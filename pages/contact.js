@@ -9,7 +9,7 @@ const Contact = () => {
         title={`Contact - ${siteMetadata.author}`}
         description={siteMetadata.description.contact}
       />
-      <div className="mx-auto max-w-3xl overflow-hidden">
+      <div className="mx-auto max-w-4xl overflow-hidden">
         <div className="pt-10 pb-8">
           <ul className="font-semi-bold flex flex-col space-y-4">
             <ContactLink
@@ -25,6 +25,11 @@ const Contact = () => {
             <ContactLink
               href="https://twitter.com/SnowyField1906"
               title="twitter"
+              icon="SnowyField1906"
+            />
+            <ContactLink
+              href="https://facebook.com/SnowyField1906"
+              title="facebook"
               icon="SnowyField1906"
             />
             <ContactLink href="https://www.linkedin.com/NHThuan/" title="linkedin" icon="NHThuan" />
