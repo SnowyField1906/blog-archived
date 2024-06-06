@@ -25,7 +25,7 @@ const projectsData = [
     title: 'Blog',
     description: 'This server-side rendered blog',
     imgSrc: '',
-    href: 'https://snowyfield.me/',
+    href: 'https://archive.snowyfield.me/',
     github: 'https://github.com/snowyfield1906/blog',
     tech1: 'Next.js',
     tech2: 'Prisma',

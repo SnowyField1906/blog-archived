@@ -22,7 +22,7 @@ _Trong bài viết này, chúng ta sẽ tìm hiểu về Least Squares và các 
 
 <img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/toan-tap-ve-bai-toan-least-squares-va-cac-phuong-phap-giai.png" alt="Toàn tập về bài toán Least Squares và các phương pháp giải" />
 
-> Khuyến nghị đọc trước [QR Decomposition là gì và chi tiết cách tính](https://snowyfield.me/posts/qr-decomposition-la-gi-va-chi-tiet-cach-tinh) và [Singular Value Decomposition là gì và chi tiết cách tính](https://snowyfield.me/posts/singular-value-decomposition-la-gi-va-chi-tiet-cach-tinh) để sẵn sàng trước khi đi vào bài viết này.
+> Khuyến nghị đọc trước [QR Decomposition là gì và chi tiết cách tính](https://archive.snowyfield.me/posts/qr-decomposition-la-gi-va-chi-tiet-cach-tinh) và [Singular Value Decomposition là gì và chi tiết cách tính](https://archive.snowyfield.me/posts/singular-value-decomposition-la-gi-va-chi-tiet-cach-tinh) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Bài toán Least Squares
 

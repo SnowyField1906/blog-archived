@@ -5,9 +5,9 @@
   "author": {
     "name": "SnowyField",
     "email": "snowyfield1906@gmail.com",
-    "url": "https://snowyfield.me/"
+    "url": "https://archive.snowyfield.me/"
   },
-  "homepage": "https://snowyfield.me/",
+  "homepage": "https://archive.snowyfield.me/",
   "scripts": {
     "start": "cross-env SOCKET=true node ./scripts/next-remote-watch.js ./data npx prisma generate",
     "dev": "next dev",

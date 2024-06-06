@@ -14,7 +14,7 @@ _Tuy nhiên, vấn đề này có thể được giải quyết bằng cách s�
 
 <img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/gioi-thieu-chi-tiet-ve-bai-toan-mental-poker.png" alt="Chi tiết về thuật toán mã hóa cho Mental Poker" />
 
-> Khuyến nghị đọc trước [Zero-Knowledge Proof là gì và cách hoạt động](https://snowyfield.me/posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong) để sẵn sàng trước khi đi vào bài viết này.
+> Khuyến nghị đọc trước [Zero-Knowledge Proof là gì và cách hoạt động](https://archive.snowyfield.me/posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Giới thiệu về Mental Poker
 

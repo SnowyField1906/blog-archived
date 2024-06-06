@@ -45,7 +45,7 @@ Tuy nhiên DeFi cũng có một số rủi ro nhất định, trong đó rủi r
 - **Pháp lý và quy định**: Vì DeFi hoạt động trong môi trường mới và thường không chịu sự kiểm soát chặt chẽ, các vấn đề liên quan đến pháp lý và quy định có thể phát sinh. Các tội phạm DeFi cũng thường rất khó truy vết. Một ví dụ điển hình là [Tornado Cash](https://en.wikipedia.org/wiki/Tornado_Cash). Bằng việc triển khai **Zero-Knowledge Proof**, nó có thể giúp các tội phạm rửa tiền mà không có cách nào để truy vết. Hiện Tornado Cash đã bị cấm ở vài quốc gia và developer cũng đã bị bắt giữ.
 - **Các rủi ro khác**: Có thể kể đến như biến động thị trường, thất thoát tiền mã hoá, mất khả năng trợ giúp,...
 
-> Đọc thêm về Zero-Knowledge tại bài viết [Zero-Knowledge Proof là gì và cách hoạt động](https://snowyfield.me/posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong).
+> Đọc thêm về Zero-Knowledge tại bài viết [Zero-Knowledge Proof là gì và cách hoạt động](https://archive.snowyfield.me/posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong).
 
 ## Các hoạt động trên DeFi
 

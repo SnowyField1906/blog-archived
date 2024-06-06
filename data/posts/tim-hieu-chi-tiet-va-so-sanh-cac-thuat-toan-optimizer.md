@@ -14,7 +14,7 @@ _Để hiểu rõ hơn về các thuật toán optimizer, chúng ta sẽ cùng t
 
 <img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/tim-hieu-chi-tiet-va-so-sanh-cac-thuat-toan-optimizer.png" alt="Tìm hiểu chi tiết và so sánh các thuật toán optimizer" />
 
-> Khuyến nghị đọc trước [Toàn tập về bài toán Least Squares và các phương pháp giải](https://snowyfield.me/posts/toan-tap-ve-bai-toan-least-squares-va-cac-phuong-phap-giai) để sẵn sàng trước khi đi vào bài viết này.
+> Khuyến nghị đọc trước [Toàn tập về bài toán Least Squares và các phương pháp giải](https://archive.snowyfield.me/posts/toan-tap-ve-bai-toan-least-squares-va-cac-phuong-phap-giai) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Khái niệm
 

@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import useSWR from 'swr-old'
 import fetcher from 'lib/fetcher'
 
-export default function ViewCounter({ slug, className, blogPage = false }) {
+export default function ViewCounter({ slug, className, inc = false }) {
   let { data } = useSWR(`/api/views/${slug}`, fetcher)
   let views = new Number(data?.total)
 
@@ -12,10 +12,10 @@ export default function ViewCounter({ slug, className, blogPage = false }) {
         method: 'POST',
       })
 
-    if (blogPage) {
+    if (inc) {
       registerView()
     }
-  }, [blogPage, slug])
+  }, [inc, slug])
 
   return <span className={className}>{`${views > 0 ? views.toLocaleString() : '–––'}`}</span>
 }

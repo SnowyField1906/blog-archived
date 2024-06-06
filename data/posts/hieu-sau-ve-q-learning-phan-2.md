@@ -14,7 +14,7 @@ _Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Q-Learning cùng 
 
 <img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/hieu-sau-ve-q-learning.png" alt="Hiểu sâu về Q-Learning" />
 
-Khuyến nghị đọc trước [Phần 1](https://snowyfield.me/posts/hieu-sau-ve-q-learning-phan-1/) để sẵn sàng trước khi đi vào bài viết này.
+Khuyến nghị đọc trước [Phần 1](https://archive.snowyfield.me/posts/hieu-sau-ve-q-learning-phan-1/) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Nhắc lại
 
@@ -69,7 +69,7 @@ Khi đó ta có thể xấp xỉ giá trị $\pi$ thông qua việc đếm số 
 
 Như ta đã biết, MDP và ADP là các thuật toán xác định Policy bằng cách ước tính Value của mỗi State. Để làm được điều này, chúng ta sẽ cần tới Reward và Transition Model. Vì vậy để bỏ đi hai yếu tố này, chúng ta sẽ cần phải thiết lập một thành phần mới với mục đích tương tự. Và thành phần (rất) quan trọng này chính là **Q-Value** (Giá trị Q), thứ sẽ ảnh hưởng đến các bài toán **Reinforcement Learning** (Học Tăng cường) sau này.
 
-> Phần này giả sử người đọc đã nắm được các kí hiệu và ví dụ ở series [Hiểu sâu về Markov Decision Process](https://snowyfield.me/posts/hieu-sau-ve-markov-decision-process/).
+> Phần này giả sử người đọc đã nắm được các kí hiệu và ví dụ ở series [Hiểu sâu về Markov Decision Process](https://archive.snowyfield.me/posts/hieu-sau-ve-markov-decision-process/).
 
 ### Xây dựng Q-Value
 

@@ -106,11 +106,11 @@ export default function PrivacyPolicy() {
                 <strong className="dark:text-gray-100">Website</strong> refers to Blog, accessible
                 from{' '}
                 <a
-                  href="https://snowyfield.me//"
+                  href="https://archive.snowyfield.me//"
                   rel="external nofollow noopener noreferrer"
                   target="_blank"
                 >
-                  https://snowyfield.me//
+                  https://archive.snowyfield.me//
                 </a>
               </p>
             </li>

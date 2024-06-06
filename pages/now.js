@@ -263,7 +263,7 @@ export default function Now(currentlyReading) {
           <br />
           <p>
             I'm a Spotify addict, you can check out my Spotify stats{' '}
-            <Link wide href={'https://snowyfield.me/stats'}>
+            <Link wide href={'https://archive.snowyfield.me/stats'}>
               here
             </Link>
             . By the way, this is the{' '}
